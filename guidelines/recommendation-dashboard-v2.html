@@ -1,0 +1,203 @@
+<!-- @dsCard group="Colors" viewport="1280x2740" name="Recommendation v2 · Flint, single-accent charts" subtitle="One neutral family with light and dark steps, and a dashboard where orange and green never meet" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:32px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+.eyebrow{font:var(--font-text3-medium);color:var(--secondary-text-color);text-transform:uppercase;letter-spacing:.08em}
+.note{color:var(--secondary-text-color);max-width:88ch;text-wrap:pretty;margin:4px 0 16px}
+h3{font:var(--font-h3-bold);letter-spacing:var(--letter-spacing-h3-bold);margin:28px 0 4px}
+.ramp{display:flex;gap:8px;margin:12px 0 20px}
+.ramp>div{flex:1;border-radius:var(--border-radius-small);overflow:hidden;border:1px solid var(--layout-border-color)}
+.ramp h{display:block;height:36px}
+.ramp .cap{padding:6px 8px;font:var(--font-text3-normal)}
+.ramp .cap b{display:block;font:var(--font-text3-medium)}
+.ramp .cap span{color:var(--secondary-text-color)}
+
+.trio{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.mock{border-radius:var(--border-radius-medium);border:1px solid #C6C5BA;overflow:hidden;background:#F4F3EE}
+.mock .bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px 16px;background:#fff;border-bottom:1px solid #C6C5BA;font:var(--font-text2-medium);color:#414042}
+.mock .body{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:16px}
+.mock .rail{background:#fff;border:1px solid #C6C5BA;border-radius:var(--border-radius-medium);padding:12px;display:flex;flex-direction:column;gap:8px;font:var(--font-text3-normal);color:#414042}
+.mock .rail b{font:var(--font-text3-medium);color:#67666a;text-transform:uppercase;letter-spacing:.06em}
+.mock .warm{background:#fff;border:1px solid #C6C5BA;border-radius:var(--border-radius-medium);padding:14px;color:#414042}
+.mock .cardw{background:#fff;border:1px solid #C6C5BA;border-radius:var(--border-radius-medium);padding:14px;color:#414042;display:flex;flex-direction:column;gap:8px}
+
+/* dashboard */
+.dash{border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:16px;border:1px solid var(--layout-border-color);background:var(--g-page);color:var(--g-text)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tile{background:var(--g-card);border:1px solid var(--g-line);border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:4px}
+.tile .k{font:var(--font-text3-medium);color:var(--g-muted);text-transform:uppercase;letter-spacing:.06em}
+.tile .v{font:var(--font-h2-bold);letter-spacing:var(--letter-spacing-h2-bold)}
+.tile .d{font:var(--font-text3-normal);color:var(--g-muted)}
+.split{display:grid;grid-template-columns:1.6fr 1fr;gap:16px}
+.panel{background:var(--g-card);border:1px solid var(--g-line);border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:16px}
+.ph{display:flex;justify-content:space-between;align-items:baseline}
+.ph b{font:var(--font-text1-medium)}
+.ph span{font:var(--font-text3-normal);color:var(--g-muted)}
+.chart{height:180px;display:grid;grid-template-columns:repeat(8,1fr);gap:16px;align-items:end;border-bottom:1px solid var(--g-line)}
+.col{display:flex;flex-direction:column;justify-content:flex-end;gap:2px;height:100%}
+.col i{display:block;border-radius:var(--border-radius-2) var(--border-radius-2) 0 0}
+.xax{display:grid;grid-template-columns:repeat(8,1fr);gap:16px;font:var(--font-text3-normal);color:var(--g-muted);text-align:center}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font:var(--font-text3-normal);color:var(--g-muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:10px;height:10px;border-radius:var(--border-radius-2)}
+.donut{width:132px;height:132px;border-radius:50%;margin:0 auto;display:grid;place-items:center}
+.donut div{width:96px;height:96px;border-radius:50%;background:var(--g-card);display:grid;place-items:center;font:var(--font-h3-bold)}
+.bars{display:flex;flex-direction:column;gap:12px}
+.brow{display:grid;grid-template-columns:96px 1fr 44px;gap:12px;align-items:center;font:var(--font-text3-normal)}
+.track{height:8px;border-radius:var(--border-radius-pill);background:var(--g-track);overflow:hidden}
+.track i{display:block;height:100%;border-radius:var(--border-radius-pill)}
+table{width:100%;border-collapse:collapse;font:var(--font-text2-normal)}
+th{font:var(--font-text3-medium);color:var(--g-muted);text-transform:uppercase;letter-spacing:.06em;text-align:left;padding:8px 12px;background:var(--g-thead);border-bottom:1px solid var(--g-line)}td{padding:12px;border-bottom:1px solid var(--g-line)}
+.chip{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px 0 8px;border-radius:var(--border-radius-pill);font:var(--font-text3-medium);background:transparent;border:1px solid #B6B6AC;color:var(--g-text)}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--positive-color)}
+.chip.bad i{background:var(--negative-color)}
+.btn{display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:var(--border-radius-small);font:var(--font-text2-medium);background:var(--lofty-crisp-orange);color:#fff}
+.light{--g-page:#F4F3EE;--g-card:#ffffff;--g-line:#C6C5BA;--g-text:#414042;--g-muted:#67666a;--g-track:#E1E1D9;--g-thead:#ffffff;--g-s3:#414042;--g-s4:#B6B6AC}
+.dark{--g-page:#1A1A18;--g-card:#24241F;--g-line:#3A3A33;--g-text:#F2F1F2;--g-muted:#B9B8BC;--g-track:#3A3A33;--g-thead:#24241F;--g-s3:#E1E1D9;--g-s4:#B6B6AC}
+</style></head><body>
+<span class="eyebrow">Recommendation · v2</span>
+<p class="note">Two corrections from v1. Crisp Orange and Eco Green are accents and never appear together, so every chart here is <strong>single-accent</strong>: one orange family plus neutrals, with a second series carried by value rather than a second hue. And the old green tint <code>#b8d0d2</code> is gone — it read blue against the neutrals. Orange 70 <code>#f8a48c</code> takes its place as series 2.</p>
+
+<h3>Flint — light and dark</h3>
+<p class="note">One neutral family, numbered steps, nothing else. <strong>Flint</strong> is the whole grey: 50 is the softer page, 100 the page, 200 does every recessed and ruled job, 300 is the border step that replaces Mid Grey, 400 is the mid-tone fill; 700/800/900 are the same material in dark mode. Oat, Ash, Flint Grey, Flint Deep, Chalk, Paper, Mineral and Stone are all retired — no warm variant, because Crisp Orange sits well on both white and Flint 100, and a second warm surface only muddied the page.</p>
+<div class="ramp">
+<div><h style="background:#F9F9F6;border-bottom:1px solid var(--layout-border-color)"></h><div class="cap"><b>Flint 50</b><span>#F9F9F6 · softer page</span></div></div>
+<div><h style="background:#F4F3EE"></h><div class="cap"><b>Flint 100</b><span>#F4F3EE · page</span></div></div>
+<div><h style="background:#E1E1D9"></h><div class="cap"><b>Flint 200</b><span>#E1E1D9 · surface, rule, track</span></div></div>
+<div><h style="background:#C6C5BA"></h><div class="cap"><b>Flint 300</b><span>#C6C5BA · borders, dividers</span></div></div>
+<div><h style="background:#B6B6AC"></h><div class="cap"><b>Flint 400</b><span>#B6B6AC · mid-tone fill, charts</span></div></div>
+<div><h style="background:#3A3A33"></h><div class="cap"><b>Flint 700</b><span>#3A3A33 · dark rule</span></div></div>
+<div><h style="background:#24241F"></h><div class="cap"><b>Flint 800</b><span>#24241F · dark surface</span></div></div>
+<div><h style="background:#1A1A18"></h><div class="cap"><b>Flint 900</b><span>#1A1A18 · dark page</span></div></div>
+</div>
+<div class="trio">
+<div class="mock">
+<div class="bar"><span>Scheduling</span><span style="font:var(--font-text3-normal);color:#67666a">White surfaces on a Flint 100 page · neutrals only where they do a job</span></div>
+<div class="body">
+<div class="rail"><b>Depots</b><span>Northline</span><span>Depot 2</span><span>Contractor</span><span>Yard</span></div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div class="warm"><div style="font:var(--font-text2-medium)">9 jobs unassigned</div><div style="font:var(--font-text3-normal);color:#67666a">Assign crew before publishing the week.</div></div>
+<div class="cardw"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span style="font:var(--font-text2-medium)">JOB-4821 · Northline</span><span style="background:#3A3A33;color:#fff;font:var(--font-text3-medium);padding:2px 8px;border-radius:var(--border-radius-pill)">Flint 700 badge</span></div><div style="font:var(--font-text3-normal);color:#67666a">Resurfacing · due Thursday</div><div><span class="btn">Assign crew</span></div></div>
+</div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);overflow:hidden">
+<div style="display:flex;height:56px">
+<div style="flex:1;background:#d1d3d4"></div><div style="flex:1;background:#C6C5BA"></div><div style="flex:1;background:#B6B6AC"></div>
+</div>
+<div style="padding:8px 10px;font:var(--font-text3-normal);color:var(--secondary-text-color)">Mid Grey #d1d3d4 · Flint 300 · Flint 400 — the cool brand grey against the two warm-neutral UI steps</div>
+</div>
+<div style="border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:14px;background:#F4F3EE;color:#414042">
+<div style="font:var(--font-text2-medium);margin-bottom:8px">Where each one goes</div>
+<div style="font:var(--font-text3-normal);color:#67666a;display:flex;flex-direction:column;gap:6px">
+<span><strong style="color:#414042">Flint 50 <code>#F9F9F6</code></strong> — Flint 100 at half strength, halfway to white. Use it where a full page of 100 feels heavy: dense tables, long forms, or a page that is mostly white cards. One or the other per screen, never both.</span>
+<span><strong style="color:#414042">Flint 300 <code>#C6C5BA</code> replaces Mid Grey in the UI.</strong> Mid Grey <code>#d1d3d4</code> is a cool grey — a faint blue cast that fights Crisp Orange and makes a border look like a different system. Flint 300 sits a step darker and warm-neutral, so it separates cleanly from Mid Grey and belongs to the same material as the page. Mid Grey stays a brand palette colour for the logo, print and brand-led surfaces; it is no longer a control border.</span>
+<span><strong style="color:#414042">Flint 100 / 200 / 300 / 400</strong> — light mode: page, recessed fills and tracks, borders and dividers, mid-tone fill. Flint 200 carries progress tracks, quiet chips and the update block; 400 is a chart and disabled fill only — never a table header or a text ground.</span>
+<span><strong style="color:#414042">Flint 900 / 800 / 700</strong> — dark mode: page, surface, rule. Same material, no second family.</span>
+<span>Content sits on white. The page tint only shows between cards, and neutrals stay secondary — a rule, a track, a disabled fill — supporting the orange rather than filling space. Table headers are white with a Flint 300 rule and muted labels, not a grey band.</span>
+</div>
+</div>
+</div>
+</div>
+
+<h3>Data-viz order · single accent</h3>
+<p class="note">Orange carries the series; the rest is value. Eco Green is not in this ramp — a green chart is allowed, but then it is green and neutrals with no orange in the same view.</p>
+<div class="ramp">
+<div><h style="background:#f47e63"></h><div class="cap"><b>1 · Crisp Orange</b><span>#f47e63</span></div></div>
+<div><h style="background:#f8a48c"></h><div class="cap"><b>2 · Orange 70</b><span>#f8a48c</span></div></div>
+<div><h style="background:#d9634a"></h><div class="cap"><b>3 · Orange deep</b><span>#d9634a · Orange 40 #fbd8cd on dark</span></div></div>
+<div><h style="background:#414042"></h><div class="cap"><b>4 · Foundation Black</b><span>#414042 · Flint 200 on dark</span></div></div>
+<div><h style="background:#B6B6AC"></h><div class="cap"><b>5 · Flint 400</b><span>#B6B6AC</span></div></div>
+<div><h style="background:#E1E1D9"></h><div class="cap"><b>6 · Flint 200</b><span>#E1E1D9 · Flint 700 on dark</span></div></div>
+</div>
+
+<h3>Light</h3>
+<div class="dash light">
+<div class="stats">
+<div class="tile"><span class="k">Jobs live</span><span class="v">128</span><span class="d">across four depots</span></div>
+<div class="tile"><span class="k">Unassigned</span><span class="v">9</span><span class="d">assign before publishing</span></div>
+<div class="tile"><span class="k">Crew utilisation</span><span class="v">82%</span><span class="d">target 75%</span></div>
+<div class="tile"><span class="k">Overdue</span><span class="v">4</span><span class="d">down 2 on last week</span></div>
+</div>
+<div class="split">
+<div class="panel">
+<div class="ph"><b>Jobs completed by week</b><span>Crew vs. contractor</span></div>
+<div class="chart">
+<div class="col"><i style="background:#f8a48c;height:22%"></i><i style="background:#f47e63;height:46%"></i></div>
+<div class="col"><i style="background:#f8a48c;height:18%"></i><i style="background:#f47e63;height:54%"></i></div>
+<div class="col"><i style="background:#f8a48c;height:26%"></i><i style="background:#f47e63;height:40%"></i></div>
+<div class="col"><i style="background:#f8a48c;height:30%"></i><i style="background:#f47e63;height:58%"></i></div>
+<div class="col"><i style="background:#f8a48c;height:20%"></i><i style="background:#f47e63;height:66%"></i></div>
+<div class="col"><i style="background:#f8a48c;height:28%"></i><i style="background:#f47e63;height:52%"></i></div>
+<div class="col"><i style="background:#f8a48c;height:24%"></i><i style="background:#f47e63;height:72%"></i></div>
+<div class="col"><i style="background:var(--g-s4);height:16%"></i><i style="background:#d9634a;height:44%"></i></div>
+</div>
+<div class="xax"><span>W27</span><span>W28</span><span>W29</span><span>W30</span><span>W31</span><span>W32</span><span>W33</span><span>W34</span></div>
+<div class="legend"><span><i class="dot" style="background:#f47e63"></i>Scheduled crew</span><span><i class="dot" style="background:#f8a48c"></i>Contractor</span><span><i class="dot" style="background:#d9634a"></i>Forecast</span></div>
+</div>
+<div class="panel">
+<div class="ph"><b>Utilisation</b><span>This week</span></div>
+<div class="donut" style="background:conic-gradient(#f47e63 0 82%,var(--g-track) 82% 100%)"><div>82%</div></div>
+<div class="bars">
+<div class="brow"><span>Northline</span><div class="track"><i style="background:#f47e63;width:82%"></i></div><span>82%</span></div>
+<div class="brow"><span>Depot 2</span><div class="track"><i style="background:#f8a48c;width:64%"></i></div><span>64%</span></div>
+<div class="brow"><span>Contractor</span><div class="track"><i style="background:var(--g-s3);width:47%"></i></div><span>47%</span></div>
+</div>
+</div>
+</div>
+<div class="panel" style="padding:0;overflow:hidden">
+<table>
+<tr><th>Job</th><th>Depot</th><th>Due</th><th>Status</th><th style="text-align:right">Action</th></tr>
+<tr><td>JOB-4821 · Northline resurfacing</td><td>Northline</td><td>12 Sep</td><td><span class="chip"><i></i>On site</span></td><td style="text-align:right"><span class="btn">Assign crew</span></td></tr>
+<tr><td>JOB-4822 · Kerb replacement</td><td>Depot 2</td><td>14 Sep</td><td><span class="chip bad"><i></i>Unassigned</span></td><td style="text-align:right"><span class="btn">Assign crew</span></td></tr>
+<tr><td>JOB-4809 · Drainage survey</td><td>Contractor</td><td>9 Sep</td><td><span class="chip bad"><i></i>Overdue</span></td><td style="text-align:right"><span class="btn">Assign crew</span></td></tr>
+</table>
+</div>
+</div>
+
+<h3>Dark</h3>
+<div class="dash dark">
+<div class="stats">
+<div class="tile"><span class="k">Jobs live</span><span class="v">128</span><span class="d">across four depots</span></div>
+<div class="tile"><span class="k">Unassigned</span><span class="v">9</span><span class="d">assign before publishing</span></div>
+<div class="tile"><span class="k">Crew utilisation</span><span class="v">82%</span><span class="d">target 75%</span></div>
+<div class="tile"><span class="k">Overdue</span><span class="v">4</span><span class="d">down 2 on last week</span></div>
+</div>
+<div class="split">
+<div class="panel">
+<div class="ph"><b>Jobs completed by week</b><span>Crew vs. contractor</span></div>
+<div class="chart">
+<div class="col"><i style="background:#f8a48c;height:22%"></i><i style="background:#f47e63;height:46%"></i></div>
+<div class="col"><i style="background:#f8a48c;height:18%"></i><i style="background:#f47e63;height:54%"></i></div>
+<div class="col"><i style="background:#f8a48c;height:26%"></i><i style="background:#f47e63;height:40%"></i></div>
+<div class="col"><i style="background:#f8a48c;height:30%"></i><i style="background:#f47e63;height:58%"></i></div>
+<div class="col"><i style="background:#f8a48c;height:20%"></i><i style="background:#f47e63;height:66%"></i></div>
+<div class="col"><i style="background:#f8a48c;height:28%"></i><i style="background:#f47e63;height:52%"></i></div>
+<div class="col"><i style="background:#f8a48c;height:24%"></i><i style="background:#f47e63;height:72%"></i></div>
+<div class="col"><i style="background:var(--g-s4);height:16%"></i><i style="background:#fbd8cd;height:44%"></i></div>
+</div>
+<div class="xax"><span>W27</span><span>W28</span><span>W29</span><span>W30</span><span>W31</span><span>W32</span><span>W33</span><span>W34</span></div>
+<div class="legend"><span><i class="dot" style="background:#f47e63"></i>Scheduled crew</span><span><i class="dot" style="background:#f8a48c"></i>Contractor</span><span><i class="dot" style="background:#fbd8cd"></i>Forecast</span></div>
+</div>
+<div class="panel">
+<div class="ph"><b>Utilisation</b><span>This week</span></div>
+<div class="donut" style="background:conic-gradient(#f47e63 0 82%,var(--g-track) 82% 100%)"><div>82%</div></div>
+<div class="bars">
+<div class="brow"><span>Northline</span><div class="track"><i style="background:#f47e63;width:82%"></i></div><span>82%</span></div>
+<div class="brow"><span>Depot 2</span><div class="track"><i style="background:#f8a48c;width:64%"></i></div><span>64%</span></div>
+<div class="brow"><span>Contractor</span><div class="track"><i style="background:var(--g-s3);width:47%"></i></div><span>47%</span></div>
+</div>
+</div>
+</div>
+<div class="panel" style="padding:0;overflow:hidden">
+<table>
+<tr><th>Job</th><th>Depot</th><th>Due</th><th>Status</th><th style="text-align:right">Action</th></tr>
+<tr><td>JOB-4821 · Northline resurfacing</td><td>Northline</td><td>12 Sep</td><td><span class="chip"><i></i>On site</span></td><td style="text-align:right"><span class="btn">Assign crew</span></td></tr>
+<tr><td>JOB-4822 · Kerb replacement</td><td>Depot 2</td><td>14 Sep</td><td><span class="chip bad"><i></i>Unassigned</span></td><td style="text-align:right"><span class="btn">Assign crew</span></td></tr>
+<tr><td>JOB-4809 · Drainage survey</td><td>Contractor</td><td>9 Sep</td><td><span class="chip bad"><i></i>Overdue</span></td><td style="text-align:right"><span class="btn">Assign crew</span></td></tr>
+</table>
+</div>
+</div>
+
+<p class="note" style="margin-top:24px">Series 4 flips between themes — Foundation Black on light, Flint 200 <code>#E1E1D9</code> on dark — because a near-black bar disappears on a dark ground, and the chart neutral holds Flint 400 in both so it stays separable from the panel. Series 3 flips too — Orange deep <code>#d9634a</code> on light, Orange 40 <code>#fbd8cd</code> on dark — since a 40% tint vanishes on white. No value outside the Flint ladder appears in either dashboard. Status is an outline chip with an 8px dot in <code>--positive-color</code> or <code>--negative-color</code> — the same treatment as the board pattern, since a colour field is reserved for a call to action. The only filled elements are the orange buttons, and they carry white ink.</p>
+</body></html>

@@ -1,0 +1,46 @@
+<!-- @dsCard group="Components" viewport="700x320" name="Actions" subtitle="MenuButton, SplitButton, ButtonGroup" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{margin:0;padding:16px;background:var(--primary-background-color);font:var(--font-text2-normal);color:var(--primary-text-color)}</style></head><body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { MenuButton, SplitButton, ButtonGroup } = window.LoftyDesignSystem_491d68;
+const Row = ({children, label}) => (
+  <div style={{display:'flex',flexDirection:'column',gap:4}}>
+    <span style={{font:'var(--font-text3-medium)',color:'var(--secondary-text-color)'}}>{label}</span>
+    <div style={{display:'flex',alignItems:'center',gap:12,flexWrap:'wrap'}}>{children}</div>
+  </div>
+);
+
+const rowActions = [
+  { id:'duplicate', label:'Duplicate job', icon:'Duplicate' },
+  { id:'move', label:'Move to board', icon:'Board' },
+  { divider:true },
+  { id:'delete', label:'Delete job', icon:'Delete', destructive:true }
+];
+const createFrom = [{ id:'template', label:'From a template' },{ id:'import', label:'Import from CSV' }];
+function Demo(){
+  const [view,setView] = React.useState('table');
+  return (
+    <div style={{display:'flex',flexDirection:'column',gap:20}}>
+      <Row label="MenuButton">
+        <MenuButton items={rowActions} />
+        <MenuButton items={rowActions} kind="secondary">Switch view</MenuButton>
+        <MenuButton items={rowActions} align="end" icon="Filter" ariaLabel="Filter" />
+      </Row>
+      <Row label="SplitButton">
+        <SplitButton items={createFrom}>New job</SplitButton>
+        <SplitButton items={createFrom} kind="secondary" size="small">Export</SplitButton>
+      </Row>
+      <Row label="ButtonGroup">
+        <ButtonGroup options={[{value:'table',text:'Table',icon:'Table'},{value:'timeline',text:'Timeline',icon:'Timeline'},{value:'map',text:'Map',icon:'Location'}]} value={view} onSelect={setView} iconBasePath="../../assets/icons" />
+        <ButtonGroup kind="tertiary" size="small" options={["Day","Week","Month"]} value="Week" />
+      </Row>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

@@ -1,0 +1,83 @@
+<!-- @dsCard group="Components" viewport="1080x760" name="Data viz" subtitle="StatTile, BarChart, ChartLegend, DonutStat, MeterRow, StatusChip — light and dark" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>
+body{margin:0;padding:32px;background:var(--primary-background-color);font:var(--font-text2-normal);color:var(--primary-text-color)}
+a{color:var(--link-color)}a:hover{color:var(--link-hover-color)}
+</style></head><body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { StatTile, BarChart, ChartLegend, DonutStat, MeterRow, StatusChip, Button } = window.LoftyDesignSystem_491d68;
+
+const weeks = [
+  {label:'W29',values:[40,26]},{label:'W30',values:[58,30]},{label:'W31',values:[66,20]},
+  {label:'W32',values:[52,28]},{label:'W33',values:[72,24]},{label:'W34',values:[44,16],muted:true}
+];
+const series = [{name:'Scheduled crew'},{name:'Contractor'}];
+
+const Panel = ({title, meta, children, style}) => (
+  <div style={{background:'var(--primary-background-color)',border:'1px solid var(--layout-border-color)',borderRadius:'var(--border-radius-medium)',padding:16,display:'flex',flexDirection:'column',gap:16,...style}}>
+    <div style={{display:'flex',justifyContent:'space-between',alignItems:'baseline',gap:12}}>
+      <b style={{font:'var(--font-text1-medium)'}}>{title}</b>
+      <span style={{font:'var(--font-text3-normal)',color:'var(--secondary-text-color)'}}>{meta}</span>
+    </div>
+    {children}
+  </div>
+);
+
+function Sample(){
+  return (
+    <div style={{display:'flex',flexDirection:'column',gap:16}}>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:16}}>
+        <StatTile label="Jobs live" value="128" detail="across four depots" />
+        <StatTile label="Unassigned" value="9" detail="assign before publishing" />
+        <StatTile label="Crew utilisation" value="82%" detail="target 75%" />
+        <StatTile label="Overdue" value="4" detail="down 2 on last week" />
+      </div>
+      <div style={{display:'grid',gridTemplateColumns:'1.6fr 1fr',gap:16,alignItems:'start'}}>
+        <Panel title="Jobs completed by week" meta="Crew vs. contractor">
+          <BarChart series={series} data={weeks} height={150} />
+          <ChartLegend items={[{name:'Scheduled crew'},{name:'Contractor'},{name:'Forecast',color:'var(--data-5)'}]} />
+        </Panel>
+        <Panel title="Utilisation" meta="This week">
+          <DonutStat value={82} caption="Target 75%" size={116} />
+          <div style={{display:'flex',flexDirection:'column',gap:12}}>
+            <MeterRow label="Northline" value={82} />
+            <MeterRow label="Depot 2" value={64} color="var(--data-2)" />
+            <MeterRow label="Contractor" value={47} color="var(--data-4)" />
+          </div>
+        </Panel>
+      </div>
+      <Panel title="Status" meta="Outline chip with an 8px dot — the only fill is the action">
+        <div style={{display:'flex',alignItems:'center',gap:12,flexWrap:'wrap'}}>
+          <StatusChip label="On site" tone="positive" />
+          <StatusChip label="Awaiting parts" tone="warning" />
+          <StatusChip label="Overdue" tone="negative" />
+          <StatusChip label="Draft" />
+          <Button size="small">Assign crew</Button>
+        </div>
+      </Panel>
+    </div>
+  );
+}
+
+const Frame = ({label, dark}) => (
+  <section style={{display:'flex',flexDirection:'column',gap:10}}>
+    <span style={{font:'var(--font-text3-medium)',color:'var(--secondary-text-color)',textTransform:'uppercase',letterSpacing:'.08em'}}>{label}</span>
+    <div {...(dark?{'data-theme':'dark'}:{})} style={{background:'var(--page-tint-color)',color:'var(--primary-text-color)',border:'1px solid var(--layout-border-color)',borderRadius:'var(--border-radius-medium)',padding:20}}>
+      <Sample />
+    </div>
+  </section>
+);
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div style={{display:'flex',flexDirection:'column',gap:28}}>
+    <p style={{margin:0,maxWidth:'88ch',textWrap:'pretty',font:'var(--font-text2-normal)',color:'var(--secondary-text-color)'}}>Every colour here comes from <code>--data-1 … --data-6</code> and the neutral tokens, so the same markup carries both themes — series 3 and 4 flip themselves on dark, the track steps to Flint 700, and no chart mixes Crisp Orange with Eco Green.</p>
+    <Frame label="Light" />
+    <Frame label="Dark" dark />
+  </div>
+);
+</script>
+</body></html>

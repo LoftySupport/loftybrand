@@ -1,0 +1,16 @@
+<!-- @dsCard group="Spacing" viewport="760x300" name="Corner radii" subtitle="Seven tokens, no literals. Every component below resolves to one of these; the app kit and guideline cards use the same variables." -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:16px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+.r{display:grid;grid-template-columns:64px 140px 1fr;gap:16px;align-items:center;padding:8px 0;border-bottom:1px solid var(--layout-border-color)}
+.r:last-child{border-bottom:none}
+.b{width:64px;height:32px;background:var(--lofty-flint-100);border:1px solid var(--ui-border-color);box-sizing:border-box}
+.n{font:var(--font-text2-medium)}.t{font:var(--font-text3-normal);color:var(--secondary-text-color)}
+</style></head><body>
+<div class="r"><div class="b" style="border-radius:var(--border-radius-2)"></div><div><div class="n">2px</div><div class="t">--border-radius-2</div></div><div class="t">Checkbox · Label (small)</div></div>
+<div class="r"><div class="b" style="border-radius:var(--border-radius-small)"></div><div><div class="n">4px · small</div><div class="t">--border-radius-small</div></div><div class="t">Button · IconButton · TextField · Search · Dropdown · Chips · Label · Tabs · Menu item · List item · Kbd · Skeleton · Toast action · nav item</div></div>
+<div class="r"><div class="b" style="border-radius:var(--border-radius-medium)"></div><div><div class="n">8px · medium</div><div class="t">--border-radius-medium</div></div><div class="t">Cards · Menu · Dropdown list · Dialog · Modal · DatePicker · Combobox · Tipseen · AttentionBox</div></div>
+<div class="r"><div class="b" style="border-radius:var(--border-radius-large)"></div><div><div class="n">12px · large</div><div class="t">--border-radius-large</div></div><div class="t">Panels · app icon</div></div>
+<div class="r"><div class="b" style="border-radius:var(--border-radius-big)"></div><div><div class="n">16px · big</div><div class="t">--border-radius-big</div></div><div class="t">Full-view modal only</div></div>
+<div class="r"><div class="b" style="border-radius:var(--border-radius-pill)"></div><div><div class="n">Pill</div><div class="t">--border-radius-pill</div></div><div class="t">Toggle · ProgressBar · Counter · Badge · Steps dots · Slider track · Tabs counter · timeline bars</div></div>
+<div class="r"><div class="b" style="width:32px;border-radius:var(--border-radius-circle)"></div><div><div class="n">Circle</div><div class="t">--border-radius-circle</div></div><div class="t">Avatar · RadioButton · Loader · Toggle knob · Slider thumb · status dots</div></div>
+</body></html>

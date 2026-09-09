@@ -1,0 +1,55 @@
+<!-- @dsCard group="Accessibility" viewport="920x900" name="Contrast pairs" subtitle="Every ink/ground pairing the components use, light and dark, with its measured ratio" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:24px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+a{color:var(--link-color)}a:hover{color:var(--link-hover-color)}
+.eyebrow{font:var(--font-text3-medium);color:var(--secondary-text-color);text-transform:uppercase;letter-spacing:.08em}
+.note{color:var(--secondary-text-color);max-width:86ch;text-wrap:pretty;margin:4px 0 0}
+code{font:var(--font-text3-normal);background:var(--surface-recessed-color);padding:1px 4px;border-radius:var(--border-radius-2)}
+.lbl{font:var(--font-text3-medium);color:var(--secondary-text-color);text-transform:uppercase;letter-spacing:.06em;margin:20px 0 8px}
+.g{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.p{height:76px;border-radius:var(--border-radius-medium);display:flex;flex-direction:column;justify-content:space-between;padding:10px 12px;box-sizing:border-box;border:1px solid var(--layout-border-color)}
+.p b{font:var(--font-text2-medium)}.p small{font:var(--font-text3-normal)}
+</style></head><body>
+<span class="eyebrow">AA floor: 4.5:1 text · 3:1 large text and control boundaries</span>
+<p class="note">Ratios below are measured, not estimated. Black is never placed on Crisp Orange — not text, not icons. Filled orange carries Finisher White at 2.6:1, so an orange fill is only used for large or semibold labels and never for small body copy; where AA text on an orange field is required, use the pressed step <code>--lofty-orange-pressed</code>. Control boundaries use <code>--ui-border-color</code> (3.5:1 on white); Flint 300 is the card, panel and table rule, which carries no information and is exempt. Mid Grey draws nothing in the UI.</p>
+
+<div class="lbl">Light · ink on ground</div>
+<div class="g">
+<div class="p" style="background:var(--primary-color);color:var(--text-color-on-primary)"><b>White on orange</b><small>2.6:1 · large or semibold labels only</small></div>
+<div class="p" style="background:var(--lofty-orange-pressed);color:var(--lofty-finisher-white)"><b>White on orange pressed</b><small>4.5:1 · use when AA text on orange is required</small></div>
+<div class="p" style="background:var(--primary-background-color);color:var(--primary-text-color)"><b>Foundation Black on white</b><small>10.3:1 · body text</small></div>
+<div class="p" style="background:var(--primary-background-color);color:var(--secondary-text-color)"><b>Black 80 on white</b><small>5.7:1 · secondary text, helper copy</small></div>
+<div class="p" style="background:var(--inverted-color-background);color:var(--text-color-on-inverted)"><b>White on black</b><small>10.3:1 · inverted surfaces, tooltips</small></div>
+<div class="p" style="background:var(--highlight-color);color:var(--lofty-finisher-white)"><b>White on Eco Green</b><small>9.2:1 · small highlight blocks only</small></div>
+<div class="p" style="background:var(--positive-color);color:var(--text-color-on-status)"><b>White on positive</b><small>4.7:1 · success toasts, filled labels</small></div>
+<div class="p" style="background:var(--negative-color);color:var(--text-color-on-status)"><b>White on negative</b><small>4.5:1 · destructive buttons</small></div>
+<div class="p" style="background:var(--warning-color);color:var(--text-color-on-warning)"><b>Black on warning</b><small>6.8:1 · warning banners</small></div>
+<div class="p" style="background:var(--primary-selected-color);color:var(--primary-text-color)"><b>Black on selected</b><small>8.4:1 · selected rows, nav items</small></div>
+<div class="p" style="background:var(--primary-selected-hover-color);color:var(--primary-text-color)"><b>Black on selected hover</b><small>7.4:1 · hover on a selected row</small></div>
+<div class="p" style="background:var(--primary-highlighted-color);color:var(--primary-text-color)"><b>Black on highlighted</b><small>9.6:1 · attention boxes, drag targets</small></div>
+</div>
+
+<div class="lbl">Light · on the Flint ladder</div>
+<div class="g">
+<div class="p" style="background:var(--page-tint-soft-color);color:var(--primary-text-color)"><b>Black on Flint 50</b><small>9.8:1 · softer page</small></div>
+<div class="p" style="background:var(--page-tint-color);color:var(--primary-text-color)"><b>Black on Flint 100</b><small>9.3:1 · page — muted text holds 5.1:1</small></div>
+<div class="p" style="background:var(--surface-recessed-color);color:var(--primary-text-color)"><b>Black on Flint 200</b><small>7.8:1 · recessed fills, tracks, quiet chips</small></div>
+<div class="p" style="background:var(--lofty-flint-400);color:var(--primary-text-color)"><b>Black on Flint 400</b><small>5.1:1 · chart and disabled fills — not a text ground by default</small></div>
+</div>
+
+<div class="lbl">Dark · same tokens, swapped values</div>
+<div class="g" data-theme="dark">
+<div class="p" style="background:var(--primary-background-color);color:var(--primary-text-color)"><b>Text on Flint 800</b><small>13.8:1 · body text on a dark surface</small></div>
+<div class="p" style="background:var(--primary-background-color);color:var(--secondary-text-color)"><b>Muted on Flint 800</b><small>7.9:1 · secondary text</small></div>
+<div class="p" style="background:var(--primary-color);color:var(--text-color-on-primary)"><b>White on orange</b><small>2.6:1 · orange keeps its hex and its white ink</small></div>
+<div class="p" style="background:var(--primary-background-color);color:var(--lofty-orange-dark-hover)"><b>Orange as text</b><small>7.4:1 · the lifted step, for links and icons</small></div>
+<div class="p" style="background:var(--highlight-color);color:var(--lofty-finisher-white)"><b>White on Eco Green lifted</b><small>5.7:1 · #20707a — the fill step</small></div>
+<div class="p" style="background:var(--primary-background-color);color:var(--lofty-green-dark-ink)"><b>Eco Green as text</b><small>7.5:1 · #57c3cc — ink only, never a fill</small></div>
+<div class="p" style="background:var(--positive-color);color:var(--text-color-on-status)"><b>Base on positive</b><small>6.6:1 · dark fills lift, so the ink flips to Flint 900</small></div>
+<div class="p" style="background:var(--negative-color);color:var(--text-color-on-status)"><b>Base on negative</b><small>5.8:1 · destructive buttons</small></div>
+<div class="p" style="background:var(--primary-background-color);color:var(--primary-text-color);border:1px solid var(--ui-border-color)"><b>Control border</b><small>3.9:1 · #807f74 on Flint 800</small></div>
+<div class="p" style="background:var(--secondary-background-color);color:var(--placeholder-color)"><b>Placeholder</b><small>5.4:1 on the raised input ground</small></div>
+<div class="p" style="background:var(--primary-selected-color);color:var(--primary-text-color)"><b>Text on selected</b><small>orange tint drops to #4a2e28 so the ink stays light</small></div>
+<div class="p" style="background:var(--primary-background-color);color:var(--disabled-text-color)"><b>Disabled</b><small>exempt · conveys no information</small></div>
+</div>
+</body></html>

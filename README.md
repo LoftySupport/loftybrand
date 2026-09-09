@@ -1,2 +1,0 @@
-# loftybrand
-Lofty Brand Kit

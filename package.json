@@ -1,0 +1,43 @@
+{
+  "name": "@lofty/design-system",
+  "version": "1.0.0",
+  "description": "Lofty's app design system — brand palette, tokens, and 61 components. Inherits monday.com Vibe.",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LoftySupport/loftybrand.git"
+  },
+  "main": "styles.css",
+  "style": "styles.css",
+  "exports": {
+    ".": "./styles.css",
+    "./styles.css": "./styles.css",
+    "./tokens/*": "./tokens/*",
+    "./components/*": "./components/*",
+    "./assets/*": "./assets/*"
+  },
+  "files": [
+    "styles.css",
+    "tokens",
+    "components",
+    "assets",
+    "guidelines",
+    "ui_kits",
+    "docs",
+    "projects",
+    "readme.md",
+    "SKILL.md",
+    "LICENSE",
+    "NOTICE.md"
+  ],
+  "keywords": [
+    "design-system",
+    "lofty",
+    "vibe",
+    "design-tokens"
+  ],
+  "sideEffects": [
+    "*.css"
+  ]
+}

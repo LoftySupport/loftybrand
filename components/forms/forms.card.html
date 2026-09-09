@@ -1,0 +1,45 @@
+<!-- @dsCard group="Components" viewport="700x640" name="Forms" subtitle="TextField, TextArea, NumberField, Search, Dropdown, Checkbox, RadioButton, Toggle" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{margin:0;padding:16px;background:var(--primary-background-color);font:var(--font-text2-normal);color:var(--primary-text-color)}</style></head><body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { TextField, TextArea, NumberField, Search, Dropdown, Checkbox, RadioButton, Toggle } = window.LoftyDesignSystem_491d68;
+
+function Demo(){
+  const [q,setQ] = React.useState('north');
+  const [crew,setCrew] = React.useState('Northline');
+  const [on,setOn] = React.useState(true);
+  const [pick,setPick] = React.useState('table');
+  const [crewN,setCrewN] = React.useState(6);
+  const [notes,setNotes] = React.useState('Access via Depot 2 gate. Traffic control from 6am.');
+  return (
+    <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}}>
+      <TextField label="Job name" placeholder="e.g. Northline resurfacing" iconBasePath="../../assets/icons" />
+      <TextField label="Email" value="crew@lofty" validation="error" message="Enter a valid email address" />
+      <Search value={q} onChange={e=>setQ(e.target.value)} onClear={()=>setQ('')} placeholder="Search jobs" iconBasePath="../../assets/icons" />
+      <Dropdown label="Crew" options={["Northline","Depot 2","Contractor"]} value={crew} onChange={setCrew} iconBasePath="../../assets/icons" />
+      <div style={{display:'flex',flexDirection:'column',gap:8}}>
+        <Checkbox label="Notify the crew" checked={on} onChange={()=>setOn(!on)} />
+        <Checkbox label="Select all" indeterminate />
+        <Checkbox label="Unavailable" disabled />
+      </div>
+      <div style={{display:'flex',flexDirection:'column',gap:8}}>
+        <RadioButton name="v" label="Table" checked={pick==='table'} onChange={()=>setPick('table')} />
+        <RadioButton name="v" label="Timeline" checked={pick==='timeline'} onChange={()=>setPick('timeline')} />
+        <Toggle checked={on} onChange={()=>setOn(!on)} label="Email digests" />
+        <Toggle checked={false} size="small" label="Small" />
+      </div>
+      <TextField label="Read only" value="JOB-4821" readOnly />
+      <TextField label="Disabled" value="Locked" disabled />
+      <NumberField label="Crew size" value={crewN} onChange={setCrewN} min={1} max={40} iconBasePath="../../assets/icons" />
+      <NumberField label="Area" value={120.5} step={0.5} unit="m²" iconBasePath="../../assets/icons" />
+      <TextArea label="Site notes" value={notes} onChange={e=>setNotes(e.target.value)} rows={3} maxLength={200} showCharCount style={{gridColumn:'1 / -1'}} />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

@@ -1,0 +1,23 @@
+<!-- @dsCard group="Spacing" viewport="700x240" name="Breakpoints" subtitle="How the shell and content respond" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:24px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+.eyebrow{font:var(--font-text3-medium);color:var(--secondary-text-color);text-transform:uppercase;letter-spacing:.08em}
+.note{color:var(--secondary-text-color);max-width:70ch;text-wrap:pretty;margin:4px 0 0}
+.i{display:inline-block;background:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;width:16px;height:16px;vertical-align:-3px}
+code{font:var(--font-text3-normal);background:var(--allgrey-background-color);padding:1px 4px;border-radius:var(--border-radius-2)}
+
+.bp{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.b{border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:12px;display:flex;flex-direction:column;gap:6px}
+.b b{font:var(--font-text2-medium)}.b small{font:var(--font-text3-normal);color:var(--secondary-text-color)}
+.wire{height:48px;display:flex;gap:3px;margin-top:4px}
+.wire span{background:var(--ui-background-color);border-radius:var(--border-radius-2)}
+</style></head><body>
+<span class="eyebrow">Fluid between stops · min 320px · no horizontal scroll · 100dvh not 100vh</span>
+<div class="bp">
+<div class="b"><b>≥1280 desktop</b><small>224px nav, 56px top bar, 32px gutters. Dashboard 4-up then 1.6fr/1fr.</small><div class="wire"><span style="width:22%"></span><span style="flex:1"></span></div></div>
+<div class="b"><b>1024–1279 laptop</b><small>Nav collapses to 56px icon rail with tooltips. Gutters 24. Dashboard 2-up.</small><div class="wire"><span style="width:8%"></span><span style="flex:1"></span></div></div>
+<div class="b"><b>640–1023 tablet</b><small>Rail hidden behind a menu button; tables scroll inside their card; dialogs full-width minus 32.</small><div class="wire"><span style="flex:1"></span></div></div>
+<div class="b"><b>&lt;640 phone</b><small>16px gutters, one column, primary action bottom-pinned, 44px targets. Text2 becomes text1.</small><div class="wire" style="flex-direction:column"><span style="flex:1"></span><span style="height:10px"></span></div></div>
+</div>
+<p class="note" style="margin-top:12px">Text reflows at 200% zoom: no fixed heights around text, <code>minmax(0,1fr)</code> tracks, <code>overflow-wrap:anywhere</code> on IDs and emails. The app is desktop-first; the phone column is a floor, not a designed surface.</p>
+</body></html>

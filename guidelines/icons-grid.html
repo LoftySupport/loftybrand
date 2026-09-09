@@ -1,0 +1,91 @@
+<!-- @dsCard group="Brand" viewport="900x620" name="Iconography" subtitle="Vibe's product glyphs, plus 16 construction icons drawn to the same rules" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:32px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+.eyebrow{font:var(--font-text3-medium);color:var(--secondary-text-color);text-transform:uppercase;letter-spacing:.08em}
+h2{font:var(--font-h3-bold);letter-spacing:var(--letter-spacing-h3-bold);margin:6px 0 0}
+.note{font:var(--font-text2-normal);color:var(--secondary-text-color);max-width:74ch;text-wrap:pretty;margin:8px 0 0}
+.i{display:block;background:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
+.strip{display:flex;flex-wrap:wrap;gap:18px;color:var(--lofty-foundation-black)}
+.set{display:grid;grid-template-columns:repeat(7,1fr);gap:24px 16px}
+.cell{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--lofty-foundation-black)}
+.cell span:last-child{font:var(--font-text3-normal);color:var(--secondary-text-color);text-align:center}
+.rule{height:1px;background:var(--layout-border-color)}
+.scale{display:flex;align-items:flex-end;gap:20px;color:var(--lofty-foundation-black)}
+.scale div{display:flex;flex-direction:column;align-items:center;gap:6px}
+.scale small{font:var(--font-text3-normal);color:var(--secondary-text-color)}
+</style></head><body>
+<div style="display:flex;flex-direction:column;gap:32px">
+
+<section>
+<span class="eyebrow">Product set</span>
+<h2>Vibe icons</h2>
+<p class="note">274 SVGs in <code>assets/icons</code>, rendered as a CSS mask over <code>currentColor</code> so every glyph inherits its context. Single-weight, mostly filled, rounded terminals — they read as solid rather than stroked at small sizes.</p>
+<div class="strip" style="margin-top:16px">
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Home.svg);mask-image:url(../assets/icons/Home.svg)" title="Home"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Search.svg);mask-image:url(../assets/icons/Search.svg)" title="Search"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Add.svg);mask-image:url(../assets/icons/Add.svg)" title="Add"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Edit.svg);mask-image:url(../assets/icons/Edit.svg)" title="Edit"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Delete.svg);mask-image:url(../assets/icons/Delete.svg)" title="Delete"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Filter.svg);mask-image:url(../assets/icons/Filter.svg)" title="Filter"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Sort.svg);mask-image:url(../assets/icons/Sort.svg)" title="Sort"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Calendar.svg);mask-image:url(../assets/icons/Calendar.svg)" title="Calendar"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Time.svg);mask-image:url(../assets/icons/Time.svg)" title="Time"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Board.svg);mask-image:url(../assets/icons/Board.svg)" title="Board"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Person.svg);mask-image:url(../assets/icons/Person.svg)" title="Person"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Team.svg);mask-image:url(../assets/icons/Team.svg)" title="Team"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Email.svg);mask-image:url(../assets/icons/Email.svg)" title="Email"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Doc.svg);mask-image:url(../assets/icons/Doc.svg)" title="Doc"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Check.svg);mask-image:url(../assets/icons/Check.svg)" title="Check"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Alert.svg);mask-image:url(../assets/icons/Alert.svg)" title="Alert"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/MoreActions.svg);mask-image:url(../assets/icons/MoreActions.svg)" title="MoreActions"></span>
+<span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/NavigationChevronRight.svg);mask-image:url(../assets/icons/NavigationChevronRight.svg)" title="NavigationChevronRight"></span>
+</div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+<span class="eyebrow">Construction set</span>
+<h2>Domain icons</h2>
+<p class="note">Sixteen additions for the work the product actually describes. Each is a literal picture of the thing — houses for projects, a pin for a site, coins for cost — so it reads without English. Seven of them (Projects, JobSite, JobHouse, Design, FloorPlan, Maintenance, Reports) are Lofty-drawn line icons supplied as artwork; they render through the same mask so they take colour like the rest.</p>
+<div class="set" style="margin-top:20px">
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/Projects.svg);mask-image:url(../assets/icons/Projects.svg)"></span><span>Projects</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/JobSite.svg);mask-image:url(../assets/icons/JobSite.svg)"></span><span>JobSite</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/Drawings.svg);mask-image:url(../assets/icons/Drawings.svg)"></span><span>Drawings</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/Design.svg);mask-image:url(../assets/icons/Design.svg)"></span><span>Design</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/FloorPlan.svg);mask-image:url(../assets/icons/FloorPlan.svg)"></span><span>FloorPlan</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/JobHouse.svg);mask-image:url(../assets/icons/JobHouse.svg)"></span><span>JobHouse</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/Estimating.svg);mask-image:url(../assets/icons/Estimating.svg)"></span><span>Estimating</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/Costs.svg);mask-image:url(../assets/icons/Costs.svg)"></span><span>Costs</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/Reports.svg);mask-image:url(../assets/icons/Reports.svg)"></span><span>Reports</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/Company.svg);mask-image:url(../assets/icons/Company.svg)"></span><span>Company</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/Maintenance.svg);mask-image:url(../assets/icons/Maintenance.svg)"></span><span>Maintenance</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/Contacts.svg);mask-image:url(../assets/icons/Contacts.svg)"></span><span>Contacts</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/Safety.svg);mask-image:url(../assets/icons/Safety.svg)"></span><span>Safety</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/Delivery.svg);mask-image:url(../assets/icons/Delivery.svg)"></span><span>Delivery</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/Materials.svg);mask-image:url(../assets/icons/Materials.svg)"></span><span>Materials</span></div>
+<div class="cell"><span class="i" style="width:28px;height:28px;-webkit-mask-image:url(../assets/icons/Approval.svg);mask-image:url(../assets/icons/Approval.svg)"></span><span>Approval</span></div>
+</div>
+</section>
+
+<div class="rule"></div>
+
+<section>
+<span class="eyebrow">Rules</span>
+<h2>Sizes and colour</h2>
+<p class="note">14px in xs controls, 16px in buttons and table cells, 18px in navigation, 20px default, 24px in empty states. Neutral by default; Crisp Orange only when the icon <em>is</em> the action; status colours only inside status contexts. Reference by file stem — <code>&lt;Icon name="JobSite" /&gt;</code>.</p>
+<div class="scale" style="margin-top:20px">
+<div><span class="i" style="width:14px;height:14px;-webkit-mask-image:url(../assets/icons/JobSite.svg);mask-image:url(../assets/icons/JobSite.svg)"></span><small>14</small></div>
+<div><span class="i" style="width:16px;height:16px;-webkit-mask-image:url(../assets/icons/JobSite.svg);mask-image:url(../assets/icons/JobSite.svg)"></span><small>16</small></div>
+<div><span class="i" style="width:18px;height:18px;-webkit-mask-image:url(../assets/icons/JobSite.svg);mask-image:url(../assets/icons/JobSite.svg)"></span><small>18</small></div>
+<div><span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/JobSite.svg);mask-image:url(../assets/icons/JobSite.svg)"></span><small>20</small></div>
+<div><span class="i" style="width:24px;height:24px;-webkit-mask-image:url(../assets/icons/JobSite.svg);mask-image:url(../assets/icons/JobSite.svg)"></span><small>24</small></div>
+<div style="width:24px"></div>
+<div style="color:var(--lofty-crisp-orange)"><span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Approval.svg);mask-image:url(../assets/icons/Approval.svg)"></span><small>Action</small></div>
+<div style="color:var(--negative-color)"><span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Safety.svg);mask-image:url(../assets/icons/Safety.svg)"></span><small>Status</small></div>
+<div style="background:var(--lofty-foundation-black);padding:8px;border-radius:var(--border-radius-small);color:var(--lofty-finisher-white)"><span class="i" style="width:20px;height:20px;-webkit-mask-image:url(../assets/icons/Contacts.svg);mask-image:url(../assets/icons/Contacts.svg)"></span><small style="color:rgba(255,255,255,.7)">Inverted</small></div>
+</div>
+</section>
+
+</div>
+</body></html>

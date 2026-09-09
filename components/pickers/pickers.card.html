@@ -1,0 +1,35 @@
+<!-- @dsCard group="Components" viewport="760x420" name="Pickers" subtitle="Combobox, DatePicker, TimePicker, ColorPicker" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{margin:0;padding:16px;background:var(--primary-background-color);font:var(--font-text2-normal);color:var(--primary-text-color)}</style></head><body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Combobox, DatePicker, TimePicker, ColorPicker } = window.LoftyDesignSystem_491d68;
+const crew = [
+  { value:'ak', label:'Ari Kelly', category:'Depot 1' },
+  { value:'lm', label:'Lena Marsh', category:'Depot 1' },
+  { value:'jd', label:'Jo Dawson', category:'Depot 2' },
+  { value:'rp', label:'Rae Patel', category:'Depot 2' },
+  { value:'ts', label:'Tom Sable', category:'Depot 2' }
+];
+function Demo(){
+  const [who,setWho]=React.useState('lm');
+  const [day,setDay]=React.useState('2026-09-10');
+  const [time,setTime]=React.useState('07:30');
+  const [col,setCol]=React.useState('var(--lofty-crisp-orange)');
+  return (
+    <div style={{display:'grid',gridTemplateColumns:'260px 280px',gap:24,alignItems:'start'}}>
+      <div style={{display:'flex',flexDirection:'column',gap:16}}>
+        <Combobox options={crew} value={who} onChange={setWho} placeholder="Search crew" maxHeight={220} />
+        <TimePicker value={time} onChange={setTime} from={6} to={19} minuteStep={30} />
+        <ColorPicker value={col} onChange={setCol} />
+      </div>
+      <DatePicker value={day} onChange={setDay} />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

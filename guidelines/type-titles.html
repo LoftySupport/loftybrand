@@ -1,0 +1,56 @@
+<!-- @dsCard group="Type" viewport="820x420" name="Screen titles — Montserrat" subtitle="h1 32/40, h2 24/30, h3 18/24 — and the spacing and colour that make the steps read" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:32px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+.sheet{display:grid;grid-template-columns:1fr 168px;gap:32px;align-items:start}
+.spec{font:var(--font-text3-normal);color:var(--secondary-text-color);white-space:nowrap}
+.eyebrow{font:var(--font-text3-medium);color:var(--secondary-text-color);text-transform:uppercase;letter-spacing:.08em}
+.h1{font:var(--font-h1-bold);letter-spacing:var(--letter-spacing-h1-bold)}
+.h2{font:var(--font-h2-bold);letter-spacing:var(--letter-spacing-h2-bold)}
+.h3{font:var(--font-h3-bold);letter-spacing:var(--letter-spacing-h3-bold)}
+.lede{font:var(--font-text1-normal);color:var(--secondary-text-color);max-width:46ch;text-wrap:pretty}
+.body{font:var(--font-text2-normal);color:var(--secondary-text-color);max-width:52ch;text-wrap:pretty}
+.rule{height:1px;background:var(--layout-border-color)}
+.row{display:grid;grid-template-columns:1fr 168px;gap:32px;align-items:baseline}
+</style></head><body>
+<div style="display:flex;flex-direction:column;gap:40px">
+
+<div style="display:flex;flex-direction:column;gap:24px">
+<div class="row"><span class="eyebrow">Scheduling</span><span class="spec">text3 medium · uppercase</span></div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div class="row"><h1 class="h1" style="margin:0">Scheduling overview</h1><span class="spec">h1 bold · 32/40 · −0.5</span></div>
+<div class="row"><p class="lede" style="margin:0">One page for every job this week, whichever depot it belongs to.</p><span class="spec">text1 · secondary</span></div>
+</div>
+<div class="rule"></div>
+<div style="display:flex;flex-direction:column;gap:8px">
+<div class="row"><h2 class="h2" style="margin:0">This week's jobs</h2><span class="spec">h2 bold · 24/30 · −0.1</span></div>
+<div class="row"><p class="body" style="margin:0">128 jobs across four depots. Sort by due date to see what is at risk.</p><span class="spec">text2 · secondary</span></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;padding-top:8px">
+<div class="row"><h3 class="h3" style="margin:0">Unassigned</h3><span class="spec">h3 bold · 18/24 · −0.1</span></div>
+<div class="row"><p class="body" style="margin:0">Nine jobs have no crew. Assign one before publishing.</p><span class="spec">text2 · secondary</span></div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:12px">
+<span class="eyebrow">How the steps hold up</span>
+<div class="body" style="max-width:70ch">Size alone is a weak signal — 32 to 24 to 18 is only one step of contrast each. Three things carry the hierarchy: <strong style="color:var(--primary-text-color)">bold titles against normal-weight body</strong>, <strong style="color:var(--primary-text-color)">Foundation Black against secondary grey</strong>, and <strong style="color:var(--primary-text-color)">space above a heading roughly double the space below it</strong>, so each title binds to the text it introduces. Drop any one and the ladder flattens.</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px">
+<div style="border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:20px">
+<span class="spec" style="color:var(--positive-color)">Correct</span>
+<div style="margin-top:16px"><div class="h3">This week's jobs</div><div class="body" style="margin-top:4px">128 jobs across four depots.</div></div>
+<div style="margin-top:24px"><div class="h3">Unassigned</div><div class="body" style="margin-top:4px">Nine jobs have no crew.</div></div>
+</div>
+<div style="border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:20px">
+<span class="spec" style="color:var(--negative-color)">Flat — even gaps, one weight, one colour</span>
+<div style="margin-top:16px;display:flex;flex-direction:column;gap:12px">
+<div style="font:var(--font-h3-bold)">This week's jobs</div>
+<div style="font:var(--font-text2-normal)">128 jobs across four depots.</div>
+<div style="font:var(--font-h3-bold)">Unassigned</div>
+<div style="font:var(--font-text2-normal)">Nine jobs have no crew.</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</body></html>

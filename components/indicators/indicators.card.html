@@ -1,0 +1,78 @@
+<!-- @dsCard group="Components" viewport="900x560" name="Indicators" subtitle="Counter, Badge, Skeleton, AvatarGroup" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>
+body{margin:0;padding:40px;background:var(--primary-background-color);font:var(--font-text2-normal);color:var(--primary-text-color)}
+</style></head><body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Counter, Badge, Skeleton, AvatarGroup, IconButton, Avatar } = window.LoftyDesignSystem_491d68;
+
+const Group = ({ label, hint, children, cols }) => (
+  <section style={{display:'flex',flexDirection:'column',gap:12}}>
+    <div style={{display:'flex',flexDirection:'column',gap:2}}>
+      <span style={{font:'var(--font-text3-medium)',color:'var(--secondary-text-color)',textTransform:'uppercase',letterSpacing:'.08em'}}>{label}</span>
+      <span style={{font:'var(--font-text3-normal)',color:'var(--secondary-text-color)'}}>{hint}</span>
+    </div>
+    <div style={{display:'flex',alignItems:'center',flexWrap:'wrap',gap:cols||28}}>{children}</div>
+  </section>
+);
+const Rule = () => <div style={{height:1,background:'var(--layout-border-color)'}} />;
+
+const crew = [
+  {id:'1',text:'AK',name:'Ari Kelly'},{id:'2',text:'LM',name:'Lena Marsh'},
+  {id:'3',text:'JD',name:'Jo Dawson'},{id:'4',text:'RP',name:'Rae Patel'},
+  {id:'5',text:'TS',name:'Tom Sable'},{id:'6',text:'BW',name:'Bea Wren'}
+];
+
+function Demo(){
+  return (
+    <div style={{display:'flex',flexDirection:'column',gap:32,maxWidth:780}}>
+
+      <Group label="Counter" hint="A count attached to something else. Rolls to 999+ past three digits.">
+        <Counter count={12} />
+        <Counter count={1284} />
+        <Counter count={7} color="dark" kind="line" />
+        <Counter count={3} color="negative" size="large" />
+        <Counter count={24} color="light" />
+      </Group>
+
+      <Rule />
+
+      <Group label="Badge" hint="Anchors a dot or a Counter to a corner. Circular alignment for avatars." cols={40}>
+        <Badge><IconButton icon="Notifications" ariaLabel="Notifications" /></Badge>
+        <Badge badgeContent={<Counter count={4} color="negative" />}><IconButton icon="Inbox" ariaLabel="Inbox" /></Badge>
+        <Badge alignment="circular" color="positive"><Avatar text="AK" /></Badge>
+        <Badge anchor="bottomEnd" color="primary" alignment="circular"><Avatar text="LM" /></Badge>
+      </Group>
+
+      <Rule />
+
+      <Group label="Avatar group" hint="Overlaps 8px, front to back, with a +N counter for the overflow." cols={40}>
+        <AvatarGroup people={crew} max={3} size="small" onCounterClick={()=>{}} />
+        <AvatarGroup people={crew} max={4} size="xs" counterColor="dark" />
+        <AvatarGroup people={crew.slice(0,3)} size="medium" />
+      </Group>
+
+      <Rule />
+
+      <Group label="Skeleton" hint="Holds the layout while data loads. Match the shape of what is coming." cols={40}>
+        <div style={{display:'flex',alignItems:'center',gap:12}}>
+          <Skeleton type="circle" width={32} height={32} />
+          <div style={{display:'flex',flexDirection:'column',gap:8}}>
+            <Skeleton type="text" size="text2" width={148} />
+            <Skeleton type="text" size="text3" width={96} />
+          </div>
+        </div>
+        <Skeleton type="text" size="h3" width={180} />
+        <Skeleton type="rectangle" width={120} height={64} />
+      </Group>
+
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

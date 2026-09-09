@@ -1,0 +1,32 @@
+<!-- @dsCard group="Accessibility" viewport="700x260" name="Focus and keyboard" subtitle="The focus ring, keyboard patterns, and what never gets removed" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:24px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+.eyebrow{font:var(--font-text3-medium);color:var(--secondary-text-color);text-transform:uppercase;letter-spacing:.08em}
+.note{color:var(--secondary-text-color);max-width:70ch;text-wrap:pretty;margin:4px 0 0}
+.i{display:inline-block;background:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;width:16px;height:16px;vertical-align:-3px}
+code{font:var(--font-text3-normal);background:var(--allgrey-background-color);padding:1px 4px;border-radius:var(--border-radius-2)}
+
+.row{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:8px 16px;border-radius:var(--border-radius-small);font:var(--font-text1-normal);border:none}
+.f{box-shadow:var(--focus-ring)}
+.in{height:40px;width:180px;box-sizing:border-box;border:1px solid var(--primary-color);border-radius:var(--border-radius-small);background:var(--secondary-background-color);padding:0 12px;display:flex;align-items:center;color:var(--placeholder-color)}
+.tab{height:36px;display:flex;align-items:center;padding:0 16px;border-bottom:2px solid var(--primary-color);border-radius:var(--border-radius-small) var(--border-radius-small) 0 0}
+.kbd{display:inline-flex;align-items:center;height:20px;padding:0 6px;border:1px solid var(--ui-border-color);border-bottom-width:2px;border-radius:var(--border-radius-2);font:var(--font-text3-medium);background:var(--primary-background-color)}
+.keys{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin-top:16px;align-items:center}
+</style></head><body>
+<span class="eyebrow">Focus ring</span>
+<p class="note"><code>--focus-ring</code>: 3px Crisp Orange at 50% plus a 1px inset. Applied by <code>:focus-visible</code> in <code>tokens/base.css</code>, so it appears for keyboard users only. Never <code>outline:none</code> without it. Forced-colours mode swaps in a 3px CanvasText outline.</p>
+<div class="row">
+<span class="btn f" style="background:var(--primary-color);color:var(--text-color-on-primary)">Create job</span>
+<span class="btn f" style="background:transparent;color:var(--primary-text-color);border:1px solid var(--ui-border-color)">Cancel</span>
+<span class="in f">Job name</span>
+<span class="tab f">Timeline</span>
+<span class="f" style="display:inline-flex;width:16px;height:16px;border-radius:var(--border-radius-2);background:var(--primary-color);margin:4px"></span>
+</div>
+<div class="keys">
+<span><span class="kbd">Tab</span></span><span>Moves between controls. Composite widgets (Tabs, Menu, List, Dropdown) are one stop; arrows move inside.</span>
+<span><span class="kbd">←</span> <span class="kbd">→</span> <span class="kbd">↑</span> <span class="kbd">↓</span></span><span>Move within Tabs (horizontal), Menu, List, Dropdown and Combobox options (vertical). <span class="kbd">Home</span>/<span class="kbd">End</span> jump.</span>
+<span><span class="kbd">Enter</span> <span class="kbd">Space</span></span><span>Activate. In Dropdown they open the list and commit the focused option.</span>
+<span><span class="kbd">Esc</span></span><span>Closes the nearest open layer: dropdown, menu, dialog, tipseen. Never discards typed input.</span>
+</div>
+</body></html>

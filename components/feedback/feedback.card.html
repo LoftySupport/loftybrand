@@ -1,0 +1,35 @@
+<!-- @dsCard group="Components" viewport="700x680" name="Feedback" subtitle="AttentionBox, Toast, Dialog, ProgressBar, EmptyState" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{margin:0;padding:16px;background:var(--primary-background-color);font:var(--font-text2-normal);color:var(--primary-text-color)}</style></head><body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { AttentionBox, Toast, Dialog, ProgressBar, Button, EmptyState, Icon } = window.LoftyDesignSystem_491d68;
+
+function Demo(){
+  return (
+    <div style={{display:'flex',flexDirection:'column',gap:12}}>
+      <AttentionBox type="warning" title="Two jobs unassigned" text="Assign a crew before publishing the schedule." iconBasePath="../../assets/icons" onClose={()=>{}} />
+      <AttentionBox type="primary" text="Scheduling runs every night at 2am." iconBasePath="../../assets/icons" />
+      <div style={{display:'flex',gap:8,flexWrap:'wrap'}}>
+        <Toast type="positive" icon="Check" iconBasePath="../../assets/icons" onClose={()=>{}}>Schedule published</Toast>
+        <Toast type="dark" actionText="Undo" onAction={()=>{}} onClose={()=>{}} iconBasePath="../../assets/icons">Job archived</Toast>
+      </div>
+      <ProgressBar value={62} label="Jobs completed" />
+      <div style={{position:'relative',height:150,border:'1px solid var(--layout-border-color)',borderRadius:'var(--border-radius-medium)',overflow:'hidden'}}>
+        <Dialog title="Delete job 4821?" description="This can't be undone." width={380} onClose={()=>{}} iconBasePath="../../assets/icons"
+          footer={<><Button kind="tertiary">Cancel</Button><Button color="negative">Delete</Button></>} />
+      </div>
+      <div style={{border:'1px solid var(--layout-border-color)',borderRadius:'var(--border-radius-medium)'}}>
+        <EmptyState title="No jobs scheduled" description="Jobs you assign to this crew will show up here."
+          visual={<span style={{display:'flex',width:56,height:56,alignItems:'center',justifyContent:'center',borderRadius:'50%',background:'var(--primary-selected-color)',color:'var(--primary-color)'}}><Icon name="Calendar" size={28} basePath="../../assets/icons" /></span>}
+          mainAction={{text:'Create job'}} supportingAction={{text:'Import from CSV',href:'#'}} />
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

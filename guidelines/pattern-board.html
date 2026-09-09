@@ -1,0 +1,164 @@
+<!-- @dsCard group="Patterns" viewport="1320x1760" name="Board view · job cards" subtitle="The Jobs board rebuilt on Flint neutrals with orange as the only accent — column, card anatomy and card states" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:32px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+.eyebrow{font:var(--font-text3-medium);color:var(--secondary-text-color);text-transform:uppercase;letter-spacing:.08em}
+.note{color:var(--secondary-text-color);max-width:88ch;text-wrap:pretty;margin:4px 0 20px}
+h3{font:var(--font-h3-bold);letter-spacing:var(--letter-spacing-h3-bold);margin:28px 0 8px}
+
+/* board shell */
+.shell{background:var(--lofty-finisher-white);border:1px solid var(--lofty-flint-200);border-radius:var(--border-radius-medium);overflow:hidden}
+.top{background:var(--lofty-finisher-white);border-bottom:1px solid var(--lofty-flint-200);padding:16px 24px;display:flex;flex-direction:column;gap:16px}
+.title{font:var(--font-h2-bold);letter-spacing:var(--letter-spacing-h2-bold)}
+.tabs{display:flex;gap:24px;align-items:center}
+.tab{display:flex;gap:8px;align-items:center;font:var(--font-text2-medium);color:var(--secondary-text-color);padding-bottom:8px;border-bottom:2px solid transparent}
+.tab.on{color:var(--primary-text-color);border-bottom-color:var(--lofty-crisp-orange)}
+.tab b{font:var(--font-text3-medium);color:var(--secondary-text-color);background:var(--lofty-flint-100);border-radius:var(--border-radius-pill);padding:1px 8px}
+.bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.ctl{height:32px;display:inline-flex;align-items:center;gap:8px;padding:0 12px;border:1px solid var(--ui-border-color);border-radius:var(--border-radius-small);background:var(--lofty-finisher-white);font:var(--font-text2-normal)}
+.ctl span{color:var(--secondary-text-color);font:var(--font-text3-normal)}
+.ghost{height:32px;display:inline-flex;align-items:center;padding:0 12px;border-radius:var(--border-radius-small);font:var(--font-text2-medium);color:var(--secondary-text-color)}
+.btn{height:32px;display:inline-flex;align-items:center;padding:0 12px;border-radius:var(--border-radius-small);font:var(--font-text2-medium);background:var(--lofty-crisp-orange);color:var(--lofty-finisher-white)}
+
+.cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) 56px;gap:12px;padding:24px;align-items:start}
+.col{display:flex;flex-direction:column;gap:12px;min-width:0;background:var(--lofty-flint-100);border:1px solid var(--lofty-flint-200);border-radius:var(--border-radius-medium);padding:12px;min-height:320px}
+.col.drop{background:var(--primary-highlighted-color);border:2px dashed var(--lofty-crisp-orange);padding:11px}
+.dropmsg{font:var(--font-text3-medium);color:var(--lofty-foundation-black);background:var(--lofty-finisher-white);border-radius:var(--border-radius-small);padding:8px 10px;text-align:center}
+.chead{display:flex;flex-direction:column;gap:8px;padding-bottom:8px;border-bottom:1px solid var(--lofty-flint-400)}
+.chead .r{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.chead .nm{font:var(--font-text2-medium);min-width:0}
+.chead .ct{font:var(--font-text3-medium);color:var(--secondary-text-color)}
+.chead.on{border-bottom:2px solid var(--lofty-crisp-orange)}
+.empty{font:var(--font-text3-normal);color:var(--secondary-text-color);padding:12px 0}
+
+.card{background:var(--lofty-finisher-white);border:1px solid var(--lofty-flint-200);border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:12px}
+.card.lift{box-shadow:var(--box-shadow-small);border-color:var(--lofty-flint-400)}
+.jn{font:var(--font-h3-bold);letter-spacing:var(--letter-spacing-h3-bold)}
+.addr{font:var(--font-text2-normal);color:var(--secondary-text-color)}
+.upd{background:var(--lofty-flint-100);border-radius:var(--border-radius-small);padding:8px 10px;display:flex;flex-direction:column;gap:2px}
+.upd b{font:var(--font-text2-normal)}
+.upd span{font:var(--font-text3-normal);color:var(--secondary-text-color)}
+.meta{display:flex;gap:8px;flex-wrap:wrap}
+.chip{height:24px;display:inline-flex;align-items:center;padding:0 10px;border-radius:var(--border-radius-pill);font:var(--font-text3-medium);background:transparent;border:1px solid var(--lofty-flint-400);color:var(--primary-text-color)}
+.stat{height:24px;display:inline-flex;align-items:center;gap:6px;padding:0 10px 0 8px;border-radius:var(--border-radius-pill);font:var(--font-text3-medium);background:transparent;border:1px solid var(--lofty-flint-400);color:var(--primary-text-color)}
+.stat i{width:8px;height:8px;border-radius:50%;background:var(--negative-color)}
+.stat.ok i{background:var(--positive-color)}
+.cta{height:24px;display:inline-flex;align-items:center;padding:0 10px;border-radius:var(--border-radius-small);font:var(--font-text3-medium);background:var(--lofty-crisp-orange);color:var(--lofty-finisher-white)}
+.collapsed{background:var(--lofty-flint-100);border:1px solid var(--lofty-flint-200);border-radius:var(--border-radius-medium);min-height:320px;display:flex;flex-direction:column;align-items:center;gap:12px;padding:12px 0}
+.collapsed .cv{writing-mode:vertical-rl;font:var(--font-text2-medium);letter-spacing:.02em}
+.collapsed .ct{font:var(--font-text3-medium);color:var(--secondary-text-color)}
+.toggle{width:24px;height:24px;border-radius:var(--border-radius-small);display:grid;place-items:center;color:var(--secondary-text-color);background:transparent;flex:none}
+.open{width:24px;height:24px;border-radius:var(--border-radius-small);display:grid;place-items:center;color:var(--secondary-text-color);background:transparent;flex:none}
+.i{display:inline-block;width:16px;height:16px;background:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain}
+.foot{display:flex;align-items:center;gap:8px;padding-top:12px;border-top:1px solid var(--lofty-flint-200)}
+.av{width:24px;height:24px;border-radius:50%;background:var(--lofty-flint-200);color:var(--lofty-foundation-black);font:var(--font-text3-medium);display:grid;place-items:center}
+.who{font:var(--font-text3-normal);color:var(--secondary-text-color)}
+.states{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:var(--lofty-finisher-white);border:1px solid var(--lofty-flint-200);border-radius:var(--border-radius-medium);padding:24px}
+.cap{font:var(--font-text3-normal);color:var(--secondary-text-color);margin-top:8px;text-wrap:pretty}
+.list{font:var(--font-text3-normal);color:var(--secondary-text-color);display:grid;grid-template-columns:1fr 1fr;gap:8px 32px;max-width:110ch}
+.list b{color:var(--primary-text-color);font:var(--font-text3-medium)}
+</style></head><body>
+<span class="eyebrow">Pattern</span>
+<p class="note">The board as it stands leans on a colour that isn't in the palette (the teal column caps), repeats the stage inside its own stage column, and gives the job number, the address and the update the same weight, so a column reads as one grey mass. Rebuilt below: white cards in Flint 100 lanes on a white board, so every column is a visible drop target, one 18/24 job number per card, and Crisp Orange used for the active tab and the lane you are dragging into.</p>
+
+<div class="shell">
+<div class="top">
+<div class="title">Jobs</div>
+<div class="tabs">
+<span class="tab on">All jobs <b>72</b></span>
+<span class="tab">Live <b>72</b></span>
+<span class="tab">Closed <b>0</b></span>
+</div>
+<div class="bar">
+<span class="ctl"><span>View</span>Board</span>
+<span class="ctl"><span>Group</span>Stage</span>
+<span class="ctl"><span>Moved</span>Any date</span>
+<span class="ghost">+ Add filter</span>
+<span class="ghost">Clear all</span>
+<span style="flex:1"></span>
+<span class="ghost">Export</span>
+<span class="btn">New job</span>
+</div>
+</div>
+<div class="cols">
+
+<div class="col">
+<div class="chead"><div class="r"><span style="display:flex;align-items:center;gap:8px;min-width:0;flex:1"><span class="toggle" title="Collapse stage"><span class="i" style="width:16px;height:16px;-webkit-mask-image:url(../assets/icons/CollapseHorizontally.svg);mask-image:url(../assets/icons/CollapseHorizontally.svg)"></span></span><span class="nm">Acquisition &amp; Development</span></span><span style="display:flex;align-items:center;gap:8px;flex:none"><span class="ct">0</span><span class="open" title="Open stage"><span class="i" style="width:16px;height:16px;-webkit-mask-image:url(../assets/icons/Open.svg);mask-image:url(../assets/icons/Open.svg)"></span></span></span></div></div>
+<div class="empty">No jobs at this stage</div>
+</div>
+
+<div class="col">
+<div class="chead on"><div class="r"><span style="display:flex;align-items:center;gap:8px;min-width:0;flex:1"><span class="toggle" title="Collapse stage"><span class="i" style="width:16px;height:16px;-webkit-mask-image:url(../assets/icons/CollapseHorizontally.svg);mask-image:url(../assets/icons/CollapseHorizontally.svg)"></span></span><span class="nm">Pre-construction</span></span><span style="display:flex;align-items:center;gap:8px;flex:none"><span class="ct">3</span><span class="open" title="Open stage"><span class="i" style="width:16px;height:16px;-webkit-mask-image:url(../assets/icons/Open.svg);mask-image:url(../assets/icons/Open.svg)"></span></span></span></div></div>
+<div class="card lift">
+<div><div class="jn">1002-001</div><div class="addr">1 Brodie Road, Reynella SA 5161</div></div>
+<div class="upd"><b>Here is a test update</b><span>Amber Beaumont · 31 Aug 2026</span></div>
+<div class="meta"><span class="chip">Residential</span><span class="stat ok"><i></i>On track</span></div>
+<div class="foot"><span class="av">AB</span><span class="who">Amber Beaumont</span></div>
+</div>
+<div class="card">
+<div><div class="jn">1002-002</div><div class="addr">2 Brodie Road, Reynella SA 5161</div></div>
+<div class="meta"><span class="chip">Residential</span><span class="cta">Assign crew</span></div>
+<div class="foot"><span class="who">No owner yet</span></div>
+</div>
+<div class="card">
+<div><div class="jn">1002-003</div><div class="addr">3 Brodie Road, Reynella SA 5161</div></div>
+<div class="meta"><span class="chip">Residential</span><span class="stat"><i></i>Overdue</span></div>
+<div class="foot"><span class="av">JT</span><span class="who">Jess Turner</span></div>
+</div>
+</div>
+
+<div class="col drop">
+<div class="chead"><div class="r"><span style="display:flex;align-items:center;gap:8px;min-width:0;flex:1"><span class="toggle" title="Collapse stage"><span class="i" style="width:16px;height:16px;-webkit-mask-image:url(../assets/icons/CollapseHorizontally.svg);mask-image:url(../assets/icons/CollapseHorizontally.svg)"></span></span><span class="nm">Construction</span></span><span style="display:flex;align-items:center;gap:8px;flex:none"><span class="ct">0</span><span class="open" title="Open stage"><span class="i" style="width:16px;height:16px;-webkit-mask-image:url(../assets/icons/Open.svg);mask-image:url(../assets/icons/Open.svg)"></span></span></span></div></div>
+<div class="dropmsg">Drop to move to Construction</div>
+</div>
+
+<div class="col">
+<div class="chead"><div class="r"><span style="display:flex;align-items:center;gap:8px;min-width:0;flex:1"><span class="toggle" title="Collapse stage"><span class="i" style="width:16px;height:16px;-webkit-mask-image:url(../assets/icons/CollapseHorizontally.svg);mask-image:url(../assets/icons/CollapseHorizontally.svg)"></span></span><span class="nm">Maintenance</span></span><span style="display:flex;align-items:center;gap:8px;flex:none"><span class="ct">0</span><span class="open" title="Open stage"><span class="i" style="width:16px;height:16px;-webkit-mask-image:url(../assets/icons/Open.svg);mask-image:url(../assets/icons/Open.svg)"></span></span></span></div></div>
+<div class="empty">No jobs at this stage</div>
+</div>
+
+<div class="collapsed">
+<span class="toggle" title="Expand stage"><span class="i" style="width:16px;height:16px;-webkit-mask-image:url(../assets/icons/Expand.svg);mask-image:url(../assets/icons/Expand.svg)"></span></span>
+<span class="cv">Completed</span>
+<span class="ct">0</span>
+</div>
+
+</div>
+</div>
+
+<h3>Card states</h3>
+<div class="states">
+<div>
+<div class="card">
+<div><div class="jn">1002-002</div><div class="addr">2 Brodie Road, Reynella SA 5161</div></div>
+<div class="meta"><span class="chip">Residential</span><span class="stat ok"><i></i>On track</span></div>
+<div class="foot"><span class="av">AB</span><span class="who">Amber Beaumont</span></div>
+</div>
+<p class="cap">Rest. White fill, 1px Flint 200, no shadow. Job number 18/24 bold, address secondary — two levels, not four. Status is an outline button with a coloured dot: the colour is 8px of signal, not a field.</p>
+</div>
+<div>
+<div class="card lift">
+<div><div class="jn">1002-001</div><div class="addr">1 Brodie Road, Reynella SA 5161</div></div>
+<div class="upd"><b>Here is a test update</b><span>Amber Beaumont · 31 Aug 2026</span></div>
+<div class="meta"><span class="chip">Residential</span><span class="stat ok"><i></i>On track</span></div>
+<div class="foot"><span class="av">AB</span><span class="who">Amber Beaumont</span></div>
+</div>
+<p class="cap">Hover / dragging. Border steps to Flint 400 and <code>--box-shadow-small</code> appears — the card lifts, nothing changes colour. The latest update sits in a Flint 100 block so it reads as quoted, not as body copy.</p>
+</div>
+<div>
+<div class="card">
+<div><div class="jn">1002-003</div><div class="addr">3 Brodie Road, Reynella SA 5161</div></div>
+<div class="meta"><span class="chip">Residential</span><span class="stat"><i></i>Overdue</span><span class="cta">Assign crew</span></div>
+<div class="foot"><span class="av">JT</span><span class="who">Jess Turner</span></div>
+</div>
+<p class="cap">Needs attention. Only the call to action is filled — orange with white ink. Status stays an outline button; nothing else on the card carries a colour field. Two chips maximum, one action.</p>
+</div>
+</div>
+
+<h3>What changed</h3>
+<div class="list">
+<span><b>Colour.</b> Teal caps out; the board is white and each stage is a Flint 100 lane with a Flint 200 edge, so the drop zones are visible before you start dragging. The lane you are over turns orange-dashed on Flint tint.</span>
+<span><b>Hierarchy.</b> One heading per card — job number 18/24, address secondary. Stage dropped; it names the column.</span>
+<span><b>Density.</b> Type and status are outline buttons, not filled pills — a fill is reserved for a call to action. Owner sits in a footer, so an unowned job reads as an absence.</span>
+<span><b>Two different jobs, two different places.</b> Collapse sits before the stage name as a horizontal-collapse icon — it acts on the lane. Opening the stage sits after the count as <code>Open</code>, so drilling a layer down is never confused with folding the column away. Collapsed, a stage becomes a 56px lane with its name vertical and its count kept, and it still accepts a dropped card.</span>
+</div>
+</body></html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="../../tokens/fonts.css">
+<link rel="stylesheet" href="../../tokens/colors.css">
+<link rel="stylesheet" href="../../tokens/typography.css">
+<link rel="stylesheet" href="../../tokens/spacing.css">
+<link rel="stylesheet" href="../../tokens/radius.css">
+<link rel="stylesheet" href="../../tokens/shadows.css">
+<link rel="stylesheet" href="../../tokens/motion.css">
+<link rel="stylesheet" href="../../tokens/base.css">
+<link rel="stylesheet" href="../../styles.css">
+<script src="../../_ds_bundle.js"></script>
+<style>
+body{margin:0;background:var(--page-tint-color);font-family:var(--font-family);color:var(--primary-text-color)}
+a{color:var(--primary-text-color);text-decoration:underline;text-underline-offset:2px}
+a:hover{color:var(--lofty-orange-pressed)}
+</style>
+</helmet>
+
+<div style="max-width:1080px;margin:0 auto;padding:40px 24px 80px;display:flex;flex-direction:column;gap:48px">
+
+  <header style="display:flex;flex-direction:column;gap:16px">
+    <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <span style="width:14px;height:14px;background:var(--lofty-crisp-orange);display:inline-block"></span>
+      <span style="font:600 12px/16px var(--font-family);color:var(--secondary-text-color)">LoftySupport/loftyprojectapp · main · a8dd8fb</span>
+    </div>
+    <h1 style="margin:0;font:600 32px/40px var(--title-font-family);letter-spacing:-0.5px">Lofty Hub — design check</h1>
+    <p style="margin:0;max-width:66ch;font:400 16px/24px var(--font-family);color:var(--primary-text-color);text-wrap:pretty">Twenty-three findings against Vibe 4, this project's design system and WCAG 2.2 AA. Every finding names its evidence — a hex value, a measured ratio, a string on screen — and the ones with a drawn fix link to the mockup that shows it.</p>
+    <p style="margin:0;max-width:66ch;font:400 14px/20px var(--font-family);color:var(--secondary-text-color)">Read: <code style="font:400 13px/20px ui-monospace,Menlo,monospace">DESIGN.md</code>, <code style="font:400 13px/20px ui-monospace,Menlo,monospace">PRODUCT.md</code>, <code style="font:400 13px/20px ui-monospace,Menlo,monospace">CLAUDE.md</code>, <code style="font:400 13px/20px ui-monospace,Menlo,monospace">app/src/theme/*</code>, <code style="font:400 13px/20px ui-monospace,Menlo,monospace">SidePanel.tsx</code>, <code style="font:400 13px/20px ui-monospace,Menlo,monospace">SortableTable.tsx</code>, <code style="font:400 13px/20px ui-monospace,Menlo,monospace">PanelExpand.tsx</code>, <code style="font:400 13px/20px ui-monospace,Menlo,monospace">app/package.json</code> (@vibe/core 4.5.30), and the prototype captures in <code style="font:400 13px/20px ui-monospace,Menlo,monospace">docs/comparison-screenshots/</code>.</p>
+    <p style="margin:0;max-width:66ch;font:400 14px/20px var(--font-family);color:var(--secondary-text-color)">The captures are of the <strong style="font-weight:600">prototype</strong>, not the React app. Where a finding is only provable from a capture it says so, and it should be re-checked against the running app before anyone spends a day on it.</p>
+    <div style="display:flex;gap:8px;padding-top:8px">
+      <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px" kind="secondary" onClick="{{ goMockups }}">Open the mockups</x-import>
+    </div>
+  </header>
+
+  <section style="display:flex;flex-direction:column;gap:16px">
+    <h2 style="margin:0;font:600 24px/30px var(--title-font-family);letter-spacing:-0.1px">Where it stands</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px">
+      <div style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:8px">
+        <div style="font:400 12px/16px var(--font-family);color:var(--secondary-text-color)">Tokens and foundations</div>
+        <div style="font:600 32px/40px var(--title-font-family);letter-spacing:-0.5px">Strong</div>
+        <div style="font:400 14px/20px var(--font-family);color:var(--secondary-text-color)">Four files own colour, one scale owns spacing, no text below 12px, no all-caps. This is better than most codebases this size.</div>
+      </div>
+      <div style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:8px">
+        <div style="font:400 12px/16px var(--font-family);color:var(--secondary-text-color)">Components</div>
+        <div style="font:600 32px/40px var(--title-font-family);letter-spacing:-0.5px">Mixed</div>
+        <div style="font:400 14px/20px var(--font-family);color:var(--secondary-text-color)">Vibe 4 is a dependency and the shells are shared, but native <code style="font:400 13px/20px ui-monospace,Menlo,monospace">select</code> and <code style="font:400 13px/20px ui-monospace,Menlo,monospace">input type=date</code> still carry the two most-used fields.</div>
+      </div>
+      <div style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:8px">
+        <div style="font:400 12px/16px var(--font-family);color:var(--secondary-text-color)">Behaviour parity</div>
+        <div style="font:600 32px/40px var(--title-font-family);letter-spacing:-0.5px">The gap</div>
+        <div style="font:400 14px/20px var(--font-family);color:var(--secondary-text-color)">This is the "lacking consistency across the app with functionality" you named. Nine of the findings below are one screen doing a thing another screen does differently.</div>
+      </div>
+      <div style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:8px">
+        <div style="font:400 12px/16px var(--font-family);color:var(--secondary-text-color)">Terminology</div>
+        <div style="font:600 32px/40px var(--title-font-family);letter-spacing:-0.5px">Good, drifting</div>
+        <div style="font:400 14px/20px var(--font-family);color:var(--secondary-text-color)">One voice, sentence case throughout. Button labels and the job-number format are where it slips.</div>
+      </div>
+    </div>
+    <p style="margin:0;max-width:66ch;font:400 14px/20px var(--font-family);color:var(--secondary-text-color)">P0 blocks a task or fails WCAG AA · P1 causes an error or a hesitation · P2 is polish. Fix in that order; prefer the systemic fix (a token, a shared component, a written rule) over the screen-by-screen one.</p>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:16px">
+    <h2 style="margin:0;font:600 24px/30px var(--title-font-family);letter-spacing:-0.1px">Re-checked against the design system update</h2>
+    <p style="margin:0;max-width:66ch;font:400 16px/24px var(--font-family);text-wrap:pretty">The design system moved after round one: a single neutral family, a single-accent data-viz ramp, and a data-viz component set. The mockups have been brought onto it. Nothing in the findings below changed as a result.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+      <div style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:8px">
+        <div style="font:600 12px/16px var(--font-family);color:var(--secondary-text-color)">APPLIED</div>
+        <div style="font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Flint replaces the cool greys</div>
+        <p style="margin:0;font:400 14px/20px var(--font-family);color:var(--secondary-text-color)">Mid Grey <code style="font:400 13px/20px ui-monospace,Menlo,monospace">#d1d3d4</code> is no longer a UI border, and <code style="font:400 13px/20px ui-monospace,Menlo,monospace">#e1e1d9</code> and <code style="font:400 13px/20px ui-monospace,Menlo,monospace">#f9f9f6</code> are retired. 116 literals across the five screens now read Flint 100 for the page, 200 for rules and tracks, 300 for card and table borders.</p>
+      </div>
+      <div style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:8px">
+        <div style="font:600 12px/16px var(--font-family);color:var(--secondary-text-color)">APPLIED</div>
+        <div style="font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Charts are single-accent</div>
+        <p style="margin:0;font:400 14px/20px var(--font-family);color:var(--secondary-text-color)">Orange and Eco Green may no longer appear in the same view, so the board's four-step green phase ramp is re-cut on the orange ladder — Orange 40, Orange 70, Crisp Orange, Orange deep — and the green counter tints become Flint 200. Reports was already one orange series on a neutral track.</p>
+      </div>
+      <div style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:8px">
+        <div style="font:600 12px/16px var(--font-family);color:var(--secondary-text-color)">OPEN</div>
+        <div style="font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">The orange split still stands</div>
+        <p style="margin:0;font:400 14px/20px var(--font-family);color:var(--secondary-text-color)">The update keeps white ink on filled orange and adds the rule that orange fills are for 16px semibold and up. Buttons here carry 14px labels, so the mockups keep <code style="font:400 13px/20px ui-monospace,Menlo,monospace">#c2543c</code> — the system's own <code style="font:400 13px/20px ui-monospace,Menlo,monospace">--lofty-orange-pressed</code>, named for exactly this case — for anything that carries text. See P0-2.</p>
+      </div>
+      <div style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:8px">
+        <div style="font:600 12px/16px var(--font-family);color:var(--secondary-text-color)">AVAILABLE, NOT YET USED</div>
+        <div style="font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Data viz and dark mode</div>
+        <p style="margin:0;font:400 14px/20px var(--font-family);color:var(--secondary-text-color)">StatTile, BarChart, DonutStat, MeterRow, ChartLegend and StatusChip now ship in the system; the Reports panels in <a href="Lofty%20Hub%20Mockups.dc.html#4a">4a</a> are still hand-built and would drop onto them. <code style="font:400 13px/20px ui-monospace,Menlo,monospace">tokens/dark.css</code> also ships — the mockups are light-only and no dark screen has been drawn.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:24px">
+    <h2 style="margin:0;font:600 24px/30px var(--title-font-family);letter-spacing:-0.1px">P0 — blocks a task or fails AA</h2>
+
+    <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-left:none;border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-foundation-black);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P0-1</span>
+        <h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Dates render in US order on an Adelaide product</h3>
+      </div>
+      <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><strong style="font-weight:600">Evidence.</strong> The job drawer's selections tracker and the new-job dialog both show the empty date placeholder as <code style="font:400 15px/24px ui-monospace,Menlo,monospace">mm/dd/yyyy</code>, and a filled row reads <code style="font:400 15px/24px ui-monospace,Menlo,monospace">07/13/2026</code> — a date that only parses one way. <code style="font:400 15px/24px ui-monospace,Menlo,monospace">PRODUCT.md</code> states dates are Adelaide calendar days. A native <code style="font:400 15px/24px ui-monospace,Menlo,monospace">input type="date"</code> takes its order from the browser locale, so the same record reads differently to two people in the same office.</p>
+      <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><strong style="font-weight:600">Fix.</strong> The design system's DatePicker, formatting <code style="font:400 15px/24px ui-monospace,Menlo,monospace">dd/mm/yyyy</code> everywhere, and one date formatter in the repository seam rather than per screen. Nine rows of it drawn in <a href="Lofty%20Hub%20Mockups.dc.html#1a">1a</a>.</p>
+    </article>
+
+    <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-foundation-black);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P0-2</span>
+        <h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Orange as the primary accent needs its darker step, or every filled button fails</h3>
+      </div>
+      <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><strong style="font-weight:600">Evidence.</strong> You chose the design system's hierarchy — orange leads. But the system's <code style="font:400 15px/24px ui-monospace,Menlo,monospace">--text-color-on-primary</code> is white on Crisp Orange <code style="font:400 15px/24px ui-monospace,Menlo,monospace">#f47e63</code>, which measures <strong style="font-weight:600">2.62:1</strong>. Foundation Black on the same orange is <strong style="font-weight:600">3.91:1</strong> — enough for a boundary, not enough for a 14px label. The repo reached the same number independently and wrote it into <code style="font:400 15px/24px ui-monospace,Menlo,monospace">DESIGN.md</code>: "2.6:1 on white… not used for meaning".</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;padding:4px 0">
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="width:180px;height:44px;background:var(--lofty-crisp-orange);color:#fff;display:flex;align-items:center;justify-content:center;font:600 14px/20px var(--font-family);border-radius:var(--border-radius-small)">Create job</div>
+          <div style="font:400 12px/16px var(--font-family);color:var(--negative-color)">2.62:1 — fails AA</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="width:180px;height:44px;background:var(--lofty-orange-pressed);color:#fff;display:flex;align-items:center;justify-content:center;font:600 14px/20px var(--font-family);border-radius:var(--border-radius-small)">Create job</div>
+          <div style="font:400 12px/16px var(--font-family);color:var(--positive-color)">4.54:1 — passes</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="width:180px;height:44px;background:#c2543c;color:#fff;display:flex;align-items:center;justify-content:center;font:600 14px/20px var(--font-family);border-radius:var(--border-radius-small)">Create job</div>
+          <div style="font:400 12px/16px var(--font-family);color:var(--positive-color)">5.25:1 — the repo's value</div>
+        </div>
+      </div>
+      <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><strong style="font-weight:600">Fix, and it invents no colour.</strong> <code style="font:400 15px/24px ui-monospace,Menlo,monospace">--lofty-orange-pressed</code> <code style="font:400 15px/24px ui-monospace,Menlo,monospace">#c2543c</code> already exists in the system and clears 4.5:1 with white. Make it the orange that carries text or meaning — filled buttons, links, focus text — and keep Crisp Orange for what it is good at: decorative fills, the 3px active-tab underline, large display figures, the first data series. That reconciles the system's orange-first hierarchy with the repo's contrast contract without a fourth place for colour to live. Every mockup uses this split.</p>
+    </article>
+
+    <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-foundation-black);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P0-3</span>
+        <h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">The three fields people change most are native selects</h3>
+      </div>
+      <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><strong style="font-weight:600">Evidence.</strong> In the job drawer capture, Who it's with, Team, Phase and Build stage are all browser <code style="font:400 15px/24px ui-monospace,Menlo,monospace">select</code> elements — grey chevron, OS menu, no search. <code style="font:400 15px/24px ui-monospace,Menlo,monospace">DESIGN.md</code> lists this under Known limitations for the prototype and says the React app uses the real component; the capture is what a reviewer sees, so it is worth confirming which is deployed. Reassigning a job across eight stages and forty people is the drawer's most-used action, and a native select gives no type-ahead beyond first letter and no way to show the stage colour.</p>
+      <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><strong style="font-weight:600">Fix.</strong> Vibe 4 Dropdown with search on anything over eight options, and the same control in the drawer, the dialog and the toolbar. Drawn in <a href="Lofty%20Hub%20Mockups.dc.html#1a">1a</a> and <a href="Lofty%20Hub%20Mockups.dc.html#2a">2a</a>.</p>
+    </article>
+
+    <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-foundation-black);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P0-4</span>
+        <h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">The board breaks its own colour rule, and its own product rule</h3>
+      </div>
+      <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><strong style="font-weight:600">Evidence.</strong> <code style="font:400 15px/24px ui-monospace,Menlo,monospace">DESIGN.md</code>: "Colour on containers encodes phase. Colour on records encodes health. Never both on one element." <code style="font:400 15px/24px ui-monospace,Menlo,monospace">PRODUCT.md</code>: "Status pills are off on cards until there is a plan for calculated health." In the board capture the columns carry a coloured strip <em>and</em> every card carries a filled On track / At risk / Stalled / Council hold pill, in green, amber and grey — four health values with no stated calculation behind them, sitting on top of a phase ramp.</p>
+      <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><strong style="font-weight:600">Why it is a P0 and not a preference.</strong> Two colour systems on one card means a scanning eye cannot tell which one it is reading, and the pill is the louder of the two — so the board reads as a health board when health is the value nobody has defined. This is the same failure as the "45% on track" figure the repo already deleted, in colour instead of numbers.</p>
+      <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><strong style="font-weight:600">Fix.</strong> Pick one. Either health comes back with a stated calculation and the phase ramp goes quiet, or the pills come off until it does. Both drawn side by side in <a href="Lofty%20Hub%20Mockups.dc.html#3a">3a</a>.</p>
+    </article>
+
+    <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-foundation-black);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P0-5</span>
+        <h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">The floating + covers the drawer's own actions again</h3>
+      </div>
+      <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><strong style="font-weight:600">Evidence.</strong> A round orange + sits at the bottom-right of the viewport, and the drawer occupies the right edge — so the + lands on top of the drawer's content and, on a phone where the drawer is full width, on top of where its save row sits. <code style="font:400 15px/24px ui-monospace,Menlo,monospace">SidePanel.tsx</code> carries the note that this exact collision already happened once: "the ai button at the bottom of the screen covers the save button". The fix then was to give side work one shell; a second floating layer puts the bug back.</p>
+      <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><strong style="font-weight:600">Fix.</strong> The create action belongs in the page's title row where the other primaries are, and the board's last row is the second way in that Lofty asked for. No floating layer over the drawer. <a href="Lofty%20Hub%20Mockups.dc.html#2b">2b</a> shows the inline row; <a href="Lofty%20Hub%20Mockups.dc.html#3a">3a</a> shows the toolbar placement.</p>
+    </article>
+
+    <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-foundation-black);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P0-6</span>
+        <h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Checkbox rows in the drawer are below the target floor at panel width</h3>
+      </div>
+      <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><strong style="font-weight:600">Evidence.</strong> The selections tracker puts a 16px checkbox, a label and a date field on one row inside a panel whose default width is <code style="font:400 15px/24px ui-monospace,Menlo,monospace">min(460px, 100vw)</code>. <code style="font:400 15px/24px ui-monospace,Menlo,monospace">PRODUCT.md</code> commits to 40px minimum targets in the drawer and calls the drawer at panel width the phone layout. The rows in the capture are visibly tighter than 40px, and this is the surface a PM uses one-handed on a ladder — the exact scenario in the brief.</p>
+      <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><strong style="font-weight:600">Fix.</strong> 48px rows, the whole row as the checkbox's hit area, the date as a second line rather than a second column. <a href="Lofty%20Hub%20Mockups.dc.html#1c">1c</a> is that at 390px.</p>
+    </article>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:24px">
+    <h2 style="margin:0;font:600 24px/30px var(--title-font-family);letter-spacing:-0.1px">P1 — the consistency findings</h2>
+    <p style="margin:0;max-width:66ch;font:400 16px/24px var(--font-family);color:var(--secondary-text-color)">These are the nine you selected on the form, with what was actually observed in each. The systemic fix for all nine is the pattern register at the foot of this page: one canonical answer per column, written down, so the next screen inherits it instead of choosing again.</p>
+
+    <div style="display:flex;flex-direction:column;gap:16px">
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:grid;grid-template-columns:minmax(0,1fr);gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-1</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Toolbars: labels beside controls, and the primary action inside the filter row</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)">The jobs toolbar reads <em>View</em> [select] <em>Group</em> [select] <em>Date</em> [field] <em>Filter by</em> [+ Add filter] [Clear] [+ New job] — six labelled controls and the page's primary action on one line, with the row count floated to the far right. A label beside every control doubles the width of the row and pushes the filters off-screen at tablet size; the primary action sitting among the filters means the loudest thing on the row is not the thing the row is for. One canonical toolbar, on every list screen, in <a href="Lofty%20Hub%20Mockups.dc.html#3a">3a</a> and reused unchanged in <a href="Lofty%20Hub%20Mockups.dc.html#3b">3b</a> and <a href="Lofty%20Hub%20Mockups.dc.html#4a">4a</a>.</p>
+      </article>
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-2</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">The primary action is in three different places</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)">Board: <em>+ New job</em>, inline in the filter row. New-job dialog: <em>Create 1201-05</em>, bottom-right of a footer. Job drawer: <em>Open job file</em>, a filled green button a third of the way down the panel body, beside an outlined <em>Request changes</em>. Three placements is three things to learn. Canonical: title row, right-aligned, one per region — dialogs keep the footer because a footer is a title row at the other end of a form.</p>
+      </article>
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-3</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Button labels: three grammars and a typed plus sign</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)">Observed on two screens: <em>+ New job</em>, <em>+ Add filter</em>, <em>Clear</em>, <em>Ask</em>, <em>Open job file</em>, <em>Request changes</em>, <em>Create 1201-05</em>, <em>Cancel</em>. The <code style="font:400 15px/24px ui-monospace,Menlo,monospace">+</code> is a character inside the label rather than the icon set's <code style="font:400 15px/24px ui-monospace,Menlo,monospace">Add</code> glyph, so it does not inherit icon colour or size; <em>Clear</em> and <em>Ask</em> are verbs with no object; <em>Create 1201-05</em> names a number nobody has agreed to yet. Canonical: verb + object, sentence case, the icon set's glyph in <code style="font:400 15px/24px ui-monospace,Menlo,monospace">leftIcon</code> — <em>New job</em>, <em>Add filter</em>, <em>Clear filters</em>, <em>Ask about this job</em>, <em>Create job</em>.</p>
+      </article>
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-4</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Row click: the drawer is the rule and the exceptions are not marked</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)">The must-have is written and the shell exists — <code style="font:400 15px/24px ui-monospace,Menlo,monospace">SidePanel.tsx</code>, expand, resize, Escape, selection in the URL. What is missing is a way to tell, at a glance, which rows honour it. In the captures a board card, a table row and a project card are three different shapes with three different hover treatments, and a card that opens a panel looks identical to one that navigates. Canonical: any record row or card gets the same hover wash <code style="font:400 15px/24px ui-monospace,Menlo,monospace">rgba(65,64,66,.08)</code>, the same <code style="font:400 15px/24px ui-monospace,Menlo,monospace">--box-shadow-xs</code> lift, and opens the panel. Anything that navigates instead is a link and looks like one.</p>
+      </article>
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-5</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Tables: no shared component, so density and headers drift</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><code style="font:400 15px/24px ui-monospace,Menlo,monospace">SortableTable.tsx</code> says it plainly: "Not a table component… The tables in this app each render their own cells and there is no reason for them to stop." That was the right call for sorting and it is the wrong call for everything else — row height, header treatment, the sort arrow, the selected row, the empty row and the sticky header are now decided per page. The arrow is also a typed <code style="font:400 15px/24px ui-monospace,Menlo,monospace">↑</code>/<code style="font:400 15px/24px ui-monospace,Menlo,monospace">↓</code> character rather than the icon set's chevron, and it shows an inactive up-arrow on every unsorted column, which reads as "sorted ascending" at a glance. Canonical density and header in <a href="Lofty%20Hub%20Mockups.dc.html#5b">5b</a>.</p>
+      </article>
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-6</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Create: a dialog, a side panel and an inline row all exist, with no rule for which</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)">New job is a centred dialog. <code style="font:400 15px/24px ui-monospace,Menlo,monospace">SidePanel.tsx</code> was built to replace exactly that dialog, and its own comment argues the panel is better because "the list stays visible and usable behind it". <code style="font:400 15px/24px ui-monospace,Menlo,monospace">InlineNewProjectRow.tsx</code> is a third way. All three are defensible; having all three without a rule is not. Canonical, and it matches Lofty's "both, they can add either way": <strong style="font-weight:600">inline row for a record that is just a name in a list</strong>, <strong style="font-weight:600">side panel for a record with fields</strong>, <strong style="font-weight:600">centred dialog only for a decision</strong> — move, clone, delete. That retires the new-job dialog. <a href="Lofty%20Hub%20Mockups.dc.html#2a">2a</a> is it as a panel, <a href="Lofty%20Hub%20Mockups.dc.html#2b">2b</a> as the inline row.</p>
+      </article>
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-7</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Empty states: the three kinds are not distinguished</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)">Nothing in the captures shows a column with no cards, a filter that matched nothing, or a report with no bound data — and the repo's strongest principle ("never fill a gap with a plausible value") makes empty the <em>most</em> common state until the import runs, not the rarest. Three different states get three different answers: first use names the action that fills it, no-results names the filter to loosen and offers to clear it, and an unbound value renders its <code style="font:400 15px/24px ui-monospace,Menlo,monospace">{{ tokColumn }}</code> token. All three drawn: first-use in <a href="Lofty%20Hub%20Mockups.dc.html#3a">3a</a>, no-results in <a href="Lofty%20Hub%20Mockups.dc.html#5b">5b</a>, unbound in <a href="Lofty%20Hub%20Mockups.dc.html#4a">4a</a>.</p>
+      </article>
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-8</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Bulk actions and selection do not exist yet</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)">No row checkboxes, no selection count, no bulk bar in any capture. The board has drag-to-move for one card at a time, and the import is about to land 801 jobs that will need re-teaming in batches. Canonical: a leading checkbox column on every table, and one bulk bar that replaces the filter row when the selection is non-empty — count, two or three actions, Undo in the toast. Shown in <a href="Lofty%20Hub%20Mockups.dc.html#5b">5b</a>.</p>
+      </article>
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-9</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Saved views, tabs and the view switcher are three ways to say the same thing</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)">The board carries a <em>View</em> select (Board / Table / Calendar / Gantt), a <em>Group</em> select, a breadcrumb reading <em>Jobs › Board › Grouped by Stage</em>, an <code style="font:400 15px/24px ui-monospace,Menlo,monospace">h2</code> reading <em>Board — by Stage</em>, and <code style="font:400 15px/24px ui-monospace,Menlo,monospace">SavedViewTabs.tsx</code> for saved views. Four of those describe the same state, one of them twice. Canonical: view is a Tabs row (the system's rule — tabs switch between views of the same object), grouping is a control in the filter row, saved views are chips above the tabs, and the breadcrumb states location only. Drawn in <a href="Lofty%20Hub%20Mockups.dc.html#3b">3b</a>.</p>
+      </article>
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-10</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Drag-to-order has no keyboard twin on screen</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><code style="font:400 15px/24px ui-monospace,Menlo,monospace">PRODUCT.md</code> makes up/down buttons on every draggable row non-optional, and the board's own hint reads "drag cards between columns to move a job" with no stated alternative. Board cards carry no move control, so stage changes are drag-only there while Settings → Processes has the buttons. Canonical: every ordered or movable thing has a visible non-drag path — up/down on rows, a Move menu item on cards. <a href="Lofty%20Hub%20Mockups.dc.html#5a">5a</a> shows the row; the same menu is on the cards in <a href="Lofty%20Hub%20Mockups.dc.html#3a">3a</a>.</p>
+      </article>
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-11</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Job numbers appear in two formats</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)"><code style="font:400 15px/24px ui-monospace,Menlo,monospace">PRODUCT.md</code> specifies a three-digit sequence — <code style="font:400 15px/24px ui-monospace,Menlo,monospace">1042-001</code>. Every number in the captures is two digits — <code style="font:400 15px/24px ui-monospace,Menlo,monospace">1209-02</code>, <code style="font:400 15px/24px ui-monospace,Menlo,monospace">1201-05</code>, <code style="font:400 15px/24px ui-monospace,Menlo,monospace">1210-01</code>. The number is the thing people say out loud and write on contracts, and it is about to be the join key for 801 imported rows. Settle the format before the import, not after.</p>
+      </article>
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-12</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Active nav reads as a button; a state badge reads as an action</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)">The current page is marked with a white filled box on the dark header, which is the shape of a button — so the loudest element in the top bar is the page you are already on. Two items to its right, <em>Dummy data</em> is a filled orange pill in the same row: a state badge wearing a primary action's clothes, next to a search field. This is the prototype's header. The React app has already moved navigation to a left rail (<code style="font:400 15px/24px ui-monospace,Menlo,monospace">AppShell.tsx</code>: eight destinations, Admin behind a cog in the header), which resolves the first half. Canonical for the rail: current location is the <code style="font:400 15px/24px ui-monospace,Menlo,monospace">#fae4d5</code> tinted row with Foundation Black text; environment state is an outlined Label, not a fill, and sits with the account menu rather than in the nav run.</p>
+      </article>
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-13</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Coloured left-border strips are doing work the system gave to nothing</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)">The drawer's "Ask about this job" block is a tinted panel with a coloured left-edge strip, and the at-risk note on a board card is another. The design system is explicit — "Coloured left-border accent strips are not part of this system" — and the reason is that the strip is the one device that cannot carry a word, so it means whatever the reader guesses. Canonical: AttentionBox for anything advisory (icon + word + full border), and Ask moves to a tertiary button in the panel header, where it stops competing with the record.</p>
+      </article>
+
+      <article style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap"><span style="font:600 11px/16px ui-monospace,Menlo,monospace;background:var(--lofty-black-80);color:#fff;padding:3px 7px;border-radius:var(--border-radius-small)">P1-14</span><h3 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">A disabled primary with no reason given</h3></div>
+        <p style="margin:0;max-width:70ch;font:400 16px/24px var(--font-family)">In the new-job dialog, <em>Create 1201-05</em> is dimmed while the form is incomplete and nothing says which field is holding it. The rule is to explain why something is disabled or not to disable it: keep the button live, validate on blur, and on submit move focus to the first field that needs an answer. <a href="Lofty%20Hub%20Mockups.dc.html#2a">2a</a> shows the live button with the field-level error.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:16px">
+    <h2 style="margin:0;font:600 24px/30px var(--title-font-family);letter-spacing:-0.1px">P2 — polish, and two deliberate trade-offs</h2>
+    <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:12px;max-width:70ch;font:400 16px/24px var(--font-family)">
+      <li>The board's coach-mark tooltip ("See everything in Sales &amp; acquisition") renders as an opaque block over the column header it is describing. Anchor it below its trigger with an offset, or make it a Tipseen with a dismiss.</li>
+      <li>Two dashes are doing three jobs: <em>Board — by Stage</em> (em dash), <em>Demo Admin — …</em> (truncation), <em>— not set —</em> (empty value). Use the icon set's chevron for hierarchy, an ellipsis for truncation, and leave empty values genuinely empty.</li>
+      <li>The <em>Type</em> row on every board card shows "Residential" for every card in the capture. A column whose value never varies is a column, not a card field — move it to the filter row.</li>
+      <li><strong style="font-weight:600">Trade-off, stated.</strong> The general UI floor asks for 16px body text. Vibe's ramp and <code style="font:400 15px/24px ui-monospace,Menlo,monospace">DESIGN.md</code> put table and card body at 14/20 with 12/16 secondary, and that is what the mockups use — the product's own written rule wins. The cost is real on a phone in daylight, so the mockups raise the drawer's primary facts to 16/24 and keep 12px for labels only, never for a value.</li>
+      <li><strong style="font-weight:600">Trade-off, stated.</strong> The system reserves the full pill for Avatar and Counter. The status chips in the mockups are 4px radius for that reason, which will look tighter than the captures.</li>
+    </ul>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:16px">
+    <h2 style="margin:0;font:600 24px/30px var(--title-font-family);letter-spacing:-0.1px">The pattern register</h2>
+    <p style="margin:0;max-width:66ch;font:400 16px/24px var(--font-family);color:var(--secondary-text-color)">One canonical answer per pattern. This is the systemic fix for every P1 above — paste it into <code style="font:400 15px/24px ui-monospace,Menlo,monospace">DESIGN.md</code> and a new screen inherits the answer instead of picking one.</p>
+    <div style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);overflow:hidden">
+      <table style="width:100%;border-collapse:collapse;font:400 14px/20px var(--font-family)">
+        <thead>
+          <tr style="background:var(--page-tint-color)">
+            <th style="text-align:left;padding:12px 16px;font:600 14px/20px var(--font-family);border-bottom:1px solid var(--layout-border-color);width:26%">Pattern</th>
+            <th style="text-align:left;padding:12px 16px;font:600 14px/20px var(--font-family);border-bottom:1px solid var(--layout-border-color)">The one answer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color);font-weight:600">Page head</td><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color)">Breadcrumb (location only) · h1 · row count · one primary button, right-aligned.</td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color);font-weight:600">View switch</td><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color)">Tabs, under the head. Never a select, never repeated in the h1.</td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color);font-weight:600">Filter row</td><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color)">Search first, then team, member, stage, date range, group-by. No labels beside controls — the placeholder is the label. Applied filters become removable chips below. <em>Clear filters</em> appears only when something is applied.</td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color);font-weight:600">Row click</td><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color)">Opens the side panel. Always. Anything that navigates is a link and looks like one.</td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color);font-weight:600">Create</td><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color)">Name only → inline row at the foot of the list. Has fields → side panel. A decision (move, clone, delete) → centred dialog.</td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color);font-weight:600">Edit</td><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color)">In place, in the panel, saving on blur with a toast. No edit mode, no second Save button per section.</td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color);font-weight:600">Table</td><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color)">48px rows, sticky grey header, leading checkbox column, sort on every comparable column with the chevron shown on the active column only, blanks last in both directions.</td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color);font-weight:600">Bulk</td><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color)">Selection replaces the filter row with a bar: count, two or three actions, Undo in the toast.</td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color);font-weight:600">Order</td><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color)">Drag handle plus up/down buttons on every ordered row. Sorting a pipeline switches to the flat table and says so.</td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color);font-weight:600">Status colour</td><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color)">Phase on containers, health on records, never both in one view. Colour never alone — always with the word.</td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color);font-weight:600">Orange</td><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color)"><code style="font:400 13px/20px ui-monospace,Menlo,monospace">#c2543c</code> when it carries text or meaning; <code style="font:400 13px/20px ui-monospace,Menlo,monospace">#f47e63</code> for fills, the 3px underline, display figures and the first data series.</td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color);font-weight:600">Dates</td><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color)"><code style="font:400 13px/20px ui-monospace,Menlo,monospace">dd/mm/yyyy</code>, Adelaide days, DatePicker not a native date input. Relative time only alongside the date, never instead of it.</td></tr>
+          <tr><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color);font-weight:600">Empty</td><td style="padding:12px 16px;border-bottom:1px solid var(--layout-border-color)">First use: what this holds + the action that fills it. No results: which filter to loosen + <em>Clear filters</em>. Unbound: the <code style="font:400 13px/20px ui-monospace,Menlo,monospace">{{ tokColumn }}</code> token.</td></tr>
+          <tr><td style="padding:12px 16px;font-weight:600">Advisory</td><td style="padding:12px 16px;">AttentionBox — icon, word, full border. No coloured left-edge strips anywhere.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:16px">
+    <h2 style="margin:0;font:600 24px/30px var(--title-font-family);letter-spacing:-0.1px">What needs your decision</h2>
+    <ol style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:12px;max-width:70ch;font:400 16px/24px var(--font-family)">
+      <li><strong style="font-weight:600">Health on cards: back with a calculation, or off?</strong> P0-4 cannot be fixed without this answer, and it changes the board.</li>
+      <li><strong style="font-weight:600">Job number: two digits or three?</strong> Before the 801-row import.</li>
+      <li><strong style="font-weight:600">Does the new-job dialog get retired for the side panel?</strong> The panel's own code argues it should have been already.</li>
+      <li><strong style="font-weight:600">Is the deployed app still using native selects and date inputs</strong>, or is that only true of the prototype these captures came from? It changes whether P0-1 and P0-3 are hours or days.</li>
+    </ol>
+  </section>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return { tokColumn: "{{table.column}}", goMockups: () => { window.location.href = "Lofty%20Hub%20Mockups.dc.html"; } };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!-- @dsCard group="Colors" viewport="760x540" name="Dark mode" subtitle="data-theme=&quot;dark&quot; swaps the semantic layer. Grounds are the dark Flint steps; every text pairing clears 4.5:1." -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:16px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+.sw{flex:1;min-width:0;border-radius:var(--border-radius-medium);overflow:hidden;border:1px solid var(--layout-border-color)}.sw h{display:block;height:40px}.sw div{padding:8px}
+.n{font:var(--font-text3-medium)}.m{font:var(--font-text3-normal);color:var(--secondary-text-color)}
+.lbl{font:var(--font-text3-medium);color:var(--secondary-text-color);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.pair{flex:1;min-width:0;padding:12px;border-radius:var(--border-radius-small);font:var(--font-text2-medium)}.pair em{display:block;font:var(--font-text3-normal);font-style:normal;margin-top:2px;opacity:.85}
+</style></head><body>
+<div style="display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:16px">
+<div><div class="lbl">Grounds — the dark Flint steps</div><div style="display:flex;gap:8px">
+<div class="sw"><h style="background:var(--lofty-flint-900)"></h><div><div class="n">Flint 900</div><div class="m">#1a1a18 · page</div></div></div>
+<div class="sw"><h style="background:var(--lofty-flint-800)"></h><div><div class="n">Flint 800</div><div class="m">#24241f · shell, cards</div></div></div>
+<div class="sw"><h style="background:#2f2e28"></h><div><div class="n">Raised</div><div class="m">#2f2e28 · menus, dialogs, inputs</div></div></div>
+<div class="sw"><h style="background:var(--lofty-flint-700)"></h><div><div class="n">Flint 700</div><div class="m">#3a3a33 · rules · #807f74 controls</div></div></div>
+</div></div>
+<div><div class="lbl">Ink</div><div style="display:flex;gap:8px">
+<div class="pair" style="background:var(--lofty-flint-800);color:#f2f1f2">Text #f2f1f2<em>13.8:1 on surface</em></div>
+<div class="pair" style="background:var(--lofty-flint-800);color:#b9b8bc">Muted #b9b8bc<em>7.9:1 · secondary, icons</em></div>
+<div class="pair" style="background:#2f2e28;color:#a3a2a6">Faint #a3a2a6<em>5.4:1 on raised · placeholders only</em></div>
+</div></div>
+<div><div class="lbl">Accents on dark</div><div style="display:flex;gap:8px">
+<div class="pair" style="background:var(--lofty-crisp-orange);color:var(--lofty-finisher-white)">Crisp Orange<em>white ink · never black on orange</em></div>
+<div class="pair" style="background:#20707a;color:var(--lofty-finisher-white)">Eco Green lifted<em>#20707a · white 5.7:1</em></div>
+<div class="pair" style="background:var(--lofty-flint-800);color:#57c3cc;border:1px solid var(--lofty-flint-700)">Eco Green as ink<em>#57c3cc · 7.5:1 — never a fill</em></div>
+<div class="pair" style="background:var(--lofty-flint-800);color:#3fb37f;border:1px solid var(--lofty-flint-700)">Positive #3fb37f<em>5.9:1 as text</em></div>
+<div class="pair" style="background:var(--lofty-flint-800);color:#f0687d;border:1px solid var(--lofty-flint-700)">Negative #f0687d<em>5.2:1 as text</em></div>
+</div></div>
+<div class="m">Elevation on dark is carried by the surface stepping lighter (page → surface → raised) as much as by shadow; shadows go neutral black at 40–70%. Orange hover lightens to #f79a84 rather than darkening. Selected rows use a deep orange tint #4a2e28 with full-strength text. Status fills lift, so their ink flips to Flint 900 — 6.6:1 on positive, 5.8:1 on negative.</div>
+</div>
+<div data-theme="dark" style="background:var(--allgrey-background-color);border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:12px;color:var(--primary-text-color)">
+<div style="background:var(--primary-background-color);border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;justify-content:space-between;align-items:center"><span style="font:var(--font-text2-medium)">JOB-4821 · Northline</span><span style="font:var(--font-text3-medium);color:var(--negative-color)">Overdue</span></div>
+<div style="font:var(--font-text3-normal);color:var(--secondary-text-color)">Resurfacing · due Thursday · 3 crew</div>
+<div style="height:6px;border-radius:var(--border-radius-pill);background:var(--ui-background-color);overflow:hidden"><div style="width:62%;height:100%;background:var(--primary-color)"></div></div>
+<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+<span style="background:var(--primary-color);color:var(--text-color-on-primary);font:var(--font-text2-medium);padding:8px 16px;border-radius:var(--border-radius-small)">Assign crew</span>
+<span style="border:1px solid var(--ui-border-color);color:var(--primary-text-color);font:var(--font-text2-medium);padding:8px 16px;border-radius:var(--border-radius-small)">Later</span>
+<span style="border:1px solid var(--lofty-flint-400);color:var(--primary-text-color);font:var(--font-text3-medium);padding:3px 10px 3px 8px;border-radius:var(--border-radius-pill);display:inline-flex;align-items:center;gap:6px"><i style="width:8px;height:8px;border-radius:50%;background:var(--positive-color)"></i>On site</span>
+</div>
+</div>
+<div style="background:var(--secondary-background-color);border:1px solid var(--ui-border-color);border-radius:var(--border-radius-small);padding:8px 12px;font:var(--font-text2-normal);color:var(--placeholder-color)">Search jobs</div>
+<div style="background:var(--primary-selected-color);border-radius:var(--border-radius-small);padding:8px 12px;font:var(--font-text2-normal);color:var(--primary-text-color)">Selected row · full-strength text on the tint</div>
+</div>
+</div>
+</body></html>
