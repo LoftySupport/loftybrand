@@ -1,0 +1,30 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Layout" subtitle="Box, Flex" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{margin:0;padding:16px;background:var(--primary-background-color);font:var(--font-text2-normal);color:var(--primary-text-color)}</style></head><body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Box, Flex, Text, Avatar, Chips } = window.LoftyDesignSystem_491d68;
+function Demo(){
+  return (
+    <Flex direction="column" gap="medium" align="stretch">
+      <Flex gap="small" wrap>
+        <Chips label="Northline" readOnly /><Chips label="Depot 2" readOnly /><Chips label="Stage 2" readOnly /><Chips label="Resurfacing" readOnly />
+      </Flex>
+      <Flex gap="medium" align="stretch">
+        <Box padding="medium" border rounded="medium" style={{flex:1}}><Text weight="bold" style={{margin:0}}>Bordered</Text><Text color="secondary" style={{margin:0}}>padding medium · rounded medium</Text></Box>
+        <Box padding="medium" shadow="small" rounded="medium" style={{flex:1}}><Text weight="bold" style={{margin:0}}>Elevated</Text><Text color="secondary" style={{margin:0}}>shadow small</Text></Box>
+        <Box padding="medium" backgroundColor="grey" rounded="medium" style={{flex:1}}><Text weight="bold" style={{margin:0}}>Grey</Text><Text color="secondary" style={{margin:0}}>backgroundColor grey</Text></Box>
+      </Flex>
+      <Flex gap="small" justify="spaceBetween">
+        <Flex gap="small"><Avatar text="JD" size="small" /><Text style={{margin:0}}>Jo Dunne</Text></Flex>
+        <Text color="secondary" style={{margin:0}}>justify spaceBetween</Text>
+      </Flex>
+    </Flex>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

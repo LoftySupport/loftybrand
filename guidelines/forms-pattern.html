@@ -1,0 +1,33 @@
+<!-- @dsCard group="Patterns" viewport="700x360" name="Form rules" subtitle="Labels, validation timing, optional markers, error anatomy" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:24px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+.eyebrow{font:var(--font-text3-medium);color:var(--secondary-text-color);text-transform:uppercase;letter-spacing:.08em}
+.note{color:var(--secondary-text-color);max-width:70ch;text-wrap:pretty;margin:4px 0 0}
+.i{display:inline-block;background:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;width:16px;height:16px;vertical-align:-3px}
+code{font:var(--font-text3-normal);background:var(--allgrey-background-color);padding:1px 4px;border-radius:var(--border-radius-2)}
+
+.g{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:16px}
+.f{display:flex;flex-direction:column;gap:2px}
+.lab{font:var(--font-text2-normal);padding:2px 0}
+.in{height:40px;box-sizing:border-box;border:1px solid var(--ui-border-color);border-radius:var(--border-radius-small);background:var(--secondary-background-color);padding:0 12px;display:flex;align-items:center;font:var(--font-text1-normal)}
+.msg{font:var(--font-text3-normal);padding:2px 0;display:flex;gap:4px;align-items:center}
+ul{margin:16px 0 0;padding-left:18px;color:var(--secondary-text-color)}li{margin:2px 0}
+</style></head><body>
+<div class="g">
+<div style="display:flex;flex-direction:column;gap:12px">
+<div class="f"><span class="lab">Job name</span><span class="in">Northline resurfacing</span></div>
+<div class="f"><span class="lab">Purchase order <span style="color:var(--secondary-text-color)">(optional)</span></span><span class="in" style="color:var(--placeholder-color)">e.g. PO-4821</span></div>
+<div class="f"><span class="lab">Work email</span><span class="in" style="border-color:var(--negative-color)">crew@lofty</span><span class="msg" style="color:var(--negative-color)"><span class="i" style="width:12px;height:12px;-webkit-mask-image:url(../assets/icons/Alert.svg);mask-image:url(../assets/icons/Alert.svg)"></span>Enter a valid work email, like name@lofty.com.au</span></div>
+</div>
+<ul>
+<li><b>Label above, always visible.</b> Placeholder is an example, never the label.</li>
+<li><b>Mark optional, not required</b> when most fields are required. <code>optional</code> prop; <code>requiredAsterisk</code> is for the rare inverse.</li>
+<li><b>Validate on blur</b>, then live once a field is in error. Character counters are the exception.</li>
+<li><b>Error anatomy:</b> red border, red 12px message with icon, label stays black. Field gets <code>aria-invalid</code> and <code>aria-describedby</code>; message is <code>role="alert"</code>.</li>
+<li><b>One column.</b> Groups gap 16; label to control 4; controls to helper 2.</li>
+<li><b>Submit names the outcome</b> and keeps its label while loading: Create job → spinner + Create job.</li>
+<li><b>Right keyboard:</b> <code>type="email"</code>, <code>inputMode="decimal"</code> (NumberField), <code>autocomplete</code> on identity fields.</li>
+<li><b>Never clear a form on error.</b> Confirm before dismissing a dialog with unsaved changes.</li>
+</ul>
+</div>
+</body></html>

@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<meta name="design_doc_mode" content="canvas">
+<link rel="stylesheet" href="../../tokens/fonts.css">
+<link rel="stylesheet" href="../../tokens/colors.css">
+<link rel="stylesheet" href="../../tokens/typography.css">
+<link rel="stylesheet" href="../../tokens/spacing.css">
+<link rel="stylesheet" href="../../tokens/radius.css">
+<link rel="stylesheet" href="../../tokens/shadows.css">
+<link rel="stylesheet" href="../../tokens/motion.css">
+<link rel="stylesheet" href="../../tokens/base.css">
+<link rel="stylesheet" href="../../styles.css">
+<script src="../../_ds_bundle.js"></script>
+<style>
+body{margin:0;background:#f4f3ee;font-family:var(--font-family);color:#414042;--primary-color:#c2543c;--primary-hover-color:var(--lofty-orange-hover);--brand-color:#c2543c}
+a{color:#414042;text-decoration:underline;text-underline-offset:2px}
+a:hover{color:#c2543c}
+.dv-turn{padding:40px 44px 32px;border-bottom:1px solid rgba(65,64,66,.1);scroll-margin-top:16px}
+.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 8px}
+.dv-tid{font:600 10px/1 ui-monospace,Menlo,monospace;padding:4px 7px;background:#414042;color:#fff;border-radius:var(--border-radius-small);text-decoration:none}
+.dv-tname{font:600 13px/1.2 var(--font-family);color:#414042}
+.dv-intro{margin:0 0 24px;max-width:78ch;font:400 14px/20px var(--font-family);color:#67666a;text-wrap:pretty}
+.dv-opts{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}
+.dv-opt{flex:none;display:flex;flex-direction:column;gap:10px;scroll-margin-top:16px}
+.dv-oid{font:600 10.5px/1 ui-monospace,Menlo,monospace;padding:4px 7px;background:rgba(65,64,66,.08);color:#414042;border-radius:var(--border-radius-small);text-decoration:none}
+.dv-olabel{display:flex;align-items:baseline;gap:8px;max-width:64ch;font:400 12px/1.5 var(--font-family);color:#67666a}
+.dv-card{background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);box-shadow:0 1px 3px rgba(65,64,66,.06);overflow:hidden}
+.dv-opt:target .dv-oid{background:#c2543c;color:#fff}
+.dv-next{margin:26px 0 0;font:400 12px/1.6 var(--font-family);color:#67666a}
+</style>
+</helmet>
+
+<section class="dv-turn" id="t2">
+  <div class="dv-thd"><a class="dv-tid" href="#t2">2</a><span class="dv-tname">Round two — the job record, denser, on the reference patterns</span></div>
+  <p class="dv-intro">One field system: a 32px row, a 16px icon, a 14px label at 136px, the value inline, and <code>Empty</code> where there is no value rather than a missing row. Six key properties sit above <strong>Show all</strong>; everything process-specific sits in its own block, where a step is a checkbox row that opens into the fields that step owns. <a href="#6a">6a</a> and <a href="#6b">6b</a> are the same record in a panel and on a full page — the only difference is that the page has room to dock the conversation. <a href="#6c">6c</a> is the column picker the same rule implies. The remaining four screens follow this system once you pick one.</p>
+
+  <div class="dv-opts">
+
+    <!-- ============ 6a ============ -->
+    <div class="dv-opt" id="6a">
+      <div class="dv-olabel"><a class="dv-oid" href="#6a">6a</a><span>Panel. 460px, everything reachable without leaving the board. Comments are a tab at the foot, so the record and the conversation trade places rather than compete.</span></div>
+      <div class="dv-card" data-screen-label="6a job panel" style="width:460px;height:860px;display:flex;flex-direction:column">
+        <div style="height:48px;flex:none;display:flex;align-items:center;gap:8px;padding:0 8px 0 16px;border-bottom:1px solid #c6c5ba">
+          <div style="flex:1;min-width:0;display:flex;align-items:center;gap:6px;font:400 12px/16px var(--font-family);color:#67666a"><span>Jobs</span><span style="color:#8a898d">›</span><span>1209</span><span style="color:#8a898d">›</span><span style="color:#414042;font-weight:600">1209-002</span></div>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="Fullscreen" ariaLabel="Open as a full page" size="small" iconBasePath="../../assets/icons"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="MoreActions" ariaLabel="More actions" size="small" iconBasePath="../../assets/icons"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="CloseSmall" ariaLabel="Close" size="small" iconBasePath="../../assets/icons"></x-import>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto;padding:16px">
+          <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;align-items:center;gap:8px;min-height:32px;padding:0 4px;border:1px solid #c6c5ba;border-radius:var(--border-radius-small);background:#f4f3ee">
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Warning" size="{{ 16 }}" basePath="../../assets/icons" color="var(--negative-color)"></x-import>
+            <span style="font:400 14px/20px var(--font-family);color:#67666a">Blocked by</span>
+            <span style="flex:1;font:400 14px/20px var(--font-family);color:#414042">Slab booked — waiting on the site survey</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <h1 style="margin:0;flex:1;min-width:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">24 Wandoo Road, Evanston Park</h1>
+            <span style="display:inline-flex;align-items:center;gap:4px;min-height:28px;padding:0 8px;border:1px solid #c6c5ba;border-radius:var(--border-radius-pill);background:#fff;font:400 12px/16px var(--font-family);color:#67666a;cursor:pointer" style-hover="background:#f4f3ee">2 previous addresses<x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="DropdownChevronDown" size="{{ 16 }}" basePath="../../assets/icons"></x-import></span>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.StatusChip" hint-size="auto,24px" label="Pre-construction" tone="neutral"></x-import>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;padding:0 4px">
+            <div style="display:flex;align-items:center;gap:8px"><span style="flex:1;font:600 14px/20px var(--font-family);color:#414042">Pipeline</span><span style="font:400 12px/16px var(--font-family);color:#67666a">Stage 2 of 5 · 22 days in Pre-construction</span></div>
+            <div style="display:flex;align-items:flex-start;gap:8px"><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px"><div style="height:4px;border-radius:var(--border-radius-pill);background:#f47e63"></div><span style="font:400 12px/16px var(--font-family);color:#67666a;text-wrap:pretty">Acquisition &amp; Development</span></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px"><div style="height:4px;border-radius:var(--border-radius-pill);background:#c2543c"></div><span style="font:600 12px/16px var(--font-family);color:#414042;text-wrap:pretty">Pre-construction</span></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px"><div style="height:4px;border-radius:var(--border-radius-pill);background:#e1e1d9"></div><span style="font:400 12px/16px var(--font-family);color:#67666a;text-wrap:pretty">Construction</span></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px"><div style="height:4px;border-radius:var(--border-radius-pill);background:#e1e1d9"></div><span style="font:400 12px/16px var(--font-family);color:#67666a;text-wrap:pretty">Maintenance</span></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px"><div style="height:4px;border-radius:var(--border-radius-pill);background:#e1e1d9"></div><span style="font:400 12px/16px var(--font-family);color:#67666a;text-wrap:pretty">Complete</span></div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <h2 style="margin:0;font:600 14px/20px var(--font-family);color:#414042;padding:0 4px">Key properties</h2>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px" style-hover="background:rgba(65,64,66,.04)"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Person" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Owner</span></span><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#414042"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="BS" size="small" backgroundColor="#414042"></x-import>Ben Sultana</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px" style-hover="background:rgba(65,64,66,.04)"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Team" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Team</span></span><span style="font:400 14px/20px var(--font-family);color:#414042">Northline</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px" style-hover="background:rgba(65,64,66,.04)"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Person" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Currently With</span></span><span style="font:400 14px/20px var(--font-family);color:#414042"><span>&#x7b;</span><span>&#x7b; user Name &#x7d;</span><span>&#x7d;, </span><span>&#x7b;</span><span>&#x7b; user Team &#x7d;</span><span>&#x7d;</span></span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px" style-hover="background:rgba(65,64,66,.04)"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="DueDate" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Next milestone</span></span><span style="font:400 14px/20px var(--font-family);color:#414042">Orders stage 1 requested · 18/09/2026</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px" style-hover="background:rgba(65,64,66,.04)"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Dollar" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Contract value</span></span><span style="font:400 14px/20px var(--font-family);color:#414042">$412,600</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px" style-hover="background:rgba(65,64,66,.04)"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="DueDate" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Handover date</span></span><span style="font:400 14px/20px var(--font-family);color:#8a898d">Empty</span></div>
+            <div style="display:flex;align-items:center;gap:8px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="MoreBelow" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span style="font:600 14px/20px var(--font-family);color:#c2543c">Show all</span><span style="font:400 12px/16px var(--font-family);color:#8a898d">7 more, empties included</span></div>
+            
+          </div>
+                    <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:baseline;gap:8px;padding:0 4px">
+              <h2 style="margin:0;font:600 14px/20px var(--font-family);color:#414042">Process</h2>
+              <span style="flex:1;font:400 12px/16px var(--font-family);color:#67666a">Residential build · 2 of 9 steps</span>
+              <span style="font:400 12px/16px var(--font-family);color:#8a898d">Each step is a process in the job file. Once complete it is marked off.</span>
+            </div>
+            <div style="height:4px;background:#e1e1d9;border-radius:var(--border-radius-pill);overflow:hidden"><div style="width:22%;height:100%;background:#f47e63"></div></div>
+            <div style="display:flex;flex-direction:column">
+              <div style="display:flex;align-items:center;gap:12px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import>
+              <span style="flex:1;min-width:0;font:400 14px/20px var(--font-family);color:#67666a;text-decoration:line-through;text-decoration-color:#c6c5ba">Selections finalised</span>
+              <span style="font:400 14px/20px var(--font-family);color:#67666a">07/09/2026</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="IW" size="small" backgroundColor="#414042"></x-import>
+              <span style="width:44px;text-align:right;font:400 12px/16px var(--font-family);color:#8a898d">4 of 4</span>
+            </div>
+              <div style="display:flex;align-items:center;gap:12px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import>
+              <span style="flex:1;min-width:0;font:400 14px/20px var(--font-family);color:#67666a;text-decoration:line-through;text-decoration-color:#c6c5ba">Quotes requested</span>
+              <span style="font:400 14px/20px var(--font-family);color:#67666a">13/09/2026</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="BS" size="small" backgroundColor="#414042"></x-import>
+              <span style="width:44px;text-align:right;font:400 12px/16px var(--font-family);color:#8a898d">3 of 3</span>
+            </div>
+              <div style="border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);background:#fff;padding:4px 12px 12px;margin:4px 0;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:center;gap:12px;min-height:32px">
+                  <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import>
+                  <span style="flex:1;min-width:0;font:600 14px/20px var(--font-family);color:#414042">Orders stage 1 requested</span>
+                  <span style="font:600 14px/20px var(--font-family);color:#c2543c">Due 18/09/2026</span>
+                  <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="BS" size="small" backgroundColor="#414042"></x-import>
+                </div>
+                <div style="display:flex;flex-direction:column;padding-left:32px">
+                  <div style="display:grid;grid-template-columns:132px minmax(0,1fr);align-items:center;gap:8px;min-height:32px"><span style="font:400 14px/20px var(--font-family);color:#67666a">Supplier</span><span style="font:400 14px/20px var(--font-family);color:#8a898d">Empty</span></div>
+              <div style="display:grid;grid-template-columns:132px minmax(0,1fr);align-items:center;gap:8px;min-height:32px"><span style="font:400 14px/20px var(--font-family);color:#67666a">Ordered on</span><span style="font:400 14px/20px var(--font-family);color:#8a898d">Empty</span></div>
+              <div style="display:grid;grid-template-columns:132px minmax(0,1fr);align-items:center;gap:8px;min-height:32px"><span style="font:400 14px/20px var(--font-family);color:#67666a">Order value</span><span style="font:400 14px/20px var(--font-family);color:#414042">$18,400</span></div>
+              <div style="display:grid;grid-template-columns:132px minmax(0,1fr);align-items:center;gap:8px;min-height:32px"><span style="font:400 14px/20px var(--font-family);color:#67666a">Approval</span><span style="font:400 14px/20px var(--font-family);color:#414042">Awaiting Ben Sultana</span></div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import>
+              <span style="flex:1;min-width:0;font:400 14px/20px var(--font-family);color:#414042;">Stage 1 orders complete</span>
+              <span style="font:400 14px/20px var(--font-family);color:#67666a">Not set</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="—" size="small" backgroundColor="#414042"></x-import>
+              <span style="width:44px;text-align:right;font:400 12px/16px var(--font-family);color:#8a898d">0 of 3</span>
+            </div>
+              <div style="display:flex;align-items:center;gap:12px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import>
+              <span style="flex:1;min-width:0;font:400 14px/20px var(--font-family);color:#414042;">Orders stage 2 requested</span>
+              <span style="font:400 14px/20px var(--font-family);color:#67666a">Not set</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="—" size="small" backgroundColor="#414042"></x-import>
+              <span style="width:44px;text-align:right;font:400 12px/16px var(--font-family);color:#8a898d">0 of 4</span>
+            </div>
+              <div style="display:flex;align-items:center;gap:8px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="MoreBelow" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span style="font:600 14px/20px var(--font-family);color:#c2543c">Show all 9 steps</span></div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:8px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="DropdownChevronRight" size="{{ 16 }}" basePath="../../assets/icons"></x-import><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Item" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span style="flex:1;font:600 14px/20px var(--font-family);color:#414042">Properties</span><span style="font:400 12px/16px var(--font-family);color:#8a898d">24 properties</span></div>
+                        <div style="display:flex;align-items:center;gap:8px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="DropdownChevronRight" size="{{ 16 }}" basePath="../../assets/icons"></x-import><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Dependency" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span style="flex:1;font:600 14px/20px var(--font-family);color:#414042">Contacts &amp; Companies</span><span style="font:400 12px/16px var(--font-family);color:#8a898d">6 linked</span></div>
+                      </div>
+        </div>
+        </div>
+        <div style="flex:none;border-top:1px solid #c6c5ba;background:#f4f3ee;padding:8px 12px 12px">
+          <div style="display:flex;gap:16px;border-bottom:1px solid #e1e1d9;padding:0 4px">
+              <span style="display:inline-flex;align-items:center;gap:6px;height:32px;font:400 14px/20px var(--font-family);color:#67666a;box-shadow:none;cursor:pointer">Tasks<span style="font:400 12px/16px var(--font-family);color:#67666a">5</span></span>
+              <span style="display:inline-flex;align-items:center;height:32px;font:600 14px/20px var(--font-family);color:#414042;box-shadow:inset 0 -3px 0 #f47e63">Comments</span>
+              <span style="display:inline-flex;align-items:center;height:32px;font:400 14px/20px var(--font-family);color:#67666a;box-shadow:none">Activity Log</span>
+              <span style="flex:1"></span>
+              <span style="display:inline-flex;align-items:center;height:32px;font:400 12px/16px var(--font-family);color:#67666a">Oldest</span>
+            </div>
+          <div style="padding-top:12px">
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;gap:8px">
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="IW" size="small" backgroundColor="#414042"></x-import>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+                  <div style="display:flex;gap:8px;align-items:baseline"><span style="font:600 14px/20px var(--font-family)">Isla Ward</span><span style="font:400 12px/16px var(--font-family);color:#67666a">Today 09:14</span></div>
+                  <span style="font:400 14px/20px var(--font-family);color:#414042">Supplier confirmed the truss lead time is four weeks, so stage 1 has to go in this week.</span>
+                </div>
+              </div>
+              <div style="display:flex;gap:8px">
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="BS" size="small" backgroundColor="#414042"></x-import>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+                  <div style="display:flex;gap:8px;align-items:baseline"><span style="font:600 14px/20px var(--font-family)">Ben Sultana</span><span style="font:400 12px/16px var(--font-family);color:#67666a">Yesterday 16:40</span></div>
+                  <span style="font:400 14px/20px var(--font-family);color:#414042">Quotes are in. Waiting on the survey before I release the order.</span>
+                </div>
+              </div>
+              <div style="display:flex;gap:8px;align-items:center">
+                <span style="width:24px;display:flex;justify-content:center"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Activity" size="{{ 16 }}" basePath="../../assets/icons"></x-import></span>
+                <span style="font:400 12px/16px var(--font-family);color:#67666a">Ben Sultana moved this job to Pre-construction · 16/08/2026</span>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;min-height:40px;padding:4px 4px 0">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="AB" size="small" backgroundColor="#c2543c"></x-import>
+              <span style="flex:1;display:flex;align-items:center;height:32px;padding:0 8px;border:1px solid #8a898d;border-radius:var(--border-radius-small);font:400 14px/20px var(--font-family);color:#8a898d">Add a comment</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" size="small" kind="secondary">Comment</x-import>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 6b ============ -->
+    <div class="dv-opt" id="6b">
+      <div class="dv-olabel"><a class="dv-oid" href="#6b">6b</a><span>Full page. Same rows, same order, nothing new — the tail fields are already open because there is room, and the conversation gets a column instead of a tab.</span></div>
+      <div class="dv-card" data-screen-label="6b job page" style="width:1180px;height:860px;display:flex;flex-direction:column">
+        <div style="height:48px;flex:none;display:flex;align-items:center;gap:8px;padding:0 12px 0 24px;border-bottom:1px solid #c6c5ba">
+          <div style="flex:1;min-width:0;display:flex;align-items:center;gap:6px;font:400 12px/16px var(--font-family);color:#67666a"><span>Jobs</span><span style="color:#8a898d">›</span><span style="color: #414042; font-weight: 600; text-decoration-line: underline">1209-002</span></div>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="tertiary" size="small">Open job folder</x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="CollapseHorizontally" ariaLabel="Back to the panel" size="small" iconBasePath="../../assets/icons"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="MoreActions" ariaLabel="More actions" size="small" iconBasePath="../../assets/icons"></x-import>
+        </div>
+        <div style="flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) 400px">
+          <div style="min-width:0;overflow:auto;padding:24px 32px;background:#fff">
+            <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;align-items:center;gap:8px;min-height:32px;padding:0 4px;border:1px solid #c6c5ba;border-radius:var(--border-radius-small);background:#f4f3ee">
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Warning" size="{{ 16 }}" basePath="../../assets/icons" color="var(--negative-color)"></x-import>
+            <span style="font:400 14px/20px var(--font-family);color:#67666a">Blocked by</span>
+            <span style="flex:1;font:400 14px/20px var(--font-family);color:#414042">Slab booked — waiting on the site survey</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <h1 style="margin:0;flex:1;min-width:0;font:600 24px/30px var(--title-font-family);letter-spacing:-0.1px">24 Wandoo Road, Evanston Park</h1>
+            <span style="display:inline-flex;align-items:center;gap:4px;min-height:28px;padding:0 8px;border:1px solid #c6c5ba;border-radius:var(--border-radius-pill);background:#fff;font:400 12px/16px var(--font-family);color:#67666a;cursor:pointer" style-hover="background:#f4f3ee">2 previous addresses<x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="DropdownChevronDown" size="{{ 16 }}" basePath="../../assets/icons"></x-import></span>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.StatusChip" hint-size="auto,24px" label="Pre-construction" tone="neutral"></x-import>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:6px;padding:4px 4px 0">
+            <div style="display:flex;align-items:center;gap:8px"><span style="flex:1;font:600 14px/20px var(--font-family);color:#414042">Pipeline</span><span style="font:400 12px/16px var(--font-family);color:#67666a">Stage 2 of 5 · 22 days in Pre-construction</span></div>
+            <div style="display:flex;align-items:flex-start;gap:8px"><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px"><div style="height:4px;border-radius:var(--border-radius-pill);background:#f47e63"></div><span style="font:400 12px/16px var(--font-family);color:#67666a;text-wrap:pretty">Acquisition &amp; Development</span></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px"><div style="height:4px;border-radius:var(--border-radius-pill);background:#c2543c"></div><span style="font:600 12px/16px var(--font-family);color:#414042;text-wrap:pretty">Pre-construction</span></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px"><div style="height:4px;border-radius:var(--border-radius-pill);background:#e1e1d9"></div><span style="font:400 12px/16px var(--font-family);color:#67666a;text-wrap:pretty">Construction</span></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px"><div style="height:4px;border-radius:var(--border-radius-pill);background:#e1e1d9"></div><span style="font:400 12px/16px var(--font-family);color:#67666a;text-wrap:pretty">Maintenance</span></div><div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:6px"><div style="height:4px;border-radius:var(--border-radius-pill);background:#e1e1d9"></div><span style="font:400 12px/16px var(--font-family);color:#67666a;text-wrap:pretty">Complete</span></div></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <h2 style="margin:0;font:600 14px/20px var(--font-family);color:#414042;padding:0 4px">Key properties</h2>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Person" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Owner</span></span><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#414042"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="BS" size="small" backgroundColor="#414042"></x-import>Ben Sultana</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Team" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Team</span></span><span style="font:400 14px/20px var(--font-family);color:#414042">Northline</span></div>
+            
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Person" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Currently With</span></span><span style="font:400 14px/20px var(--font-family);color:#414042"><span>&#x7b;</span><span>&#x7b; user Name &#x7d;</span><span>&#x7d;, </span><span>&#x7b;</span><span>&#x7b; user Team &#x7d;</span><span>&#x7d;</span></span></div>
+            
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="DueDate" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Next milestone</span></span><span style="font:400 14px/20px var(--font-family);color:#414042">Orders stage 1 requested · 18/09/2026</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Dollar" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Contract value</span></span><span style="font:400 14px/20px var(--font-family);color:#414042">$412,600</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="DueDate" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Handover date</span></span><span style="font:400 14px/20px var(--font-family);color:#8a898d">Empty</span></div>
+            <div style="display:flex;align-items:center;gap:8px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="DropdownChevronUp" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span style="font:600 14px/20px var(--font-family);color:#c2543c">Show less</span><span style="font:400 12px/16px var(--font-family);color:#8a898d">7 shown, empties included</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Board" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Division</span></span><span style="font:400 14px/20px var(--font-family);color:#414042">Residential</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Company" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Client type</span></span><span style="font:400 14px/20px var(--font-family);color:#414042">Lofty</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="HardHat" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Site manager</span></span><span style="font:400 14px/20px var(--font-family);color:#8a898d">Empty</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Contacts" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Sales consultant</span></span><span style="font:400 14px/20px var(--font-family);color:#414042">Han Le</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Doc" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>OTR — community title</span></span><span style="font:400 14px/20px var(--font-family);color:#8a898d">Empty</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Calendar" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Actual release date</span></span><span style="font:400 14px/20px var(--font-family);color:#8a898d">Empty</span></div>
+            <div style="display:grid;grid-template-columns:136px minmax(0,1fr);align-items:center;gap:8px;min-height:32px;padding:0 4px"><span style="display:flex;align-items:center;gap:8px;font:400 14px/20px var(--font-family);color:#67666a"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Item" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span>Old job number</span></span><span style="font:400 14px/20px var(--font-family);color:#414042">J-2091</span></div>
+          </div>
+                    <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:baseline;gap:8px;padding:0 4px">
+              <h2 style="margin:0;font:600 14px/20px var(--font-family);color:#414042">Process</h2>
+              <span style="flex:1;font:400 12px/16px var(--font-family);color:#67666a">Residential build · 2 of 9 steps</span>
+              <span style="font:400 12px/16px var(--font-family);color:#8a898d">Each step is a process in the job file. Once complete it is marked off.</span>
+            </div>
+            <div style="height:4px;background:#e1e1d9;border-radius:var(--border-radius-pill);overflow:hidden"><div style="width:22%;height:100%;background:#f47e63"></div></div>
+            <div style="display:flex;flex-direction:column">
+              <div style="display:flex;align-items:center;gap:12px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import>
+              <span style="flex:1;min-width:0;font:400 14px/20px var(--font-family);color:#67666a;text-decoration:line-through;text-decoration-color:#c6c5ba">Selections finalised</span>
+              <span style="font:400 14px/20px var(--font-family);color:#67666a">07/09/2026</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="IW" size="small" backgroundColor="#414042"></x-import>
+              <span style="width:44px;text-align:right;font:400 12px/16px var(--font-family);color:#8a898d">4 of 4</span>
+            </div>
+              <div style="display:flex;align-items:center;gap:12px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import>
+              <span style="flex:1;min-width:0;font:400 14px/20px var(--font-family);color:#67666a;text-decoration:line-through;text-decoration-color:#c6c5ba">Quotes requested</span>
+              <span style="font:400 14px/20px var(--font-family);color:#67666a">13/09/2026</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="BS" size="small" backgroundColor="#414042"></x-import>
+              <span style="width:44px;text-align:right;font:400 12px/16px var(--font-family);color:#8a898d">3 of 3</span>
+            </div>
+              <div style="border-top:1px solid #e1e1d9;background:#fdf6f0;border-left:3px solid #f47e63;padding:4px 4px 12px 9px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:center;gap:12px;min-height:32px">
+                  <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import>
+                  <span style="flex:1;min-width:0;font:600 14px/20px var(--font-family);color:#414042">Orders stage 1 requested</span>
+                  <span style="font:600 14px/20px var(--font-family);color:#c2543c">Due 18/09/2026</span>
+                  <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="BS" size="small" backgroundColor="#414042"></x-import>
+                </div>
+                <div style="display:flex;flex-direction:column;padding-left:32px">
+                  <div style="display:grid;grid-template-columns:132px minmax(0,1fr);align-items:center;gap:8px;min-height:32px"><span style="font:400 14px/20px var(--font-family);color:#67666a">Supplier</span><span style="font:400 14px/20px var(--font-family);color:#8a898d">Empty</span></div>
+              <div style="display:grid;grid-template-columns:132px minmax(0,1fr);align-items:center;gap:8px;min-height:32px"><span style="font:400 14px/20px var(--font-family);color:#67666a">Ordered on</span><span style="font:400 14px/20px var(--font-family);color:#8a898d">Empty</span></div>
+              <div style="display:grid;grid-template-columns:132px minmax(0,1fr);align-items:center;gap:8px;min-height:32px"><span style="font:400 14px/20px var(--font-family);color:#67666a">Order value</span><span style="font:400 14px/20px var(--font-family);color:#414042">$18,400</span></div>
+              <div style="display:grid;grid-template-columns:132px minmax(0,1fr);align-items:center;gap:8px;min-height:32px"><span style="font:400 14px/20px var(--font-family);color:#67666a">Approval</span><span style="font:400 14px/20px var(--font-family);color:#414042">Awaiting Ben Sultana</span></div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:center;gap:12px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import>
+              <span style="flex:1;min-width:0;font:400 14px/20px var(--font-family);color:#414042;">Stage 1 orders complete</span>
+              <span style="font:400 14px/20px var(--font-family);color:#67666a">Not set</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="—" size="small" backgroundColor="#414042"></x-import>
+              <span style="width:44px;text-align:right;font:400 12px/16px var(--font-family);color:#8a898d">0 of 3</span>
+            </div>
+              <div style="display:flex;align-items:center;gap:12px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import>
+              <span style="flex:1;min-width:0;font:400 14px/20px var(--font-family);color:#414042;">Orders stage 2 requested</span>
+              <span style="font:400 14px/20px var(--font-family);color:#67666a">Not set</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="—" size="small" backgroundColor="#414042"></x-import>
+              <span style="width:44px;text-align:right;font:400 12px/16px var(--font-family);color:#8a898d">0 of 4</span>
+            </div>
+              <div style="display:flex;align-items:center;gap:8px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="DropdownChevronUp" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span style="font:600 14px/20px var(--font-family);color:#c2543c">Show all 9 steps</span></div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column">
+            <div style="display:flex;align-items:center;gap:8px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="DropdownChevronRight" size="{{ 16 }}" basePath="../../assets/icons"></x-import><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Item" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span style="flex:1;font:600 14px/20px var(--font-family);color:#414042">Properties</span><span style="font:400 12px/16px var(--font-family);color:#8a898d">24 properties</span></div>
+                        <div style="display:flex;align-items:center;gap:8px;min-height:32px;padding:0 4px;border-top:1px solid #e1e1d9"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="DropdownChevronRight" size="{{ 16 }}" basePath="../../assets/icons"></x-import><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Dependency" size="{{ 16 }}" basePath="../../assets/icons"></x-import><span style="flex:1;font:600 14px/20px var(--font-family);color:#414042">Contacts &amp; Companies</span><span style="font:400 12px/16px var(--font-family);color:#8a898d">6 linked</span></div>
+                      </div>
+        </div>
+          </div>
+          <div style="min-width:0;display:flex;flex-direction:column;border-left:1px solid #c6c5ba;background:#f4f3ee">
+            <div style="flex:none;padding:12px 16px 0">
+              <div style="display:flex;gap:16px;border-bottom:1px solid #e1e1d9;padding:0 4px">
+              <span style="display:inline-flex;align-items:center;gap:6px;height:32px;font:400 14px/20px var(--font-family);color:#67666a;box-shadow:none;cursor:pointer">Tasks<span style="font:400 12px/16px var(--font-family);color:#67666a">5</span></span>
+              <span style="display:inline-flex;align-items:center;height:32px;font:600 14px/20px var(--font-family);color:#414042;box-shadow:inset 0 -3px 0 #f47e63">Comments</span>
+              <span style="display:inline-flex;align-items:center;height:32px;font:400 14px/20px var(--font-family);color:#67666a;box-shadow:none">Activity Log</span>
+              <span style="flex:1"></span>
+              <span style="display:inline-flex;align-items:center;height:32px;font:400 12px/16px var(--font-family);color:#67666a">Oldest</span>
+            </div>
+            </div>
+            <div style="flex:1;min-height:0;overflow:auto;padding:16px">
+              <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;gap:8px">
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="IW" size="small" backgroundColor="#414042"></x-import>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+                  <div style="display:flex;gap:8px;align-items:baseline"><span style="font:600 14px/20px var(--font-family)">Isla Ward</span><span style="font:400 12px/16px var(--font-family);color:#67666a">Today 09:14</span></div>
+                  <span style="font:400 14px/20px var(--font-family);color:#414042">Supplier confirmed the truss lead time is four weeks, so stage 1 has to go in this week.</span>
+                </div>
+              </div>
+              <div style="display:flex;gap:8px">
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="BS" size="small" backgroundColor="#414042"></x-import>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:2px">
+                  <div style="display:flex;gap:8px;align-items:baseline"><span style="font:600 14px/20px var(--font-family)">Ben Sultana</span><span style="font:400 12px/16px var(--font-family);color:#67666a">Yesterday 16:40</span></div>
+                  <span style="font:400 14px/20px var(--font-family);color:#414042">Quotes are in. Waiting on the survey before I release the order.</span>
+                </div>
+              </div>
+              <div style="display:flex;gap:8px;align-items:center">
+                <span style="width:24px;display:flex;justify-content:center"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Icon" hint-size="16px,16px" name="Activity" size="{{ 16 }}" basePath="../../assets/icons"></x-import></span>
+                <span style="font:400 12px/16px var(--font-family);color:#67666a">Ben Sultana moved this job to Pre-construction · 16/08/2026</span>
+              </div>
+            </div>
+            </div>
+            <div style="flex:none;padding:8px 16px 16px;border-top:1px solid #c6c5ba">
+              <div style="display:flex;align-items:center;gap:8px;min-height:40px;padding:4px 4px 0">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="24px,24px" text="AB" size="small" backgroundColor="#c2543c"></x-import>
+              <span style="flex:1;display:flex;align-items:center;height:32px;padding:0 8px;border:1px solid #8a898d;border-radius:var(--border-radius-small);font:400 14px/20px var(--font-family);color:#8a898d">Add a comment</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" size="small" kind="secondary">Comment</x-import>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 6c ============ -->
+    <div class="dv-opt" id="6c">
+      <div class="dv-olabel"><a class="dv-oid" href="#6c">6c</a><span>The column picker the field rule implies. The toggle is the same decision as <code>Empty</code> in the record — on a board you hide empty columns, in a record you show them, because a record is a form and a board is a comparison.</span></div>
+      <div class="dv-card" data-screen-label="6c column picker" style="width:380px;height:700px;display:flex;flex-direction:column">
+        <div style="height:48px;flex:none;display:flex;align-items:center;gap:8px;padding:0 8px 0 16px;border-bottom:1px solid #c6c5ba">
+          <span style="flex:1;font:600 14px/20px var(--font-family)">Columns</span>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="CloseSmall" ariaLabel="Close" size="small" iconBasePath="../../assets/icons"></x-import>
+        </div>
+        <div style="flex:none;padding:12px 16px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid #e1e1d9">
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Search" hint-size="100%,32px" size="small" placeholder="Find a column" iconBasePath="../../assets/icons"></x-import>
+          <label style="display:flex;align-items:center;gap:12px;min-height:32px;cursor:pointer">
+            <span style="flex:1;font:400 14px/20px var(--font-family);color:#414042">Show only columns with values</span>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Toggle" hint-size="41px,24px" checked="{{ true }}" ariaLabel="Show only columns with values"></x-import>
+          </label>
+          <span style="font:400 12px/16px var(--font-family);color:#67666a">17 of 41 columns have a value on this board.</span>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto;padding:8px 16px 16px">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="display:flex;align-items:center;min-height:32px;font:600 12px/16px var(--font-family);color:#67666a">Identity</div>
+            <label style="display:flex;align-items:center;gap:12px;min-height:32px;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import><span style="flex:1;font:400 14px/20px var(--font-family)">Job number</span><span style="font:400 12px/16px var(--font-family);color:#8a898d">Locked</span></label>
+            <label style="display:flex;align-items:center;gap:12px;min-height:32px;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import><span style="flex:1;font:400 14px/20px var(--font-family)">Site address</span></label>
+            <label style="display:flex;align-items:center;gap:12px;min-height:32px;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import><span style="flex:1;font:400 14px/20px var(--font-family)">Suburb</span></label>
+            <label style="display:flex;align-items:center;gap:12px;min-height:32px;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import><span style="flex:1;font:400 14px/20px var(--font-family);color:#67666a">Old job number</span><span style="font:400 12px/16px var(--font-family);color:#8a898d">Empty</span></label>
+            <div style="display:flex;align-items:center;min-height:32px;font:600 12px/16px var(--font-family);color:#67666a;padding-top:8px">Programme</div>
+            <label style="display:flex;align-items:center;gap:12px;min-height:32px;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import><span style="flex:1;font:400 14px/20px var(--font-family)">Stage</span></label>
+            <label style="display:flex;align-items:center;gap:12px;min-height:32px;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import><span style="flex:1;font:400 14px/20px var(--font-family)">Next milestone</span></label>
+            <label style="display:flex;align-items:center;gap:12px;min-height:32px;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import><span style="flex:1;font:400 14px/20px var(--font-family)">Days in stage</span></label>
+            <label style="display:flex;align-items:center;gap:12px;min-height:32px;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import><span style="flex:1;font:400 14px/20px var(--font-family);color:#67666a">Adjusted forecast date</span><span style="font:400 12px/16px var(--font-family);color:#8a898d">Empty</span></label>
+            <div style="display:flex;align-items:center;min-height:32px;font:600 12px/16px var(--font-family);color:#67666a;padding-top:8px">People</div>
+            <label style="display:flex;align-items:center;gap:12px;min-height:32px;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import><span style="flex:1;font:400 14px/20px var(--font-family)">Owner</span></label>
+            <label style="display:flex;align-items:center;gap:12px;min-height:32px;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import><span style="flex:1;font:400 14px/20px var(--font-family)">Sales consultant</span></label>
+            <label style="display:flex;align-items:center;gap:12px;min-height:32px;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import><span style="flex:1;font:400 14px/20px var(--font-family);color:#67666a">Site manager</span><span style="font:400 12px/16px var(--font-family);color:#8a898d">Empty</span></label>
+          </div>
+        </div>
+        <div style="flex:none;display:flex;align-items:center;gap:8px;padding:12px 16px;border-top:1px solid #c6c5ba;background:#f4f3ee">
+          <span style="flex:1;font:400 12px/16px var(--font-family);color:#67666a">Saved to this view only</span>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="tertiary" size="small">Reset</x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" size="small">Apply</x-import>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <p class="dv-next">Next, once you pick: the same 32px field system and disclosure rule across the board, Gantt, reports and Settings → Processes, plus the shell pass.</p>
+</section>
+
+<section class="dv-turn" id="t1">
+  <div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Round one — five screens, built on the pattern register</span></div>
+  <p class="dv-intro">Every board below uses the same shell, the same 48px rows, the same filter row and the same orange split: <code>#c2543c</code> where orange carries text or meaning, <code>#f47e63</code> for fills and the 3px active underline. Findings and measured numbers are in the <a href="Design%20Check.dc.html">design check</a>. Neutrals are the design system's Flint family (Flint 100 page, 200 rules and tracks, 300 borders), and every chart is single-accent — the orange ladder plus neutrals, no Eco Green in the same view. Phase colour on the board is a decorative 4px strip only — the stage name in Foundation Black is what carries it, because no seven-step tint ramp in one hue can clear 3:1 across its whole range.</p>
+
+  <div class="dv-opts">
+
+    <!-- ============ 1a ============ -->
+    <div class="dv-opt" id="1a">
+      <div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a><span>Job drawer, answer-first. Sections and actions are <code>JobDrawer.tsx</code>’s (Numbers &amp; addresses, Who it’s with, Folders, Phase &amp; stage, Processes, Documents; docked is one scroll, tabs only when expanded). What changes: the four facts a PM needs are lifted above the fold, Ask is a header button rather than a bordered panel, and dates are dd/mm/yyyy.</span></div>
+      <div class="dv-card" style="width:460px;height:820px;display:flex;flex-direction:column">
+        <div style="height:52px;flex:none;display:flex;align-items:center;gap:8px;padding:0 12px 0 16px;border-bottom:1px solid #c6c5ba;background:#fff">
+          <div style="flex:1;min-width:0;display:flex;align-items:center;gap:6px;font:400 12px/16px var(--font-family);color:#67666a">
+            <span>Jobs</span><span style="color:#8a898d">›</span><span>Project 1209</span><span style="color:#8a898d">›</span><span style="color:#414042;font-weight:600">1209-02</span>
+          </div>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="tertiary" size="small">Ask about this job</x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="Fullscreen" ariaLabel="Expand to full screen" size="small" iconBasePath="../../assets/icons"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="CloseSmall" ariaLabel="Close" size="small" iconBasePath="../../assets/icons"></x-import>
+        </div>
+
+        <div style="flex:1;min-height:0;overflow:hidden;display:flex;flex-direction:column">
+          <div style="padding:20px 20px 16px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid #c6c5ba">
+            <h1 style="margin:0;font:600 24px/30px var(--title-font-family);letter-spacing:-0.1px">24 Wandoo Road, Evanston Park</h1>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;font:400 14px/20px var(--font-family);color:#67666a">
+              <span>Evanston Park build programme</span><span style="color:#c6c5ba">·</span><span>Residential</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;padding-top:4px">
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <span style="font:400 12px/16px var(--font-family);color:#67666a">Stage</span>
+                <span style="font:600 16px/24px var(--font-family)">Pre-construction</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <span style="font:400 12px/16px var(--font-family);color:#67666a">Owner</span>
+                <span style="font:600 16px/24px var(--font-family)">Renee Cho</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <span style="font:400 12px/16px var(--font-family);color:#67666a">Team</span>
+                <span style="font:600 16px/24px var(--font-family)">Estimating</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:4px">
+                <span style="font:400 12px/16px var(--font-family);color:#67666a">Next due</span>
+                <span style="font:600 16px/24px var(--font-family)">18/09/2026 — orders</span>
+              </div>
+            </div>
+            <div style="display:flex;gap:8px;padding-top:4px">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px">Open job folder</x-import>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px" kind="secondary">Request changes</x-import>
+            </div>
+          </div>
+
+
+          <div style="flex:1;min-height:0;overflow:auto;padding:20px;display:flex;flex-direction:column;gap:24px">
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                <h2 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Processes — Pre-construction</h2>
+                <span style="font:400 14px/20px var(--font-family);color:#67666a">2 of 9 milestones</span>
+              </div>
+              <div style="height:4px;background:#e1e1d9;border-radius:var(--border-radius-pill);overflow:hidden"><div style="width:22%;height:100%;background:#f47e63"></div></div>
+              <div style="display:flex;flex-direction:column">
+                <label style="display:flex;align-items:center;gap:12px;min-height:48px;padding:0 4px;border-bottom:1px solid #e1e1d9;cursor:pointer">
+                  <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import>
+                  <span style="flex:1;font:400 16px/24px var(--font-family)">Selections finalised</span>
+                  <span style="font:400 14px/20px var(--font-family);color:#67666a">07/09/2026</span>
+                </label>
+                <label style="display:flex;align-items:center;gap:12px;min-height:48px;padding:0 4px;border-bottom:1px solid #e1e1d9;cursor:pointer">
+                  <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import>
+                  <span style="flex:1;font:400 16px/24px var(--font-family)">Quotes requested</span>
+                  <span style="font:400 14px/20px var(--font-family);color:#67666a">13/09/2026</span>
+                </label>
+                <label style="display:flex;align-items:center;gap:12px;min-height:48px;padding:0 4px;border-bottom:1px solid #e1e1d9;cursor:pointer">
+                  <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import>
+                  <span style="flex:1;font:400 16px/24px var(--font-family)">Orders stage 1 requested</span>
+                  <span style="font:400 14px/20px var(--font-family);color:#c2543c;font-weight:600">Due 18/09/2026</span>
+                </label>
+                <label style="display:flex;align-items:center;gap:12px;min-height:48px;padding:0 4px;border-bottom:1px solid #e1e1d9;cursor:pointer">
+                  <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import>
+                  <span style="flex:1;font:400 16px/24px var(--font-family)">Stage 1 orders complete</span>
+                  <span style="font:400 14px/20px var(--font-family);color:#8a898d">Not set</span>
+                </label>
+                <label style="display:flex;align-items:center;gap:12px;min-height:48px;padding:0 4px;cursor:pointer">
+                  <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import>
+                  <span style="flex:1;font:400 16px/24px var(--font-family)">Orders stage 2 requested</span>
+                  <span style="font:400 14px/20px var(--font-family);color:#8a898d">Not set</span>
+                </label>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <h2 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Updates &amp; comments</h2>
+              <div style="display:flex;gap:12px">
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="32px,32px" text="IW" size="small" backgroundColor="var(--lofty-eco-green)"></x-import>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;gap:4px">
+                  <div style="display:flex;gap:8px;align-items:baseline"><span style="font:600 14px/20px var(--font-family)">Isla Ward</span><span style="font:400 12px/16px var(--font-family);color:#67666a">04/09/2026</span></div>
+                  <p style="margin:0;font:400 16px/24px var(--font-family)">Draft schedule and trade packs started. Waiting on the revised floor plan before the frame order goes out.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <h2 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Numbers &amp; addresses</h2>
+              <div style="display:flex;flex-direction:column">
+                <div style="display:flex;align-items:center;gap:12px;min-height:48px;border-bottom:1px solid #e1e1d9"><span style="width:40%;font:400 14px/20px var(--font-family);color:#67666a">Lofty number</span><span style="font:400 16px/24px var(--font-family)">12417</span></div>
+                <div style="display:flex;align-items:center;gap:12px;min-height:48px;border-bottom:1px solid #e1e1d9"><span style="width:40%;font:400 14px/20px var(--font-family);color:#67666a">Title type</span><span style="font:400 16px/24px var(--font-family)">Torrens</span></div>
+                <div style="display:flex;align-items:center;gap:12px;min-height:48px;border-bottom:1px solid #e1e1d9"><span style="width:40%;font:400 14px/20px var(--font-family);color:#67666a">Council</span><span style="font:400 16px/24px var(--font-family)">Town of Gawler</span></div>
+                <div style="display:flex;align-items:center;gap:12px;min-height:48px;border-bottom:1px solid #e1e1d9"><span style="width:40%;font:400 14px/20px var(--font-family);color:#67666a">Land size</span><span style="font:400 16px/24px var(--font-family)">462 m²</span></div>
+                <div style="display:flex;align-items:center;gap:12px;min-height:48px"><span style="width:40%;font:400 14px/20px var(--font-family);color:#67666a">Slab booked</span><span style="font:400 15px/24px ui-monospace,Menlo,monospace;color:#8a898d">{{ tokSlab }}</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 1b ============ -->
+    <div class="dv-opt" id="1b">
+      <div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a><span>Same drawer, editable-in-place. Every value is a control at rest — Dropdown for stage, owner and team, DatePicker for dates — saving on blur with a toast. No edit mode, no second Save.</span></div>
+      <div class="dv-card" style="width:460px;height:820px;display:flex;flex-direction:column">
+        <div style="height:52px;flex:none;display:flex;align-items:center;gap:8px;padding:0 12px 0 16px;border-bottom:1px solid #c6c5ba">
+          <div style="flex:1;min-width:0;display:flex;align-items:center;gap:6px;font:400 12px/16px var(--font-family);color:#67666a"><span>Jobs</span><span style="color:#8a898d">›</span><span>Project 1209</span><span style="color:#8a898d">›</span><span style="color:#414042;font-weight:600">1209-02</span></div>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="tertiary" size="small">Ask about this job</x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="Fullscreen" ariaLabel="Expand to full screen" size="small" iconBasePath="../../assets/icons"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="CloseSmall" ariaLabel="Close" size="small" iconBasePath="../../assets/icons"></x-import>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto;padding:20px;display:flex;flex-direction:column;gap:20px">
+          <h1 style="margin:0;font:600 24px/30px var(--title-font-family);letter-spacing:-0.1px">24 Wandoo Road, Evanston Park</h1>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.AttentionBox" iconBasePath="../../assets/icons" hint-size="100%,auto" type="warning" title="Two teams are editing this job">Renee Cho (Estimating) and Han Le (Design) both have it open.</x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,64px" label="Build lifecycle stage" options="{{ stages }}" value="{{ stageValue }}" onChange="{{ noop }}"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,64px" label="Team" options="{{ teams }}" value="{{ teamValue }}" onChange="{{ noop }}"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,64px" label="Owner" options="{{ people }}" value="{{ ownerValue }}" onChange="{{ noop }}"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.TextField" iconBasePath="../../assets/icons" hint-size="100%,64px" label="Next milestone due" value="18/09/2026" placeholder="dd/mm/yyyy" onChange="{{ noop }}"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.TextField" iconBasePath="../../assets/icons" hint-size="100%,64px" label="Site address" value="24 Wandoo Road, Evanston Park" onChange="{{ noop }}"></x-import>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <span style="font:400 14px/20px var(--font-family);color:#67666a">Slab booked</span>
+            <div style="min-height:40px;display:flex;align-items:center;padding:0 12px;border:1px dashed #c6c5ba;border-radius:var(--border-radius-small);font:400 15px/24px ui-monospace,Menlo,monospace;color:#8a898d">{{ tokSlab }}</div>
+            <span style="font:400 12px/16px var(--font-family);color:#67666a">This field has no column yet. It stays a token rather than showing a blank you could mistake for an answer.</span>
+          </div>
+        </div>
+        <div style="flex:none;display:flex;align-items:center;gap:12px;padding:12px 20px;border-top:1px solid #c6c5ba;background:#f4f3ee">
+          <span style="flex:1;font:400 14px/20px var(--font-family);color:#00854d;font-weight:600">Saved 2 minutes ago</span>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px" kind="secondary">Open job folder</x-import>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 1c ============ -->
+    <div class="dv-opt" id="1c">
+      <div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a><span><a href="#1a">1a</a> at 390px — the drawer at panel width is the phone layout. 48px rows, the whole row is the checkbox target, actions in the thumb zone.</span></div>
+      <div class="dv-card" style="width:390px;height:844px;display:flex;flex-direction:column">
+        <div style="height:52px;flex:none;display:flex;align-items:center;gap:4px;padding:0 8px 0 12px;border-bottom:1px solid #c6c5ba">
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="40px,40px" icon="NavigationChevronLeft" ariaLabel="Back to the board" iconBasePath="../../assets/icons"></x-import>
+          <span style="flex:1;font:600 14px/20px var(--font-family)">1209-02</span>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="40px,40px" icon="MoreActions" ariaLabel="More actions" iconBasePath="../../assets/icons"></x-import>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto;padding:16px;display:flex;flex-direction:column;gap:20px">
+          <h1 style="margin:0;font:600 24px/30px var(--title-font-family);letter-spacing:-0.1px">24 Wandoo Road, Evanston Park</h1>
+          <div style="display:flex;flex-direction:column;gap:0;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);overflow:hidden">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:0 16px;border-bottom:1px solid #c6c5ba"><span style="font:400 14px/20px var(--font-family);color:#67666a">Stage</span><span style="font:600 16px/24px var(--font-family)">Pre-construction</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:0 16px;border-bottom:1px solid #c6c5ba"><span style="font:400 14px/20px var(--font-family);color:#67666a">Owner</span><span style="font:600 16px/24px var(--font-family)">Renee Cho</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:0 16px;border-bottom:1px solid #c6c5ba"><span style="font:400 14px/20px var(--font-family);color:#67666a">Team</span><span style="font:600 16px/24px var(--font-family)">Estimating</span></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:0 16px"><span style="font:400 14px/20px var(--font-family);color:#67666a">Next due</span><span style="font:600 16px/24px var(--font-family)">18/09/2026</span></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:center;justify-content:space-between"><h2 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Processes</h2><span style="font:400 14px/20px var(--font-family);color:#67666a">2 of 9</span></div>
+            <label style="display:flex;align-items:center;gap:12px;min-height:48px;border-bottom:1px solid #e1e1d9;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import><span style="flex:1;font:400 16px/24px var(--font-family)">Selections finalised</span><span style="font:400 14px/20px var(--font-family);color:#67666a">07/09</span></label>
+            <label style="display:flex;align-items:center;gap:12px;min-height:48px;border-bottom:1px solid #e1e1d9;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}"></x-import><span style="flex:1;font:400 16px/24px var(--font-family)">Quotes requested</span><span style="font:400 14px/20px var(--font-family);color:#67666a">13/09</span></label>
+            <label style="display:flex;align-items:center;gap:12px;min-height:48px;border-bottom:1px solid #e1e1d9;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import><span style="flex:1;font:400 16px/24px var(--font-family)">Orders stage 1 requested</span><span style="font:600 14px/20px var(--font-family);color:#c2543c">18/09</span></label>
+            <label style="display:flex;align-items:center;gap:12px;min-height:48px;cursor:pointer"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px"></x-import><span style="flex:1;font:400 16px/24px var(--font-family)">Stage 1 orders complete</span><span style="font:400 14px/20px var(--font-family);color:#8a898d">—</span></label>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <h2 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Updates &amp; comments</h2>
+            <p style="margin:0;font:400 16px/24px var(--font-family)">Draft schedule and trade packs started. Waiting on the revised floor plan before the frame order goes out.</p>
+            <span style="font:400 12px/16px var(--font-family);color:#67666a">Isla Ward · 04/09/2026</span>
+          </div>
+        </div>
+        <div style="flex:none;display:flex;gap:8px;padding:12px 16px 20px;border-top:1px solid #c6c5ba;background:#fff">
+          <div style="flex:1"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="100%,48px" size="large">Open job folder</x-import></div>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,48px" kind="secondary" size="large">Ask</x-import>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 2a ============ -->
+    <div class="dv-opt" id="2a">
+      <div class="dv-olabel"><a class="dv-oid" href="#2a">2a</a><span>New job as a side panel, not a centred dialog — the list stays readable behind it, which is the argument <code>SidePanel.tsx</code> already makes. Primary stays live; the error is on the field.</span></div>
+      <div class="dv-card" style="width:460px;height:820px;display:flex;flex-direction:column">
+        <div style="height:52px;flex:none;display:flex;align-items:center;gap:8px;padding:0 12px 0 20px;border-bottom:1px solid #c6c5ba">
+          <h1 style="flex:1;margin:0;font:500 18px/24px var(--title-font-family);letter-spacing:-0.1px">New job</h1>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="Fullscreen" ariaLabel="Expand to full screen" size="small" iconBasePath="../../assets/icons"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="CloseSmall" ariaLabel="Close" size="small" iconBasePath="../../assets/icons"></x-import>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto;padding:20px;display:flex;flex-direction:column;gap:20px">
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,64px" label="Parent project" options="{{ projects }}" value="{{ projectValue }}" onChange="{{ noop }}"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.TextField" iconBasePath="../../assets/icons" hint-size="100%,72px" label="Site address" placeholder="e.g. 12 Wattle Grove, Angle Vale" validation="error" message="Enter the site address — it is how the job is found on the board." onChange="{{ noop }}"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,64px" label="Project type" options="{{ projectTypes }}" value="{{ typeValue }}" onChange="{{ noop }}"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,64px" label="Owner" options="{{ people }}" value="{{ assignValue }}" onChange="{{ noop }}"></x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.TextField" iconBasePath="../../assets/icons" hint-size="100%,64px" label="Notes (optional)" placeholder="Anything the next person needs to know" onChange="{{ noop }}"></x-import>
+          <div style="background:#f4f3ee;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:12px">
+            <h2 style="margin:0;font:600 14px/20px var(--font-family)">What this creates</h2>
+            <div style="display:flex;justify-content:space-between;gap:12px;font:400 14px/20px var(--font-family)"><span style="color:#67666a">Job number</span><span style="font-weight:600">1201-05</span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;font:400 14px/20px var(--font-family)"><span style="color:#67666a">Opens in</span><span style="font-weight:600">Acquisition &amp; Development</span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;font:400 14px/20px var(--font-family)"><span style="color:#67666a">Processes</span><span style="font-weight:600">8, from the Residential template</span></div>
+            <div style="display:flex;justify-content:space-between;gap:12px;font:400 14px/20px var(--font-family)"><span style="color:#67666a">Checkpoints</span><span style="font-weight:600">34</span></div>
+          </div>
+        </div>
+        <div style="flex:none;display:flex;align-items:center;gap:8px;padding:12px 20px;border-top:1px solid #c6c5ba">
+          <span style="flex:1"></span>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px" kind="tertiary">Cancel</x-import>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px">Create job</x-import>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 2b ============ -->
+    <div class="dv-opt" id="2b">
+      <div class="dv-olabel"><a class="dv-oid" href="#2b">2b</a><span>The second way in, which Lofty asked for: the last row of the list. Address, project and owner inline; Enter saves and opens a fresh row. No floating +, so nothing sits over the drawer.</span></div>
+      <div class="dv-card" style="width:1280px;display:flex;flex-direction:column">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 32px 12px">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="font:400 12px/16px var(--font-family);color:#67666a">Jobs</div>
+            <h1 style="margin:0;font:600 32px/40px var(--title-font-family);letter-spacing:-0.5px">Jobs</h1>
+          </div>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px" leftIcon="{{ addIcon }}">New job</x-import>
+        </div>
+        <div style="padding:0 32px 24px">
+          <div style="border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);overflow:hidden">
+            <div style="display:grid;grid-template-columns:120px 1fr 200px 160px 160px;gap:16px;padding:0 16px;min-height:44px;align-items:center;background:#f4f3ee;border-bottom:1px solid #c6c5ba;font:600 12px/16px var(--font-family);color:#67666a">
+              <span>Job</span><span>Site address</span><span>Project</span><span>Team</span><span>Owner</span>
+            </div>
+            <div style="display:grid;grid-template-columns:120px 1fr 200px 160px 160px;gap:16px;padding:0 16px;min-height:48px;align-items:center;border-bottom:1px solid #e1e1d9;font:400 14px/20px var(--font-family)">
+              <span style="font-weight:600">1201-03</span><span>8 Wattle Grove, Angle Vale</span><span>Andrews Farm land release</span><span>Estimating</span><span>Priya Nair</span>
+            </div>
+            <div style="display:grid;grid-template-columns:120px 1fr 200px 160px 160px;gap:16px;padding:0 16px;min-height:48px;align-items:center;border-bottom:1px solid #e1e1d9;font:400 14px/20px var(--font-family)">
+              <span style="font-weight:600">1201-04</span><span>10 Wattle Grove, Angle Vale</span><span>Andrews Farm land release</span><span>Design</span><span>Han Le</span>
+            </div>
+            <div style="display:grid;grid-template-columns:120px 1fr 200px 160px 160px;gap:16px;padding:12px 16px;align-items:center;background:#fdf6f0;border-bottom:1px solid #c6c5ba">
+              <span style="font:600 14px/20px var(--font-family);color:#67666a">1201-05</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.TextField" iconBasePath="../../assets/icons" hint-size="100%,40px" placeholder="Site address" onChange="{{ noop }}"></x-import>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ projects }}" value="{{ projectValue }}" onChange="{{ noop }}"></x-import>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ teams }}" value="{{ teamValue }}" onChange="{{ noop }}"></x-import>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ people }}" value="{{ assignValue }}" onChange="{{ noop }}"></x-import>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:#f4f3ee">
+              <span style="flex:1;font:400 12px/16px var(--font-family);color:#67666a">Enter saves this row and opens the next. The full form is the side panel — <a href="#2a">2a</a>.</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="tertiary" size="small">Open the full form</x-import>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" size="small">Create job</x-import>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 3a ============ -->
+    <div class="dv-opt" id="3a">
+      <div class="dv-olabel"><a class="dv-oid" href="#3a">3a</a><span>Projects, Board view. The shell follows <code>AppShell.tsx</code>: left rail with its eight destinations and the real logo; header holds search, Ask, notifications, the Admin cog and your name. Saved views (<code>PROJECT_VIEWS</code>) are chips; Board / Table / Gantt are tabs. Project cards carry the fields the capture shows; health pills are off, per the product rule — that choice is <a href="Design%20Check.dc.html">P0-4</a>. Last column is the first-use empty state.</span></div>
+      <div class="dv-card" style="width:1280px;height:820px;display:flex">
+        <aside style="width:224px;flex:none;border-right:1px solid #c6c5ba;display:flex;flex-direction:column;background:#fff">
+          <div style="height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 16px;border-bottom:1px solid #c6c5ba">
+            <img src="../../assets/brand/lofty-logo-orange.png" alt="Lofty" style="height:24px;width:auto;display:block">
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="NavigationChevronLeft" ariaLabel="Collapse navigation to icons" size="small" iconBasePath="../../assets/icons"></x-import>
+          </div>
+          <nav aria-label="Main" style="display:flex;flex-direction:column;gap:2px;padding:12px 8px">
+            <a href="#3a" style="display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:var(--border-radius-small);font:400 14px/20px var(--font-family);color:#414042;text-decoration:none;background:transparent"><span style="width:20px;height:20px;border-radius:var(--border-radius-small);background:#c6c5ba;flex:none;display:inline-block"></span>Dashboard</a><a href="#3a" style="display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:var(--border-radius-small);font:600 14px/20px var(--font-family);color:#414042;text-decoration:none;background:#fae4d5"><span style="width:20px;height:20px;border-radius:var(--border-radius-small);background:#c2543c;flex:none;display:inline-block"></span>Projects</a><a href="#3a" style="display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:var(--border-radius-small);font:400 14px/20px var(--font-family);color:#414042;text-decoration:none;background:transparent"><span style="width:20px;height:20px;border-radius:var(--border-radius-small);background:#c6c5ba;flex:none;display:inline-block"></span>Jobs</a><a href="#3a" style="display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:var(--border-radius-small);font:400 14px/20px var(--font-family);color:#414042;text-decoration:none;background:transparent"><span style="width:20px;height:20px;border-radius:var(--border-radius-small);background:#c6c5ba;flex:none;display:inline-block"></span>Maintenance</a><a href="#3a" style="display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:var(--border-radius-small);font:400 14px/20px var(--font-family);color:#414042;text-decoration:none;background:transparent"><span style="width:20px;height:20px;border-radius:var(--border-radius-small);background:#c6c5ba;flex:none;display:inline-block"></span>Reports</a><a href="#3a" style="display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:var(--border-radius-small);font:400 14px/20px var(--font-family);color:#414042;text-decoration:none;background:transparent"><span style="width:20px;height:20px;border-radius:var(--border-radius-small);background:#c6c5ba;flex:none;display:inline-block"></span>Contacts</a><a href="#3a" style="display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:var(--border-radius-small);font:400 14px/20px var(--font-family);color:#414042;text-decoration:none;background:transparent"><span style="width:20px;height:20px;border-radius:var(--border-radius-small);background:#c6c5ba;flex:none;display:inline-block"></span>Tools</a><a href="#3a" style="display:flex;align-items:center;gap:12px;height:40px;padding:0 12px;border-radius:var(--border-radius-small);font:400 14px/20px var(--font-family);color:#414042;text-decoration:none;background:transparent"><span style="width:20px;height:20px;border-radius:var(--border-radius-small);background:#c6c5ba;flex:none;display:inline-block"></span>Settings</a>
+          </nav>
+        </aside>
+        <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+          <header style="height:56px;flex:none;display:flex;align-items:center;gap:8px;padding:0 24px;border-bottom:1px solid #c6c5ba;background:#fff">
+            <div style="width:320px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Search" iconBasePath="../../assets/icons" hint-size="100%,32px" size="small" placeholder="Search jobs and projects" onChange="{{ noop }}"></x-import></div>
+            <span style="flex:1"></span>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="tertiary" size="small">Ask Lofty</x-import>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="Alert" ariaLabel="Notifications" size="small" iconBasePath="../../assets/icons"></x-import>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="Info" ariaLabel="Admin" size="small" iconBasePath="../../assets/icons"></x-import>
+            <div style="display:flex;align-items:center;gap:8px;padding-left:8px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Avatar" hint-size="32px,32px" text="DA" size="small" backgroundColor="var(--lofty-foundation-black)"></x-import><span style="font:400 14px/20px var(--font-family)">Deanna</span></div>
+          </header>
+
+          <div style="flex:none;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:12px 32px 0">
+            <div style="display:flex;flex-direction:column;gap:4px">
+              <div style="font:400 12px/16px var(--font-family);color:#67666a">Projects</div>
+              <h1 style="margin:0;font:600 24px/30px var(--title-font-family);letter-spacing:-0.2px">Projects</h1>
+              <span style="font:400 14px/20px var(--font-family);color:#67666a">9 of 9 projects · All Projects, 7 of 7 stages</span>
+            </div>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px" leftIcon="{{ addIcon }}">New project</x-import>
+          </div>
+
+          <div style="flex:none;display:flex;align-items:center;gap:8px;padding:8px 32px 0">
+            <span style="display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:var(--border-radius-small);font:600 14px/20px var(--font-family);background:#fae4d5;color:#414042;border:1px solid #fae4d5">All Projects</span><span style="display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:var(--border-radius-small);font:400 14px/20px var(--font-family);background:transparent;color:#414042;border:1px solid #c6c5ba">Current Projects</span><span style="display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:var(--border-radius-small);font:400 14px/20px var(--font-family);background:transparent;color:#414042;border:1px solid #c6c5ba">Archived</span><span style="display:inline-flex;align-items:center;height:32px;padding:0 12px;border-radius:var(--border-radius-small);font:400 14px/20px var(--font-family);background:transparent;color:#414042;border:1px solid #c6c5ba">New Projects</span>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="tertiary" size="small">Save this view</x-import>
+          </div>
+
+          <div style="flex:none;padding:4px 32px 0;border-bottom:1px solid #c6c5ba">
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Tabs" iconBasePath="../../assets/icons" hint-size="auto,44px" tabs="{{ viewTabs }}" value="{{ viewTab }}" onChange="{{ setViewTab }}"></x-import>
+          </div>
+
+          <div style="flex:none;display:flex;align-items:center;gap:8px;padding:8px 32px;border-bottom:1px solid #c6c5ba;background:#fff">
+            <div style="width:220px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Search" iconBasePath="../../assets/icons" hint-size="100%,40px" placeholder="Job or project number" onChange="{{ noop }}"></x-import></div>
+            <div style="width:150px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ teams }}" placeholder="Team" onChange="{{ noop }}"></x-import></div><div style="width:160px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ people }}" placeholder="Team member" onChange="{{ noop }}"></x-import></div><div style="width:180px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ stages }}" placeholder="Stage" onChange="{{ noop }}"></x-import></div><div style="width:160px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ dateRanges }}" placeholder="Due date" onChange="{{ noop }}"></x-import></div><div style="width:150px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ groupBys }}" value="{{ groupByValue }}" onChange="{{ noop }}"></x-import></div>
+            <span style="flex:1"></span>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Chips" iconBasePath="../../assets/icons" hint-size="auto,24px" label="Team: Estimating" onDelete="{{ noop }}"></x-import>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="tertiary" size="small">Clear filters</x-import>
+          </div>
+
+          <div style="flex:1;min-height:0;overflow:auto;padding:20px 32px;background:#f4f3ee">
+            <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;align-items:start">
+
+            <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="height:4px;background:#fbd8cd;border-radius:var(--border-radius-pill)"></div>
+                <div style="display:flex;align-items:center;gap:8px"><span style="flex:1;font:600 14px/20px var(--font-family)">Acquisition &amp; Development</span><span style="font:600 12px/16px var(--font-family);background:#e1e1d9;padding:2px 8px;border-radius:var(--border-radius-pill)">3</span></div>
+              </div>
+              <div style="background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px"><span style="font:600 12px/16px var(--font-family);color:#67666a">Project 1203</span><span style="font:400 12px/16px var(--font-family);color:#67666a">2 jobs</span></div>
+                <span style="font:600 16px/22px var(--font-family)">Blakeview land release</span>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding-top:4px">
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Division</span><span style="font:400 14px/20px var(--font-family)">Land</span></div>
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Type</span><span style="font:400 14px/20px var(--font-family)">Development</span></div>
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Manager</span><span style="font:400 14px/20px var(--font-family)">Marcus Webb</span></div>
+                </div>
+                <div style="display:flex;justify-content:flex-end"><x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="MoreActions" ariaLabel="Move or open project 1203" size="small" iconBasePath="../../assets/icons"></x-import></div>
+              </div>
+              <div style="background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px"><span style="font:600 12px/16px var(--font-family);color:#67666a">Project 1215</span><span style="font:400 12px/16px var(--font-family);color:#67666a">2 jobs</span></div>
+                <span style="font:600 16px/22px var(--font-family)">Mawson Lakes build programme</span>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding-top:4px">
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Division</span><span style="font:400 14px/20px var(--font-family)">Residential</span></div>
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Type</span><span style="font:400 14px/20px var(--font-family)">Residential</span></div>
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Manager</span><span style="font:400 14px/20px var(--font-family)">Aisha Khan</span></div>
+                </div>
+                <div style="display:flex;justify-content:flex-end"><x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="MoreActions" ariaLabel="Move or open project 1215" size="small" iconBasePath="../../assets/icons"></x-import></div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="height:4px;background:#f8a48c;border-radius:var(--border-radius-pill)"></div>
+                <div style="display:flex;align-items:center;gap:8px"><span style="flex:1;font:600 14px/20px var(--font-family)">Pre-construction</span><span style="font:600 12px/16px var(--font-family);background:#e1e1d9;padding:2px 8px;border-radius:var(--border-radius-pill)">3</span></div>
+              </div>
+              <div style="background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px"><span style="font:600 12px/16px var(--font-family);color:#67666a">Project 1201</span><span style="font:400 12px/16px var(--font-family);color:#67666a">4 jobs</span></div>
+                <span style="font:600 16px/22px var(--font-family)">Andrews Farm land release</span>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding-top:4px">
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Division</span><span style="font:400 14px/20px var(--font-family)">Residential</span></div>
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Type</span><span style="font:400 14px/20px var(--font-family)">Mixed</span></div>
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Manager</span><span style="font:400 14px/20px var(--font-family)">Marcus Webb</span></div>
+                </div>
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.AttentionBox" iconBasePath="../../assets/icons" hint-size="100%,auto" type="warning">Council pre-lodgement outstanding on 1201-01.</x-import>
+                <div style="display:flex;justify-content:flex-end"><x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="MoreActions" ariaLabel="Move or open project 1201" size="small" iconBasePath="../../assets/icons"></x-import></div>
+              </div>
+              <div style="background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px"><span style="font:600 12px/16px var(--font-family);color:#67666a">Project 1209</span><span style="font:400 12px/16px var(--font-family);color:#67666a">3 jobs</span></div>
+                <span style="font:600 16px/22px var(--font-family)">Evanston Park build programme</span>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding-top:4px">
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Division</span><span style="font:400 14px/20px var(--font-family)">Residential</span></div>
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Type</span><span style="font:400 14px/20px var(--font-family)">Residential</span></div>
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Manager</span><span style="font:400 14px/20px var(--font-family)">Renee Cho</span></div>
+                </div>
+                <div style="display:flex;justify-content:flex-end"><x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="MoreActions" ariaLabel="Move or open project 1209" size="small" iconBasePath="../../assets/icons"></x-import></div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="height:4px;background:#f47e63;border-radius:var(--border-radius-pill)"></div>
+                <div style="display:flex;align-items:center;gap:8px"><span style="flex:1;font:600 14px/20px var(--font-family)">Construction</span><span style="font:600 12px/16px var(--font-family);background:#e1e1d9;padding:2px 8px;border-radius:var(--border-radius-pill)">2</span></div>
+              </div>
+              <div style="background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px"><span style="font:600 12px/16px var(--font-family);color:#67666a">Project 1204</span><span style="font:400 12px/16px var(--font-family);color:#67666a">2 jobs</span></div>
+                <span style="font:600 16px/22px var(--font-family)">Brahma Lodge build programme</span>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding-top:4px">
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Division</span><span style="font:400 14px/20px var(--font-family)">Residential</span></div>
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Type</span><span style="font:400 14px/20px var(--font-family)">Residential</span></div>
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Manager</span><span style="font:400 14px/20px var(--font-family)">Ben Sultana</span></div>
+                </div>
+                <div style="display:flex;justify-content:flex-end"><x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="MoreActions" ariaLabel="Move or open project 1204" size="small" iconBasePath="../../assets/icons"></x-import></div>
+              </div>
+              <div style="background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:8px">
+                <div style="display:flex;align-items:baseline;justify-content:space-between;gap:8px"><span style="font:600 12px/16px var(--font-family);color:#67666a">Project 1210</span><span style="font:400 12px/16px var(--font-family);color:#67666a">2 jobs</span></div>
+                <span style="font:600 16px/22px var(--font-family)">Gawler East build programme</span>
+                <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding-top:4px">
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Division</span><span style="font:400 14px/20px var(--font-family)">Residential</span></div>
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Type</span><span style="font:400 14px/20px var(--font-family)">Residential</span></div>
+                  <div style="display:flex;flex-direction:column;gap:2px"><span style="font:400 12px/16px var(--font-family);color:#67666a">Manager</span><span style="font:400 14px/20px var(--font-family)">Han Le</span></div>
+                </div>
+                <div style="display:flex;justify-content:flex-end"><x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="MoreActions" ariaLabel="Move or open project 1210" size="small" iconBasePath="../../assets/icons"></x-import></div>
+              </div>
+            </div>
+
+            <div style="display:flex;flex-direction:column;gap:12px;min-width:0">
+              <div style="display:flex;flex-direction:column;gap:8px">
+                <div style="height:4px;background:#c2543c;border-radius:var(--border-radius-pill)"></div>
+                <div style="display:flex;align-items:center;gap:8px"><span style="flex:1;font:600 14px/20px var(--font-family)">Maintenance</span><span style="font:600 12px/16px var(--font-family);background:#e1e1d9;padding:2px 8px;border-radius:var(--border-radius-pill)">0</span></div>
+              </div>
+              <div style="border:1px dashed #c6c5ba;border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+                <span style="font:600 14px/20px var(--font-family)">Nothing in maintenance</span>
+                <span style="font:400 14px/20px var(--font-family);color:#67666a">A project follows its slowest live job, so it arrives here when the last job hands over.</span>
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="tertiary" size="small">See Current Projects</x-import>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 3b ============ -->
+    <div class="dv-opt" id="3b">
+      <div class="dv-olabel"><a class="dv-oid" href="#3b">3b</a><span>Same page, Gantt tab (<code>ProjectsGantt.tsx</code>) — proving the toolbar is the same object across views. Grouping is a control in the filter row, not a second sentence in the heading; the breadcrumb states location only.</span></div>
+      <div class="dv-card" style="width:1280px;height:640px;display:flex;flex-direction:column">
+        <div style="flex:none;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:12px 32px 0">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="font:400 12px/16px var(--font-family);color:#67666a">Projects</div>
+            <h1 style="margin:0;font:600 24px/30px var(--title-font-family);letter-spacing:-0.2px">Projects</h1>
+            <span style="font:400 14px/20px var(--font-family);color:#67666a">9 projects · 66 jobs</span>
+          </div>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px" leftIcon="{{ addIcon }}">New project</x-import>
+        </div>
+        <div style="flex:none;padding:16px 32px 0;border-bottom:1px solid #c6c5ba">
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Tabs" iconBasePath="../../assets/icons" hint-size="auto,44px" tabs="{{ viewTabs }}" value="{{ ganttTab }}" onChange="{{ noop }}"></x-import>
+        </div>
+        <div style="flex:none;display:flex;align-items:center;gap:8px;padding:12px 32px;border-bottom:1px solid #c6c5ba">
+          <div style="width:240px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Search" iconBasePath="../../assets/icons" hint-size="100%,40px" placeholder="Job or project number" onChange="{{ noop }}"></x-import></div>
+          <div style="width:150px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ teams }}" placeholder="Team" onChange="{{ noop }}"></x-import></div>
+          <div style="width:170px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ people }}" placeholder="Team member" onChange="{{ noop }}"></x-import></div>
+          <div style="width:190px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ stages }}" placeholder="Stage" onChange="{{ noop }}"></x-import></div>
+          <div style="width:170px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ dateRanges }}" value="{{ dateRangeValue }}" onChange="{{ noop }}"></x-import></div>
+          <span style="flex:1"></span>
+          <span style="font:400 14px/20px var(--font-family);color:#67666a">Showing 12 of 66 jobs</span>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto">
+          <div style="display:grid;grid-template-columns:300px 1fr;min-height:100%">
+            <div style="border-right:1px solid #c6c5ba">
+              <div style="min-height:44px;display:flex;align-items:center;padding:0 16px;background:#f4f3ee;border-bottom:1px solid #c6c5ba;font:600 12px/16px var(--font-family);color:#67666a">Project · job</div>
+              <div style="min-height:48px;display:flex;align-items:center;gap:8px;padding:0 16px;border-bottom:1px solid #e1e1d9;font:600 14px/20px var(--font-family)">1201 Andrews Farm land release</div>
+              <div style="min-height:48px;display:flex;align-items:center;gap:8px;padding:0 16px 0 32px;border-bottom:1px solid #e1e1d9;font:400 14px/20px var(--font-family)"><span style="color:#67666a">1201-03</span><span>8 Wattle Grove</span></div>
+              <div style="min-height:48px;display:flex;align-items:center;gap:8px;padding:0 16px 0 32px;border-bottom:1px solid #e1e1d9;font:400 14px/20px var(--font-family)"><span style="color:#67666a">1201-04</span><span>10 Wattle Grove</span></div>
+              <div style="min-height:48px;display:flex;align-items:center;gap:8px;padding:0 16px;border-bottom:1px solid #e1e1d9;font:600 14px/20px var(--font-family)">1209 Evanston Park build programme</div>
+              <div style="min-height:48px;display:flex;align-items:center;gap:8px;padding:0 16px 0 32px;border-bottom:1px solid #e1e1d9;font:400 14px/20px var(--font-family)"><span style="color:#67666a">1209-02</span><span>24 Wandoo Road</span></div>
+              <div style="min-height:48px;display:flex;align-items:center;gap:8px;padding:0 16px;border-bottom:1px solid #e1e1d9;font:600 14px/20px var(--font-family)">1210 Gawler East build programme</div>
+              <div style="min-height:48px;display:flex;align-items:center;gap:8px;padding:0 16px 0 32px;border-bottom:1px solid #e1e1d9;font:400 14px/20px var(--font-family)"><span style="color:#67666a">1210-01</span><span>19 Banksia Avenue</span></div>
+            </div>
+            <div>
+              <div style="min-height:44px;display:grid;grid-template-columns:repeat(6,1fr);background:#f4f3ee;border-bottom:1px solid #c6c5ba">
+                <span style="display:flex;align-items:center;padding:0 12px;font:600 12px/16px var(--font-family);color:#67666a;border-left:1px solid #c6c5ba">Jul</span>
+                <span style="display:flex;align-items:center;padding:0 12px;font:600 12px/16px var(--font-family);color:#67666a;border-left:1px solid #c6c5ba">Aug</span>
+                <span style="display:flex;align-items:center;padding:0 12px;font:600 12px/16px var(--font-family);color:#414042;border-left:1px solid #c6c5ba">Sep</span>
+                <span style="display:flex;align-items:center;padding:0 12px;font:600 12px/16px var(--font-family);color:#67666a;border-left:1px solid #c6c5ba">Oct</span>
+                <span style="display:flex;align-items:center;padding:0 12px;font:600 12px/16px var(--font-family);color:#67666a;border-left:1px solid #c6c5ba">Nov</span>
+                <span style="display:flex;align-items:center;padding:0 12px;font:600 12px/16px var(--font-family);color:#67666a;border-left:1px solid #c6c5ba">Dec</span>
+              </div>
+              <div style="min-height:48px;border-bottom:1px solid #e1e1d9;display:flex;align-items:center;padding:0 12px"><div style="margin-left:4%;width:56%;height:20px;background:#414042;border-radius:var(--border-radius-small)"></div></div>
+              <div style="min-height:48px;border-bottom:1px solid #e1e1d9;display:flex;align-items:center;padding:0 12px"><div style="margin-left:8%;width:30%;height:16px;background:#f47e63;border-radius:var(--border-radius-small)"></div></div>
+              <div style="min-height:48px;border-bottom:1px solid #e1e1d9;display:flex;align-items:center;padding:0 12px"><div style="margin-left:22%;width:34%;height:16px;background:#f47e63;border-radius:var(--border-radius-small)"></div></div>
+              <div style="min-height:48px;border-bottom:1px solid #e1e1d9;display:flex;align-items:center;padding:0 12px"><div style="margin-left:30%;width:44%;height:20px;background:#414042;border-radius:var(--border-radius-small)"></div></div>
+              <div style="min-height:48px;border-bottom:1px solid #e1e1d9;display:flex;align-items:center;padding:0 12px"><div style="margin-left:34%;width:26%;height:16px;background:#f47e63;border-radius:var(--border-radius-small)"></div></div>
+              <div style="min-height:48px;border-bottom:1px solid #e1e1d9;display:flex;align-items:center;padding:0 12px"><div style="margin-left:44%;width:40%;height:20px;background:#414042;border-radius:var(--border-radius-small)"></div></div>
+              <div style="min-height:48px;border-bottom:1px solid #e1e1d9;display:flex;align-items:center;padding:0 12px"><div style="margin-left:46%;width:22%;height:16px;background:#f47e63;border-radius:var(--border-radius-small)"></div></div>
+            </div>
+          </div>
+        </div>
+        <div style="flex:none;display:flex;align-items:center;gap:16px;padding:12px 32px;border-top:1px solid #c6c5ba;font:400 12px/16px var(--font-family);color:#67666a">
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:16px;height:10px;background:#414042;border-radius:var(--border-radius-2);display:inline-block"></span>Project span</span>
+          <span style="display:flex;align-items:center;gap:6px"><span style="width:16px;height:10px;background:#f47e63;border-radius:var(--border-radius-2);display:inline-block"></span>Job span</span>
+          <span>Dates are Adelaide days. A bar with no end date is drawn to today and labelled, never guessed forward.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 4a ============ -->
+    <div class="dv-opt" id="4a">
+      <div class="dv-olabel"><a class="dv-oid" href="#4a">4a</a><span>Reports, Portfolio overview. The capture’s seven stat cards include “On track (62%)” and “At risk”, which are the health figures the repo says have no calculation yet, so they are gone. Bound numbers are stated plainly; anything unbound renders its column token instead of a figure — the rule that removed "45% on track". Same head, tabs and filter row as <a href="#3a">3a</a>.</span></div>
+      <div class="dv-card" style="width:1280px;height:760px;display:flex;flex-direction:column">
+        <div style="flex:none;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:12px 32px 0">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="display:flex;align-items:center;gap:6px;font:400 12px/16px var(--font-family);color:#67666a"><span>Reports</span><span style="color:#8a898d">›</span><span>Portfolio overview</span></div>
+            <h1 style="margin:0;font:600 32px/40px var(--title-font-family);letter-spacing:-0.5px">Portfolio overview</h1>
+            <span style="font:400 14px/20px var(--font-family);color:#67666a">66 jobs across 9 projects · to 06/09/2026</span>
+          </div>
+          <div style="display:flex;gap:8px">
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px" kind="secondary">Export</x-import>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px">Share report</x-import>
+          </div>
+        </div>
+        <div style="flex:none;padding:16px 32px 0;border-bottom:1px solid #c6c5ba">
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Tabs" iconBasePath="../../assets/icons" hint-size="auto,44px" tabs="{{ reportTabs }}" value="{{ reportTab }}" onChange="{{ noop }}"></x-import>
+        </div>
+        <div style="flex:none;display:flex;align-items:center;gap:8px;padding:12px 32px;border-bottom:1px solid #c6c5ba">
+          <div style="width:150px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ teams }}" placeholder="Team" onChange="{{ noop }}"></x-import></div>
+          <div style="width:190px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ stages }}" placeholder="Stage" onChange="{{ noop }}"></x-import></div>
+          <div style="width:200px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ dateRanges }}" value="{{ dateRangeValue }}" onChange="{{ noop }}"></x-import></div>
+          <span style="flex:1"></span>
+          <span style="font:400 12px/16px var(--font-family);color:#67666a">Every figure below traces to a row you can open.</span>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto;padding:24px 32px;background:#f4f3ee;display:flex;flex-direction:column;gap:20px">
+          <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px">
+            <div style="background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:8px">
+              <span style="font:400 14px/20px var(--font-family);color:#67666a">Live jobs</span>
+              <span style="font:600 48px/52px var(--title-font-family);letter-spacing:-0.5px">66</span>
+              <span style="font:400 12px/16px var(--font-family);color:#67666a">Across 9 projects</span>
+            </div>
+            <div style="background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:8px">
+              <span style="font:400 14px/20px var(--font-family);color:#67666a">In pre-construction</span>
+              <span style="font:600 48px/52px var(--title-font-family);letter-spacing:-0.5px">18</span>
+              <span style="font:400 12px/16px var(--font-family);color:#67666a">Longest 41 days in stage</span>
+            </div>
+            <div style="background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:8px">
+              <span style="font:400 14px/20px var(--font-family);color:#67666a">Milestones passed</span>
+              <span style="font:600 48px/52px var(--title-font-family);letter-spacing:-0.5px">214</span>
+              <span style="font:400 12px/16px var(--font-family);color:#67666a">Boolean, never a percentage</span>
+            </div>
+            <div style="background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:8px">
+              <span style="font:400 14px/20px var(--font-family);color:#67666a">On-time rate</span>
+              <span style="font:400 20px/28px ui-monospace,Menlo,monospace;color:#8a898d">{{ tokSla }}</span>
+              <span style="font:400 12px/16px var(--font-family);color:#67666a">Waiting on stage SLAs. No figure until there is one.</span>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:start">
+            <div style="background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:20px">
+              <div style="display:flex;align-items:baseline;justify-content:space-between;gap:12px">
+                <h2 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Jobs by stage</h2>
+                <span style="font:400 12px/16px var(--font-family);color:#67666a">Bars are counts, not health</span>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <div style="display:grid;grid-template-columns:200px 1fr 48px;gap:12px;align-items:center"><span style="font:400 14px/20px var(--font-family)">Acquisition &amp; Development</span><div style="height:20px;background:#e1e1d9;border-radius:var(--border-radius-small);overflow:hidden"><div style="width:24%;height:100%;background:#f47e63"></div></div><span style="font:600 14px/20px var(--font-family);text-align:right">16</span></div>
+                <div style="display:grid;grid-template-columns:200px 1fr 48px;gap:12px;align-items:center"><span style="font:400 14px/20px var(--font-family)">Pre-construction</span><div style="height:20px;background:#e1e1d9;border-radius:var(--border-radius-small);overflow:hidden"><div style="width:27%;height:100%;background:#f47e63"></div></div><span style="font:600 14px/20px var(--font-family);text-align:right">18</span></div>
+                <div style="display:grid;grid-template-columns:200px 1fr 48px;gap:12px;align-items:center"><span style="font:400 14px/20px var(--font-family)">Construction</span><div style="height:20px;background:#e1e1d9;border-radius:var(--border-radius-small);overflow:hidden"><div style="width:32%;height:100%;background:#f47e63"></div></div><span style="font:600 14px/20px var(--font-family);text-align:right">21</span></div>
+                <div style="display:grid;grid-template-columns:200px 1fr 48px;gap:12px;align-items:center"><span style="font:400 14px/20px var(--font-family)">Maintenance</span><div style="height:20px;background:#e1e1d9;border-radius:var(--border-radius-small);overflow:hidden"><div style="width:11%;height:100%;background:#f47e63"></div></div><span style="font:600 14px/20px var(--font-family);text-align:right">7</span></div>
+                <div style="display:grid;grid-template-columns:200px 1fr 48px;gap:12px;align-items:center"><span style="font:400 14px/20px var(--font-family)">Completed</span><div style="height:20px;background:#e1e1d9;border-radius:var(--border-radius-small);overflow:hidden"><div style="width:6%;height:100%;background:#f47e63"></div></div><span style="font:600 14px/20px var(--font-family);text-align:right">4</span></div>
+                <div style="display:grid;grid-template-columns:200px 1fr 48px;gap:12px;align-items:center"><span style="font:400 14px/20px var(--font-family);color:#67666a">Cancelled</span><div style="height:20px;background:#e1e1d9;border-radius:var(--border-radius-small);overflow:hidden"><div style="width:0%;height:100%;background:#c6c5ba"></div></div><span style="font:600 14px/20px var(--font-family);text-align:right;color:#67666a">0</span></div>
+              </div>
+              <div style="border-top:1px solid #c6c5ba;padding-top:16px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="tertiary" size="small">See this as a table</x-import></div>
+            </div>
+            <div style="background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);padding:24px;display:flex;flex-direction:column;gap:16px">
+              <h2 style="margin:0;font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">Longest in stage</h2>
+              <div style="display:flex;flex-direction:column">
+                <div style="display:flex;align-items:center;gap:12px;min-height:48px;border-bottom:1px solid #e1e1d9"><span style="flex:1;font:400 14px/20px var(--font-family)"><span style="color:#67666a">1210-01</span> 19 Banksia Avenue</span><span style="font:600 14px/20px var(--font-family)">41 days</span></div>
+                <div style="display:flex;align-items:center;gap:12px;min-height:48px;border-bottom:1px solid #e1e1d9"><span style="flex:1;font:400 14px/20px var(--font-family)"><span style="color:#67666a">1215-02</span> 16 Wattle Crescent</span><span style="font:600 14px/20px var(--font-family)">33 days</span></div>
+                <div style="display:flex;align-items:center;gap:12px;min-height:48px;border-bottom:1px solid #e1e1d9"><span style="flex:1;font:400 14px/20px var(--font-family)"><span style="color:#67666a">1202-01</span> 5 Magnolia Street</span><span style="font:600 14px/20px var(--font-family)">28 days</span></div>
+                <div style="display:flex;align-items:center;gap:12px;min-height:48px"><span style="flex:1;font:400 14px/20px var(--font-family)"><span style="color:#67666a">1209-02</span> 24 Wandoo Road</span><span style="font:600 14px/20px var(--font-family)">22 days</span></div>
+              </div>
+              <span style="font:400 12px/16px var(--font-family);color:#67666a">Rows open in the side panel, like everywhere else.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 5a ============ -->
+    <div class="dv-opt" id="5a">
+      <div class="dv-olabel"><a class="dv-oid" href="#5a">5a</a><span>Settings → Processes, Pipeline view — the two views <code>ProcessesSetupPage.tsx</code> already names, as tabs rather than two buttons. Handle, name you type straight into, row actions at the end, add row at the foot — and up/down buttons on every row, because drag alone is a control some people cannot use.</span></div>
+      <div class="dv-card" style="width:1280px;height:700px;display:flex;flex-direction:column">
+        <div style="flex:none;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;padding:12px 32px 0">
+          <div style="display:flex;flex-direction:column;gap:4px">
+            <div style="display:flex;align-items:center;gap:6px;font:400 12px/16px var(--font-family);color:#67666a"><span>Settings</span><span style="color:#8a898d">›</span><span>Processes</span></div>
+            <h1 style="margin:0;font:600 32px/40px var(--title-font-family);letter-spacing:-0.5px">Processes</h1>
+            <span style="font:400 14px/20px var(--font-family);color:#67666a">8 processes in Pre-construction · order is what a job runs through</span>
+          </div>
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px" leftIcon="{{ addIcon }}">New process</x-import>
+        </div>
+        <div style="flex:none;padding:16px 32px 0;border-bottom:1px solid #c6c5ba">
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.Tabs" iconBasePath="../../assets/icons" hint-size="auto,44px" tabs="{{ processTabs }}" value="{{ processTab }}" onChange="{{ noop }}"></x-import>
+        </div>
+        <div style="flex:none;display:flex;align-items:center;gap:8px;padding:12px 32px;border-bottom:1px solid #c6c5ba">
+          <div style="width:220px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ stages }}" value="{{ stageValue }}" onChange="{{ noop }}"></x-import></div>
+          <div style="width:150px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Dropdown" iconBasePath="../../assets/icons" hint-size="100%,40px" options="{{ teams }}" placeholder="Team" onChange="{{ noop }}"></x-import></div>
+          <span style="flex:1"></span>
+          <span style="font:400 12px/16px var(--font-family);color:#67666a">Dragging is on in this view. Sorting a column switches to the table — <a href="#5b">5b</a>.</span>
+        </div>
+        <div style="flex:1;min-height:0;overflow:auto;padding:20px 32px;background:#f4f3ee">
+          <div style="background:#fff;border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);overflow:hidden">
+            <div style="display:grid;grid-template-columns:40px 48px 1fr 180px 120px 96px 88px;gap:12px;align-items:center;padding:0 16px;min-height:44px;background:#f4f3ee;border-bottom:1px solid #c6c5ba;font:600 12px/16px var(--font-family);color:#67666a">
+              <span></span><span>#</span><span>Process</span><span>Owning team</span><span>Expected days</span><span>Milestone</span><span></span>
+            </div>
+            <div style="display:grid;grid-template-columns:40px 48px 1fr 180px 120px 96px 88px;gap:12px;align-items:center;padding:0 16px;min-height:56px;border-bottom:1px solid #e1e1d9">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="Drag" ariaLabel="Drag to reorder" size="small" iconBasePath="../../assets/icons"></x-import>
+              <span style="font:600 14px/20px var(--font-family)">1</span>
+              <span style="font:400 16px/24px var(--font-family)">Contract signed</span>
+              <span style="font:400 14px/20px var(--font-family)">Sales Admin</span>
+              <span style="font:400 14px/20px var(--font-family)">4</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Toggle" hint-size="auto,24px" checked="{{ true }}" ariaLabel="Milestone"></x-import>
+              <div style="display:flex;gap:2px;justify-content:flex-end">
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="NavigationChevronUp" ariaLabel="Move up" size="small" disabled="{{ true }}" iconBasePath="../../assets/icons"></x-import>
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="NavigationChevronDown" ariaLabel="Move down" size="small" iconBasePath="../../assets/icons"></x-import>
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="MoreActions" ariaLabel="More actions for Contract signed" size="small" iconBasePath="../../assets/icons"></x-import>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:40px 48px 1fr 180px 120px 96px 88px;gap:12px;align-items:center;padding:0 16px;min-height:56px;border-bottom:1px solid #e1e1d9;background:#fdf6f0;box-shadow:0 1px 3px rgba(65,64,66,.12)">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="Drag" ariaLabel="Drag to reorder" size="small" iconBasePath="../../assets/icons"></x-import>
+              <span style="font:600 14px/20px var(--font-family)">2</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.TextField" iconBasePath="../../assets/icons" hint-size="100%,40px" value="Council pre-lodgement" onChange="{{ noop }}"></x-import>
+              <span style="font:400 14px/20px var(--font-family)">Pre-construction Admin</span>
+              <span style="font:400 14px/20px var(--font-family)">7</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Toggle" hint-size="auto,24px" checked="{{ true }}" ariaLabel="Milestone"></x-import>
+              <div style="display:flex;gap:2px;justify-content:flex-end">
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="NavigationChevronUp" ariaLabel="Move up" size="small" iconBasePath="../../assets/icons"></x-import>
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="NavigationChevronDown" ariaLabel="Move down" size="small" iconBasePath="../../assets/icons"></x-import>
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="MoreActions" ariaLabel="More actions for Council pre-lodgement" size="small" iconBasePath="../../assets/icons"></x-import>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:40px 48px 1fr 180px 120px 96px 88px;gap:12px;align-items:center;padding:0 16px;min-height:56px;border-bottom:1px solid #e1e1d9">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="Drag" ariaLabel="Drag to reorder" size="small" iconBasePath="../../assets/icons"></x-import>
+              <span style="font:600 14px/20px var(--font-family)">3</span>
+              <span style="font:400 16px/24px var(--font-family)">Working drawings</span>
+              <span style="font:400 14px/20px var(--font-family)">Design</span>
+              <span style="font:400 14px/20px var(--font-family)">11</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Toggle" hint-size="auto,24px" checked="{{ true }}" ariaLabel="Milestone"></x-import>
+              <div style="display:flex;gap:2px;justify-content:flex-end">
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="NavigationChevronUp" ariaLabel="Move up" size="small" iconBasePath="../../assets/icons"></x-import>
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="NavigationChevronDown" ariaLabel="Move down" size="small" iconBasePath="../../assets/icons"></x-import>
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="MoreActions" ariaLabel="More actions for Working drawings" size="small" iconBasePath="../../assets/icons"></x-import>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:40px 48px 1fr 180px 120px 96px 88px;gap:12px;align-items:center;padding:0 16px;min-height:56px;border-bottom:1px solid #e1e1d9">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="Drag" ariaLabel="Drag to reorder" size="small" iconBasePath="../../assets/icons"></x-import>
+              <span style="font:600 14px/20px var(--font-family)">4</span>
+              <span style="font:400 16px/24px var(--font-family)">Estimating pack</span>
+              <span style="font:400 14px/20px var(--font-family)">Estimating</span>
+              <span style="font:400 14px/20px var(--font-family)">9</span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Toggle" hint-size="auto,24px" ariaLabel="Milestone"></x-import>
+              <div style="display:flex;gap:2px;justify-content:flex-end">
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="NavigationChevronUp" ariaLabel="Move up" size="small" iconBasePath="../../assets/icons"></x-import>
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="NavigationChevronDown" ariaLabel="Move down" size="small" iconBasePath="../../assets/icons"></x-import>
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.IconButton" hint-size="32px,32px" icon="MoreActions" ariaLabel="More actions for Estimating pack" size="small" iconBasePath="../../assets/icons"></x-import>
+              </div>
+            </div>
+            <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;background:#f4f3ee">
+              <div style="width:40px"></div>
+              <div style="flex:1;max-width:420px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.TextField" iconBasePath="../../assets/icons" hint-size="100%,40px" placeholder="Add a process to Pre-construction" onChange="{{ noop }}"></x-import></div>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px" kind="secondary">Add process</x-import>
+              <span style="flex:1;font:400 12px/16px var(--font-family);color:#67666a;text-align:right">Position renumbers 1..n across the whole stage on every move, not per visible row.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ 5b ============ -->
+    <div class="dv-opt" id="5b">
+      <div class="dv-olabel"><a class="dv-oid" href="#5b">5b</a><span>The same processes as the flat table: sorting on, dragging off, and it says so. Also carries the two things no screen has yet — the selection bulk bar and the no-results state.</span></div>
+      <div class="dv-card" style="width:1280px;display:flex;flex-direction:column">
+        <div style="display:flex;flex-direction:column;gap:4px;padding:20px 32px 12px">
+          <div style="display:flex;align-items:center;gap:6px;font:400 12px/16px var(--font-family);color:#67666a"><span>Settings</span><span style="color:#8a898d">›</span><span>Processes</span></div>
+          <h1 style="margin:0;font:600 32px/40px var(--title-font-family);letter-spacing:-0.5px">Processes</h1>
+        </div>
+        <div style="padding:0 32px 24px;display:flex;flex-direction:column;gap:24px">
+          <x-import component-from-global-scope="LoftyDesignSystem_491d68.AttentionBox" iconBasePath="../../assets/icons" hint-size="100%,auto" title="Sorted by team, so dragging is off">Pipeline order is only meaningful in the order it runs. Clear the sort to drag rows again.</x-import>
+
+          <div style="display:flex;align-items:center;gap:12px;padding:8px 16px;background:#fdf6f0;border:1px solid #f47e63;border-radius:var(--border-radius-medium);min-height:56px">
+            <span style="flex:1;font:600 14px/20px var(--font-family)">3 processes selected</span>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="secondary" size="small">Change owning team</x-import>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="secondary" size="small">Move to stage</x-import>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="tertiary" color="negative" size="small">Delete</x-import>
+            <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="tertiary" size="small">Clear selection</x-import>
+          </div>
+
+          <div style="border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);overflow:hidden">
+            <div style="display:grid;grid-template-columns:48px 1fr 200px 200px 120px;gap:12px;align-items:center;padding:0 16px;min-height:44px;background:#f4f3ee;border-bottom:1px solid #c6c5ba;font:600 12px/16px var(--font-family);color:#67666a">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" indeterminate="{{ true }}" aria-label="Select all processes"></x-import>
+              <span>Process</span>
+              <span style="display:flex;align-items:center;gap:4px;color:#414042">Owning team <span aria-hidden="true">▾</span></span>
+              <span>Stage</span>
+              <span>Properties</span>
+            </div>
+            <div style="display:grid;grid-template-columns:48px 1fr 200px 200px 120px;gap:12px;align-items:center;padding:0 16px;min-height:48px;border-bottom:1px solid #e1e1d9;background:#fdf6f0">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}" aria-label="Select Working drawings"></x-import>
+              <span style="font:400 14px/20px var(--font-family)">Working drawings</span><span style="font:400 14px/20px var(--font-family)">Design</span><span style="font:400 14px/20px var(--font-family)">Pre-construction</span><span style="font:400 14px/20px var(--font-family)">11</span>
+            </div>
+            <div style="display:grid;grid-template-columns:48px 1fr 200px 200px 120px;gap:12px;align-items:center;padding:0 16px;min-height:48px;border-bottom:1px solid #e1e1d9;background:#fdf6f0">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}" aria-label="Select Concept plans"></x-import>
+              <span style="font:400 14px/20px var(--font-family)">Concept plans</span><span style="font:400 14px/20px var(--font-family)">Design</span><span style="font:400 14px/20px var(--font-family)">Acquisition &amp; Development</span><span style="font:400 14px/20px var(--font-family)">6</span>
+            </div>
+            <div style="display:grid;grid-template-columns:48px 1fr 200px 200px 120px;gap:12px;align-items:center;padding:0 16px;min-height:48px;border-bottom:1px solid #e1e1d9;background:#fdf6f0">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" checked="{{ true }}" aria-label="Select Site plan markup"></x-import>
+              <span style="font:400 14px/20px var(--font-family)">Site plan markup</span><span style="font:400 14px/20px var(--font-family)">Design</span><span style="font:400 14px/20px var(--font-family)">Pre-construction</span><span style="font:400 14px/20px var(--font-family)">3</span>
+            </div>
+            <div style="display:grid;grid-template-columns:48px 1fr 200px 200px 120px;gap:12px;align-items:center;padding:0 16px;min-height:48px;border-bottom:1px solid #e1e1d9">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" aria-label="Select Estimating pack"></x-import>
+              <span style="font:400 14px/20px var(--font-family)">Estimating pack</span><span style="font:400 14px/20px var(--font-family)">Estimating</span><span style="font:400 14px/20px var(--font-family)">Pre-construction</span><span style="font:400 14px/20px var(--font-family)">9</span>
+            </div>
+            <div style="display:grid;grid-template-columns:48px 1fr 200px 200px 120px;gap:12px;align-items:center;padding:0 16px;min-height:48px">
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Checkbox" hint-size="20px,20px" aria-label="Select Maintenance handover"></x-import>
+              <span style="font:400 14px/20px var(--font-family)">Maintenance handover</span><span style="font:400 14px/20px var(--font-family)">Maintenance</span><span style="font:400 14px/20px var(--font-family)">Maintenance</span><span style="font:400 14px/20px var(--font-family);color:#8a898d">0</span>
+            </div>
+          </div>
+
+          <div style="border:1px solid #c6c5ba;border-radius:var(--border-radius-medium);overflow:hidden">
+            <div style="display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid #c6c5ba">
+              <div style="width:240px"><x-import component-from-global-scope="LoftyDesignSystem_491d68.Search" iconBasePath="../../assets/icons" hint-size="100%,40px" value="handover" onChange="{{ noop }}"></x-import></div>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Chips" iconBasePath="../../assets/icons" hint-size="auto,24px" label="Team: Estimating" onDelete="{{ noop }}"></x-import>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Chips" iconBasePath="../../assets/icons" hint-size="auto,24px" label="Stage: Construction" onDelete="{{ noop }}"></x-import>
+              <span style="flex:1"></span>
+              <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,32px" kind="tertiary" size="small">Clear filters</x-import>
+            </div>
+            <div style="padding:48px 24px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
+              <span style="font:600 18px/24px var(--title-font-family);letter-spacing:-0.1px">No processes match "handover"</span>
+              <span style="max-width:52ch;font:400 14px/20px var(--font-family);color:#67666a">Two filters are narrowing this list: team Estimating and stage Construction. Maintenance handover exists, in another team.</span>
+              <div style="display:flex;gap:8px;padding-top:4px">
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px" kind="secondary">Clear filters</x-import>
+                <x-import component-from-global-scope="LoftyDesignSystem_491d68.Button" hint-size="auto,40px" kind="tertiary">Search all stages</x-import>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="dv-next">Try next: "resolve <a class="dv-oid" href="#1a">1a</a> and <a class="dv-oid" href="#1b">1b</a> into one drawer" · "do the board grouped by phase as well" · "the remaining seven screens at one design each" · "health back on cards with a stated calculation"</p>
+</section>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { jobTab: "overview", viewTab: "board" };
+  renderVals() {
+    const noop = () => {};
+    const ns = window.LoftyDesignSystem_491d68 || {};
+    const addIcon = ns.Icon ? React.createElement(ns.Icon, { name: "Add", size: 16, basePath: "../../assets/icons" }) : null;
+    return {
+      noop,
+      addIcon,
+      tokSlab: "{{jobs.slab_booked_on}}",
+      tokSla: "{{jobs.sla_met}}",
+      stages: ["Acquisition & Development", "Pre-construction", "Construction", "Maintenance", "Completed", "Closed", "Cancelled"],
+      teams: ["Acquisition & Development", "Pre-construction Admin", "Design", "Estimating", "Sales Admin", "Construction", "Maintenance"],
+      people: ["Aisha Khan", "Han Le", "Isla Ward", "Priya Nair", "Renee Cho", "Todd Ferris"],
+      projects: ["1201 Andrews Farm land release", "1202 Angle Vale build programme", "1209 Evanston Park build programme", "1210 Gawler East build programme", "1215 Mawson Lakes build programme"],
+      projectTypes: ["Residential", "Commercial", "Land division"],
+      dateRanges: ["Any date", "Next 7 days", "Next 30 days", "This quarter", "Custom range"],
+      groupBys: ["Group: stage", "Group: phase", "Group: team", "Group: project"],
+      stageValue: "Pre-construction",
+      teamValue: "Estimating",
+      ownerValue: "Renee Cho",
+      assignValue: "Aisha Khan",
+      projectValue: "1201 Andrews Farm land release",
+      typeValue: "Residential",
+      dateRangeValue: "This quarter",
+      groupByValue: "Group: stage",
+      jobTabs: [{ id: "overview", label: "Overview" }, { id: "processes", label: "Processes" }, { id: "comments", label: "Comments" }, { id: "documents", label: "Documents" }],
+      viewTabs: [{ id: "board", label: "Board" }, { id: "table", label: "Table" }, { id: "gantt", label: "Gantt" }],
+      reportTabs: [{ id: "portfolio", label: "Portfolio overview" }, { id: "leadership", label: "Leadership summary" }, { id: "job", label: "Job report" }],
+      processTabs: [{ id: "pipeline", label: "Pipeline" }, { id: "table", label: "Table" }],
+      reportTab: "portfolio",
+      processTab: "pipeline",
+      ganttTab: "gantt",
+      jobTab: this.state.jobTab,
+      viewTab: this.state.viewTab,
+      setJobTab: (id) => this.setState({ jobTab: id }),
+      setViewTab: (id) => this.setState({ viewTab: id })
+    };
+  }
+}
+</script>
+</body>
+</html>

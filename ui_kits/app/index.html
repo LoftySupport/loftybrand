@@ -1,0 +1,75 @@
+<!-- @dsCard group="App" viewport="1280x760" name="Work app" subtitle="Click-through recreation: sign in, jobs table, timeline, new-job dialog, dashboard" -->
+<!doctype html><html><head><meta charset="utf-8"><title>Lofty · Work app UI kit</title>
+<link rel="icon" href="../../assets/lofty-favicon.png">
+<link rel="stylesheet" href="../../styles.css">
+<style>html,body{margin:0;height:100%}#root{height:100%}</style>
+</head><body>
+<div id="root"></div>
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#414042"/><rect x="30" y="38" width="40" height="8" rx="2" fill="#FF6B00"/><rect x="30" y="50" width="26" height="8" rx="2" fill="#FFFFFF"/></svg></template>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="AppShell.jsx"></script>
+<script type="text/babel" src="BoardScreen.jsx"></script>
+<script type="text/babel" src="DashboardScreen.jsx"></script>
+<script type="text/babel" src="LoginScreen.jsx"></script>
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "theme": "Light",
+  "chrome": "Light",
+  "density": "Standard",
+  "softness": "System"
+}/*EDITMODE-END*/;
+
+const CHROME = {
+  Light: {'--shell-bg':'var(--primary-background-color)','--shell-fg':'var(--primary-text-color)','--shell-border':'var(--ui-border-color)','--shell-icon':'var(--icon-color)','--shell-muted':'var(--secondary-text-color)','--shell-hover':'var(--primary-background-hover-color)'},
+  Ink: {'--shell-bg':'var(--lofty-foundation-black)','--shell-fg':'var(--lofty-finisher-white)','--shell-border':'rgba(255,255,255,.16)','--shell-icon':'rgba(255,255,255,.8)','--shell-muted':'rgba(255,255,255,.6)','--shell-hover':'rgba(255,255,255,.1)'},
+  Flint: {'--shell-bg':'var(--allgrey-background-color)','--shell-fg':'var(--primary-text-color)','--shell-border':'var(--layout-border-color)','--shell-icon':'var(--icon-color)','--shell-muted':'var(--secondary-text-color)','--shell-hover':'var(--primary-background-hover-color)'}
+};
+const SPACE = [2,4,8,12,16,20,24,32,40,48,64,80];
+const DENSITY = {Compact:{f:.7,top:48,nav:32},Standard:{f:1,top:56,nav:40},Airy:{f:1.35,top:64,nav:48}};
+const SOFT = {Sharp:[0,2,4,6],System:[4,8,12,16],Soft:[10,14,20,26]};
+
+function App(){
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const [signedIn, setSignedIn] = React.useState(false);
+  const [page, setPage] = React.useState('jobs');
+  React.useEffect(() => {
+    document.documentElement.setAttribute('data-theme', t.theme === 'Dark' ? 'dark' : 'light');
+    const r = document.documentElement.style;
+    Object.entries(CHROME[t.chrome] || CHROME.Light).forEach(([k,v]) => r.setProperty(k,v));
+    const d = DENSITY[t.density] || DENSITY.Standard;
+    SPACE.forEach(n => r.setProperty('--space-'+n, Math.max(2, Math.round(n*d.f))+'px'));
+    r.setProperty('--shell-topbar-h', d.top+'px');
+    r.setProperty('--shell-nav-h', d.nav+'px');
+    const s = SOFT[t.softness] || SOFT.System;
+    [4,8,12,16].forEach((n,i) => r.setProperty('--border-radius-'+n, s[i]+'px'));
+  }, [t.theme, t.chrome, t.density, t.softness]);
+  const panel = (
+    <TweaksPanel>
+      <TweakSection label="Theme" />
+      <TweakRadio label="Mode" value={t.theme} options={['Light','Dark']} onChange={v => setTweak('theme', v)} />
+      <TweakSection label="Shell" />
+      <TweakRadio label="Chrome" value={t.chrome} options={['Light','Ink','Flint']} onChange={v => setTweak('chrome', v)} />
+      <TweakSection label="Rhythm" />
+      <TweakRadio label="Density" value={t.density} options={['Compact','Standard','Airy']} onChange={v => setTweak('density', v)} />
+      <TweakRadio label="Softness" value={t.softness} options={['Sharp','System','Soft']} onChange={v => setTweak('softness', v)} />
+    </TweaksPanel>
+  );
+  if (!signedIn) return <React.Fragment><LoginScreen onLogin={() => setSignedIn(true)} />{panel}</React.Fragment>;
+  return (
+    <div style={{display:'flex',flexDirection:'column',height:'100%',background:'var(--allgrey-background-color)'}}>
+      <TopBar onLogout={() => setSignedIn(false)} />
+      <div style={{display:'flex',flex:1,minHeight:0}}>
+        <SideNav page={page} setPage={setPage} />
+        {page === 'dash' ? <DashboardScreen /> : <BoardScreen />}
+      </div>
+      {panel}
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body></html>

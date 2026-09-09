@@ -1,0 +1,22 @@
+# Compiler output — regenerated on every build, never edit or commit by hand
+_ds_bundle.js
+_ds_manifest.json
+_adherence.oxlintrc.json
+
+# Export artifacts
+.bundles/
+*.zip
+
+# Working material, not part of the system
+uploads/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Node
+node_modules/
+npm-debug.log*

@@ -1,0 +1,34 @@
+<!-- @dsCard group="Patterns" viewport="700x420" name="Loading, empty, error" subtitle="Which state to show, for how long, and what it says" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:24px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+.eyebrow{font:var(--font-text3-medium);color:var(--secondary-text-color);text-transform:uppercase;letter-spacing:.08em}
+.note{color:var(--secondary-text-color);max-width:70ch;text-wrap:pretty;margin:4px 0 0}
+.i{display:inline-block;background:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;width:16px;height:16px;vertical-align:-3px}
+code{font:var(--font-text3-normal);background:var(--allgrey-background-color);padding:1px 4px;border-radius:var(--border-radius-2)}
+
+.g{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.c{border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:8px}
+.c h4{margin:0;font:var(--font-text2-bold)}
+.sk{height:14px;border-radius:var(--border-radius-small);background:linear-gradient(90deg,var(--ui-background-color) 25%,var(--allgrey-background-color) 50%,var(--ui-background-color) 75%);background-size:200% 100%;animation:sh 1.4s linear infinite}
+@keyframes sh{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){.sk{animation:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:32px;padding:4px 8px;border-radius:var(--border-radius-small);font:var(--font-text2-normal);border:none;width:fit-content}
+.tl{display:grid;grid-template-columns:110px 1fr;gap:4px 12px;margin-top:12px}
+.tl b{font:var(--font-text2-medium)}
+</style></head><body>
+<span class="eyebrow">By duration</span>
+<div class="tl">
+<b>0–100ms</b><span>Nothing. The pressed state is the feedback.</span>
+<b>100–300ms</b><span>Still nothing — a spinner here flickers. Keep the button pressed or optimistic.</span>
+<b>300ms–1s</b><span>Inline <code>Loader</code> beside the label, or <code>Button loading</code>. Label stays.</span>
+<b>1–10s</b><span><code>Skeleton</code> shaped like the real content (rows, tiles). Times out into the error state.</span>
+<b>&gt;10s</b><span><code>ProgressBar</code> with status text and a way to cancel.</span>
+</div>
+<div class="g">
+<div class="c"><h4>Loading</h4><div class="sk" style="width:70%"></div><div class="sk" style="width:45%"></div><div class="sk" style="width:60%"></div><span class="note">Same layout as the loaded view so nothing shifts. <code>Table loading</code> does this for you.</span></div>
+<div class="c"><h4>Empty — first use</h4><span>No jobs scheduled</span><span class="note">Jobs you assign to this crew will show up here.</span><span class="btn" style="background:var(--primary-color);color:var(--text-color-on-primary)">Create job</span></div>
+<div class="c"><h4>Empty — no results</h4><span>No matches for “northline”</span><span class="note">Try fewer filters or a shorter term.</span><span class="btn" style="border:1px solid var(--ui-border-color);color:var(--primary-text-color)">Clear filters</span></div>
+<div class="c"><h4>Error</h4><span style="display:flex;gap:8px;align-items:center"><span style="color:var(--negative-color)"><span class="i" style="width:16px;height:16px;-webkit-mask-image:url(../assets/icons/Alert.svg);mask-image:url(../assets/icons/Alert.svg)"></span></span>We couldn't load jobs.</span><span class="note">Check your connection. Anything you typed is still here.</span><span class="btn" style="border:1px solid var(--ui-border-color);color:var(--primary-text-color)">Try again</span></div>
+</div>
+<p class="note" style="margin-top:12px">Errors say what happened and what to do; never “Something went wrong”, never a code as the headline. Input is preserved on every error. Errors announce (<code>role="alert"</code>); loads announce nothing until done.</p>
+</body></html>

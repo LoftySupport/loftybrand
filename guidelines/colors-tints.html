@@ -1,0 +1,38 @@
+<!-- @dsCard group="Colors" viewport="760x420" name="Brand tints & shades" subtitle="Interaction colours built from the five brand colours only. Primary hover is the inverse — fill drops out, orange becomes ink and line." -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:16px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+a{color:var(--link-color)}a:hover{color:var(--link-hover-color)}
+.lbl{font:var(--font-text3-medium);color:var(--secondary-text-color);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.opt{border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);padding:16px;display:flex;flex-direction:column;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 16px;border-radius:var(--border-radius-small);font:var(--font-text1-medium);box-sizing:border-box;border:1px solid transparent}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.m{font:var(--font-text3-normal);color:var(--secondary-text-color)}
+.n{font:var(--font-text2-medium)}
+.sw{flex:1;min-width:0;border-radius:var(--border-radius-medium);overflow:hidden;border:1px solid var(--layout-border-color)}.sw h{display:block;height:40px}.sw div{padding:8px}
+.rej{display:flex;gap:12px}.rej .opt{flex:1;min-width:0;opacity:.55}
+</style></head><body>
+<div style="display:flex;flex-direction:column;gap:20px">
+<div><div class="lbl">Primary button — the chosen sequence</div>
+<div class="opt"><div class="n">Inverse hover</div>
+<div class="row"><span class="btn" style="background:var(--primary-color);color:var(--text-color-on-primary)">Create job</span><span class="m">rest · Crisp Orange fill, Finisher White label</span></div>
+<div class="row"><span class="btn" style="background:var(--primary-background-color);color:var(--primary-color);border-color:var(--primary-color)">Create job</span><span class="m">hover · fill drops out, orange becomes ink and line</span></div>
+<div class="row"><span class="btn" style="background:var(--lofty-orange-pressed);color:var(--text-color-on-primary);transform:scale(.95)">Create job</span><span class="m">press · <code>--lofty-orange-pressed</code> #c2543c, 0.95 scale over 70ms</span></div>
+<div class="m">Orange ink on white is 2.3:1, so the inverse is only legible at button scale — 16px medium and up, hover state only, never body copy. Every other filled element still darkens to its <code>-hover</code> step; this exception belongs to the one primary action per view.</div></div>
+</div>
+<div><div class="lbl">Not used</div>
+<div class="rej">
+<div class="opt"><div class="n">B · Black</div><div class="row"><span class="btn" style="background:var(--primary-color);color:#fff">Create job</span><span class="m">→</span><span class="btn" style="background:var(--lofty-foundation-black);color:#fff">Create job</span></div><div class="m">High contrast but reads as a different button, not the same one hovered.</div></div>
+<div class="opt"><div class="n">C · Ring</div><div class="row"><span class="btn" style="background:var(--primary-color);color:#fff">Create job</span><span class="m">→</span><span class="btn" style="background:var(--primary-color);color:#fff;box-shadow:0 0 0 2px #fff,0 0 0 3px var(--primary-color)">Create job</span></div><div class="m">Collides with the focus ring, which is already orange.</div></div>
+</div></div>
+<div><div class="lbl">Selected & surface states — current tokens</div>
+<div style="display:flex;gap:8px">
+<div class="sw"><h style="background:var(--primary-background-hover-color)"></h><div><div class="n" style="font:var(--font-text3-medium)">Hover wash</div><div class="m">Foundation Black at 8% · rows, nav, menu items</div></div></div>
+<div class="sw"><h style="background:var(--primary-selected-color)"></h><div><div class="n" style="font:var(--font-text3-medium)">Selected</div><div class="m">#fae4d5 · rows, nav item, active filter</div></div></div>
+<div class="sw"><h style="background:var(--primary-selected-hover-color)"></h><div><div class="n" style="font:var(--font-text3-medium)">Selected hover</div><div class="m">#f6d3bf · hover on a selected row</div></div></div>
+<div class="sw"><h style="background:var(--primary-highlighted-color)"></h><div><div class="n" style="font:var(--font-text3-medium)">Highlighted</div><div class="m">#fdf6f0 · attention boxes, drag targets</div></div></div>
+<div class="sw"><h style="background:var(--data-2)"></h><div><div class="n" style="font:var(--font-text3-medium)">Orange 70</div><div class="m">#f8a48c · second data series, quiet badges</div></div></div>
+</div>
+<div class="m" style="margin-top:8px">Warm peach throughout — one hue stepped by lightness, never drifting pink. Text on all four stays Foundation Black. Neutral surfaces come from the Flint family, not from tinted orange.</div>
+</div>
+</div>
+</body></html>

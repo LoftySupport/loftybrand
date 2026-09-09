@@ -1,0 +1,21 @@
+<!-- @dsCard group="Spacing" viewport="700x200" name="Layer scale" subtitle="Five z-index tokens; never a literal" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:24px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+.eyebrow{font:var(--font-text3-medium);color:var(--secondary-text-color);text-transform:uppercase;letter-spacing:.08em}
+.note{color:var(--secondary-text-color);max-width:70ch;text-wrap:pretty;margin:4px 0 0}
+.i{display:inline-block;background:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;width:16px;height:16px;vertical-align:-3px}
+code{font:var(--font-text3-normal);background:var(--allgrey-background-color);padding:1px 4px;border-radius:var(--border-radius-2)}
+
+.st{position:relative;height:120px;margin-top:16px}
+.l{position:absolute;height:40px;border-radius:var(--border-radius-small);display:flex;align-items:center;padding:0 12px;font:var(--font-text3-medium);box-shadow:var(--box-shadow-small);border:1px solid var(--layout-border-color);background:var(--primary-background-color)}
+</style></head><body>
+<span class="eyebrow">--z-sticky 10 · --z-dropdown 20 · --z-tooltip 30 · --z-dialog 40 · --z-toast 50</span>
+<div class="st">
+<div class="l" style="left:0;top:0;width:200px;background:var(--allgrey-background-color)">sticky · table header, top bar</div>
+<div class="l" style="left:120px;top:20px;width:200px">dropdown · lists, combobox</div>
+<div class="l" style="left:240px;top:40px;width:200px;background:var(--inverted-color-background);color:var(--text-color-on-inverted);border:none">tooltip · tipseen</div>
+<div class="l" style="left:360px;top:60px;width:200px;box-shadow:var(--box-shadow-large)">dialog · modal + backdrop</div>
+<div class="l" style="left:440px;top:80px;width:200px;background:var(--primary-color);color:var(--text-color-on-primary);border:none">toast · alert banner</div>
+</div>
+<p class="note" style="margin-top:8px">A layer only ever needs to beat the layer beneath it. Inside a component, use 1 and 2 for local stacking (sticky group headers inside a combobox), not the scale.</p>
+</body></html>

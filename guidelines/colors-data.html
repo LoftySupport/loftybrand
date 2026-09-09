@@ -1,0 +1,20 @@
+<!-- @dsCard group="Colors" viewport="700x400" name="Data-viz ramp" subtitle="Categorical order and the sequential gradient — brand colours only, light and dark" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>body{margin:0;font:var(--font-text2-normal)}.pane{padding:16px;background:var(--primary-background-color);color:var(--primary-text-color)}.hd{font:var(--font-text3-normal);color:var(--secondary-text-color);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}.ramp{display:flex;height:64px;border-radius:var(--border-radius-medium);overflow:hidden}.ramp>div{flex:1}.keys{display:flex;font:var(--font-text3-normal);color:var(--secondary-text-color);margin-top:6px}.keys>span{flex:1}</style></head><body>
+<div class="pane">
+<div class="hd">Light</div>
+<div class="ramp"><div style="background:var(--data-1)"></div><div style="background:var(--data-2)"></div><div style="background:var(--data-3)"></div><div style="background:var(--data-4)"></div><div style="background:var(--data-5)"></div><div style="background:var(--data-6)"></div></div>
+<div class="keys"><span>--data-1</span><span>--data-2</span><span>--data-3</span><span>--data-4</span><span>--data-5</span><span>--data-6</span></div>
+<div class="hd" style="margin-top:20px">Light · sequential</div>
+<div class="ramp" style="height:40px;background:var(--data-gradient)"></div>
+<div class="keys"><span>--data-scale-1</span><span style="flex:1;text-align:right">--data-scale-5</span></div>
+</div>
+<div class="pane" data-theme="dark">
+<div class="hd">Dark</div>
+<div class="ramp"><div style="background:var(--data-1)"></div><div style="background:var(--data-2)"></div><div style="background:var(--data-3)"></div><div style="background:var(--data-4)"></div><div style="background:var(--data-5)"></div><div style="background:var(--data-6)"></div></div>
+<div class="keys"><span>--data-1</span><span>--data-2</span><span>--data-3</span><span>--data-4</span><span>--data-5</span><span>--data-6</span></div>
+<div class="hd" style="margin-top:20px">Dark · sequential</div>
+<div class="ramp" style="height:40px;background:var(--data-gradient)"></div>
+<div class="keys"><span>--data-scale-1</span><span style="flex:1;text-align:right">--data-scale-5</span></div>
+<div style="font:var(--font-text3-normal);color:var(--secondary-text-color);margin-top:10px">Categorical: series 3 and the neutral steps 4–6 invert on dark. Sequential: the scale reverses so its low end lifts off the panel rather than fading into it.</div>
+</div>
+</body></html>

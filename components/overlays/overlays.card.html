@@ -1,0 +1,32 @@
+<!-- @dsCard group="Components" viewport="760x420" name="Overlays" subtitle="Modal, AlertBanner, Tipseen" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{margin:0;padding:16px;background:var(--primary-background-color);font:var(--font-text2-normal);color:var(--primary-text-color)}</style></head><body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Modal, AlertBanner, Tipseen, Button, Text } = window.LoftyDesignSystem_491d68;
+function Demo(){
+  const [open,setOpen]=React.useState(false);
+  return (
+    <div style={{position:'relative',height:380,display:'flex',flexDirection:'column',gap:16}}>
+      <div style={{display:'flex',flexDirection:'column',gap:8}}>
+        <AlertBanner backgroundColor="warning" icon="Info" actionText="Add payment" onClose={()=>{}}>Your trial ends in 3 days</AlertBanner>
+        <AlertBanner backgroundColor="dark" icon="Update">Scheduled maintenance on Sunday, 2am–4am AEST</AlertBanner>
+      </div>
+      <div style={{display:'flex',gap:24,alignItems:'flex-start'}}>
+        <Button onClick={()=>setOpen(true)}>Open modal</Button>
+        <Tipseen title="Timeline view" position="top" onClose={()=>{}}>Drag a job to move it. Crews stay attached.</Tipseen>
+      </div>
+      <Modal contained open={open} onClose={()=>setOpen(false)} size="small" title="New job"
+        description="Crews can be assigned after the job is created."
+        footer={<><Button kind="tertiary" onClick={()=>setOpen(false)}>Cancel</Button><Button onClick={()=>setOpen(false)}>Create job</Button></>}>
+        <Text>Name the job, pick a site, and set a due date.</Text>
+      </Modal>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

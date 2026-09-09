@@ -1,0 +1,38 @@
+<!-- @dsCard group="Components" viewport="760x400" name="Lists and disclosure" subtitle="List, ExpandCollapse, Accordion" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{margin:0;padding:16px;background:var(--primary-background-color);font:var(--font-text2-normal);color:var(--primary-text-color)}</style></head><body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { List, ExpandCollapse, Accordion, Counter, Text } = window.LoftyDesignSystem_491d68;
+function Demo(){
+  const [sel,setSel]=React.useState('d1');
+  return (
+    <div style={{display:'grid',gridTemplateColumns:'280px 1fr',gap:24,alignItems:'start'}}>
+      <div style={{border:'1px solid var(--layout-border-color)',borderRadius:'var(--border-radius-medium)'}}>
+        <List selectedId={sel} onSelect={setSel} items={[
+          { title:'Depots' },
+          { id:'d1', label:'Depot 1', secondaryLabel:'Fyshwick', end:<Counter count={12} color="light" /> },
+          { id:'d2', label:'Depot 2', secondaryLabel:'Mitchell', end:<Counter count={4} color="light" /> },
+          { divider:true },
+          { id:'d3', label:'Unassigned', icon:'Alert' }
+        ]} />
+      </div>
+      <div style={{display:'flex',flexDirection:'column',gap:16}}>
+        <ExpandCollapse title="Advanced scheduling" subtitle="Buffers, dependencies, blackout dates">
+          <Text>Set a buffer between jobs so crews can travel between sites.</Text>
+        </ExpandCollapse>
+        <Accordion defaultIndex={0} sections={[
+          { title:'Scheduling', content:<Text>Weeks start Monday. Published schedules notify the crew.</Text> },
+          { title:'Crews and depots', content:<Text>A crew belongs to one depot and can be lent to another.</Text> },
+          { title:'Billing', content:<Text>Invoices are raised on job completion.</Text> }
+        ]} />
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>

@@ -1,0 +1,25 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Navigation" subtitle="Tabs, Menu, Breadcrumbs" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css"><style>body{margin:0;padding:16px;background:var(--primary-background-color);font:var(--font-text2-normal);color:var(--primary-text-color)}</style></head><body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<script type="text/babel">
+const { Tabs, Menu, Breadcrumbs } = window.LoftyDesignSystem_491d68;
+
+function Demo(){
+  const [v,setV] = React.useState('table');
+  return (
+    <div style={{display:'flex',flexDirection:'column',gap:16}}>
+      <Breadcrumbs items={[{label:'Workspace',icon:'Workspace'},{label:'Northline'},{label:'Job 4821'}]} iconBasePath="../../assets/icons" />
+      <Tabs value={v} onChange={setV} iconBasePath="../../assets/icons"
+        tabs={[{id:'table',label:'Table',icon:'Table'},{id:'timeline',label:'Timeline',icon:'Timeline',counter:4},{id:'map',label:'Map',icon:'Location'},{id:'files',label:'Files',icon:'Files',disabled:true}]} />
+      <Menu iconBasePath="../../assets/icons" style={{width:260}}
+        items={[{title:'Job actions'},{id:'edit',label:'Edit job',icon:'Edit',shortcut:'E'},{id:'dup',label:'Duplicate',icon:'Duplicate'},{id:'move',label:'Move to…',icon:'Move'},{divider:true},{id:'del',label:'Delete',icon:'Delete',destructive:true}]} />
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script>
+</body></html>
