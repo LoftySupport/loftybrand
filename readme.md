@@ -32,7 +32,7 @@ One product surface was described: **the app** — a work-management application
 | `components/disclosure/` | List, ExpandCollapse, Accordion |
 | `components/dataviz/` | StatTile, BarChart, ChartLegend, DonutStat, MeterRow, StatusChip |
 | `ui_kits/app/` | Work app recreation — see its own README |
-| `guidelines/` | Foundation specimen cards — colours (brand, neutrals, semantic, tints, pairings, text-on, data, dark), type (display, titles, body, brand body), spacing, radius, elevation, motion, states, z-index, breakpoints, forms pattern, a11y contrast & focus, copy glossary, icons grid, brand logo/mark/assets |
+| `guidelines/` | Foundation specimen cards — colours (brand, neutrals, semantic, tints, pairings, text-on, data, dark), type (display, titles, body, brand body), spacing, radius, elevation, motion, states, z-index, breakpoints, forms pattern, **screen pattern (`pattern-screen.html` — what a new screen has to have)**, a11y contrast & focus, copy glossary, icons grid, brand logo/mark/assets |
 | `assets/` | Logo, mark, favicon, brand-kit reference images, Fieldwork fonts, 274 product icon SVGs + 14 Lofty construction icons |
 | `assets/brand/` | Four logo colourways, the square app icon, and the six Lofty lines/shapes silhouettes in three colourways each |
 | `SKILL.md` | Agent Skills wrapper so this folder works inside Claude Code |

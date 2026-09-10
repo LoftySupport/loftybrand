@@ -2,6 +2,18 @@
 
 Notable changes to the Lofty design system. Newest first.
 
+## Unreleased
+
+### Added
+- `guidelines/pattern-screen.html` — **what a new screen has to have**, drawn in
+  place: the four views (board, table, gantt, calendar) over one dataset, the
+  persistent inline filter bar with its Advanced row and sort control, sortable
+  and filterable columns, date pickers, row and card selection with a bulk bar,
+  a kanban lane accepting a drop, and the stand-in an empty screen ships with.
+  A **Screens** section in `SKILL.md` states the same rules in prose, because a
+  screen was the one thing this system described component by component and
+  never as a whole.
+
 ## 1.0.0 — 2026-09-09
 
 First packaged release. Everything below already existed in the working
