@@ -1,0 +1,159 @@
+<!-- @dsCard group="Patterns" viewport="1180x900" name="New screen rules" subtitle="Four views, a persistent inline filter bar, sortable and filterable columns, selection and bulk edit, drag-and-drop lanes, and the stand-in" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css"><style>
+body{margin:0;padding:32px;background:var(--primary-background-color);color:var(--primary-text-color);font:var(--font-text2-normal)}
+h2{font:var(--font-h3-bold);margin:0 0 4px}
+.eyebrow{font:var(--font-text3-medium);color:var(--secondary-text-color);text-transform:uppercase;letter-spacing:.08em}
+.note{color:var(--secondary-text-color);max-width:78ch;text-wrap:pretty;margin:4px 0 0}
+code{font:var(--font-text3-normal);background:var(--allgrey-background-color);padding:1px 4px;border-radius:var(--border-radius-2)}
+.sec{margin-top:32px}
+.frame{border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);background:var(--secondary-background-color);overflow:hidden;margin-top:12px}
+
+/* the screen mock */
+.tabs{display:flex;gap:4px;padding:0 16px;border-bottom:1px solid var(--layout-border-color)}
+.tab{padding:10px 12px;font:var(--font-text2-normal);color:var(--secondary-text-color);border-bottom:2px solid transparent}
+.tab.on{color:var(--primary-text-color);font:var(--font-text2-bold);border-bottom-color:var(--lofty-orange,#f47e63)}
+.bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--layout-border-color)}
+.fld{display:flex;align-items:center;gap:8px}
+.lab{font:var(--font-text2-normal);color:var(--secondary-text-color);white-space:nowrap}
+.ctl{height:32px;min-width:150px;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;
+     gap:8px;padding:0 10px;border:1px solid var(--ui-border-color);border-radius:var(--border-radius-small);
+     background:var(--secondary-background-color);font:var(--font-text2-normal)}
+.ctl.any{color:var(--placeholder-color)}
+.ctl:after{content:"⌄";color:var(--secondary-text-color);line-height:0.6}
+.btn{height:32px;display:inline-flex;align-items:center;padding:0 10px;border-radius:var(--border-radius-small);
+     font:var(--font-text2-normal);color:var(--primary-text-color)}
+.btn.on{background:var(--primary-selected-color)}
+.spacer{margin-left:auto;color:var(--secondary-text-color);font:var(--font-text2-normal)}
+.adv{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding-top:8px;border-top:1px dashed var(--layout-border-color)}
+
+/* the lanes */
+.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px;background:var(--primary-background-color)}
+.lane{border:1px solid var(--layout-border-color);border-radius:var(--border-radius-medium);background:var(--secondary-background-color);
+      padding:10px;display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--strip)}
+.lane.drop{border-style:dashed;border-color:var(--lofty-orange,#f47e63);background:var(--primary-highlighted-color)}
+.lanehead{display:flex;align-items:baseline;justify-content:space-between}
+.count{font:var(--font-text3-medium);background:var(--tint);color:var(--ink);border-radius:999px;padding:1px 8px}
+.card{border:1px solid var(--layout-border-color);border-radius:var(--border-radius-small);background:var(--secondary-background-color);padding:10px;position:relative}
+.card.picked{outline:2px solid var(--lofty-orange,#f47e63);outline-offset:1px}
+.tick{position:absolute;top:8px;right:8px;width:14px;height:14px;border:1px solid var(--ui-border-color);border-radius:var(--border-radius-2);background:var(--secondary-background-color)}
+.tick.on{background:var(--lofty-orange,#f47e63);border-color:var(--lofty-orange,#f47e63)}
+.cname{font:var(--font-text2-medium);padding-right:22px}
+.cmeta{font:var(--font-text3-normal);color:var(--secondary-text-color);margin-top:2px}
+.chip{font:var(--font-text3-medium);border:1px solid var(--ui-border-color);border-radius:var(--border-radius-small);padding:0 6px;display:inline-flex;align-items:center;gap:6px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--positive-color,#00854d)}
+
+/* the bulk bar */
+.bulk{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0 16px 16px;padding:12px;
+      background:var(--primary-selected-color);border-radius:var(--border-radius-medium)}
+
+/* the stand-in */
+.standin{margin:0 16px 16px;padding:24px;border:1px dashed var(--layout-border-color);border-radius:var(--border-radius-medium);text-align:left}
+.pill{display:inline-flex;height:32px;align-items:center;padding:0 12px;border:1px solid var(--ui-border-color);border-radius:var(--border-radius-small);font:var(--font-text2-normal);margin-top:12px}
+.token{font:var(--font-text3-normal);color:var(--secondary-text-color);background:var(--allgrey-background-color);border-radius:var(--border-radius-2);padding:1px 4px}
+
+ul{margin:12px 0 0;padding-left:18px;color:var(--secondary-text-color)}li{margin:4px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+</style></head><body>
+
+<span class="eyebrow">Patterns</span>
+<h2>What a new screen has to have</h2>
+<p class="note">
+  Everything below defaults to Vibe unless a Lofty override is named — see
+  <code>CONTRIBUTING.md</code>. These are the rules a Lofty app screen is measured against
+  once it lists records: the same toolbar, the same four views, the same selection, the
+  same words in the empty state. A screen that answers these differently is a screen
+  somebody has to learn twice.
+</p>
+
+<div class="sec">
+  <span class="eyebrow">Anatomy</span>
+
+  <div class="frame">
+    <!-- saved views -->
+    <div class="tabs">
+      <span class="tab on">All</span><span class="tab">Live</span><span class="tab">Mine</span><span class="tab">Overdue</span>
+    </div>
+
+    <!-- the one toolbar: view, group, the group-by fields as filters, advanced, sort -->
+    <div class="bar">
+      <span class="fld"><span class="lab">View</span><span class="ctl">Board</span></span>
+      <span class="fld"><span class="lab">Group</span><span class="ctl">Stage</span></span>
+      <span class="fld"><span class="lab">Stage</span><span class="ctl any">Any</span></span>
+      <span class="fld"><span class="lab">Team</span><span class="ctl any">Any</span></span>
+      <span class="fld"><span class="lab">Status</span><span class="ctl any">Any</span></span>
+      <span class="btn on">Advanced (1)</span>
+      <span class="btn">Clear all</span>
+      <span class="spacer">Showing 11 of 200</span>
+      <span class="adv">
+        <span class="fld"><span class="lab">Job or project number</span><span class="ctl any">e.g. 1042-003</span></span>
+        <span class="fld"><span class="lab">Due</span><span class="ctl">Last 7 days</span></span>
+        <span class="fld"><span class="lab">Sort</span><span class="ctl">Due date</span><span class="btn">↑ A–Z</span></span>
+      </span>
+    </div>
+
+    <!-- lanes, one of them a live drop target -->
+    <div class="lanes">
+      <div class="lane" style="--strip:#7ec7cd;--tint:#eef7f8;--ink:#0e4d53">
+        <div class="lanehead"><span><span class="eyebrow">Stage</span><br><b>Acquisition</b></span><span class="count">2</span></div>
+        <div class="card picked"><span class="tick on"></span><div class="cname">1042-01</div><div class="cmeta">28 Corner Street · Design</div></div>
+        <div class="card"><span class="tick"></span><div class="cname">1042-02</div><div class="cmeta">30 Corner Street · Design</div></div>
+      </div>
+      <div class="lane drop" style="--strip:#4faab2;--tint:#e7f3f4;--ink:#0b454b">
+        <div class="lanehead"><span><span class="eyebrow">Stage</span><br><b>Pre-construction</b></span><span class="count">1</span></div>
+        <div class="card"><span class="tick"></span><div class="cname">1042-03</div><div class="cmeta">32 Corner Street · Estimating</div></div>
+        <div class="cmeta">Drop to move it here</div>
+      </div>
+      <div class="lane" style="--strip:#218b94;--tint:#e1eff0;--ink:#08434a">
+        <div class="lanehead"><span><span class="eyebrow">Stage</span><br><b>Construction</b></span><span class="count">1</span></div>
+        <div class="card"><span class="tick"></span><div class="cname">1041-07</div><div class="cmeta">9 Wattle Grove · Site<br><span class="chip"><span class="dot"></span>On track</span></div></div>
+      </div>
+    </div>
+
+    <!-- the bulk bar the selection puts up -->
+    <div class="bulk">
+      <b>1 selected</b><span class="btn">Clear</span>
+      <span class="ctl any">Move to…</span><span class="ctl any">Set team…</span>
+      <span class="ctl any">Assign to…</span><span class="btn">Unassign</span>
+    </div>
+
+    <!-- the stand-in -->
+    <div class="standin">
+      <b>No jobs yet</b>
+      <p class="note">A job is one dwelling on a project. Create a project first, then add its jobs — one per lot.</p>
+      <span class="pill">Create a project</span>
+      <p class="note" style="margin-top:12px">
+        An unbound value is a token naming its column — <span class="token">{{job_display.project_type}}</span> —
+        never a plausible-looking stand-in.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="sec two">
+  <div>
+    <span class="eyebrow">The rules</span>
+    <ul>
+      <li><b>Four views over one dataset.</b> Board, Table, Gantt, Calendar, one toolbar above all of them. Switching keeps the grouping, the filters, the sort and the search. Leave one out only where it would draw nothing — and say which and why.</li>
+      <li><b>The filter bar is persistent, inline and one wrapping row.</b> The fields you group by are on it from the start, each reading <i>Any</i>. Everything else is a single <b>Advanced</b> row that opens whole. Never a filter panel, drawer or sidebar — filters must not take the screen the results are on.</li>
+      <li><b>Advanced carries a count</b> so a filter narrowing the screen from behind a folded row still announces itself, and <b>Clear all</b> clears the grouping with the filters.</li>
+      <li><b>Every comparable column sorts</b>, and Sort by and Group by reach <i>any</i> property — including one whose column is switched off. Blanks sort last in both directions.</li>
+      <li><b>Every date is a date picker.</b> Presets — today, yesterday, last 7, last 30, next 30 — plus a custom range. Never two boxes to type into.</li>
+      <li><b>Columns show, hide and reorder</b>, by drag and by arrow keys, remembered per person.</li>
+      <li><b>The count line says what is hidden</b>: "Showing 11 of 200", announced as well as drawn.</li>
+    </ul>
+  </div>
+  <div>
+    <span class="eyebrow">Selection, drag, and the stand-in</span>
+    <ul>
+      <li><b>A tick box on every row and every card</b>, a select-all, and one bulk bar for the whole selection — a selection made on the board is actionable without switching to the table, and it survives the switch.</li>
+      <li><b>The bulk bar reassigns and edits</b>: set the person, the team, the status, the stage, a date. Writes go one at a time so a refusal names its record; what was skipped is counted and said before, not discovered after.</li>
+      <li><b>Selection is page state, never the URL.</b> A link that arrives with eleven records pre-selected is a trap.</li>
+      <li><b>A lane whose column is a settable value takes a drop.</b> The lane under the card shows a dashed orange edge on <code>--primary-highlighted-color</code>; a lane that will not take it refuses during the drag, so the cursor stays honest, and prints why while there is still time to aim elsewhere.</li>
+      <li><b>A grouping a drop cannot write says so</b> and names the grouping to switch to. Inert cards with no explanation read as broken.</li>
+      <li><b>The stand-in is a worked example, not an apology.</b> Say what the screen is for, what to do next, and put the control to do it in the empty state — the create button usually lives in a row that is not being drawn.</li>
+      <li><b>"Nothing here yet" and "nothing matches" are different sentences</b>, and only the one that actually narrowed offers to clear itself.</li>
+    </ul>
+  </div>
+</div>
+
+</body></html>

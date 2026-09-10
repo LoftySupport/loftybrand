@@ -13,7 +13,7 @@ Read `readme.md` for the full rationale and every foundation in detail. This fil
 ## Before you build
 
 1. Read `readme.md`.
-2. Look at `guidelines/` — one `@dsCard` specimen per foundation (colour hierarchy, neutrals, pairings, dark mode, type, spacing, elevation, icons, brand assets), plus two composed pattern references: `recommendation-dashboard-v2.html` (data-viz ramp in place) and `pattern-board.html` (Kanban lanes, collapsible columns, outline status chips, drag targets).
+2. Look at `guidelines/` — one `@dsCard` specimen per foundation (colour hierarchy, neutrals, pairings, dark mode, type, spacing, elevation, icons, brand assets), plus three composed pattern references: `recommendation-dashboard-v2.html` (data-viz ramp in place), `pattern-board.html` (Kanban lanes, collapsible columns, outline status chips, drag targets) and **`pattern-screen.html` — what a new screen has to have**, which is the one to read before drawing a screen rather than a component.
 3. Read the `.d.ts` and `.prompt.md` beside any component you plan to use. Do not guess props.
 4. For an app-shaped screen, open `ui_kits/app/` first — it is a working recreation (sign in, jobs table/timeline, new-job dialog, delivery dashboard) and shows how the parts compose.
 
@@ -84,6 +84,21 @@ Fieldwork ships as `.woff` in six cuts only, so the brand scale uses weights 300
 **Transparency** Only the hover wash and the modal backdrop (black at 70%). No frosted glass, no backdrop blur.
 
 **Layout** Fixed 56px top bar, 224px side nav, both persistent, both white with grey rules. Content scrolls under them. Sticky grey table headers. Toasts top-centre. Dialogs centre over the backdrop.
+
+## Screens
+
+A component is not a screen. Once a screen lists records — jobs, tasks, properties, contacts — it is measured against `guidelines/pattern-screen.html`, which draws every rule below in place. Read it before designing one.
+
+- **Four views over one dataset.** Board (kanban), Table, Gantt, Calendar, with one toolbar above all four; switching a view keeps the grouping, the filters, the sort and the search. Leave a view out only where it would draw nothing — configuration screens, lookup tables — and name the omission rather than dropping the tab silently.
+- **One persistent, inline filter bar at the top.** The fields the screen groups by are on the bar from the start, each reading *Any* until chosen; everything else is a single **Advanced** row that opens whole, with a count on the button so a filter hidden behind a folded row still announces itself. Never a filter panel, drawer or sidebar: filters must not take the screen the results are supposed to be on. Compact — one wrapping row of 32px controls, labels beside them, not above.
+- **Standard filters for the domain**, then the screen's own: team, team member, lifecycle stage, search by job # / project #, and a date range. "Similar options" for other domains means the equivalents, not fewer.
+- **Every comparable column sorts, and every column a person would narrow by filters.** Sort by and Group by reach any property, including one whose column is switched off; blanks sort last in both directions. Columns show, hide and reorder — by drag and by arrow key — and the layout is remembered per person.
+- **Every date is a `DatePicker`**, with presets (today, yesterday, last 7, last 30, next 30) plus a custom range. Never two boxes to type into, and never a dropdown of three fixed spans.
+- **Selection and bulk edit everywhere.** A tick box on every row and every card, a select-all, and one bulk bar carrying reassign / set team / set status / set a date. The bar belongs to the selection, not to the view it was made in.
+- **Kanban lanes take a drop wherever the column is a value somebody can set.** The lane under the card shows a dashed orange edge on `--primary-highlighted-color`. A lane that will not accept the card refuses during the drag and says why; a grouping no drop could write turns dragging off and names the grouping to switch to.
+- **The stand-in.** An empty screen says what it is for, what to do next, and carries the control to do it — the same way the document template ships filled in rather than as a specification. "Nothing here yet" and "nothing matches your filters" are different sentences, and only the one that actually narrowed offers to clear itself. An unbound value is a token naming its column, never a plausible-looking placeholder.
+- **Records open in a slideout** down the right, over a list that stays readable — expandable to full width, width-adjustable, Escape to close.
+- **Everything on screen is in the URL**, and defaults are absent from it, so a link is the answer to "show me what you mean".
 
 ## Icons
 
