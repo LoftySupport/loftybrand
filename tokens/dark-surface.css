@@ -1,0 +1,24 @@
+/* Dark-surface selection layer — additions for tokens/colors.css.
+   Selection on a dark ground is a white wash, not the peach light-surface tint and never an
+   orange fill. These are the only alpha values in the rail; everything else is a named token. */
+
+:root {
+  /* Ink on a Foundation Black ground */
+  --on-dark-text-color:            #ffffff;   /* 10.1:1 on #414042 */
+  --on-dark-secondary-text-color:  rgba(255,255,255,.72); /* 5.9:1 — eyebrows, counts, meta */
+
+  /* Structure */
+  --on-dark-border-color:          rgba(255,255,255,.16); /* rules, dividers, rail edge */
+
+  /* States */
+  --on-dark-hover-color:           rgba(255,255,255,.12);
+  --on-dark-selected-color:        rgba(255,255,255,.20);
+  --on-dark-selected-hover-color:  rgba(255,255,255,.28); /* selected row whose flyout is open */
+
+  /* Scrollbar on a dark ground */
+  --on-dark-scrollbar-thumb:       rgba(255,255,255,.32);
+  --on-dark-scrollbar-thumb-hover: rgba(255,255,255,.48);
+}
+
+/* Not redefined under [data-theme="dark"]: a Foundation Black rail is the same material on
+   both themes, so these values hold unchanged. */
