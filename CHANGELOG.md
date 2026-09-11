@@ -5,6 +5,33 @@ Notable changes to the Lofty design system. Newest first.
 ## Unreleased
 
 ### Added
+- **`components/navigation/NavRail`** — the persistent dark application rail. One component with two
+  widths (224px expanded, 64px collapsed) and four states, not four variants. White-wash selection,
+  role-gated footer, restyled dark scrollbar.
+- **`components/navigation/NavFlyout`** — the 240px views panel that opens beside a hovered
+  destination. Same component at both rail widths.
+- **`components/navigation/RecordTabs`** — delineated 36px tab strip for a record's docked panel:
+  Flint 100 strip, dividers between tabs, active tab lifted as a white card with a Crisp Orange
+  underline. `Tabs` remains the right choice on white.
+- **`components/navigation/RecordBreadcrumb`** — three-level record path, plus `JobTitle` carrying
+  the house format `1209-002 - SUBURB, Res/StreetNo Street` with the project number as a quiet link.
+- **`components/records/`** — new family: `RecordDrawer` (header / scrolling body / docked footer,
+  with `RecordSection`), `FieldRow` and `FieldList` (one row system, typed empty controls),
+  `ProcessSteps` (checkbox rows with disclosure, date stamping, derived progress), `StageTrack`
+  and `HealthChip` (pipeline strip coloured by record health).
+- **`tokens/dark-surface.css`** — `--on-dark-*` ink, border, hover and selection values. These
+  replace the hardcoded white alphas that the mockups had been carrying.
+- **14 Lofty construction glyphs as SVG** — traced from the client PNGs, normalised to one stroke
+  weight on a 24×24 grid. See `ICONS.md`.
+
+### Rules recorded
+
+- Crisp Orange is a fill, never ink on light and never behind 12px text. Where a small element needs
+  emphasis: Foundation Black fill with white ink, or `--negative-color`.
+- Selection on dark is a white wash; the peach tint is for light surfaces only.
+- A field with a type shows its control, not the word "Empty".
+- In a column of controls every control is the same width and height.
+- There is no type step below 12px.
 - `guidelines/pattern-screen.html` — **what a new screen has to have**, drawn in
   place: the four views (board, table, gantt, calendar) over one dataset, the
   persistent inline filter bar with its Advanced row and sort control, sortable
