@@ -8,6 +8,8 @@ Outstanding issues, open questions and next steps only. What the system is and h
 **Done**
 - Artifact "Lofty Momentum Consolidated" populated: brand book, Consolidation and Handoff sections, `tokens.json` (56 colours in three themes, 19 type styles, spacing, radius, shadow, blur, z-index), 20 components with previews, six Fieldwork fonts, 81 assets in three groups, a new cover.
 - This folder added: the same tokens as CSS, the Vibe name mapping, the eleven backgrounds, the component rules as Markdown.
+- Design canvas published (5 October 2026, later the same day): six artboards at https://claude.ai/artifact/Ma3dEuBCDVpnYA7MZM8dfA, with the consolidated system installed as its design system. The landing artboard carries a theme tweak (light, eco, twilight); the Deep Eco artboard imports it.
+- Pull request #4 merged 5 October 2026 with five decisions recorded (three themes, Deep Eco ink, Flint dropped, glass everywhere, Momentum chart series).
 
 **Decided**
 - 5 October 2026, Amber: the Hub ships three themes (Sunrise, Deep Eco, Twilight) via `data-theme`, with two token tiers. Supersedes C15's two themes; the Hub's `docs/ui-system/OPEN_QUESTIONS.md` row of 5 October and `PATTERNS.md` section 7 (C15) still need updating on `ui_system_rebuild`.
