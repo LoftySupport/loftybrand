@@ -28,7 +28,7 @@ A higher rank wins a conflict. A lower rank fills a gap. Nothing here is invente
 | Control boundary | `#8a898d` (`--ui-border-color`), `#807f74` on dark | `rgba(8,26,28,0.12)` light, white 16% dark (1.6:1 on dark) | 5 Oct, C10: `#8a898d`, one token | `line-control` = `#8a898d` in every theme: 3.1:1 on Shell, 3.5:1 on white, 5.8:1 on eco-night, 5.1:1 on the dark solid card |
 | Selected state | Peach `#fae4d5` on light; white wash 20% on dark rails | `surface-selected` white on light, white 10% on dark | 5 Oct, C11: peach tint on light, white wash on dark, one token each | `surface-selected` = `#fae4d5` / `rgba(255,255,255,0.20)`; `surface-selected-hover` carries the App Design System hover steps |
 | Status | Outline chip with a dot; Vibe `#00854d`, `#d83a52`, `#ffcb00` | Pill chip, shape icon plus word, graded; `#00805f`, `#c28400`, `#d83a52` | 5 Oct, C12: "Match momentum" | Momentum's set and grading. Vibe's warning `#ffcb00` (1.5:1) is retired. `status-complete` = `eco-green` added from the StatusIcon guideline |
-| Themes | Light and dark (`data-theme="dark"`) | Sunrise, Deep Eco, Twilight | 4 Oct, C15: two themes. 5 Oct: Amber's brief asks for three via `data-theme` and two token tiers. **Open** | Built with three themes and two tiers (primitives, semantic). The Hub can ship two by not offering `twilight` |
+| Themes | Light and dark (`data-theme="dark"`) | Sunrise, Deep Eco, Twilight | 4 Oct, C15: two themes. 5 Oct: Amber's brief asks for three via `data-theme` and two token tiers. **Decided 5 Oct 2026, this consolidation: three themes.** The Hub ships Sunrise, Deep Eco and Twilight; C15 is superseded | Three themes and two tiers (primitives, semantic) |
 
 ## Where Momentum won over the App Design System
 

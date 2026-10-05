@@ -9,15 +9,17 @@ Outstanding issues, open questions and next steps only. What the system is and h
 - Artifact "Lofty Momentum Consolidated" populated: brand book, Consolidation and Handoff sections, `tokens.json` (56 colours in three themes, 19 type styles, spacing, radius, shadow, blur, z-index), 20 components with previews, six Fieldwork fonts, 81 assets in three groups, a new cover.
 - This folder added: the same tokens as CSS, the Vibe name mapping, the eleven backgrounds, the component rules as Markdown.
 
+**Decided**
+- 5 October 2026, Amber: the Hub ships three themes (Sunrise, Deep Eco, Twilight) via `data-theme`, with two token tiers. Supersedes C15's two themes; the Hub's `docs/ui-system/OPEN_QUESTIONS.md` row of 5 October and `PATTERNS.md` section 7 (C15) still need updating on `ui_system_rebuild`.
+
 **Needs Amber (one at a time, in the popup)**
-1. Themes for the Hub: three via `data-theme` (light, eco, twilight) and two token tiers, as the 5 October brief asks, or the two confirmed on 4 October (C15)? This folder is built with three.
-2. Foundation Black `#414042` as text: replaced by Deep Eco in UI (Momentum's rule, applied here), or kept for the Hub? Affects every text token in `vibe-theme.css`.
-3. Flint neutrals: not carried. Confirm the Hub drops the Flint page and border values for Shell and the alpha `line` tokens, or name which Flint steps stay.
-4. Backgrounds and glass: the App Design System's "no gradients, no blur" rule is superseded by Momentum's glows and frame. Confirm for the Hub, or limit glass to the shell.
-5. Data visualisation: five fixed series replace the single-accent orange ramp. Confirm, and decide a sequential scale (none exists in either source).
-6. The derived values in `CONSOLIDATION.md` (focus ring, hover wash, disabled ink, backdrop): confirm or change.
-7. `radius-xs` 4px and `radius-circle` from the App Design System are kept for Vibe controls; 2px and 16px are dropped. Confirm.
-8. Contacts, Dashboard and Team icons: which drawing wins (`../assets/icons-pending/README.md`).
+1. Foundation Black `#414042` as text: replaced by Deep Eco in UI (Momentum's rule, applied here), or kept for the Hub? Affects every text token in `vibe-theme.css`.
+2. Flint neutrals: not carried. Confirm the Hub drops the Flint page and border values for Shell and the alpha `line` tokens, or name which Flint steps stay.
+3. Backgrounds and glass: the App Design System's "no gradients, no blur" rule is superseded by Momentum's glows and frame. Confirm for the Hub, or limit glass to the shell.
+4. Data visualisation: five fixed series replace the single-accent orange ramp. Confirm, and decide a sequential scale (none exists in either source).
+5. The derived values in `CONSOLIDATION.md` (focus ring, hover wash, disabled ink, backdrop): confirm or change.
+6. `radius-xs` 4px and `radius-circle` from the App Design System are kept for Vibe controls; 2px and 16px are dropped. Confirm.
+7. Contacts, Dashboard and Team icons: which drawing wins (`../assets/icons-pending/README.md`).
 
 **Next steps**
 - When the Hub rebuild reaches Stage 3, repoint `app/src/design-system/` (the mirror) at this folder and update `loftyTheme.ts`; expect `npm run check:design-tokens` to fail until both move together. Correct `DESIGN.md` and `check-contrast.mjs` lines 142 to 152 for Deep Eco on orange (C08 follow-up).
