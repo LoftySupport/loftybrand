@@ -17,6 +17,11 @@ Notable changes to the Lofty design system. Newest first.
 - **`assets/icons/ContactsLofty.svg`, `DashboardLofty.svg`, `TeamLofty.svg`** (5 October 2026): the three traced glyphs held in
   `assets/icons-pending/`, placed under distinct names. The Vibe glyphs keep Contacts, Dashboard and Team (Amber, 5 October 2026).
   The holding note moved to `docs/icons-pending-decision.md`.
+
+### Changed
+- **Document template and cover pages** (`projects/lofty-document-template/`, `templates/lofty-document/`, 5 October 2026): text ink,
+  headings, rules and the hover wash move from Foundation Black `#414042` to Deep Eco `#081a1c` (Amber, 5 October 2026: Deep Eco
+  everywhere, documents included). The closing page's dark brand band keeps Foundation Black as a background.
 - **`components/navigation/NavRail`** — the persistent dark application rail. One component with two
   widths (224px expanded, 64px collapsed) and four states, not four variants. White-wash selection,
   role-gated footer, restyled dark scrollbar.
