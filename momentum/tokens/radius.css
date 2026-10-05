@@ -1,0 +1,11 @@
+/* momentum/tokens/radius.css : corners grow with the surface. */
+:root {
+  --radius-xs: 4px; /* Vibe controls inside the Hub: inputs, checkboxes, menu items, small tags (the App Design System's `--border-radius-small`). */
+  --radius-s: 8px; /* Small tags and status chips that are not pills; cards in dense tables. */
+  --radius-m: 12px; /* Rail items, icon tiles, list rows. */
+  --radius-l: 20px; /* Starter cards, answer widgets, glance cards. */
+  --radius-xl: 24px; /* The prompt box and side panels. */
+  --radius-frame: 28px; /* The frosted app frame only. */
+  --radius-pill: 999px; /* Buttons, chips, send and voice buttons, the mobile prompt bar, toggles, progress tracks. */
+  --radius-circle: 50%; /* Avatars, radios, loaders, status circles. */
+}

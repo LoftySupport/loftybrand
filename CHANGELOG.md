@@ -5,6 +5,15 @@ Notable changes to the Lofty design system. Newest first.
 ## Unreleased
 
 ### Added
+- **`momentum/`** (5 October 2026): Lofty Momentum Consolidated. The Momentum brand refresh (concept 1.4)
+  merged with this system and Amber's 4 and 5 October decisions for the Hub rebuild, as one token set
+  with three themes (Sunrise, Deep Eco, Twilight): `styles.css`, eleven `tokens/*.css` files including
+  `vibe-theme.css` (every Vibe semantic name pointed at a Momentum token) and `backgrounds.css`,
+  `tokens.json`, 18 component rule files, `CONSOLIDATION.md` (every decision and its source) and
+  `HANDOFF.md` (questions for Amber). Montserrat only, four weights, Deep Eco ink on orange, `#8a898d`
+  control edge in every theme, peach and white-wash selection, WCAG AA with a solid focus ring, graded
+  status chips. Opt-in: the root `styles.css` is unchanged. Published alongside as the Claude artifact
+  "Lofty Momentum Consolidated".
 - **`components/navigation/NavRail`** — the persistent dark application rail. One component with two
   widths (224px expanded, 64px collapsed) and four states, not four variants. White-wash selection,
   role-gated footer, restyled dark scrollbar.

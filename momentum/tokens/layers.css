@@ -1,0 +1,8 @@
+/* momentum/tokens/layers.css : z-index scale, never a literal (App Design System). */
+:root {
+  --z-sticky: 10; /* Sticky table headers and the top bar. */
+  --z-dropdown: 20; /* Dropdown lists and combobox panels. */
+  --z-tooltip: 30; /* Tooltips and tipseens. */
+  --z-dialog: 40; /* Dialogs, modals and the backdrop. */
+  --z-toast: 50; /* Toasts and alert banners. */
+}

@@ -1,0 +1,129 @@
+/* momentum/tokens/colors.css : Lofty Momentum Consolidated colour tokens.
+   Generated from tokens.json by gen.py on 5 October 2026. Edit the generator, not this file.
+   Sunrise (light) on :root; Deep Eco on [data-theme="eco"]; Twilight on [data-theme="twilight"] (any element).
+   Precedence: Amber's decisions of 4 and 5 October 2026, then Momentum 1.4, then the App Design System, then Vibe. */
+:root, [data-theme="light"] {
+  /* ---- Brand kit and Momentum palette (primitives, never themed except plum-lift) ---- */
+  --crisp-orange: #f47e63;
+  --orange-hover: #d9634a;
+  --orange-pressed: #c2543c;
+  --deep-eco: #081a1c;
+  --plum: #32021f;
+  --eco-green: #005058;
+  --current: #009ba3;
+  --shell: #fcf1ee;
+  --blush: #fad1c7;
+  --sky: #adfbff;
+  --eco-night: #020a0b;
+  --twilight: #070105;
+  --foundation-black: #414042;
+  --finisher-white: #ffffff;
+  --mid-gray: #d1d3d4;
+  --plum-lift: var(--plum);
+  /* ---- Semantic layer: build with these, not the primitives ---- */
+  --page: var(--shell);
+  --ink: var(--deep-eco);
+  --ink-muted: #5a6668;
+  --ink-disabled: rgba(8,26,28,0.4);
+  --surface-frame: rgba(255,255,255,0.42);
+  --surface-panel: rgba(255,255,255,0.5);
+  --surface-card: rgba(255,255,255,0.72);
+  --surface-input: #ffffff;
+  --surface-solid: #ffffff;
+  --surface-selected: #fae4d5;
+  --surface-selected-hover: #f6d3bf;
+  --surface-hover: rgba(8,26,28,0.08);
+  --edge-glass: rgba(255,255,255,0.85);
+  --line: rgba(8,26,28,0.08);
+  --line-control: #8a898d;
+  --action: var(--crisp-orange);
+  --action-hover: var(--orange-hover);
+  --action-pressed: var(--orange-pressed);
+  --on-action: var(--deep-eco);
+  --ai-surface: var(--plum);
+  --focus: #c2543c;
+  --backdrop: rgba(8,26,28,0.7);
+  --glow-1: var(--crisp-orange);
+  --glow-2: var(--crisp-orange);
+  --glow-3: var(--current);
+  /* ---- Status: state only, never decoration or a chart series ---- */
+  --status-on-track: #00805f;
+  --status-on-track-soft: rgba(0,128,95,0.12);
+  --status-at-risk: #c28400;
+  --status-at-risk-soft: #fdefc8;
+  --status-at-risk-edge: rgba(194,132,0,0.55);
+  --status-overdue: #d83a52;
+  --status-overdue-fill: #d83a52;
+  --status-complete: var(--eco-green);
+  --on-status: #ffffff;
+  /* ---- Chart series: which one, never is it OK ---- */
+  --series-1: #009ba3;
+  --series-2: #e46c50;
+  --series-3: #8e3a72;
+  --series-4: #ad8410;
+  --series-5: #3f6fb0;
+  --series-other: var(--line-control);
+  color-scheme: light;
+}
+[data-theme="eco"] {
+  --page: var(--eco-night);
+  --ink: #ffffff;
+  --ink-muted: rgba(255,255,255,0.62);
+  --ink-disabled: rgba(255,255,255,0.4);
+  --surface-frame: rgba(255,255,255,0.03);
+  --surface-panel: rgba(255,255,255,0.04);
+  --surface-card: rgba(255,255,255,0.05);
+  --surface-input: rgba(255,255,255,0.06);
+  --surface-solid: #0a1b1d;
+  --surface-selected: rgba(255,255,255,0.20);
+  --surface-selected-hover: rgba(255,255,255,0.28);
+  --surface-hover: rgba(255,255,255,0.12);
+  --edge-glass: rgba(255,255,255,0.08);
+  --line: rgba(255,255,255,0.08);
+  --focus: #f47e63;
+  --backdrop: rgba(0,0,0,0.7);
+  --glow-1: var(--current);
+  --glow-3: var(--eco-green);
+  --status-on-track: #1f9e80;
+  --status-on-track-soft: rgba(31,158,128,0.18);
+  --status-at-risk: #bf8912;
+  --status-at-risk-soft: rgba(191,137,18,0.22);
+  --status-at-risk-edge: rgba(191,137,18,0.6);
+  --status-overdue: #e85a6e;
+  --on-status: var(--deep-eco);
+  --series-3: #a8508a;
+  --series-4: #b88c14;
+  --series-5: #5a82d0;
+  color-scheme: dark;
+}
+[data-theme="twilight"] {
+  --plum-lift: #4a0c32;
+  --page: var(--twilight);
+  --ink: #ffffff;
+  --ink-muted: rgba(255,255,255,0.62);
+  --ink-disabled: rgba(255,255,255,0.4);
+  --surface-frame: rgba(255,255,255,0.03);
+  --surface-panel: rgba(255,255,255,0.04);
+  --surface-card: rgba(255,255,255,0.05);
+  --surface-input: rgba(255,255,255,0.06);
+  --surface-solid: #170710;
+  --surface-selected: rgba(255,255,255,0.20);
+  --surface-selected-hover: rgba(255,255,255,0.28);
+  --surface-hover: rgba(255,255,255,0.12);
+  --edge-glass: rgba(255,255,255,0.08);
+  --line: rgba(255,255,255,0.08);
+  --focus: #f47e63;
+  --backdrop: rgba(0,0,0,0.7);
+  --glow-1: #8e3a72;
+  --status-on-track: #1f9e80;
+  --status-on-track-soft: rgba(31,158,128,0.18);
+  --status-at-risk: #bf8912;
+  --status-at-risk-soft: rgba(191,137,18,0.22);
+  --status-at-risk-edge: rgba(191,137,18,0.6);
+  --status-overdue: #e85a6e;
+  --on-status: var(--deep-eco);
+  --series-3: #a8508a;
+  --series-4: #b88c14;
+  --series-5: #5a82d0;
+  color-scheme: dark;
+}

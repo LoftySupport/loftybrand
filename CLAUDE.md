@@ -10,3 +10,6 @@ monday.com Vibe is the design system this one inherits from. **Everything defaul
 - **Components:** layout and interaction behaviour come from Vibe; brand comes from the Lofty brand kit. Nothing here should be invented Lofty product design.
 
 When something is not specified, the answer is "whatever Vibe does".
+
+## Momentum, 5 October 2026
+`momentum/` holds Lofty Momentum Consolidated: the brand refresh merged with this system and Amber's 4 and 5 October 2026 decisions, as an opt-in token layer with three themes. Read `momentum/CONSOLIDATION.md` before changing a value there, and `momentum/HANDOFF.md` for what is still open. Vibe stays the base: `momentum/tokens/vibe-theme.css` maps every Vibe semantic name onto a Momentum token, so the components in `components/` are unchanged. The root `styles.css` still serves the production system; link `momentum/styles.css` to get Momentum.

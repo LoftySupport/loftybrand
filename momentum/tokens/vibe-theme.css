@@ -1,0 +1,132 @@
+/* momentum/tokens/vibe-theme.css : the consolidation itself, as CSS.
+   The App Design System's semantic layer uses monday.com Vibe's token names, and so does the Lofty Hub
+   (app/src/theme/tokens.css). This file points every one of those names at a Lofty Momentum token, so a
+   Vibe-shaped component takes the brand refresh without a rewrite. Load it after tokens/colors.css.
+   Inside the Hub, re-declare at body.light-app-theme specificity as tokens.css does today, or Vibe's class wins.
+   Lines marked FALLBACK keep an App Design System value because Momentum has no equivalent (see CONSOLIDATION.md). */
+:root, [data-theme="light"], [data-theme="eco"], [data-theme="twilight"] {
+  /* primary and brand */
+  --primary-color: var(--action);
+  --primary-hover-color: var(--action-hover);
+  --primary-selected-color: var(--surface-selected);
+  --primary-selected-hover-color: var(--surface-selected-hover);
+  --primary-highlighted-color: var(--surface-selected);
+  --primary-surface-color: var(--surface-solid);
+  --brand-color: var(--crisp-orange);
+  --brand-hover-color: var(--orange-hover);
+  --brand-selected-color: var(--surface-selected);
+  --brand-selected-hover-color: var(--surface-selected-hover);
+  --primary-action-color: var(--action);
+  --primary-action-hover-ground: var(--action-hover);
+  --primary-action-hover-ink: var(--on-action);
+  /* secondary and highlight */
+  --secondary-color: var(--ink);
+  --secondary-hover-color: var(--ink-muted);
+  --secondary-selected-color: var(--surface-selected);
+  --highlight-color: var(--eco-green);
+  --highlight-hover-color: #003c42;   /* FALLBACK: App Design System --lofty-green-hover */
+  --highlight-tint-color: #eef4f4;    /* FALLBACK: App Design System --lofty-green-tint */
+  /* text */
+  --primary-text-color: var(--ink);
+  --secondary-text-color: var(--ink-muted);
+  --placeholder-color: var(--ink-muted);
+  --text-color-on-primary: var(--on-action);
+  --text-color-on-brand: var(--on-action);
+  --text-color-on-inverted: var(--page);
+  --text-color-on-status: var(--on-status);
+  --text-color-on-warning: var(--on-status);
+  --disabled-text-color: var(--ink-disabled);
+  --link-color: var(--ink);
+  --link-hover-color: var(--orange-pressed);
+  /* surfaces */
+  --primary-background-color: var(--surface-solid);
+  --secondary-background-color: var(--surface-solid);
+  --primary-background-hover-color: var(--surface-hover);
+  --allgrey-background-color: var(--page);
+  --page-tint-color: var(--page);
+  --page-tint-soft-color: var(--page);
+  --surface-recessed-color: var(--line);
+  --grey-background-color: var(--page);
+  --dark-background-color: var(--page);
+  --inverted-color-background: var(--ink);
+  --modal-background-color: var(--surface-solid);
+  --dialog-background-color: var(--surface-solid);
+  --backdrop-color: var(--backdrop);
+  --disabled-background-color: var(--line);
+  --fixed-dark-color: var(--deep-eco);
+  --fixed-light-color: var(--finisher-white);
+  /* lines and icons */
+  --ui-border-color: var(--line-control);
+  --ui-border-subtle-color: var(--line);
+  --layout-border-color: var(--line);
+  --ui-background-color: var(--line);
+  --ui-background-hover-color: var(--surface-hover);
+  --icon-color: var(--ink-muted);
+  /* status: Vibe's three map onto Momentum's graded set (Amber, 5 October 2026, C12) */
+  --positive-color: var(--status-on-track);
+  --positive-color-hover: var(--status-on-track);
+  --positive-color-selected: var(--status-on-track-soft);
+  --positive-color-selected-hover: var(--status-on-track-soft);
+  --negative-color: var(--status-overdue);
+  --negative-color-hover: var(--status-overdue-fill);
+  --negative-color-selected: #f4c3cb;        /* FALLBACK: App Design System; Momentum's Overdue chip is a solid fill */
+  --negative-color-selected-hover: #ecb7bf;  /* FALLBACK: App Design System */
+  --warning-color: var(--status-at-risk);
+  --warning-color-hover: var(--status-at-risk);
+  --warning-color-selected: var(--status-at-risk-soft);
+  --warning-color-selected-hover: var(--status-at-risk-soft);
+  --disabled-component-opacity: .4;
+  /* data: the single-accent ramp becomes the five fixed series. No sequential scale exists in Momentum (CONSOLIDATION.md, gaps). */
+  --data-1: var(--series-1);
+  --data-2: var(--series-2);
+  --data-3: var(--series-3);
+  --data-4: var(--series-4);
+  --data-5: var(--series-5);
+  --data-6: var(--series-other);
+  /* type */
+  --font-family: var(--font-body);
+  --title-font-family: var(--font-display);
+  --h1-font-family: var(--font-display);
+  --brand-font-family: var(--font-brand);
+  --brand-body-font-family: var(--font-brand-body);
+  --font-weight-normal: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 700;
+  --font-h1-bold: var(--type-h1);
+  --font-h2-bold: var(--type-h2);
+  --font-h3-bold: var(--type-h3);
+  --font-text1-normal: var(--type-text1);
+  --font-text2-normal: var(--type-text2);
+  --font-text3-normal: var(--type-text3);
+  --letter-spacing-h1-bold: var(--letter-spacing-h1);
+  --letter-spacing-h2-bold: var(--letter-spacing-h2);
+  --letter-spacing-h3-bold: var(--letter-spacing-h3);
+  /* radius */
+  --border-radius-2: 2px;                     /* FALLBACK: App Design System checkbox corner; no Momentum step */
+  --border-radius-small: var(--radius-xs);
+  --border-radius-medium: var(--radius-s);
+  --border-radius-large: var(--radius-m);
+  --border-radius-big: var(--radius-l);
+  --border-radius-pill: var(--radius-pill);
+  --border-radius-circle: var(--radius-circle);
+  --border-width: 1px;
+  --border-style: solid;
+  /* shadows and focus */
+  --box-shadow-xs: var(--shadow-xs);
+  --box-shadow-small: var(--shadow-s);
+  --box-shadow-medium: var(--shadow-m);
+  --box-shadow-large: var(--shadow-l);
+  /* --focus-ring is the same name in both systems and is declared in tokens/shadows.css */
+  /* on-dark rail tokens (App Design System tokens/dark-surface.css) */
+  --on-dark-text-color: #ffffff;
+  --on-dark-secondary-text-color: rgba(255,255,255,.72);
+  --on-dark-border-color: rgba(255,255,255,.16);
+  --on-dark-hover-color: rgba(255,255,255,.12);
+  --on-dark-selected-color: rgba(255,255,255,.20);
+  --on-dark-selected-hover-color: rgba(255,255,255,.28);
+}
+[data-theme="eco"], [data-theme="twilight"] {
+  --link-hover-color: var(--crisp-orange);   /* orange is 7.6:1 on the dark pages; orange-pressed is not */
+  --inverted-color-background: var(--finisher-white);
+  --text-color-on-inverted: var(--eco-night);
+}
