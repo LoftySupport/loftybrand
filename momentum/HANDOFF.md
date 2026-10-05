@@ -13,13 +13,13 @@ Outstanding issues, open questions and next steps only. What the system is and h
 - 5 October 2026, Amber: the Hub ships three themes (Sunrise, Deep Eco, Twilight) via `data-theme`, with two token tiers. Supersedes C15's two themes; the Hub's `docs/ui-system/OPEN_QUESTIONS.md` row of 5 October and `PATTERNS.md` section 7 (C15) still need updating on `ui_system_rebuild`.
 - 5 October 2026, Amber: text ink is Deep Eco everywhere, the Hub, the portal and documents included. Foundation Black stays only for the black lockup. Closes Momentum 1.4's open decision; the document template in `projects/lofty-document-template/` still sets Foundation Black and needs the change.
 - 5 October 2026, Amber: the Hub drops Flint. One neutral story: Shell, the alpha `line` tokens, `surface-solid` and the two dark pages. The Hub's Flint references resolve through `vibe-theme.css`; the root `tokens/colors.css` keeps Flint for the production system until the switch.
+- 5 October 2026, Amber: glass everywhere Momentum draws it (frame, panels, cards, widgets). Body text still sits on `surface-solid` or `surface-input`; text on glass is measured over the brightest glow. The App Design System's "no gradients, no blur" rule no longer applies to the Hub.
 
 **Needs Amber (one at a time, in the popup)**
-1. Backgrounds and glass: the App Design System's "no gradients, no blur" rule is superseded by Momentum's glows and frame. Confirm for the Hub, or limit glass to the shell.
-2. Data visualisation: five fixed series replace the single-accent orange ramp. Confirm, and decide a sequential scale (none exists in either source).
-3. The derived values in `CONSOLIDATION.md` (focus ring, hover wash, disabled ink, backdrop): confirm or change.
-4. `radius-xs` 4px and `radius-circle` from the App Design System are kept for Vibe controls; 2px and 16px are dropped. Confirm.
-5. Contacts, Dashboard and Team icons: which drawing wins (`../assets/icons-pending/README.md`).
+1. Data visualisation: five fixed series replace the single-accent orange ramp. Confirm, and decide a sequential scale (none exists in either source).
+2. The derived values in `CONSOLIDATION.md` (focus ring, hover wash, disabled ink, backdrop): confirm or change.
+3. `radius-xs` 4px and `radius-circle` from the App Design System are kept for Vibe controls; 2px and 16px are dropped. Confirm.
+4. Contacts, Dashboard and Team icons: which drawing wins (`../assets/icons-pending/README.md`).
 
 **Next steps**
 - When the Hub rebuild reaches Stage 3, repoint `app/src/design-system/` (the mirror) at this folder and update `loftyTheme.ts`; expect `npm run check:design-tokens` to fail until both move together. Correct `DESIGN.md` and `check-contrast.mjs` lines 142 to 152 for Deep Eco on orange (C08 follow-up).
