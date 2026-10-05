@@ -6,7 +6,7 @@
   --shadow-l: 0 15px 50px rgba(65,64,66,0.3); /* Modals (App Design System). */
   --shadow-float: 0 24px 60px rgba(8,26,28,0.10); /* The prompt box and anything that floats over glass. */
   --shadow-ai: 0 12px 32px rgba(50,2,31,0.35); /* The plum AI mark on the landing page. */
-  --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #c2543c; /* Visible focus on every control: a 2px gap in the page colour, then a 2px solid ring in `focus`. Never removed, never replaced by a colour change alone. */
+  --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #c2543c; /* Visible focus on every control: a 2px gap in the page colour, then a 2px solid ring in `focus`. Never removed, never replaced by a colour change alone. Confirmed by Amber, 5 October 2026. */
   --blur-frame: 30px; /* backdrop-filter on the app frame. */
   --blur-input: 20px; /* backdrop-filter on the prompt box and floating bars. */
   --blur-glow: 140px; /* filter blur on the background glow discs. */
