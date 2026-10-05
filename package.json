@@ -1,7 +1,7 @@
 {
   "name": "@lofty/design-system",
   "version": "1.0.0",
-  "description": "Lofty's app design system — brand palette, tokens, and 61 components. Inherits monday.com Vibe.",
+  "description": "Lofty's app design system \u2014 brand palette, tokens, and 61 components. Inherits monday.com Vibe.",
   "private": true,
   "license": "SEE LICENSE IN LICENSE",
   "repository": {
@@ -15,7 +15,8 @@
     "./styles.css": "./styles.css",
     "./tokens/*": "./tokens/*",
     "./components/*": "./components/*",
-    "./assets/*": "./assets/*"
+    "./assets/*": "./assets/*",
+    "./momentum/*": "./momentum/*"
   },
   "files": [
     "styles.css",
@@ -24,6 +25,7 @@
     "assets",
     "guidelines",
     "ui_kits",
+    "momentum",
     "docs",
     "projects",
     "readme.md",

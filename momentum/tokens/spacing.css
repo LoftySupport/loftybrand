@@ -1,0 +1,15 @@
+/* momentum/tokens/spacing.css : 2 to 80, nothing off the scale. */
+:root {
+  --space-2: 2px; /* Hairline offsets: the gap between a focus ring and its control, a dot and its label (App Design System). */
+  --space-4: 4px; /* Label to value. */
+  --space-8: 8px; /* Between chips and adjacent controls. */
+  --space-12: 12px; /* Between starter cards and inside compact rows. */
+  --space-16: 16px; /* Frame padding, gap between rail and panels, card padding, compact tiles. */
+  --space-20: 20px; /* Panel padding and frame inset from the page edge. */
+  --space-24: 24px; /* Between stacked widgets; content card padding. */
+  --space-32: 32px; /* Between the landing question, prompt box and starter row; page gutters. */
+  --space-40: 40px; /* Control height on desktop; nav row height (App Design System). */
+  --space-48: 48px; /* Side padding of the conversation column; the largest button. */
+  --space-64: 64px; /* Condensed rail width; section breaks on long pages (App Design System). */
+  --space-80: 80px; /* Hero and cover spacing on brand-led surfaces (App Design System). */
+}

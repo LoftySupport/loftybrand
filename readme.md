@@ -1,5 +1,7 @@
 # Lofty Apps Design System
 
+> 5 October 2026: the Momentum brand refresh, consolidated with this system and Amber's 4 and 5 October decisions, lives in [`momentum/`](momentum/README.md) as an opt-in token layer. The rest of this file describes the production system as it stands.
+
 Lofty's brand kit applied to a work-management interface system. The brand palette, logo and Fieldwork typeface come from Lofty; layout, component behaviour, spacing, motion and the icon set are the product layer, on the explicit instruction that readability and familiar product patterns come first.
 
 - **Brand source:** Lofty brand kit extracts supplied as images (`assets/brand-kit-colours.png`, `assets/brand-kit-typography.png`), the Lofty logo, the twin-triangle mark, a favicon, and six Fieldwork `.woff` files.
@@ -35,6 +37,7 @@ One product surface was described: **the app** — a work-management application
 | `guidelines/` | Foundation specimen cards — colours (brand, neutrals, semantic, tints, pairings, text-on, data, dark), type (display, titles, body, brand body), spacing, radius, elevation, motion, states, z-index, breakpoints, forms pattern, **screen pattern (`pattern-screen.html` — what a new screen has to have)**, a11y contrast & focus, copy glossary, icons grid, brand logo/mark/assets |
 | `assets/` | Logo, mark, favicon, brand-kit reference images, Fieldwork fonts, 274 product icon SVGs + 14 Lofty construction icons |
 | `assets/brand/` | Four logo colourways, the square app icon, and the six Lofty lines/shapes silhouettes in three colourways each |
+| `momentum/` | **Lofty Momentum Consolidated** (5 October 2026): the brand refresh merged with this system and the Hub rebuild's decisions. Its own `styles.css`, three themes, the Vibe name mapping, the eleven backgrounds, component rules, `CONSOLIDATION.md` and `HANDOFF.md`. Opt-in until the Hub ships it |
 | `SKILL.md` | Agent Skills wrapper so this folder works inside Claude Code |
 | `projects/` | Index of downstream projects that consume this system, what each uses, and how to refresh a bound copy |
 | `docs/` | `getting-started.md` (install, theming, first component), `tokens.md` (full token reference), `components.md` (component index + props summary) |

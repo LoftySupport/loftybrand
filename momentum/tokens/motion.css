@@ -1,0 +1,12 @@
+/* momentum/tokens/motion.css : productive and expressive durations, the AI feedback deadline, easings. Nothing bounces; everything stops under prefers-reduced-motion (see base.css). */
+:root {
+  --motion-productive-short: 70ms; /* Press scale, hover washes. */
+  --motion-productive-medium: 100ms; /* Toggle knobs, tab underlines. */
+  --motion-productive-long: 150ms; /* Chevron rotation; a new answer or widget sliding in 8px from the left. */
+  --motion-expressive-short: 250ms; /* Dialog and toast entrances. */
+  --motion-expressive-long: 400ms; /* Progress fills animating forward once on load. */
+  --motion-ai-feedback: 300ms; /* The latest moment the arrows mark starts pulsing after a question is sent. */
+  --motion-timing-enter: cubic-bezier(0,0,0.35,1); /* Entering. */
+  --motion-timing-exit: cubic-bezier(0.4,0,1,1); /* Leaving. */
+  --motion-timing-transition: cubic-bezier(0.4,0,0.2,1); /* State changes. */
+}

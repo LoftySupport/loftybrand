@@ -1,0 +1,31 @@
+<!-- momentum/HANDOFF.md : outstanding issues and next steps for Lofty Momentum Consolidated. 5 October 2026. -->
+# Handoff: Lofty Momentum Consolidated
+
+Outstanding issues, open questions and next steps only. What the system is and how it was decided: `README.md` and `CONSOLIDATION.md`.
+
+## 5 October 2026: consolidation published
+
+**Done**
+- Artifact "Lofty Momentum Consolidated" populated: brand book, Consolidation and Handoff sections, `tokens.json` (56 colours in three themes, 19 type styles, spacing, radius, shadow, blur, z-index), 20 components with previews, six Fieldwork fonts, 81 assets in three groups, a new cover.
+- This folder added: the same tokens as CSS, the Vibe name mapping, the eleven backgrounds, the component rules as Markdown.
+
+**Needs Amber (one at a time, in the popup)**
+1. Themes for the Hub: three via `data-theme` (light, eco, twilight) and two token tiers, as the 5 October brief asks, or the two confirmed on 4 October (C15)? This folder is built with three.
+2. Foundation Black `#414042` as text: replaced by Deep Eco in UI (Momentum's rule, applied here), or kept for the Hub? Affects every text token in `vibe-theme.css`.
+3. Flint neutrals: not carried. Confirm the Hub drops the Flint page and border values for Shell and the alpha `line` tokens, or name which Flint steps stay.
+4. Backgrounds and glass: the App Design System's "no gradients, no blur" rule is superseded by Momentum's glows and frame. Confirm for the Hub, or limit glass to the shell.
+5. Data visualisation: five fixed series replace the single-accent orange ramp. Confirm, and decide a sequential scale (none exists in either source).
+6. The derived values in `CONSOLIDATION.md` (focus ring, hover wash, disabled ink, backdrop): confirm or change.
+7. `radius-xs` 4px and `radius-circle` from the App Design System are kept for Vibe controls; 2px and 16px are dropped. Confirm.
+8. Contacts, Dashboard and Team icons: which drawing wins (`../assets/icons-pending/README.md`).
+
+**Next steps**
+- When the Hub rebuild reaches Stage 3, repoint `app/src/design-system/` (the mirror) at this folder and update `loftyTheme.ts`; expect `npm run check:design-tokens` to fail until both move together. Correct `DESIGN.md` and `check-contrast.mjs` lines 142 to 152 for Deep Eco on orange (C08 follow-up).
+- Repoint the homeowner portal's tokens (`portal/src/styles/tokens/`, byte-identical to Momentum 1.4) at this folder so there is one set.
+- Regenerate the CSS from `tokens.json` whenever a value changes, so the artifact and this folder never drift. The generator lived in the session that produced this folder; a small script under `scripts/` would make it repeatable.
+- Decide whether the root `styles.css` and `SKILL.md` switch to Momentum, or whether this folder stays opt-in until the Hub ships it.
+
+**Known shortfalls, kept and named**
+- `line-control` on `surface-selected` peach is 2.8:1; a control inside a selected row uses `ink-muted` as its edge.
+- `status-at-risk` light is 3.2:1 on white: graphic only, never text.
+- `orange-hover` is 3.6:1 on white: large or bold labels only.

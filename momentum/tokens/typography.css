@@ -1,0 +1,45 @@
+/* momentum/tokens/typography.css : families, weights and the type styles. Montserrat only for digital and web (Amber, 5 October 2026, C04); four weights (C05). Fieldwork for brand-led surfaces only. */
+:root {
+  --font-display: Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-body: Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-brand: "Fieldwork Geo", "Fieldwork", Montserrat, Arial, sans-serif;
+  --font-brand-body: "Fieldwork Hum", "Fieldwork", Montserrat, Arial, sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  /* Display */
+  --type-hero: 500 40px/50px var(--font-display);
+  --letter-spacing-hero: -1.2px;
+  --type-hero-mobile: 500 32px/38px var(--font-display);
+  --letter-spacing-hero-mobile: -1px;
+  --type-title: 600 18px/24px var(--font-display);
+  /* Numbers */
+  --type-stat-xl: 600 120px/116px var(--font-display);
+  --letter-spacing-stat-xl: -6px;
+  --type-stat-l: 600 52px/52px var(--font-display);
+  --letter-spacing-stat-l: -2px;
+  --type-stat-m: 500 36px/40px var(--font-display);
+  --letter-spacing-stat-m: -1px;
+  /* Screen */
+  --type-h1: 700 32px/40px var(--font-display);
+  --letter-spacing-h1: -0.5px;
+  --type-h2: 700 24px/30px var(--font-display);
+  --letter-spacing-h2: -0.1px;
+  --type-h3: 700 18px/24px var(--font-display);
+  --letter-spacing-h3: -0.1px;
+  --type-text1: 400 16px/22px var(--font-display);
+  --type-text2: 400 14px/20px var(--font-display);
+  --type-text3: 400 12px/16px var(--font-display);
+  /* Text */
+  --type-body: 400 15px/23px var(--font-body);
+  --type-prompt: 400 17px/24px var(--font-body);
+  --type-body-strong: 700 14px/20px var(--font-body);
+  --type-caption: 400 12px/16px var(--font-body);
+  --type-label: 700 12px/16px var(--font-body);
+  /* Brand */
+  --type-brand-display: 600 48px/52px var(--font-brand);
+  --letter-spacing-brand-display: -0.01em;
+  --type-brand-body: 300 16px/24px var(--font-brand-body);
+  --letter-spacing-brand-body: -0.02em;
+}

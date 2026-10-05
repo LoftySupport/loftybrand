@@ -1,0 +1,14 @@
+/* momentum/tokens/base.css : minimal element defaults so any page linking styles.css inherits the system. Do not load inside the Hub, where Vibe owns the base layer. */
+body{margin:0;font:var(--type-text1);color:var(--ink);background:var(--page);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+h1,h2,h3,h4,h5{font-family:var(--font-display);color:var(--ink);margin:0}
+h1{font:var(--type-h1);letter-spacing:var(--letter-spacing-h1)}
+h2{font:var(--type-h2);letter-spacing:var(--letter-spacing-h2)}
+h3{font:var(--type-h3);letter-spacing:var(--letter-spacing-h3)}
+p{margin:0;text-wrap:pretty}
+a{color:var(--ink);text-decoration:none}
+a:hover{color:var(--orange-pressed);text-decoration:underline}
+[data-theme="eco"] a:hover,[data-theme="twilight"] a:hover{color:var(--crisp-orange)}
+:focus-visible{outline:none;box-shadow:var(--focus-ring)}
+button,[role="button"],[role="tab"],[role="menuitem"],[role="option"],input,select,textarea,a{touch-action:manipulation}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+@media (forced-colors:active){:focus-visible{outline:3px solid CanvasText;outline-offset:2px}}
