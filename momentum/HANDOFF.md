@@ -22,7 +22,7 @@ Outstanding issues, open questions and next steps only. What the system is and h
 **Next steps**
 - When the Hub rebuild reaches Stage 3, repoint `app/src/design-system/` (the mirror) at this folder and update `loftyTheme.ts`; expect `npm run check:design-tokens` to fail until both move together. Correct `DESIGN.md` and `check-contrast.mjs` lines 142 to 152 for Deep Eco on orange (C08 follow-up).
 - Repoint the homeowner portal's tokens (`portal/src/styles/tokens/`, byte-identical to Momentum 1.4) at this folder so there is one set.
-- Regenerate the CSS from `tokens.json` whenever a value changes, so the artifact and this folder never drift. The generator lived in the session that produced this folder; a small script under `scripts/` would make it repeatable.
+- Regenerate the CSS from `tokens.json` whenever a value changes, so the artifact and this folder never drift: edit `scripts/gen-tokens.py` and run it (`python3 momentum/scripts/gen-tokens.py momentum/tokens.json momentum/tokens`), then republish `tokens.json` to the artifact.
 - Decide whether the root `styles.css` and `SKILL.md` switch to Momentum, or whether this folder stays opt-in until the Hub ships it.
 
 **Known shortfalls, kept and named**

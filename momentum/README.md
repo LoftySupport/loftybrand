@@ -24,6 +24,7 @@ Where the sources disagree: Amber's dated decisions, then Momentum 1.4, then the
 | `tokens/base.css` | Element defaults for a page that links `styles.css`. Not for the Hub, where Vibe owns the base |
 | `tokens/vibe-theme.css` | **The consolidation as CSS:** every Vibe semantic name the App Design System and the Hub use, pointed at a Momentum token. Fallbacks to App Design System values are marked |
 | `tokens.json` | The artifact's token file: every token with its usage note and contrast ratio |
+| `scripts/gen-tokens.py` | The one source of values. Writes `tokens.json` and eight of the `tokens/*.css` files; `fonts.css`, `base.css` and `vibe-theme.css` are hand-written |
 | `components/*.md` | Momentum's component rules: AppFrame, AppRail, PromptBox, StarterCard, ChatBubble, AnswerWidget, GlanceCard, Button, StatusIcon, ReportColours, ReportExamples, LandingQuestion, TaskPlanner, PrintTemplates, GradientBackgrounds, and the three reference screens |
 | `CONSOLIDATION.md` | Sources, precedence, every decision carried, where Momentum won, derived values to confirm, known shortfalls, gaps |
 | `HANDOFF.md` | Outstanding issues, open questions and the next steps |
