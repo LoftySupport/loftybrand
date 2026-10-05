@@ -9,19 +9,20 @@ Outstanding issues, open questions and next steps only. What the system is and h
 - Artifact "Lofty Momentum Consolidated" populated: brand book, Consolidation and Handoff sections, `tokens.json` (56 colours in three themes, 19 type styles, spacing, radius, shadow, blur, z-index), 20 components with previews, six Fieldwork fonts, 81 assets in three groups, a new cover.
 - This folder added: the same tokens as CSS, the Vibe name mapping, the eleven backgrounds, the component rules as Markdown.
 - Design canvas published (5 October 2026, later the same day): six artboards at https://claude.ai/artifact/Ma3dEuBCDVpnYA7MZM8dfA, with the consolidated system installed as its design system. The landing artboard carries a theme tweak (light, eco, twilight); the Deep Eco artboard imports it.
-- Pull request #4 merged 5 October 2026 with five decisions recorded (three themes, Deep Eco ink, Flint dropped, glass everywhere, Momentum chart series).
+- Pull requests #4 and #5 merged 5 October 2026; all nine consolidation decisions recorded below.
 
 **Decided**
 - 5 October 2026, Amber: the Hub ships three themes (Sunrise, Deep Eco, Twilight) via `data-theme`, with two token tiers. Supersedes C15's two themes; the Hub's `docs/ui-system/OPEN_QUESTIONS.md` row of 5 October and `PATTERNS.md` section 7 (C15) still need updating on `ui_system_rebuild`.
 - 5 October 2026, Amber: text ink is Deep Eco everywhere, the Hub, the portal and documents included. Foundation Black stays only for the black lockup. Closes Momentum 1.4's open decision; the document template in `projects/lofty-document-template/` still sets Foundation Black and needs the change.
 - 5 October 2026, Amber: the Hub drops Flint. One neutral story: Shell, the alpha `line` tokens, `surface-solid` and the two dark pages. The Hub's Flint references resolve through `vibe-theme.css`; the root `tokens/colors.css` keeps Flint for the production system until the switch.
 - 5 October 2026, Amber: glass everywhere Momentum draws it (frame, panels, cards, widgets). Body text still sits on `surface-solid` or `surface-input`; text on glass is measured over the brightest glow. The App Design System's "no gradients, no blur" rule no longer applies to the Hub.
+- 5 October 2026, Amber: charts use the five Momentum series only. The orange ramp and its sequential scale are not carried. Heat and load charts wait until a sequential scale is designed separately.
+- 5 October 2026, Amber: the four derived values stand (solid focus ring, Deep Eco hover wash, disabled ink at 40%, Deep Eco backdrop).
+- 5 October 2026, Amber: eight radii. `radius-xs` 4px and `radius-circle` stay for Vibe controls; 2px and 16px are dropped.
+- 5 October 2026, Amber: the Vibe glyphs keep the names Contacts, Dashboard and Team; the Lofty traces moved from `assets/icons-pending/` to `assets/icons/` as `ContactsLofty`, `DashboardLofty` and `TeamLofty` (`docs/icons-pending-decision.md`).
 
-**Needs Amber (one at a time, in the popup)**
-1. Data visualisation: five fixed series replace the single-accent orange ramp. Confirm, and decide a sequential scale (none exists in either source).
-2. The derived values in `CONSOLIDATION.md` (focus ring, hover wash, disabled ink, backdrop): confirm or change.
-3. `radius-xs` 4px and `radius-circle` from the App Design System are kept for Vibe controls; 2px and 16px are dropped. Confirm.
-4. Contacts, Dashboard and Team icons: which drawing wins (`../assets/icons-pending/README.md`).
+**Needs Amber**
+Nothing open from the consolidation. New questions go here only after the popup, one at a time.
 
 **Next steps**
 - When the Hub rebuild reaches Stage 3, repoint `app/src/design-system/` (the mirror) at this folder and update `loftyTheme.ts`; expect `npm run check:design-tokens` to fail until both move together. Correct `DESIGN.md` and `check-contrast.mjs` lines 142 to 152 for Deep Eco on orange (C08 follow-up).

@@ -36,3 +36,7 @@ Whoever decides should look at both drawings side by side — `icon-proof.html` 
 package shows the traces against their PNGs.
 
 Nothing references this folder. Delete it once the three are placed.
+
+## Decision, 5 October 2026
+
+Amber: the Vibe glyphs keep the names Contacts, Dashboard and Team. The three traces are placed in `assets/icons/` as `ContactsLofty.svg`, `DashboardLofty.svg` and `TeamLofty.svg`. `assets/icons-pending/` is empty and gone; this note is the record.

@@ -29,7 +29,7 @@ COLORS = [
  ("semantic","page",T("{shell}","{eco-night}","{twilight}"),"The page ground under the glass frame: Shell in Sunrise, eco-night in Deep Eco, twilight in Twilight."),
  ("semantic","ink",T("{deep-eco}","#ffffff","#ffffff"),"Primary text and icons on page, glass and card surfaces. 16:1 on Shell, 20:1 on the dark pages."),
  ("semantic","ink-muted",T("#5a6668","rgba(255,255,255,0.62)","rgba(255,255,255,0.62)"),"Secondary text, captions, timestamps, placeholders. 5.4:1 on Shell, 5.9:1 on white, 4.8:1 on `surface-selected`; 7.8:1 on eco-night."),
- ("semantic","ink-disabled",T("rgba(8,26,28,0.4)","rgba(255,255,255,0.4)","rgba(255,255,255,0.4)"),"Disabled labels and controls: ink at 40%, the App Design System's disabled opacity. Exempt from the contrast floor, so never for content people must read."),
+ ("semantic","ink-disabled",T("rgba(8,26,28,0.4)","rgba(255,255,255,0.4)","rgba(255,255,255,0.4)"),"Disabled labels and controls: ink at 40%, the App Design System's disabled opacity. Exempt from the contrast floor, so never for content people must read. Confirmed by Amber, 5 October 2026."),
  ("semantic","surface-frame",T("rgba(255,255,255,0.42)","rgba(255,255,255,0.03)","rgba(255,255,255,0.03)"),"The frosted app frame that holds rail, panels and main area. Pair with blur-frame."),
  ("semantic","surface-panel",T("rgba(255,255,255,0.5)","rgba(255,255,255,0.04)","rgba(255,255,255,0.04)"),"Side panels: the AppRail, chat history and Your day."),
  ("semantic","surface-card",T("rgba(255,255,255,0.72)","rgba(255,255,255,0.05)","rgba(255,255,255,0.05)"),"Starter cards and answer widgets on the frame."),
@@ -37,7 +37,7 @@ COLORS = [
  ("semantic","surface-solid",T("#ffffff","#0a1b1d","#170710"),"Solid cards that must stand off the ground: kanban cards, widgets, tables, file lists, watch lists, modals."),
  ("semantic","surface-selected",T("#fae4d5","rgba(255,255,255,0.20)","rgba(255,255,255,0.20)"),"Selected row, nav item, tab or option: a peach tint on light, a white wash on dark, one token per theme (Amber, 5 October 2026, C11). Ink stays `ink`. Replaces Momentum's white and the App Design System's two values."),
  ("semantic","surface-selected-hover",T("#f6d3bf","rgba(255,255,255,0.28)","rgba(255,255,255,0.28)"),"Hover on a selected item (App Design System values for peach and the on-dark wash)."),
- ("semantic","surface-hover",T("rgba(8,26,28,0.08)","rgba(255,255,255,0.12)","rgba(255,255,255,0.12)"),"Neutral hover wash behind ghost buttons, icon buttons, menu and table rows. The App Design System rule with Deep Eco as the ink; white at 12% on dark."),
+ ("semantic","surface-hover",T("rgba(8,26,28,0.08)","rgba(255,255,255,0.12)","rgba(255,255,255,0.12)"),"Neutral hover wash behind ghost buttons, icon buttons, menu and table rows. The App Design System rule with Deep Eco as the ink; white at 12% on dark. Confirmed by Amber, 5 October 2026."),
  ("semantic","edge-glass",T("rgba(255,255,255,0.85)","rgba(255,255,255,0.08)","rgba(255,255,255,0.08)"),"1px edge on frame, panels and cards so glass reads as a surface. Decorative: carries no meaning."),
  ("semantic","line",T("rgba(8,26,28,0.08)","rgba(255,255,255,0.08)","rgba(255,255,255,0.08)"),"Dividers inside panels, table rules, ring and tab tracks, recessed fills. Decorative: carries no meaning."),
  ("semantic","line-control","#8a898d","Control boundaries: inputs, ghost buttons, chips, the prompt box, one token in every theme (Amber, 5 October 2026, C10). 3.1:1 on Shell, 3.5:1 on white, 5.8:1 on eco-night, 5.1:1 on the dark solid card. 2.8:1 on `surface-selected` peach: a control inside a selected row takes `ink-muted` as its edge."),
@@ -46,8 +46,8 @@ COLORS = [
  ("semantic","action-pressed","{orange-pressed}","Press on a filled action."),
  ("semantic","on-action","{deep-eco}","Text and icons on action fills (Amber, 5 October 2026, C08). Never white."),
  ("semantic","ai-surface","{plum}","The AI mark and AI-owned tiles. Never a page."),
- ("semantic","focus",T("#c2543c","#f47e63","#f47e63"),"Focus ring colour, drawn solid by `focus-ring`. 4.5:1 on white and 4.1:1 on Shell in Sunrise; 7.6:1 on eco-night. Replaces the App Design System's 50% orange ring, which measured 1.6:1 (Amber, 5 October 2026, C09: 3:1 on edges and icons)."),
- ("semantic","backdrop",T("rgba(8,26,28,0.7)","rgba(0,0,0,0.7)","rgba(0,0,0,0.7)"),"Modal backdrop: the App Design System's 70% black, in Deep Eco on light."),
+ ("semantic","focus",T("#c2543c","#f47e63","#f47e63"),"Focus ring colour, drawn solid by `focus-ring`. 4.5:1 on white and 4.1:1 on Shell in Sunrise; 7.6:1 on eco-night. Replaces the App Design System's 50% orange ring, which measured 1.6:1 (C09: 3:1 on edges and icons). Confirmed by Amber, 5 October 2026."),
+ ("semantic","backdrop",T("rgba(8,26,28,0.7)","rgba(0,0,0,0.7)","rgba(0,0,0,0.7)"),"Modal backdrop: the App Design System's 70% black, in Deep Eco on light. Confirmed by Amber, 5 October 2026."),
  ("semantic","glow-1",T("{crisp-orange}","{current}","#8e3a72"),"Large glow, top left in Sunrise: 1000px Crisp Orange disc at 36%. Top right in dark: Current at 40% (Deep Eco) or berry plum at 47% (Twilight), 820px."),
  ("semantic","glow-2",T("{crisp-orange}","{crisp-orange}","{crisp-orange}"),"Warm glow, bottom right in Sunrise: 820px Crisp Orange disc at 40%. Bottom left in dark: 560px at 18%."),
  ("semantic","glow-3",T("{current}","{eco-green}","{current}"),"Cool counterweight: a 700px Current disc at 26% top right in Sunrise; an Eco Green disc at 60% on the right in Deep Eco; a faint Current disc at 14% in Twilight."),
@@ -132,14 +132,14 @@ SPACING = [
  ("space-80","80px","Hero and cover spacing on brand-led surfaces (App Design System)."),
 ]
 RADIUS = [
- ("radius-xs","4px","Vibe controls inside the Hub: inputs, checkboxes, menu items, small tags (the App Design System's `--border-radius-small`)."),
+ ("radius-xs","4px","Vibe controls inside the Hub: inputs, checkboxes, menu items, small tags (the App Design System's `--border-radius-small`). Kept by Amber, 5 October 2026; 2px and 16px are dropped."),
  ("radius-s","8px","Small tags and status chips that are not pills; cards in dense tables."),
  ("radius-m","12px","Rail items, icon tiles, list rows."),
  ("radius-l","20px","Starter cards, answer widgets, glance cards."),
  ("radius-xl","24px","The prompt box and side panels."),
  ("radius-frame","28px","The frosted app frame only."),
  ("radius-pill","999px","Buttons, chips, send and voice buttons, the mobile prompt bar, toggles, progress tracks."),
- ("radius-circle","50%","Avatars, radios, loaders, status circles."),
+ ("radius-circle","50%","Avatars, radios, loaders, status circles (App Design System; kept by Amber, 5 October 2026)."),
 ]
 SHADOWS = [
  ("shadow-xs",T("0 4px 6px -4px rgba(65,64,66,0.1)","0 4px 6px -4px rgba(0,0,0,0.4)","0 4px 6px -4px rgba(0,0,0,0.4)"),"Row hover lift (App Design System)."),
@@ -148,7 +148,7 @@ SHADOWS = [
  ("shadow-l",T("0 15px 50px rgba(65,64,66,0.3)","0 15px 50px rgba(0,0,0,0.7)","0 15px 50px rgba(0,0,0,0.7)"),"Modals (App Design System)."),
  ("shadow-float",T("0 24px 60px rgba(8,26,28,0.10)","0 24px 60px rgba(0,0,0,0.35)","0 24px 60px rgba(0,0,0,0.35)"),"The prompt box and anything that floats over glass."),
  ("shadow-ai","0 12px 32px rgba(50,2,31,0.35)","The plum AI mark on the landing page."),
- ("focus-ring",T("0 0 0 2px #ffffff, 0 0 0 4px #c2543c","0 0 0 2px #020a0b, 0 0 0 4px #f47e63","0 0 0 2px #070105, 0 0 0 4px #f47e63"),"Visible focus on every control: a 2px gap in the page colour, then a 2px solid ring in `focus`. Never removed, never replaced by a colour change alone."),
+ ("focus-ring",T("0 0 0 2px #ffffff, 0 0 0 4px #c2543c","0 0 0 2px #020a0b, 0 0 0 4px #f47e63","0 0 0 2px #070105, 0 0 0 4px #f47e63"),"Visible focus on every control: a 2px gap in the page colour, then a 2px solid ring in `focus`. Never removed, never replaced by a colour change alone. Confirmed by Amber, 5 October 2026."),
 ]
 BLUR = [
  ("blur-frame","30px","backdrop-filter on the app frame."),
