@@ -34,15 +34,15 @@ One typeface family. Headings never below 14pt at −0.01em tracking; body never
 | Style | Font | Size / line | Tracking | Colour |
 | --- | --- | --- | --- | --- |
 | Title header | Geo Demi Bold | 8.5 / 11pt, uppercase | 0.14em | `#005058` |
-| Title | Geo Demi Bold | 32 / 36pt | −0.01em | `#414042` |
+| Title | Geo Demi Bold | 32 / 36pt | −0.01em | `#081a1c` |
 | Subtitle | Geo Light | 13 / 19pt | −0.02em | `#67666a` |
-| Level 1 | Geo Demi Bold | 32 / 36pt | −0.01em | `#414042` |
-| Level 2 | Geo Demi Bold | 20 / 24pt | −0.01em | `#414042`, 2px `#f47e63` rule below |
-| Level 3 | Geo Demi Bold | 16 / 21pt | −0.01em | `#414042` |
-| Level 4 | Geo Demi Bold | 14 / 19pt | −0.01em | `#414042` |
-| Level 5 | Geo Demi Bold | 10.5 / 17pt | −0.02em | `#414042` |
+| Level 1 | Geo Demi Bold | 32 / 36pt | −0.01em | `#081a1c` |
+| Level 2 | Geo Demi Bold | 20 / 24pt | −0.01em | `#081a1c`, 2px `#f47e63` rule below |
+| Level 3 | Geo Demi Bold | 16 / 21pt | −0.01em | `#081a1c` |
+| Level 4 | Geo Demi Bold | 14 / 19pt | −0.01em | `#081a1c` |
+| Level 5 | Geo Demi Bold | 10.5 / 17pt | −0.02em | `#081a1c` |
 | Level 6 | Italic Light | 9.5 / 15pt | −0.02em | `#67666a` |
-| Body | Geo Light | 10.5 / 17pt | −0.02em | `#414042` |
+| Body | Geo Light | 10.5 / 17pt | −0.02em | `#081a1c` |
 
 Fieldwork has no Regular or Medium cut — only Light (300) and Demi Bold (600). Never apply synthetic bold to a Light heading. Fallback order is Montserrat first, then Arial. Do not substitute Helvetica, Calibri or Aptos. Sending brand-font .docx requires Word's embed-fonts option.
 
@@ -50,7 +50,7 @@ Spacing: L2 26pt above / 10pt below; L3 18/8; L4 16/6; body 0/14; lists 8 above,
 
 ## Colour
 
-- `#414042` Foundation Black — all headings and body.
+- `#081a1c` Foundation Black — all headings and body.
 - `#f47e63` Crisp Orange — the highlight. Section rules, callouts, pull-out bar.
 - `#005058` Eco Green — once only, the cover title header.
 - `#e1e1d9` layout rules, `#f9f9f6` table header fill, `#8a898d` / `#67666a` secondary text.
