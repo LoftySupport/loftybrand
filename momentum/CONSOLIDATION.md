@@ -37,7 +37,7 @@ These are not Amber's decisions; they follow from rank 2 beating rank 3. Each is
 | Topic | App Design System | Consolidated (Momentum) |
 |---|---|---|
 | Ink | Foundation Black `#414042` | `ink` = Deep Eco `#081a1c` everywhere: the Hub, the portal and documents. **Decided 5 Oct 2026 (Amber).** Foundation Black stays a brand kit primitive for the black lockup only |
-| Page and neutrals | Flint family (`#f4f3ee` page, `#c6c5ba` borders, dark Flint 700 to 900) | `page` = Shell, glass surfaces, `line` alpha rules, `eco-night` and `twilight` dark pages. Flint is not carried; the Hub's Flint references map onto these in `vibe-theme.css` |
+| Page and neutrals | Flint family (`#f4f3ee` page, `#c6c5ba` borders, dark Flint 700 to 900) | `page` = Shell, glass surfaces, `line` alpha rules, `eco-night` and `twilight` dark pages. **Decided 5 Oct 2026 (Amber): the Hub drops Flint.** Its Flint references map onto these in `vibe-theme.css` |
 | Backgrounds | Flat colour, no gradients, no blur | Glow discs, the frosted frame, eleven backgrounds by job |
 | Data visualisation | Single-accent orange ramp `--data-1` to `-6` and a sequential orange scale | Five fixed series plus `series-other`. No sequential scale exists in Momentum: a gap, listed below |
 | Radii | 2, 4, 8, 12, 16, pill, circle | Momentum's 8 to 28 plus pill, with `radius-xs` 4px and `radius-circle` added from the App Design System. 2px and 16px are not carried |
