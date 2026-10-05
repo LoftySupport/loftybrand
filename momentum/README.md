@@ -5,6 +5,8 @@ The Momentum brand refresh (concept 1.4, 25 September 2026) merged with this rep
 
 The same system is published as the Claude artifact "Lofty Momentum Consolidated" (brand book, live previews, asset groups): https://claude.ai/artifact/EhxWmKtgNMfZsT7wYgTR6P. `tokens.json` here is the artifact's token file, byte for byte. The CSS is generated from the same values.
 
+A design canvas of the same system, "Lofty Momentum Consolidated Design" (the Ask Lofty landing in Sunrise and Deep Eco with a theme switch, colour in three themes, type, controls and states, spacing, shape and glass), is at https://claude.ai/artifact/Ma3dEuBCDVpnYA7MZM8dfA. It reads this system's `tokens.json` for its colour and text style menus. Both artifacts are private until shared.
+
 Status: draft for Amber's review. Nothing in `components/` is coded yet; the files are rules and layout references.
 
 ## Precedence
