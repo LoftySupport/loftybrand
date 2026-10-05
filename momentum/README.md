@@ -36,7 +36,7 @@ Where the sources disagree: Amber's dated decisions, then Momentum 1.4, then the
 | Faces | Figtree body, Montserrat titles | Montserrat only (Amber, 5 Oct 2026, C04) |
 | Weights | 200 to 700 | 400, 500, 600, 700 (C05) |
 | Ink on orange | White | Deep Eco `#081a1c`, 6.8:1 (C08) |
-| Text ink | Foundation Black `#414042` | Deep Eco. Foundation Black stays a brand kit primitive for the lockup and print |
+| Text ink | Foundation Black `#414042` | Deep Eco everywhere, documents included (Amber, 5 Oct 2026). Foundation Black stays a brand kit primitive for the black lockup only |
 | Page | Flint 100 `#f4f3ee`, flat | Shell `#fcf1ee` with glow discs and a frosted frame |
 | Control edge | `#8a898d` light, `#807f74` dark | `#8a898d` in every theme (C10) |
 | Selected | Peach `#fae4d5` light; white wash on dark rails | `surface-selected`: peach light, white 20% dark (C11) |

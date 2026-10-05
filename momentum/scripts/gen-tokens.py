@@ -21,7 +21,7 @@ COLORS = [
  ("brand","sky","#adfbff","Highlights on dark: eyebrow text on Eco Green, glow on light pages, avatars. Deep Eco ink on it."),
  ("brand","eco-night","#020a0b","Deep Eco dark page ground: near-black with a green cast. White on it 20:1."),
  ("brand","twilight","#070105","Twilight dark page ground: near-black with a plum cast. White on it 20:1."),
- ("brand","foundation-black","#414042","Brand kit primary and the App Design System's text colour. In this system `ink` is Deep Eco; Foundation Black stays for the black lockup, print and brand panels. Replacing it across production is an open decision carried from Momentum 1.4."),
+ ("brand","foundation-black","#414042","Brand kit primary and the App Design System's former text colour. Only the black lockup carries it now: text ink is Deep Eco on every surface, the Hub, the portal and documents included (Amber, 5 October 2026)."),
  ("brand","finisher-white","#ffffff","Brand kit. Solid cards and the prompt box in Sunrise; the white lockup and mark on dark grounds."),
  ("brand","mid-gray","#d1d3d4","Brand kit. Logo and print only. Never a UI border or fill (App Design System rule, kept)."),
  ("brand","plum-lift",T("{plum}","{plum}","#4a0c32"),"Plum for blocks and tiles on the page. Plum holds on eco-night; on twilight it disappears, so it lifts to #4A0C32. White on it 15:1."),
