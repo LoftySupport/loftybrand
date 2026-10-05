@@ -7,6 +7,8 @@ The same system is published as the Claude artifact "Lofty Momentum Consolidated
 
 A design canvas of the same system, "Lofty Momentum Consolidated Design" (the Ask Lofty landing in Sunrise and Deep Eco with a theme switch, colour in three themes, type, controls and states, spacing, shape and glass), is at https://claude.ai/artifact/Ma3dEuBCDVpnYA7MZM8dfA. It reads this system's `tokens.json` for its colour and text style menus. Both artifacts are private until shared.
 
+A claude.ai/design design-system project, "Lofty Momentum Consolidated" (project `4b3d14eb-fc09-41a4-acd8-1e8a6af7fb24`), holds a design-sync copy of this folder with the brand assets, fonts, the Momentum icon subset and six specimen cards. It sits beside "Lofty's App Design System" (`491d6888-cf3b-4d56-bdaa-4ac8a6948e99`), which keeps the 61 Vibe-shaped components. Re-sync it from this folder after a change here.
+
 Status: draft for Amber's review. Nothing in `components/` is coded yet; the files are rules and layout references.
 
 ## Precedence
