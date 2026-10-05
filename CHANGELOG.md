@@ -14,6 +14,9 @@ Notable changes to the Lofty design system. Newest first.
   control edge in every theme, peach and white-wash selection, WCAG AA with a solid focus ring, graded
   status chips. Opt-in: the root `styles.css` is unchanged. Published alongside as the Claude artifact
   "Lofty Momentum Consolidated".
+- **`assets/icons/ContactsLofty.svg`, `DashboardLofty.svg`, `TeamLofty.svg`** (5 October 2026): the three traced glyphs held in
+  `assets/icons-pending/`, placed under distinct names. The Vibe glyphs keep Contacts, Dashboard and Team (Amber, 5 October 2026).
+  The holding note moved to `docs/icons-pending-decision.md`.
 - **`components/navigation/NavRail`** — the persistent dark application rail. One component with two
   widths (224px expanded, 64px collapsed) and four states, not four variants. White-wash selection,
   role-gated footer, restyled dark scrollbar.

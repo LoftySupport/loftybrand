@@ -44,7 +44,7 @@ Where the sources disagree: Amber's dated decisions, then Momentum 1.4, then the
 | Selected | Peach `#fae4d5` light; white wash on dark rails | `surface-selected`: peach light, white 20% dark (C11) |
 | Status | Outline chip, dot, Vibe `#00854d` `#d83a52` `#ffcb00` | Graded pill with shape and word; `#00805f` `#c28400` `#d83a52` (C12) |
 | Focus | Orange at 50%, 1.6:1 | Solid 2px ring with a gap, 4.1:1 or better (C09) |
-| Charts | Single-accent orange ramp | Five fixed series plus Other |
+| Charts | Single-accent orange ramp | Five fixed series plus Other (Amber, 5 Oct 2026). No sequential scale yet |
 | Themes | Light and dark | Sunrise, Deep Eco, Twilight; the Hub ships all three (Amber, 5 Oct 2026, superseding C15) |
 
 ## Using it
