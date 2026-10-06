@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Controls and states</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0;font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+button{font-family:inherit;cursor:pointer}
+.lbl{font-size:12px;line-height:16px;font-weight:700}
+.chip{height:22px;padding:0 10px 0 6px;border-radius:999px;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;box-sizing:border-box}
+</style>
+</helmet>
+<div style="width: 1440px; height: 760px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr))">
+
+  <section style="position: relative; overflow: hidden; box-sizing: border-box; background: #fcf1ee; color: #081a1c; padding: 40px 48px; display: flex; flex-direction: column; gap: 20px">
+    <div style="position: absolute; width: 520px; height: 520px; left: -200px; top: -260px; border-radius: 50%; background: #f47e63; opacity: 0.30; filter: blur(140px); pointer-events: none"></div>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 6px">
+      <h1 style="margin: 0; font-size: 24px; line-height: 30px; font-weight: 700; letter-spacing: -0.1px">Controls and states, Sunrise</h1>
+      <p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a6668">Pills name the action. One filled orange action per area, Deep Eco ink on it. Focus is a solid ring, never removed.</p>
+    </div>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 8px">
+      <span class="lbl" style="color: #5a6668">Button: primary, accent, accent, ghost, pressed, focus-visible, disabled</span>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center">
+        <button type="button" style="height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: #f47e63; color: #081a1c; font-size: 14px; font-weight: 700">Chase engineer</button>
+        <button type="button" style="height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: #005058; color: #ffffff; font-size: 14px; font-weight: 700">Prep me</button>
+        <button type="button" style="height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: #32021f; color: #ffffff; font-size: 14px; font-weight: 700">Show what's blocked</button>
+        <button type="button" style="height: 40px; padding: 0 16px; border: 1px solid #8a898d; border-radius: 999px; background: transparent; color: #081a1c; font-size: 13px; font-weight: 600">Hold the pour</button>
+        <button type="button" style="height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: #c2543c; color: #081a1c; font-size: 14px; font-weight: 700; transform: scale(0.95)">Pressed</button>
+        <button type="button" style="height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: #f47e63; color: #081a1c; font-size: 14px; font-weight: 700; box-shadow: 0 0 0 2px #fcf1ee, 0 0 0 4px #c2543c">Focused</button>
+        <button type="button" disabled style="height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: rgba(8,26,28,0.08); color: rgba(8,26,28,0.4); font-size: 14px; font-weight: 700">Disabled</button>
+      </div>
+    </div>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 8px">
+      <span class="lbl" style="color: #5a6668">StatusIcon chips: quiet, louder, solid, plus Complete and Not started</span>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap">
+        <span class="chip" style="background: rgba(0,128,95,0.12); color: #081a1c"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#00805f"></circle><path d="M7 12.5l3 3 7-7" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>On track</span>
+        <span class="chip" style="background: #fdefc8; color: #081a1c; box-shadow: inset 0 0 0 1px rgba(194,132,0,0.55)"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l11 20H1z" fill="#c28400"></path><path d="M12 9v6M12 18v.5" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"></path></svg>At risk</span>
+        <span class="chip" style="background: #d83a52; color: #ffffff"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 1h9L23 7.5v9L16.5 23h-9L1 16.5v-9z" fill="#ffffff"></path><circle cx="12" cy="12" r="5.5" fill="none" stroke="#d83a52" stroke-width="2"></circle><path d="M12 9v3l2 1.5" fill="none" stroke="#d83a52" stroke-width="2" stroke-linecap="round"></path></svg>Overdue</span>
+        <span class="chip" style="background: rgba(0,80,88,0.12); color: #081a1c"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#005058"></circle><path d="M7 12.5l3 3 7-7" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Complete</span>
+        <span class="chip" style="background: transparent; color: #5a6668; box-shadow: inset 0 0 0 1px #8a898d"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="#5a6668" stroke-width="2" stroke-dasharray="3 3"></circle></svg>Not started</span>
+      </div>
+    </div>
+    <div style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span class="lbl" style="color: #5a6668">Field, selected row, hover row</span>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <label for="s-job" style="font-size: 12px; line-height: 16px; font-weight: 700">Job</label>
+          <input id="s-job" type="text" value="1042-01 Harbour Rise Lot 12" style="height: 40px; box-sizing: border-box; border-radius: 12px; border: 1px solid #8a898d; background: #ffffff; color: #081a1c; font-family: inherit; font-size: 14px; padding: 0 12px">
+        </div>
+        <div style="height: 36px; border-radius: 12px; background: #fae4d5; display: flex; align-items: center; padding: 0 12px; font-size: 14px; font-weight: 700">Selected: peach tint, ink stays Deep Eco</div>
+        <div style="height: 36px; border-radius: 12px; background: rgba(8,26,28,0.08); display: flex; align-items: center; padding: 0 12px; font-size: 14px">Hover: a neutral wash, not a colour change</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span class="lbl" style="color: #5a6668">StarterCard and AnswerWidget tile</span>
+        <div style="display: flex; gap: 12px">
+          <a href="#start" style="flex: 1; display: flex; flex-direction: column; gap: 12px; padding: 16px; border-radius: 20px; background: rgba(255,255,255,0.72); border: 1px solid rgba(255,255,255,0.85); color: #081a1c; text-decoration: none"><span style="width: 36px; height: 36px; border-radius: 12px; background: #005058; color: #ffffff; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"></rect><path d="M16 3v4M8 3v4M3 10h18"></path></svg></span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 14px; font-weight: 700">Prep my next meeting</span><span style="font-size: 12px; line-height: 16px; color: #5a6668">Agenda, notes and open items</span></span></a>
+          <div style="flex: 1; border-radius: 20px; background: #32021f; color: #ffffff; padding: 16px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px"><span style="font-size: 12px; color: rgba(255,255,255,0.72)">Against plan</span><span style="font-size: 36px; line-height: 40px; font-weight: 600; letter-spacing: -1px; color: #f47e63">-4 days</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="position: relative; overflow: hidden; box-sizing: border-box; background: #020a0b; color: #ffffff; padding: 40px 48px; display: flex; flex-direction: column; gap: 20px">
+    <div style="position: absolute; width: 520px; height: 520px; right: -200px; top: -260px; border-radius: 50%; background: #009ba3; opacity: 0.40; filter: blur(140px); pointer-events: none"></div>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 6px">
+      <h2 style="margin: 0; font-size: 24px; line-height: 30px; font-weight: 700; letter-spacing: -0.1px">Controls and states, Deep Eco</h2>
+      <p style="margin: 0; font-size: 14px; line-height: 20px; color: rgba(255,255,255,0.62)">Same tokens, dark values. Crisp Orange stays the action; the focus ring is Crisp Orange itself (7.6:1 on eco-night).</p>
+    </div>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 8px">
+      <span class="lbl" style="color: rgba(255,255,255,0.62)">Button: primary, accent, accent, ghost, pressed, focus-visible, disabled</span>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center">
+        <button type="button" style="height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: #f47e63; color: #081a1c; font-size: 14px; font-weight: 700">Chase engineer</button>
+        <button type="button" style="height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: #005058; color: #ffffff; font-size: 14px; font-weight: 700">Prep me</button>
+        <button type="button" style="height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: #32021f; color: #ffffff; font-size: 14px; font-weight: 700">Show what's blocked</button>
+        <button type="button" style="height: 40px; padding: 0 16px; border: 1px solid #8a898d; border-radius: 999px; background: transparent; color: #ffffff; font-size: 13px; font-weight: 600">Hold the pour</button>
+        <button type="button" style="height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: #c2543c; color: #081a1c; font-size: 14px; font-weight: 700; transform: scale(0.95)">Pressed</button>
+        <button type="button" style="height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: #f47e63; color: #081a1c; font-size: 14px; font-weight: 700; box-shadow: 0 0 0 2px #020a0b, 0 0 0 4px #f47e63">Focused</button>
+        <button type="button" disabled style="height: 40px; padding: 0 20px; border: 0; border-radius: 999px; background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.4); font-size: 14px; font-weight: 700">Disabled</button>
+      </div>
+    </div>
+    <div style="position: relative; display: flex; flex-direction: column; gap: 8px">
+      <span class="lbl" style="color: rgba(255,255,255,0.62)">StatusIcon chips: Deep Eco glyphs on the lifted dark status colours</span>
+      <div style="display: flex; gap: 8px; flex-wrap: wrap">
+        <span class="chip" style="background: rgba(31,158,128,0.18); color: #ffffff"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1f9e80"></circle><path d="M7 12.5l3 3 7-7" fill="none" stroke="#081a1c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>On track</span>
+        <span class="chip" style="background: rgba(191,137,18,0.22); color: #ffffff; box-shadow: inset 0 0 0 1px rgba(191,137,18,0.6)"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l11 20H1z" fill="#bf8912"></path><path d="M12 9v6M12 18v.5" stroke="#081a1c" stroke-width="2.4" stroke-linecap="round"></path></svg>At risk</span>
+        <span class="chip" style="background: #d83a52; color: #ffffff"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 1h9L23 7.5v9L16.5 23h-9L1 16.5v-9z" fill="#ffffff"></path><circle cx="12" cy="12" r="5.5" fill="none" stroke="#d83a52" stroke-width="2"></circle><path d="M12 9v3l2 1.5" fill="none" stroke="#d83a52" stroke-width="2" stroke-linecap="round"></path></svg>Overdue</span>
+        <span class="chip" style="background: rgba(0,80,88,0.5); color: #ffffff"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#005058"></circle><path d="M7 12.5l3 3 7-7" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>Complete</span>
+        <span class="chip" style="background: transparent; color: rgba(255,255,255,0.62); box-shadow: inset 0 0 0 1px #8a898d"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="rgba(255,255,255,0.62)" stroke-width="2" stroke-dasharray="3 3"></circle></svg>Not started</span>
+      </div>
+    </div>
+    <div style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span class="lbl" style="color: rgba(255,255,255,0.62)">Field, selected row, hover row</span>
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <label for="d-job" style="font-size: 12px; line-height: 16px; font-weight: 700">Job</label>
+          <input id="d-job" type="text" value="1042-01 Harbour Rise Lot 12" style="height: 40px; box-sizing: border-box; border-radius: 12px; border: 1px solid #8a898d; background: rgba(255,255,255,0.06); color: #ffffff; font-family: inherit; font-size: 14px; padding: 0 12px">
+        </div>
+        <div style="height: 36px; border-radius: 12px; background: rgba(255,255,255,0.20); display: flex; align-items: center; padding: 0 12px; font-size: 14px; font-weight: 700">Selected: a white wash at 20%</div>
+        <div style="height: 36px; border-radius: 12px; background: rgba(255,255,255,0.12); display: flex; align-items: center; padding: 0 12px; font-size: 14px">Hover: white at 12%</div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span class="lbl" style="color: rgba(255,255,255,0.62)">ChatBubble: you, then Lofty on the plum tile</span>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding: 16px; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08)">
+          <div style="align-self: flex-end; max-width: 260px; padding: 10px 16px; border-radius: 20px 20px 4px 20px; background: rgba(255,255,255,0.06); border: 1px solid #8a898d; font-size: 14px; font-weight: 500">Where are we at with Harbour Rise?</div>
+          <div style="display: flex; gap: 10px; align-items: flex-start; font-size: 15px; line-height: 23px"><span style="width: 28px; height: 28px; flex-shrink: 0; border-radius: 9px; background: #32021f; display: flex; align-items: center; justify-content: center"><img src="/_blob/8fc722733d4000409c4471b5ff7dce24" alt="Lofty" style="width: 14px; height: 14px; display: block"></span><span>68% built and 4 days behind plan.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":760}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

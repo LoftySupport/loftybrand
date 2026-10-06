@@ -1,4 +1,4 @@
-<!-- momentum/CONSOLIDATION.md : how Lofty Momentum Consolidated was decided. 5 October 2026. Same text as the artifact's Consolidation section. -->
+<!-- momentum/CONSOLIDATION.md : how Lofty Momentum Consolidated was decided. 5 October 2026; reconciliation record answered 6 October 2026. Same text as the artifact's Consolidation section. -->
 # Consolidation
 
 How Lofty Momentum Consolidated was put together, decision by decision, so nothing here has to be taken on trust.
@@ -69,6 +69,37 @@ Nothing in this table comes verbatim from a source. Each applies a source rule t
 - A 2px radius for checkboxes and a 16px radius for the full-view modal, which Vibe components use. `vibe-theme.css` keeps `--border-radius-2: 2px` and maps the big radius to `radius-l` (20px) until decided.
 - Eco Green hover and tint steps (`--highlight-hover-color`, `--highlight-tint-color`). Momentum has none; `vibe-theme.css` keeps the App Design System values as literals, flagged.
 - Overdue tints for Vibe's `--negative-color-selected`. Momentum's Overdue chip is a solid fill; `vibe-theme.css` keeps the App Design System tints as literals, flagged.
+
+## The 3 October 2026 reconciliation, answered
+
+Before the consolidation, the claude.ai/design project "Lofty Momentum" carried a reconciliation card (now `guidelines/reconciliation.html`) comparing Momentum 1.4 with the App Design System: 22 conflicts, seven repo findings and 30 gaps, with owner feedback recorded on three rows. Added here on 6 October 2026 so the record and the outcome sit together. Rows not listed were resolved by the tables above or stay open in the Hub's `RULE_SOURCES.md`.
+
+| Row | Recorded on 3 October | Consolidated outcome |
+|---|---|---|
+| C-01 ink on orange | Owner feedback: neither white nor a new colour; Deep Eco for buttons, Plum for AI-related orange suggested | Deep Eco, one token `on-action` (Amber, 5 Oct, C08). Plum on orange is not a token; the AI mark is orange on a plum tile instead |
+| C-02 primary ink | Momentum suggested | Deep Eco everywhere, documents included (Amber, 5 Oct) |
+| C-03 neutrals | Momentum in the app; Flint kept for documents suggested | The Hub drops Flint (Amber, 5 Oct). Documents moved to Deep Eco ink the same day; their page stays white, not Flint |
+| C-04 backgrounds | Owner preference: natural gradients with little colour, never left to right or top to bottom; about 15% saturation or less suggested | Glass and glows everywhere Momentum draws them (Amber, 5 Oct). No linear gradient anywhere except the brand tile `--bg-flow-current-flow`. **The 15% figure is not yet applied**: the glow discs sit at 22% to 47% alpha. Open, asked 6 Oct |
+| C-05, C-06 glass and cards | Momentum suggested | As Momentum, with body text on `surface-solid` |
+| C-07, C-08 accents and Eco Green | Momentum; highlight button kept suggested | Orange is the primary colour for interactive elements (C07); Eco Green keeps its narrow role plus `status-complete`. Vibe's highlight tokens stay as flagged literals in `vibe-theme.css` |
+| C-09 radii | Owner feedback: Momentum is too round; 4, 8, 12, 16, 24 with pills for chips and Search only suggested | Momentum's 8 to 28 plus `radius-xs` 4 and `radius-circle`; 2 and 16 dropped (Amber, 5 Oct, on which steps exist). Buttons stay pills. **The "too round" feedback is not yet applied**. Open, asked 6 Oct |
+| C-10 buttons | Momentum on shape | As Momentum: pills, hover steps to `action-hover` then `action-pressed`, no outline swap |
+| C-11 type scale | Momentum for app screens, App h1 to h3 kept suggested | The Hub keeps Vibe's scale (Amber, 4 Oct, C01 and C03); Momentum's styles are for AI surfaces |
+| C-12, G-01 spacing | Add 2, 40, 64, 80 back | Twelve steps, as proposed |
+| C-13, R-05 status | Momentum; App yellow kept for toasts | Momentum's set and grading (Amber, 5 Oct, C12). `#ffcb00` retired for status; Vibe toasts still read it through `vibe-theme.css` |
+| C-14, R-07 charts | Momentum series, App orange ramp kept for heat suggested | Momentum series only; the ramp is not carried (Amber, 5 Oct). A sequential scale is a named gap |
+| C-16 dark mode | Map `dark` once the default is chosen | Three themes ship (Amber, 5 Oct). The default dark theme is still an open decision in the README |
+| C-17, R-04 selected | Momentum; retire the peach tint suggested | **Reversed by Amber (5 Oct, C11): peach on light, white wash on dark.** `surface-selected` |
+| C-18, R-01 token names and Vibe | Alias file; keep Vibe as the fallback | `vibe-theme.css` is the alias file; Vibe stays the base (this repository's `CLAUDE.md`) |
+| G-02, R-06 focus ring | App ring on `--action` with a Deep Eco gap | Replaced by the solid 2px ring (Amber, 5 Oct); the 50% ring measured 1.6:1 |
+| G-03, G-07 hover, press, disabled | Adopt the App values | `surface-hover`, press scales 0.95 and 0.9, `ink-disabled` at 40% (confirmed 5 Oct) |
+| G-04, G-05, G-06 motion, z-index, elevation | Adopt | `motion.css`, `layers.css`, `shadows.css` |
+| G-08 control edge | 55% ink suggested | `#8a898d` in every theme (Amber, 5 Oct, C10) |
+| G-09 small radius | Add 4px | `radius-xs` (Amber, 5 Oct) |
+| G-10 breakpoints | 768 and 1024 need a decision | Still undecided; targets 40 and 44 are README rules |
+| G-16 Word template | Keep on Foundation Black and Flint | Superseded: Deep Eco ink in the document template (Amber, 5 Oct) |
+| G-17 icons | Tools and Dashboard glyphs open | Vibe glyphs keep Contacts, Dashboard and Team; Lofty traces renamed (Amber, 5 Oct) |
+| B-01 to B-06 | Link Capital, website, tablet, density, inbox, print export | Unchanged: not designed in either system |
 
 ## Lineage of Momentum 1.4
 

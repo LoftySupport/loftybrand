@@ -1,0 +1,44 @@
+/* momentum/reference/proposed-tokens-1.4.css : the gap-fill proposals written against Lofty Momentum 1.4 (tokens/proposed.css in the claude.ai/design project "Lofty Momentum"), copied on 6 October 2026 as a record. Not imported anywhere. Every block below has since been resolved in the consolidation: G-01, G-04, G-05, G-06 and G-09 were adopted as written (../tokens/spacing.css, motion.css, layers.css, shadows.css, radius.css); G-02 was replaced by the solid 2px focus ring (Amber, 5 October 2026); G-03 and G-07 became ink-disabled and surface-hover; G-08 became line-control #8a898d (Amber, 5 October 2026, C10); G-10 targets are in the README rules, breakpoints still undecided. Original header follows. */
+/* tokens/proposed.css : PROPOSED gap-fill tokens for Lofty Momentum. NOT imported by styles.css. Each block needs approval in guidelines/reconciliation.html (ids G-xx). Values come from Lofty's App Design System, re-expressed on Momentum semantic tokens. */
+:root {
+  /* G-01 spacing: App steps missing from Momentum */
+  --space-2: 2px;
+  --space-40: 40px;
+  --space-64: 64px;
+  --space-80: 80px;
+  /* G-02 focus: App ring (3px at 50% + 1px inset), on Momentum action colour */
+  --focus-ring: 0 0 0 3px color-mix(in srgb, var(--action) 50%, transparent), inset 0 0 0 1px var(--action);
+  /* G-03 press and disabled */
+  --press-scale-button: 0.95;
+  --press-scale-icon: 0.9;
+  --disabled-opacity: 0.4;
+  /* G-04 motion */
+  --motion-productive-short: 70ms;
+  --motion-productive-medium: 100ms;
+  --motion-productive-long: 150ms;
+  --motion-expressive-short: 250ms;
+  --motion-expressive-long: 400ms;
+  --motion-enter: cubic-bezier(0, 0, 0.35, 1);
+  --motion-exit: cubic-bezier(0.4, 0, 1, 1);
+  /* G-05 z-index */
+  --z-sticky: 10;
+  --z-dropdown: 20;
+  --z-tooltip: 30;
+  --z-dialog: 40;
+  --z-toast: 50;
+  /* G-06 elevation: floating layers only, neutral Deep Eco at low alpha */
+  --shadow-xs: 0 1px 2px rgba(8, 26, 28, 0.08);
+  --shadow-s: 0 2px 8px rgba(8, 26, 28, 0.12);
+  --shadow-m: 0 6px 16px rgba(8, 26, 28, 0.16);
+  --shadow-l: 0 16px 40px rgba(8, 26, 28, 0.24);
+  --backdrop: rgba(8, 26, 28, 0.7);
+  /* G-07 hover wash */
+  --hover-wash: color-mix(in srgb, var(--ink) 8%, transparent);
+  /* G-08 form control boundary (3:1) */
+  --control-edge: color-mix(in srgb, var(--ink) 55%, transparent);
+  /* G-09 radius bridge for dense controls (App 4px) */
+  --radius-xs: 4px;
+  /* G-10 breakpoints and touch targets */
+  --target-desktop: 40px;
+  --target-phone: 44px;
+}

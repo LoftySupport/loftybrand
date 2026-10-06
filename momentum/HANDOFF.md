@@ -1,7 +1,24 @@
-<!-- momentum/HANDOFF.md : outstanding issues and next steps for Lofty Momentum Consolidated. 5 October 2026. -->
+<!-- momentum/HANDOFF.md : outstanding issues and next steps for Lofty Momentum Consolidated. 5 October 2026, updated 6 October 2026. -->
 # Handoff: Lofty Momentum Consolidated
 
 Outstanding issues, open questions and next steps only. What the system is and how it was decided: `README.md` and `CONSOLIDATION.md`.
+
+## 6 October 2026: cards, canvas source and records added
+
+**Done**
+- `guidelines/`: 27 specimen cards. The 20 component previews from the artifact, with every uploaded asset replaced by this repository's file (`assets/icons/Inbox.svg` and the three Lofty traces included); the six cards flattened from the design canvas; the 3 October 2026 reconciliation card and its `recon-visuals.js` as a governance record (font link moved from Figtree to Montserrat, text unchanged). The same 21 new files were written to the claude.ai/design project "Lofty Momentum Consolidated" (`4b3d14eb-fc09-41a4-acd8-1e8a6af7fb24`), which now shows 27 cards.
+- `canvas/`: the live source of "Lofty Momentum Consolidated Design" (https://claude.ai/code/artifact/a693ef6a-271a-429e-ab5a-d76cc4e9890d), seven files plus the installed `tokens.json`.
+- `reference/`: the Grounds page (https://claude.ai/artifact/L8cprtqo47YTG5sLUafsit; its CSS matches `tokens/backgrounds.css` exactly), the Lofty Hub Icon study (https://claude.ai/artifact/3NgDUejwLP4U4HeZWNoza1) with four PNG previews of the chosen icon, and three records from the claude.ai/design project "Lofty Momentum" (`85c9500f-c4af-47b9-8329-8ab78617deb2`): the 1.0 handoff, the proposed CLAUDE.md section and `proposed.css`.
+- `CONSOLIDATION.md`: new section answering the 3 October 2026 reconciliation row by row, with the owner feedback it recorded.
+- Artifact "Lofty Momentum Consolidated": the app icon uploaded to the Logos group, an AppIcon entry, the README's Logos section and the Consolidation section updated.
+
+**Needs Amber** (asked in the popup on 6 October 2026; the outcome is recorded under Decided once answered)
+- C-09 of the reconciliation recorded the feedback "Momentum is too round" with a suggested scale (4px dense controls, 8px buttons and inputs, 12px cards, 16px panels, 24px frame; pills for chips and Search only). The consolidation kept Momentum's radii (8, 12, 20, 24, 28, pill) and pill buttons under rank 2, and Amber's 5 October decision on radii covered only which steps exist. Which scale applies?
+- C-04 recorded the feedback "natural gradients with little colour, low saturation (about 15% or less)". The glow discs in `tokens/colors.css` run at 22% to 47% alpha and the eleven backgrounds at 8% to 85%. Is the 15% a ceiling on the glows, or guidance already met by the backgrounds' soft falloff?
+- The chosen app icon needs sign-off as a new mark before it moves to `assets/brand/`, and the 1024px, dark and tinted exports need to be produced; the study only holds previews.
+
+**Not done, and why**
+- The Momentum presentation (`projects/lofty-momentum-presentation/index.html`, version 13) was not copied: it exceeds the 256 KiB a design-sync read returns and a cut copy would mislead. It stays in the "Lofty Momentum" design project.
 
 ## 5 October 2026: consolidation published
 
@@ -23,7 +40,7 @@ Outstanding issues, open questions and next steps only. What the system is and h
 - 5 October 2026, Amber: the Vibe glyphs keep the names Contacts, Dashboard and Team; the Lofty traces moved from `assets/icons-pending/` to `assets/icons/` as `ContactsLofty`, `DashboardLofty` and `TeamLofty` (`docs/icons-pending-decision.md`).
 
 **Needs Amber**
-Nothing open from the consolidation. New questions go here only after the popup, one at a time.
+Nothing open from the 5 October consolidation itself. The 6 October items are listed above.
 
 **Next steps**
 - When the Hub rebuild reaches Stage 3, repoint `app/src/design-system/` (the mirror) at this folder and update `loftyTheme.ts`; expect `npm run check:design-tokens` to fail until both move together. Correct `DESIGN.md` and `check-contrast.mjs` lines 142 to 152 for Deep Eco on orange (C08 follow-up).

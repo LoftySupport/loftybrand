@@ -5,6 +5,11 @@ Notable changes to the Lofty design system. Newest first.
 ## Unreleased
 
 ### Added
+- **`momentum/guidelines/`, `momentum/canvas/`, `momentum/reference/`** (6 October 2026): 27 specimen cards (the artifact's 20
+  component previews pointed at this repository's assets, six cards flattened from the design canvas, the 3 October 2026
+  reconciliation record); the design canvas source; and dated records: the Grounds page, the Lofty Hub app icon study with
+  previews of the chosen icon (Gantt, tone on tone, all orange; sign-off as a new mark pending), the Momentum 1.4 handoff,
+  its CLAUDE.md proposal and its gap-fill token proposals. `CONSOLIDATION.md` answers the reconciliation row by row.
 - **`momentum/`** (5 October 2026): Lofty Momentum Consolidated. The Momentum brand refresh (concept 1.4)
   merged with this system and Amber's 4 and 5 October decisions for the Hub rebuild, as one token set
   with three themes (Sunrise, Deep Eco, Twilight): `styles.css`, eleven `tokens/*.css` files including

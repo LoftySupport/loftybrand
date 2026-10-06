@@ -1,0 +1,38 @@
+<!-- @dsCard group="Brand" viewport="1100x330" name="Cover" subtitle="Lofty Momentum Consolidated" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cover</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap">
+<style>
+body{margin:0;background:var(--page)}
+.cv{width:960px;height:330px;position:relative;background:var(--page);overflow:hidden}
+.o{fill:var(--crisp-orange)} .p{fill:var(--plum-lift)} .g{fill:var(--eco-green)} .c{fill:var(--current)} .b{fill:var(--blush)} .k{fill:var(--on-action)}
+.fr{rx:var(--radius-frame)} .xl{rx:var(--radius-xl)}
+.mk{position:absolute;left:40px;top:24px;width:112px;height:112px;display:block}
+.nm{position:absolute;left:40px;top:160px;max-width:880px;margin:0;font-family:var(--font-display);font-weight:500;font-size:64px;line-height:.95;letter-spacing:-2px;color:var(--ink)}
+.tg{position:absolute;left:40px;top:294px;margin:0;font-family:var(--font-body);font-size:14px;line-height:18px;color:var(--ink-muted)}
+</style>
+</head>
+<body>
+<div class="cv">
+<!--
+blocks: crisp-orange 256x112 (radius-frame) straight after the mark, then plum-lift 160, eco-green 128, current 96, blush 128 bleeding off the right edge (radius-xl on the four); a band across the top at identity weight
+arrangement: the top-band skeleton, because the name is too wide for the right-hand zone at 64px; blocks read left to right in space-16 gaps so the band itself moves forward like the mark
+mark: the Lofty favicon arrows (lofty-mark-transparent.png, the twin forward triangles) at 112px leading the band, as supplied, never redrawn (Amber, 6 October 2026: use our favicon, not a drawn pattern)
+scales: gaps space-16, pitch space-32, triangle height 24 (space-24), radii radius-frame and radius-xl, name 64px at .95 leading on two lines, tagline 14/18 in ink-muted
+-->
+<svg width="960" height="148" viewBox="0 0 960 148" aria-hidden="true" style="position:absolute;left:0;top:0">
+<rect class="o fr" x="168" y="24" width="256" height="112"></rect>
+<rect class="p xl" x="440" y="24" width="160" height="112"></rect>
+<rect class="g xl" x="616" y="24" width="128" height="112"></rect>
+<rect class="c xl" x="760" y="24" width="96" height="112"></rect>
+<rect class="b xl" x="872" y="24" width="128" height="112"></rect>
+</svg>
+<img class="mk" src="../../assets/lofty-mark-transparent.png" alt="Lofty mark">
+<h1 class="nm">Lofty Momentum<br>Consolidated</h1>
+<p class="tg">One system: Momentum's brand refresh over Vibe, with every decision recorded.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- @dsCard group="Chat" viewport="1100x200" name="Prompt box" subtitle="Hero, docked and mobile variants" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PromptBox</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--page);color:var(--ink);font-family:var(--font-body)} .wrap{padding:24px;display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start} button{font-family:var(--font-body)}</style>
+</head>
+<body>
+<div class="wrap">
+<div style="width:640px;max-width:100%;box-sizing:border-box;min-height:132px;border-radius:var(--radius-xl);background:var(--surface-input);border:1px solid var(--line-control);box-shadow:var(--shadow-float);padding:16px 16px 12px 20px;display:flex;flex-direction:column;justify-content:space-between;gap:12px">
+<label for="ask" style="position:absolute;left:-9999px">Ask Lofty</label>
+<input id="ask" type="text" placeholder="Ask about any job, or tell Lofty what to do" style="border:0;outline:none;background:transparent;color:var(--ink);font-family:var(--font-body);font-size:17px;padding:4px 0">
+<div style="display:flex;align-items:center;gap:8px">
+<button type="button" style="height:32px;padding:0 12px;border-radius:var(--radius-pill);border:1px solid var(--line-control);background:transparent;color:var(--ink);font-size:12px;font-weight:600">Attach</button>
+<button type="button" style="height:32px;padding:0 12px;border-radius:var(--radius-pill);border:1px solid var(--line-control);background:transparent;color:var(--ink);font-size:12px;font-weight:600">Any job</button>
+<button type="button" style="height:32px;padding:0 12px;border-radius:var(--radius-pill);border:1px solid var(--line-control);background:transparent;color:var(--ink);font-size:12px;font-weight:600">Search records</button>
+<span style="flex-grow:1"></span>
+<button type="button" aria-label="Speak" style="width:40px;height:40px;border-radius:var(--radius-pill);border:0;background:transparent;color:var(--ink);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg></button>
+<button type="button" aria-label="Send" style="width:40px;height:40px;border-radius:var(--radius-pill);border:0;background:var(--action);color:var(--on-action);display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></button>
+</div></div></div>
+</body>
+</html>
