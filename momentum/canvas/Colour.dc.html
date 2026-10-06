@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Colour in three themes</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0;font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.sw{display:flex;flex-direction:column;gap:6px;min-width:0}
+.sw b{display:block;height:56px;border-radius:12px}
+.sw span{font-size:12px;line-height:16px}
+.chip{height:22px;padding:0 10px 0 6px;border-radius:999px;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;box-sizing:border-box}
+</style>
+</helmet>
+<div style="width: 1440px; height: 820px; box-sizing: border-box; background: #ffffff; color: #081a1c; padding: 40px 48px; display: flex; flex-direction: column; gap: 28px">
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-size: 24px; line-height: 30px; font-weight: 700; letter-spacing: -0.1px">Colour</h1>
+    <p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a6668; max-width: 960px">Twelve primitives from the brand kit and Momentum. Build with the semantic layer below, which switches between Sunrise, Deep Eco and Twilight. Orange carries Deep Eco ink (6.8:1), never white. Control edges are #8a898d in every theme.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px">
+    <div class="sw"><b style="background: #f47e63"></b><span><strong>crisp-orange</strong><br>#F47E63</span></div>
+    <div class="sw"><b style="background: #c2543c"></b><span><strong>orange-pressed</strong><br>#C2543C</span></div>
+    <div class="sw"><b style="background: #081a1c"></b><span><strong>deep-eco</strong><br>#081A1C</span></div>
+    <div class="sw"><b style="background: #32021f"></b><span><strong>plum</strong><br>#32021F</span></div>
+    <div class="sw"><b style="background: #005058"></b><span><strong>eco-green</strong><br>#005058</span></div>
+    <div class="sw"><b style="background: #009ba3"></b><span><strong>current</strong><br>#009BA3</span></div>
+    <div class="sw"><b style="background: #fcf1ee; border: 1px solid rgba(8,26,28,0.08)"></b><span><strong>shell</strong><br>#FCF1EE</span></div>
+    <div class="sw"><b style="background: #fad1c7"></b><span><strong>blush</strong><br>#FAD1C7</span></div>
+    <div class="sw"><b style="background: #adfbff"></b><span><strong>sky</strong><br>#ADFBFF</span></div>
+    <div class="sw"><b style="background: #020a0b"></b><span><strong>eco-night</strong><br>#020A0B</span></div>
+    <div class="sw"><b style="background: #070105"></b><span><strong>twilight</strong><br>#070105</span></div>
+    <div class="sw"><b style="background: #414042"></b><span><strong>foundation-black</strong><br>Lockup only</span></div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; flex-grow: 1">
+
+    <section style="position: relative; overflow: hidden; border-radius: 24px; background: #fcf1ee; color: #081a1c; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+      <div style="position: absolute; width: 420px; height: 420px; left: -160px; top: -200px; border-radius: 50%; background: #f47e63; opacity: 0.36; filter: blur(140px); pointer-events: none"></div>
+      <div style="position: absolute; width: 320px; height: 320px; right: -140px; bottom: -160px; border-radius: 50%; background: #009ba3; opacity: 0.26; filter: blur(140px); pointer-events: none"></div>
+      <div style="position: relative; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 18px; line-height: 24px; font-weight: 600">Sunrise</span><span style="font-size: 12px; color: #5a6668">page = shell · ink = deep-eco · ink-muted 5.4:1</span></div>
+      <div style="position: relative; border-radius: 20px; background: rgba(255,255,255,0.72); border: 1px solid rgba(255,255,255,0.85); padding: 16px; display: flex; flex-direction: column; gap: 12px">
+        <span style="font-size: 12px; font-weight: 700; color: #5a6668">surface-card on the frame</span>
+        <div style="height: 40px; box-sizing: border-box; border-radius: 999px; border: 1px solid #8a898d; background: #ffffff; display: flex; align-items: center; padding: 0 16px; font-size: 14px; color: #5a6668">surface-input, line-control 3.5:1</div>
+        <div style="height: 36px; border-radius: 12px; background: #fae4d5; display: flex; align-items: center; padding: 0 12px; font-size: 14px; font-weight: 700">surface-selected, peach</div>
+        <div style="display: flex; gap: 8px; align-items: center"><span style="height: 40px; padding: 0 20px; border-radius: 999px; background: #f47e63; color: #081a1c; display: inline-flex; align-items: center; font-size: 14px; font-weight: 700">Chase engineer</span><span style="height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid #8a898d; display: inline-flex; align-items: center; font-size: 13px; font-weight: 600">Hold the pour</span></div>
+      </div>
+      <div style="position: relative; display: flex; gap: 8px; flex-wrap: wrap">
+        <span class="chip" style="background: rgba(0,128,95,0.12); color: #081a1c"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#00805f"></circle><path d="M7 12.5l3 3 7-7" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>On track</span>
+        <span class="chip" style="background: #fdefc8; color: #081a1c; box-shadow: inset 0 0 0 1px rgba(194,132,0,0.55)"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l11 20H1z" fill="#c28400"></path><path d="M12 9v6M12 18v.5" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"></path></svg>At risk</span>
+        <span class="chip" style="background: #d83a52; color: #ffffff"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 1h9L23 7.5v9L16.5 23h-9L1 16.5v-9z" fill="#ffffff"></path><circle cx="12" cy="12" r="5.5" fill="none" stroke="#d83a52" stroke-width="2"></circle><path d="M12 9v3l2 1.5" fill="none" stroke="#d83a52" stroke-width="2" stroke-linecap="round"></path></svg>Overdue</span>
+      </div>
+      <div style="position: relative; display: flex; gap: 6px; margin-top: auto">
+        <span style="flex: 1; height: 28px; border-radius: 4px 4px 4px 4px; background: #009ba3"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #e46c50"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #8e3a72"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #ad8410"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #3f6fb0"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #8a898d"></span>
+      </div>
+      <span style="position: relative; font-size: 12px; color: #5a6668">series-1 to series-5, then series-other. Fixed order, never cycled.</span>
+    </section>
+
+    <section style="position: relative; overflow: hidden; border-radius: 24px; background: #020a0b; color: #ffffff; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+      <div style="position: absolute; width: 420px; height: 420px; right: -160px; top: -200px; border-radius: 50%; background: #009ba3; opacity: 0.40; filter: blur(140px); pointer-events: none"></div>
+      <div style="position: absolute; width: 320px; height: 320px; left: -140px; bottom: -160px; border-radius: 50%; background: #f47e63; opacity: 0.18; filter: blur(140px); pointer-events: none"></div>
+      <div style="position: relative; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 18px; line-height: 24px; font-weight: 600">Deep Eco</span><span style="font-size: 12px; color: rgba(255,255,255,0.62)">page = eco-night · ink white 20:1 · ink-muted 7.8:1</span></div>
+      <div style="position: relative; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 16px; display: flex; flex-direction: column; gap: 12px">
+        <span style="font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.62)">surface-card on the frame</span>
+        <div style="height: 40px; box-sizing: border-box; border-radius: 999px; border: 1px solid #8a898d; background: rgba(255,255,255,0.06); display: flex; align-items: center; padding: 0 16px; font-size: 14px; color: rgba(255,255,255,0.62)">surface-input, line-control 5.8:1</div>
+        <div style="height: 36px; border-radius: 12px; background: rgba(255,255,255,0.20); display: flex; align-items: center; padding: 0 12px; font-size: 14px; font-weight: 700">surface-selected, white wash</div>
+        <div style="display: flex; gap: 8px; align-items: center"><span style="height: 40px; padding: 0 20px; border-radius: 999px; background: #f47e63; color: #081a1c; display: inline-flex; align-items: center; font-size: 14px; font-weight: 700">Chase engineer</span><span style="height: 40px; padding: 0 16px; border-radius: 999px; border: 1px solid #8a898d; display: inline-flex; align-items: center; font-size: 13px; font-weight: 600">Hold the pour</span></div>
+      </div>
+      <div style="position: relative; display: flex; gap: 8px; flex-wrap: wrap">
+        <span class="chip" style="background: rgba(31,158,128,0.18); color: #ffffff"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1f9e80"></circle><path d="M7 12.5l3 3 7-7" fill="none" stroke="#081a1c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>On track</span>
+        <span class="chip" style="background: rgba(191,137,18,0.22); color: #ffffff; box-shadow: inset 0 0 0 1px rgba(191,137,18,0.6)"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l11 20H1z" fill="#bf8912"></path><path d="M12 9v6M12 18v.5" stroke="#081a1c" stroke-width="2.4" stroke-linecap="round"></path></svg>At risk</span>
+        <span class="chip" style="background: #d83a52; color: #ffffff"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 1h9L23 7.5v9L16.5 23h-9L1 16.5v-9z" fill="#ffffff"></path><circle cx="12" cy="12" r="5.5" fill="none" stroke="#d83a52" stroke-width="2"></circle><path d="M12 9v3l2 1.5" fill="none" stroke="#d83a52" stroke-width="2" stroke-linecap="round"></path></svg>Overdue</span>
+      </div>
+      <div style="position: relative; display: flex; gap: 6px; margin-top: auto">
+        <span style="flex: 1; height: 28px; border-radius: 4px; background: #009ba3"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #e46c50"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #a8508a"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #b88c14"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #5a82d0"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #8a898d"></span>
+      </div>
+      <span style="position: relative; font-size: 12px; color: rgba(255,255,255,0.62)">Series 3 to 5 lift on dark so they read as colour.</span>
+    </section>
+
+    <section style="position: relative; overflow: hidden; border-radius: 24px; background: #070105; color: #ffffff; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+      <div style="position: absolute; width: 420px; height: 420px; right: -160px; top: -200px; border-radius: 50%; background: #8e3a72; opacity: 0.47; filter: blur(140px); pointer-events: none"></div>
+      <div style="position: absolute; width: 320px; height: 320px; left: -140px; bottom: -160px; border-radius: 50%; background: #f47e63; opacity: 0.18; filter: blur(140px); pointer-events: none"></div>
+      <div style="position: relative; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 18px; line-height: 24px; font-weight: 600">Twilight</span><span style="font-size: 12px; color: rgba(255,255,255,0.62)">page = twilight · plum-lift #4A0C32 for AI tiles</span></div>
+      <div style="position: relative; border-radius: 20px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); padding: 16px; display: flex; flex-direction: column; gap: 12px">
+        <span style="font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.62)">surface-card on the frame</span>
+        <div style="height: 40px; box-sizing: border-box; border-radius: 999px; border: 1px solid #8a898d; background: rgba(255,255,255,0.06); display: flex; align-items: center; padding: 0 16px; font-size: 14px; color: rgba(255,255,255,0.62)">surface-input, line-control 6.0:1</div>
+        <div style="height: 36px; border-radius: 12px; background: rgba(255,255,255,0.20); display: flex; align-items: center; padding: 0 12px; font-size: 14px; font-weight: 700">surface-selected, white wash</div>
+        <div style="display: flex; gap: 8px; align-items: center"><span style="height: 40px; padding: 0 20px; border-radius: 999px; background: #f47e63; color: #081a1c; display: inline-flex; align-items: center; font-size: 14px; font-weight: 700">Chase engineer</span><span style="width: 40px; height: 40px; border-radius: 14px; background: #4a0c32; display: inline-flex; align-items: center; justify-content: center"><img src="/_blob/8fc722733d4000409c4471b5ff7dce24" alt="Lofty arrows on plum-lift" style="width: 20px; height: 20px; display: block"></span></div>
+      </div>
+      <div style="position: relative; display: flex; gap: 8px; flex-wrap: wrap">
+        <span class="chip" style="background: rgba(31,158,128,0.18); color: #ffffff"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1f9e80"></circle><path d="M7 12.5l3 3 7-7" fill="none" stroke="#081a1c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>On track</span>
+        <span class="chip" style="background: rgba(191,137,18,0.22); color: #ffffff; box-shadow: inset 0 0 0 1px rgba(191,137,18,0.6)"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l11 20H1z" fill="#bf8912"></path><path d="M12 9v6M12 18v.5" stroke="#081a1c" stroke-width="2.4" stroke-linecap="round"></path></svg>At risk</span>
+        <span class="chip" style="background: #d83a52; color: #ffffff"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 1h9L23 7.5v9L16.5 23h-9L1 16.5v-9z" fill="#ffffff"></path><circle cx="12" cy="12" r="5.5" fill="none" stroke="#d83a52" stroke-width="2"></circle><path d="M12 9v3l2 1.5" fill="none" stroke="#d83a52" stroke-width="2" stroke-linecap="round"></path></svg>Overdue</span>
+      </div>
+      <div style="position: relative; display: flex; gap: 6px; margin-top: auto">
+        <span style="flex: 1; height: 28px; border-radius: 4px; background: #009ba3"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #e46c50"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #a8508a"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #b88c14"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #5a82d0"></span><span style="flex: 1; height: 28px; border-radius: 4px; background: #8a898d"></span>
+      </div>
+      <span style="position: relative; font-size: 12px; color: rgba(255,255,255,0.62)">Status means state only. Brand accents stay on surfaces.</span>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":820}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

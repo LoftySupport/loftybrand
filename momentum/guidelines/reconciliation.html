@@ -1,0 +1,154 @@
+<!-- @dsCard group="Governance" name="System reconciliation, 3 October 2026 record" subtitle="Momentum 1.4 vs Lofty App Design System: the conflicts, gaps and owner feedback the consolidation answered" viewport="1280x1600" -->
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>System reconciliation</title>
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0;background:var(--page);color:var(--ink);font:var(--type-body)}
+a{color:var(--ink)}a:hover{color:var(--orange-pressed)}
+.w{max-width:1200px;margin:0 auto;padding:32px}
+h1{font:600 32px/40px var(--font-display);letter-spacing:-.5px;margin:0 0 8px}
+h2{font:600 24px/30px var(--font-display);margin:48px 0 8px}
+p{margin:0 0 12px;max-width:80ch}
+.sum{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}
+.s{background:var(--surface-solid);border:1px solid var(--line-control);border-radius:var(--radius-l);padding:16px 20px;min-width:140px}
+.s b{font:600 36px/40px var(--font-display);display:block}
+.s span{font-size:12px;color:var(--ink-muted)}
+.rules{background:var(--surface-solid);border:1px solid var(--line-control);border-radius:var(--radius-l);padding:16px 24px;margin:16px 0}
+.rules li{margin:4px 0}
+.tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:16px 0}
+.f{height:40px;padding:0 16px;border-radius:var(--radius-pill);border:1px solid var(--line-control);background:var(--surface-solid);color:var(--ink);font:700 13px var(--font-body);cursor:pointer}
+.f[aria-pressed=true]{background:var(--action);border-color:var(--action);color:var(--on-action)}
+.row{display:grid;grid-template-columns:64px minmax(0,1.5fr) minmax(0,1.5fr) minmax(0,1.6fr) 232px;gap:16px;padding:16px;border-top:1px solid var(--line-control);align-items:start}
+.hd{font:700 12px/16px var(--font-body);color:var(--ink-muted);border-top:0}
+.tb{background:var(--surface-solid);border:1px solid var(--line-control);border-radius:var(--radius-l);overflow:hidden}
+.id{font:700 12px/16px var(--font-body)}
+.t{font:700 14px/20px var(--font-body);margin-bottom:4px}
+.c{font-size:14px;line-height:20px}
+.k{font-size:12px;color:var(--ink-muted);display:block;margin-bottom:2px}
+.d{display:flex;gap:4px;flex-wrap:wrap}
+.d button{height:40px;padding:0 12px;border-radius:var(--radius-pill);border:1px solid var(--line-control);background:transparent;color:var(--ink);font:700 12px var(--font-body);cursor:pointer}
+.d button:hover{background:var(--hover-wash,rgba(8,26,28,.08))}
+.d button:focus-visible,.f:focus-visible{outline:3px solid #f47e6380;outline-offset:1px}
+.d button[aria-pressed=true]{background:var(--ink);color:var(--page);border-color:var(--ink)}
+.tag{display:inline-block;font:700 11px/16px var(--font-body);padding:0 8px;border-radius:var(--radius-pill);border:1px solid var(--line-control);margin-top:8px}
+.note{font-size:13px;color:var(--ink-muted)}
+@media(max-width:900px){.row{grid-template-columns:1fr}.hd{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body><div class="w">
+<h1>System reconciliation</h1>
+<p>Lofty Momentum 1.4 compared with Lofty's App Design System (the <code>lofty-design</code> skill, bound to this project). Every conflict is flagged with no default winner: choose Momentum, keep the App system and repo as built, or discuss. Where Momentum is silent, the App system and repo fill the gap as a proposal. Nothing here is adopted until approved.</p>
+<div class="rules"><b>Separation</b><ul><li>The App system and <code>LoftySupport/loftybrand</code> are the existing, production brand. Lofty Momentum is new and stays separate from both until Momentum is approved.</li><li>Nothing here changes either side. Decisions are recorded as proposals only; no token, rule or file is copied across until approval.</li></ul></div>
+<div class="rules"><b>Sources compared</b><ul>
+<li>Lofty Momentum: this project, <code>readme.md</code>, <code>tokens/</code>, <code>docs/MOMENTUM_HANDOFF.md</code>.</li>
+<li>Lofty's App Design System: the bound <code>_ds</code> tree and the <code>lofty-design</code> skill.</li>
+<li>Lofty SaaS design system: Momentum is the SaaS system, so it is compared once. </li>
+<li>Repo as built: <code>LoftySupport/loftybrand</code> (main), the brand currently configured for the app. It matches the bound App system, plus newer additions (NavFlyout, screen pattern, data scale, record title format). Those are listed in the sections R and G-19 onward.</li></ul>
+<b>Kept from the original, unchanged</b><ul>
+<li>Brand: Crisp Orange, Eco Green, the Lofty lockups, favicon arrows and lines and shapes silhouettes.</li>
+<li>Type families: Montserrat titles, Figtree body, Fieldwork for print, decks and brand heroes.</li>
+<li>Voice: Australian English, sentence case, second person, verb-plus-object buttons, concrete numbers, no emoji, no exclamation marks.</li>
+<li>Icons: 297-glyph set as a mask over <code>currentColor</code>, by file stem. No substitutes.</li>
+<li>Orange and Eco Green never meet inside one element. Orange is never body text on white. Eco Green is not a link colour.</li>
+<li>Borders are 1px. No coloured left-border strips. Press scales. Focus is never removed. Nothing bounces. Reduced motion respected.</li>
+<li>WCAG 2.2 AA, 40px targets on desktop and 44px on phones.</li></ul></div>
+<div class="sum" id="sum"></div>
+<div class="tools"><span class="note">Decide each item. Choices are saved in this browser.</span>
+<button class="f" id="copy">Copy decisions</button><button class="f" id="reset">Clear decisions</button></div>
+
+<h2>Conflicts</h2>
+<p>Each conflict shows both sides as a sample. Swatches and samples are illustrative, drawn from the token values in each system. No default. The suggested resolution is a recommendation only; nothing changes until you pick a button.</p>
+<div class="tb" id="conf"></div>
+
+<h2>Repo as built vs Momentum</h2>
+<p>Conflicts found only in <code>LoftySupport/loftybrand</code>, including places where the repo disagrees with its own readme. Same decision rules.</p>
+<div class="tb" id="rc"></div>
+<h2>Gaps in Momentum, filled from the App system and repo</h2>
+<p>Momentum does not define these. The proposals are written in <code>tokens/proposed.css</code>, which is not imported until approved.</p>
+<div class="tb" id="gaps"></div>
+
+<h2>Gaps in both systems</h2>
+<p>Neither system covers these. Proposals are starting points only.</p>
+<div class="tb" id="both"></div>
+</div>
+<script src="recon-visuals.js"></script>
+<script>
+const C=[
+["C-01","Text and icons on orange","White (Finisher White). Black never sits on orange.","Deep Eco. White on orange is 2.6:1 and fails.","Owner feedback: neither white nor a new colour. Suggested: choose from the Momentum palette. Crisp Orange #F47E63 carries Deep Eco (8.0:1) or Plum (6.7:1). Eco Green fails at 3.4:1. Recommend Deep Eco for buttons and Plum for AI-related orange. Pressed orange #C2543C keeps white for pressed fills only.","High"],
+["C-02","Primary ink","Foundation Black #414042.","Deep Eco #081A1C.","Suggested: Momentum. Foundation Black stays a brand colour for print and the logo. Already an open decision in the Momentum README.","High"],
+["C-03","Neutrals and page tint","Flint 50 to 400 (warm greys). One page tint per screen.","Shell, Blush, Sky, and white or black alpha surfaces. No Flint.","Suggested: Momentum in the app. Keep Flint for Word documents and any flat, non-glass surface (tables in the Lofty document template).","High"],
+["C-04","Backgrounds","Flat colour only. No gradients, photos or blur.","Blurred glow discs on a page ground, plus eleven named backgrounds.","Owner preference: natural gradients with little colour, never left to right or top to bottom. Suggested: Momentum's radial glow only, low saturation (about 15% or less), soft elliptical falloff and off-centre placement. No linear gradients anywhere. Flat colour still applies to documents and dense admin tables.","High"],
+["C-05","Glass and blur","Transparency only for hover wash and modal backdrop. No backdrop blur.","Frosted frame, panels and cards with blur, glass edge and translucent fills.","Suggested: Momentum. Add the rule that reading areas sit on solid or near-solid surfaces (already in Momentum).","High"],
+["C-06","Cards","White, 1px Flint 300 edge, 8px radius, no shadow.","Translucent surface-card, glass edge, 20px radius, no shadow at rest.","Suggested: Momentum. Both agree: no shadow at rest.","Med"],
+["C-07","Accent colours per view","Orange or green in a view, never both. One accent family per chart.","Orange plus Plum, Eco Green and Current in one view, each with a fixed job.","Suggested: Momentum. Keep the no-mixing rule inside a single element. Drop the per-view rule.","High"],
+["C-08","Eco Green role","Secondary accent: highlight buttons, chips, blobs, own data ramp.","Schedule and Next up cards only. Ink on it is white.","Suggested: Momentum. Keep the highlight button as a permitted secondary button.","Med"],
+["C-09","Radii","4px controls and chips, 8px cards, 12px panels, 16px modal.","8, 12, 20, 24 and 28px. Buttons, chips and prompt buttons are pills.","Owner feedback: Momentum is too round. Suggested balance: 4px dense controls, 8px buttons and inputs, 12px cards, 16px panels, 24px frame. Pills for chips and Search only. Sits between the App scale and Momentum's 20 to 28px.","High"],
+["C-10","Buttons","4px radius. Primary hover drops the fill and shows an orange outline.","Pills. Primary, accent and ghost. Hover not specified.","Suggested: Momentum on shape. Hover behaviour is a gap (G-03).","Med"],
+["C-11","Type scale","h1 32/40 bold, h2 24/30, h3 18/24, text 16, 14 and 12.","Hero 40/50 medium, title 18/24, stats 120, 52 and 36, body 15/23, prompt 17/24.","Suggested: Momentum for app screens. Keep App h1 to h3 for record pages, forms and documents until Momentum defines them.","Med"],
+["C-12","Spacing scale","2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80.","4, 8, 12, 16, 20, 24, 32, 48.","Suggested: Momentum. Add back 2, 40, 64 and 80 (G-01).","Low"],
+["C-13","Status chips","Outline chip with an 8px dot. Never a filled status pill. Positive #00854D, warning #FFCB00.","Graded chips with a shape and a word. Overdue can be solid. On track #00805F, at risk #C28400.","Suggested: Momentum. Retire the App warning yellow for status text; keep it for the toast and banner warning family.","High"],
+["C-14","Chart colours","data-1 to data-6: orange plus neutrals, or a green ramp. Single accent.","series-1 to series-5: teal, coral, berry, gold, blue. No brand or status colours.","Suggested: Momentum. Keep the App sequential orange and green ramps for heat and progress fills.","High"],
+["C-15","Layout chrome","56px top bar and 224px side nav, both persistent.","No top bar. 224 or 64px rail inside a glass frame, 280px Your day panel.","Suggested: Momentum. Record pages and tables need a title bar: proposal in G-11.","Med"],
+["C-16","Dark mode","<code>data-theme=dark</code>. Flint 700 to 900 grounds. Rail is Foundation Black on both themes.","<code>data-theme=eco</code> and <code>twilight</code>. Near-black grounds with glows.","Suggested: Momentum. Map <code>dark</code> to the chosen default once Amber decides (open decision).","Med"],
+["C-17","Selected state","Flint 200 fill with a 2px orange marker.","Lifted white or 10% white fill. Never orange.","Suggested: Momentum. Keep the orange marker as an optional 2px rule on selected tabs.","Low"],
+["C-18","Token names","Vibe-shaped: <code>--primary-color</code>, <code>--border-radius-*</code>, <code>--layout-border-color</code>.","Semantic: <code>--action</code>, <code>--radius-*</code>, <code>--line</code>, <code>--surface-*</code>.","Suggested: Momentum. Ship a thin alias file so App components keep working until they are migrated.","High"],
+["C-19","Twin-triangle mark","Decorative only, low prominence.","The system motif and the AI mark on a plum tile. Progress, empty states, brand panels.","Suggested: Momentum. Still never redrawn, never inside a white circle.","Low"],
+["C-20","Photography","None. Flat brand panels or silhouettes.","Homeowner portal is photo-led with smoky glass panels.","Suggested: Momentum for the portal only. CRM screens stay photo-free in both.","Low"],
+["C-21","Voice of the AI","The product never says “I”.","The AI speaks in first person in conversation.","Suggested: Momentum. Only inside chat replies. Interface labels stay second person.","Low"],
+["C-22","Punctuation","Em dashes not addressed.","No em dashes.","Suggested: Momentum. Add to the shared copy rules.","Low"]];
+const R=[
+["R-01","Vibe as the fallback","Anything unspecified defaults to monday.com Vibe. Token names, type scale, status values and component behaviour are inherited. Attributions must not be stripped.","No stated fallback. Token names are Momentum's own.","Suggested: keep Vibe as the fallback for components Momentum does not define, and keep the lineage notes and NOTICE.md. Tied to C-18.","High"],
+["R-02","Eco Green role, inside the repo","<code>colors.css</code> says Eco Green is not a secondary and is a minimal highlight for small accents and data series. The repo readme says it is a full secondary accent with buttons and blocks.","Schedule and Next up cards only, white ink.","Suggested: settle the repo first. Momentum's narrow role is the tighter of the three. Extends C-08.","High"],
+["R-03","Orange fills and small text","Orange fills only carry white on large or semibold labels (16px and up). For small elements use a Foundation Black fill with white ink, or <code>orange-pressed</code>.","Deep Eco ink on orange at any size.","Suggested: follow C-01. Deep Eco or Plum on Crisp Orange at all sizes, both above 4.5:1. No white on Crisp Orange. Extends C-01.","Med"],
+["R-04","Selected state on light","<code>--primary-selected-color</code> is peach #FAE4D5 in the tokens. The readme says selection is Flint 200, not tinted.","Lifted white or 10% white fill, never orange.","Suggested: Momentum. Retire the peach tint on light surfaces. Extends C-17.","Med"],
+["R-05","Ink on status fills","White ink on positive and negative, Foundation Black on warning.","Status is a shape, a word and a graded chip. Overdue can be solid.","Suggested: Momentum for chips. Keep the App ink pairing for toast and banner fills. Extends C-13.","Low"],
+["R-06","Focus ring inset","3px orange at 50% plus a 1px inset in <code>orange-hover</code>.","Not defined.","Suggested: adopt the ring drawn on <code>--action</code> (G-02). Orange button still needs the Deep Eco inner gap.","Low"],
+["R-07","Data-viz ramp","Categorical <code>data-1…6</code> plus a sequential orange ladder <code>data-scale-1…5</code>, reversed on dark.","<code>series-1…5</code> categorical only, no sequential scale.","Suggested: Momentum categorical series. Adopt the orange sequential scale for heat, load and progress fills. Extends C-14.","Med"]];
+const G=[
+["G-01","Spacing steps 2, 40, 64, 80","Full 12-step scale.","Restore the four missing steps as <code>--space-2/40/64/80</code>. Frame inset <code>space-20</code> stays."],
+["G-02","Focus ring","3px orange at 50% plus 1px inset, on every focusable element.","Same ring on orange, drawn against <code>--action</code>. Needs a check on the orange button itself (ring plus fill are both orange): use a Deep Eco 2px inner gap."],
+["G-03","Hover, press, disabled","Neutral wash on hover, press scale 0.95 (buttons) and 0.9 (icon buttons), 40% opacity disabled.","Adopt as is. Primary orange hover: darken to <code>orange-pressed</code> with Deep Eco text instead of the App outline swap, so ink stays legible."],
+["G-04","Motion tokens","Productive 70, 100, 150ms. Expressive 250, 400ms. Enter and exit easings.","Adopt the five durations. Momentum's 150ms slide-in becomes <code>productive-long</code>. Drop the bounce curve except chip pop."],
+["G-05","Z-index scale","Sticky 10, dropdown 20, tooltip 30, dialog 40, toast 50.","Adopt as is."],
+["G-06","Elevation","xs, small, medium, large shadows, neutral black. Backdrop at 70%.","Four shadows in Deep Eco alpha. <code>shadow-float</code> stays the prompt box shadow."],
+["G-07","Form controls","TextField, TextArea, NumberField, Search, Dropdown, Checkbox, Radio, Toggle, Combobox and pickers.","Rebuild on glass: solid <code>surface-input</code>, <code>line-control</code> edge, 40px height, pill only for Search. Control edge needs 3:1 (G-08)."],
+["G-08","Control boundary contrast","<code>ui-border-color</code> #8A898D for 3:1 on control edges.","Momentum <code>line-control</code> is 12% ink, well under 3:1. Add <code>--control-edge</code> at about 55% ink for inputs, checkboxes and radios."],
+["G-09","Small radius","4px for controls, chips, tabs and menu items.","Add <code>--radius-xs</code> 4px for dense table controls and checkbox corners."],
+["G-10","Targets and breakpoints","Breakpoints card, 40 and 44px targets.","Adopt targets as tokens. Momentum only defines 1440 and 390: 768 and 1024 breakpoints need a decision."],
+["G-11","Table, Tabs, Menu, Breadcrumbs, RecordDrawer, RecordTabs, StageTrack","Full navigation, records and data families.","Re-skin on solid <code>surface-card</code>. Sticky header row on <code>surface-panel</code>. Keep Tabs and RecordTabs, Breadcrumbs and RecordBreadcrumb as separate components."],
+["G-12","Dialog, Modal, Toast, AlertBanner, Tooltip, Tipseen","Overlay family with backdrop and toast at top centre.","Solid surface, <code>radius-xl</code>, backdrop at 70% Deep Eco. Toast text: plain confirmation, no exclamation."],
+["G-13","Loading, empty and error states","Skeleton, Loader, EmptyState, ProgressBar.","Momentum's handoff requires the states but has no visuals. Use App patterns; progress fills left to right in Current."],
+["G-14","Dark rail material","On-dark ink layer: white text, 72% secondary, 16% rule, 12% hover, 20% selected.","Rail sits on glass in Momentum. Adopt the same alpha steps for text and selection inside the rail in Eco and Twilight."],
+["G-15","Mid Grey #D1D3D4","Brand colour for logo, print, brand-led surfaces. Never a UI border.","Keep as a brand colour for print only. No UI use."],
+["G-16","Lofty document (Word) template","A4 house template in Montserrat.","Keep as is. It stays on Foundation Black and Flint until documents are reviewed under Momentum."],
+["G-17","Icon library","274 product plus 23 Lofty glyphs. Momentum lists a smaller chat-focused subset.","Keep the full 297 as the source. Momentum's groups are views onto it. Tools and Dashboard glyphs are still open."],
+["G-19","Screen pattern","Every new screen has four views (board, table, gantt, calendar) over one dataset, a persistent inline filter bar with Advanced row and sort, sortable columns, date pickers, row selection with a bulk bar, a kanban drop lane and an empty-state stand-in.","Adopt as the screen checklist. Restyle on solid <code>surface-card</code> inside the glass frame."],
+["G-20","NavFlyout","240px views panel opening beside a hovered rail destination, at both rail widths.","Add beside AppRail. Solid <code>surface-card</code>, same motion as the rail."],
+["G-21","Record title format","JobTitle: <code>1209-002 - SUBURB, Res/StreetNo Street</code>, with the project number as a quiet link.","Adopt as the house job title in headers, chat answers and tables."],
+["G-22","Content rules from the repo","No type below 12px. A typed field shows its control, never the word Empty. Controls in a column share one width and height.","Adopt as shared rules. Momentum's smallest type is already 12px."],
+["G-23","Third-party terms","Vibe (MIT), Montserrat and Figtree (OFL), Fieldwork (commercial, distribution beyond the private repo unconfirmed).","Carry NOTICE.md across. Confirm Fieldwork licensing before any public release."],
+["G-24","Known issues in the repo","Domain icons read lighter than filled glyphs at 14 to 16px. No <code>letter-spacing-*-medium</code> tokens.","Log both. Re-export the domain icons heavier before Momentum uses them in the rail."],
+["G-18","Copy glossary and a11y cards","Glossary, contrast and focus guidance.","Keep as shared. Update the contrast card for Deep Eco on orange."]];
+const B=[
+["B-01","Link Capital screens","Not designed in either system.","Design after the staff app, reusing the rail, cards and Charts. Confirm with Amber whether Link Capital has its own accent."],
+["B-02","Website pages","Parked 25 September 2026.","Restart from screenshots of the current site. Use Fieldwork and Sunrise."],
+["B-03","Tablet layout (768 to 1024px)","Neither defines it.","Collapse the rail to 64px and show one side panel."],
+["B-04","Data density mode","Neither defines a compact table or form.","Add a compact row height of 32px and 12px cell padding for tables on solid cards."],
+["B-05","Notifications and inbox","Momentum has an Inbox destination, no screen.","Design a list on the Your day panel pattern. Needs a decision on unread styling."],
+["B-06","Print and export of Momentum screens","Print templates exist for documents only.","Export screens on Shell with no glow discs and solid cards."]];
+const K='momentum-recon-v1';let S={};try{S=JSON.parse(localStorage.getItem(K)||'{}')}catch(e){}
+const opts={c:["Momentum","Keep App / repo","Discuss"],g:["Approve","Reject","Discuss"]};
+function hd(a){return '<div class="row hd">'+a.map(x=>'<div>'+x+'</div>').join('')+'</div>'}
+function dec(id,t){return '<div class="d" role="group" aria-label="Decision for '+id+'">'+opts[t].map((o,i)=>'<button type="button" data-id="'+id+'" data-v="'+o+'" aria-pressed="'+(S[id]===o)+'">'+o+'</button>').join('')+'</div>'}
+function draw(){
+document.getElementById('conf').innerHTML=hd(['ID','Topic','Lofty App system','Lofty Momentum','Suggested (not a default)'])+C.map(r=>'<div class="row"><div class="id">'+r[0]+'<br><span class="tag">'+r[5]+'</span></div><div><div class="t">'+r[1]+'</div></div><div class="c">'+r[2]+'</div><div class="c">'+r[3]+'</div><div><div class="c">'+r[4]+'</div><div style="margin-top:8px">'+dec(r[0],'c')+'</div></div>'+vis(r[0])+'</div>').join('');
+document.getElementById('rc').innerHTML=hd(['ID','Topic','Repo as built','Lofty Momentum','Suggested (not a default)'])+R.map(r=>'<div class="row"><div class="id">'+r[0]+'<br><span class="tag">'+r[5]+'</span></div><div><div class="t">'+r[1]+'</div></div><div class="c">'+r[2]+'</div><div class="c">'+r[3]+'</div><div><div class="c">'+r[4]+'</div><div style="margin-top:8px">'+dec(r[0],'c')+'</div></div>'+vis(r[0])+'</div>').join('');
+document.getElementById('gaps').innerHTML=hd(['ID','Missing in Momentum','In the App system','Proposed for Momentum'])+G.map(r=>'<div class="row" style="grid-template-columns:64px minmax(0,1.5fr) minmax(0,1.5fr) minmax(0,1.6fr) 232px"><div class="id">'+r[0]+'<br><span class="tag">Approval required</span></div><div class="t">'+r[1]+'</div><div class="c">'+r[2]+'</div><div class="c">'+r[3]+'</div><div>'+dec(r[0],'g')+'</div></div>').join('');
+document.getElementById('both').innerHTML=hd(['ID','Missing in both','Status','Proposed'])+B.map(r=>'<div class="row"><div class="id">'+r[0]+'<br><span class="tag">Approval required</span></div><div class="t">'+r[1]+'</div><div class="c">'+r[2]+'</div><div class="c">'+r[3]+'</div><div>'+dec(r[0],'g')+'</div></div>').join('');
+const all=[...C,...R,...G,...B],n=all.length,done=all.filter(r=>S[r[0]]).length;
+document.getElementById('sum').innerHTML=[[C.length+R.length,'Conflicts'],[G.length,'Gaps filled from App'],[B.length,'Gaps in both'],[done+' of '+n,'Decided']].map(x=>'<div class="s"><b>'+x[0]+'</b><span>'+x[1]+'</span></div>').join('')}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(!b)return;S[b.dataset.id]=S[b.dataset.id]===b.dataset.v?undefined:b.dataset.v;if(!S[b.dataset.id])delete S[b.dataset.id];localStorage.setItem(K,JSON.stringify(S));const y=scrollY;draw();scrollTo(0,y)});
+document.getElementById('reset').onclick=()=>{S={};localStorage.removeItem(K);draw()};
+document.getElementById('copy').onclick=()=>{const t=[...C,...R,...G,...B].map(r=>r[0]+' '+r[1]+': '+(S[r[0]]||'undecided')).join('\n');navigator.clipboard&&navigator.clipboard.writeText(t)};
+draw();
+</script></body></html>

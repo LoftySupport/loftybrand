@@ -1,4 +1,4 @@
-<!-- momentum/README.md : Lofty Momentum Consolidated in this repository. Version 2.0 draft, 5 October 2026. -->
+<!-- momentum/README.md : Lofty Momentum Consolidated in this repository. Version 2.0 draft, 5 October 2026; cards, canvas source and reference records added 6 October 2026. -->
 # Lofty Momentum Consolidated
 
 The Momentum brand refresh (concept 1.4, 25 September 2026) merged with this repository's App Design System and Amber's decisions of 4 and 5 October 2026 for the Lofty Hub rebuild, as one token set. It is the brand layer the Hub applies over Vibe, and the shared tokens the homeowner portal reads. It does not replace the rest of this repository: the 61 Vibe-shaped components, the icons and the brand assets stay where they are and read this folder through `tokens/vibe-theme.css`.
@@ -30,6 +30,9 @@ Where the sources disagree: Amber's dated decisions, then Momentum 1.4, then the
 | `tokens.json` | The artifact's token file: every token with its usage note and contrast ratio |
 | `scripts/gen-tokens.py` | The one source of values. Writes `tokens.json` and eight of the `tokens/*.css` files; `fonts.css`, `base.css` and `vibe-theme.css` are hand-written |
 | `components/*.md` | Momentum's component rules: AppFrame, AppRail, PromptBox, StarterCard, ChatBubble, AnswerWidget, GlanceCard, Button, StatusIcon, ReportColours, ReportExamples, LandingQuestion, TaskPlanner, PrintTemplates, GradientBackgrounds, and the three reference screens |
+| `guidelines/*.html` | 27 specimen cards (6 October 2026): the 20 component previews from the artifact pointed at this repository's assets, the six theme and screen cards flattened from the design canvas, and the 3 October 2026 reconciliation record. Index in `guidelines/README.md` |
+| `canvas/` | Source of the design canvas "Lofty Momentum Consolidated Design": `canvas.json` and six `.dc.html` artboards, byte for byte with the live artifact (6 October 2026) |
+| `reference/` | Dated records: the Grounds page (eleven backgrounds, interactive), the Lofty Hub app icon study with the chosen icon's previews, the Momentum 1.4 handoff, its proposed CLAUDE.md section and its gap-fill token proposals. Each file's status against the consolidation is in `reference/README.md` |
 | `CONSOLIDATION.md` | Sources, precedence, every decision carried, where Momentum won, derived values to confirm, known shortfalls, gaps |
 | `HANDOFF.md` | Outstanding issues, open questions and the next steps |
 
@@ -60,6 +63,10 @@ Where the sources disagree: Amber's dated decisions, then Momentum 1.4, then the
 - A Vibe-shaped component from `../components/` keeps reading `--primary-color`, `--primary-text-color` and the rest; `tokens/vibe-theme.css` resolves them. In the Hub, re-declare at `body.light-app-theme` specificity as `app/src/theme/tokens.css` does, or Vibe's class wins.
 - Assets are the repository's single set: logos and marks in `../assets/brand/` and `../assets/`, icons in `../assets/icons/`, fonts in `../assets/fonts/`. Nothing is duplicated here.
 - No raw hex, radius or spacing in components. Every value here is a custom property.
+
+## App icon
+
+The Lofty Hub app icon study (`reference/lofty-hub-icon.html`, from https://claude.ai/artifact/3NgDUejwLP4U4HeZWNoza1) chose **Gantt, tone on tone, all orange**: three rounded bars stepping forward on Crisp Orange, the top two in darker orange and the last in white. Previews are in `reference/app-icon/`. The study notes that the icon arranges the Lofty point in a new way and needs sign-off as a new mark before it ships; until then it stays in `reference/`, not `assets/brand/`, and the 1024px exports the study describes are not in this repository.
 
 ## Not here
 

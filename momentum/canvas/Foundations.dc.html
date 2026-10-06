@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Spacing, shape, elevation and glass</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0;font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.cap{font-size:12px;line-height:16px;color:#5a6668}
+.cap b{color:#081a1c}
+.step{display:flex;flex-direction:column;align-items:center;gap:6px}
+.step i{display:block;background:#f47e63;border-radius:2px}
+</style>
+</helmet>
+<div style="width: 1440px; height: 760px; box-sizing: border-box; background: #ffffff; color: #081a1c; padding: 40px 48px; display: flex; flex-direction: column; gap: 24px">
+  <div style="display: flex; flex-direction: column; gap: 6px">
+    <h1 style="margin: 0; font-size: 24px; line-height: 30px; font-weight: 700; letter-spacing: -0.1px">Spacing, shape, elevation and glass</h1>
+    <p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a6668; max-width: 960px">Twelve spacing steps, nothing off the scale. Corners grow with the surface. Only the prompt box floats at rest. The page is never a straight gradient: glow discs, then a frosted frame, panels and cards, with text on solid surfaces.</p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.3fr; gap: 32px; flex-grow: 1">
+
+    <section style="display: flex; flex-direction: column; gap: 20px">
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span class="cap"><b>Spacing</b> 2 · 4 · 8 · 12 · 16 · 20 · 24 · 32 · 40 · 48 · 64 · 80</span>
+        <div style="display: flex; align-items: flex-end; gap: 10px; height: 96px">
+          <div class="step"><i style="width: 2px; height: 2px"></i><span class="cap">2</span></div>
+          <div class="step"><i style="width: 4px; height: 4px"></i><span class="cap">4</span></div>
+          <div class="step"><i style="width: 8px; height: 8px"></i><span class="cap">8</span></div>
+          <div class="step"><i style="width: 12px; height: 12px"></i><span class="cap">12</span></div>
+          <div class="step"><i style="width: 16px; height: 16px"></i><span class="cap">16</span></div>
+          <div class="step"><i style="width: 20px; height: 20px"></i><span class="cap">20</span></div>
+          <div class="step"><i style="width: 24px; height: 24px"></i><span class="cap">24</span></div>
+          <div class="step"><i style="width: 32px; height: 32px"></i><span class="cap">32</span></div>
+          <div class="step"><i style="width: 40px; height: 40px"></i><span class="cap">40</span></div>
+          <div class="step"><i style="width: 48px; height: 48px"></i><span class="cap">48</span></div>
+          <div class="step"><i style="width: 64px; height: 64px"></i><span class="cap">64</span></div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span class="cap"><b>Radius</b> xs 4 · s 8 · m 12 · l 20 · xl 24 · frame 28 · pill · circle</span>
+        <div style="display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap">
+          <div class="step"><span style="display: block; width: 56px; height: 56px; border-radius: 4px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">xs</span></div>
+          <div class="step"><span style="display: block; width: 56px; height: 56px; border-radius: 8px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">s</span></div>
+          <div class="step"><span style="display: block; width: 56px; height: 56px; border-radius: 12px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">m</span></div>
+          <div class="step"><span style="display: block; width: 72px; height: 56px; border-radius: 20px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">l</span></div>
+          <div class="step"><span style="display: block; width: 72px; height: 56px; border-radius: 24px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">xl</span></div>
+          <div class="step"><span style="display: block; width: 80px; height: 56px; border-radius: 28px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">frame</span></div>
+          <div class="step"><span style="display: block; width: 96px; height: 40px; border-radius: 999px; background: #f47e63"></span><span class="cap">pill</span></div>
+          <div class="step"><span style="display: block; width: 40px; height: 40px; border-radius: 50%; background: #fad1c7"></span><span class="cap">circle</span></div>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <span class="cap"><b>Motion</b> productive 70, 100, 150 ms · expressive 250, 400 ms · AI feedback within 300 ms · nothing bounces</span>
+        <div style="height: 8px; border-radius: 999px; background: rgba(8,26,28,0.08); overflow: hidden"><span style="display: block; width: 68%; height: 100%; border-radius: 999px; background: #009ba3"></span></div>
+        <span class="cap">Progress fills left to right, once, on load. Arrows point right or up.</span>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px">
+      <span class="cap"><b>Elevation</b> only when something floats</span>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; padding: 16px; border-radius: 20px; background: #fcf1ee">
+        <div style="height: 72px; border-radius: 12px; background: #ffffff; box-shadow: 0 4px 6px -4px rgba(65,64,66,0.1); display: flex; align-items: flex-end; padding: 10px; box-sizing: border-box"><span class="cap"><b>shadow-xs</b> row hover</span></div>
+        <div style="height: 72px; border-radius: 12px; background: #ffffff; box-shadow: 0 4px 8px rgba(65,64,66,0.2); display: flex; align-items: flex-end; padding: 10px; box-sizing: border-box"><span class="cap"><b>shadow-s</b> dropdowns</span></div>
+        <div style="height: 72px; border-radius: 12px; background: #ffffff; box-shadow: 0 6px 20px rgba(65,64,66,0.2); display: flex; align-items: flex-end; padding: 10px; box-sizing: border-box"><span class="cap"><b>shadow-m</b> menus, toasts</span></div>
+        <div style="height: 72px; border-radius: 12px; background: #ffffff; box-shadow: 0 15px 50px rgba(65,64,66,0.3); display: flex; align-items: flex-end; padding: 10px; box-sizing: border-box"><span class="cap"><b>shadow-l</b> modals</span></div>
+        <div style="grid-column: span 2; height: 72px; border-radius: 24px; background: #ffffff; border: 1px solid #8a898d; box-shadow: 0 24px 60px rgba(8,26,28,0.10); display: flex; align-items: center; padding: 0 16px; box-sizing: border-box"><span class="cap"><b>shadow-float</b> the prompt box, the one surface that floats at rest</span></div>
+      </div>
+      <span class="cap"><b>Borders</b> 1px solid. line-control #8a898d on controls; line (8% ink) on dividers and card rules; edge-glass on glass.</span>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 12px">
+      <span class="cap"><b>Glass</b> page with glows, then frame, panel, card, solid</span>
+      <div style="position: relative; overflow: hidden; flex-grow: 1; border-radius: 24px; background: #fcf1ee; padding: 20px; box-sizing: border-box">
+        <div style="position: absolute; width: 420px; height: 420px; left: -140px; top: -200px; border-radius: 50%; background: #f47e63; opacity: 0.36; filter: blur(140px); pointer-events: none"></div>
+        <div style="position: absolute; width: 360px; height: 360px; right: -160px; bottom: -200px; border-radius: 50%; background: #f47e63; opacity: 0.40; filter: blur(140px); pointer-events: none"></div>
+        <div style="position: absolute; width: 300px; height: 300px; right: -120px; top: -140px; border-radius: 50%; background: #009ba3; opacity: 0.26; filter: blur(140px); pointer-events: none"></div>
+        <div style="position: relative; height: 100%; box-sizing: border-box; border-radius: 28px; background: rgba(255,255,255,0.42); border: 1px solid rgba(255,255,255,0.85); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); padding: 16px; display: flex; gap: 12px">
+          <div style="width: 120px; flex-shrink: 0; box-sizing: border-box; border-radius: 24px; background: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.85); padding: 12px"><span class="cap"><b>surface-panel</b> 50%</span></div>
+          <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 12px">
+            <div style="box-sizing: border-box; border-radius: 20px; background: rgba(255,255,255,0.72); border: 1px solid rgba(255,255,255,0.85); padding: 12px"><span class="cap"><b>surface-card</b> 72%: starter cards, widgets</span></div>
+            <div style="box-sizing: border-box; border-radius: 20px; background: #ffffff; padding: 12px"><span class="cap"><b>surface-solid</b>: tables, watch lists, modals, body text</span></div>
+            <div style="margin-top: auto; box-sizing: border-box; height: 48px; border-radius: 24px; background: #ffffff; border: 1px solid #8a898d; box-shadow: 0 24px 60px rgba(8,26,28,0.10); display: flex; align-items: center; justify-content: space-between; padding: 0 6px 0 16px"><span style="font-size: 14px; color: #5a6668">surface-input, the prompt box</span><span style="width: 36px; height: 36px; border-radius: 999px; background: #f47e63; color: #081a1c; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></span></div>
+          </div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px">
+        <div style="height: 44px; border-radius: 12px; background: radial-gradient(55% 70% at 8% 0%, rgba(244,126,99,0.22), transparent 70%), radial-gradient(45% 60% at 80% 110%, rgba(244,126,99,0.21), transparent 70%), radial-gradient(30% 40% at 100% 0%, rgba(0,155,163,0.15), transparent 70%), #fcf1ee; border: 1px solid rgba(8,26,28,0.08); display: flex; align-items: flex-end; padding: 6px 8px; box-sizing: border-box"><span class="cap">4A Sunrise</span></div>
+        <div style="height: 44px; border-radius: 12px; background: radial-gradient(70% 80% at 100% 0%, rgba(173,251,255,0.70), transparent 70%), radial-gradient(60% 70% at 0% 100%, rgba(0,155,163,0.14), transparent 70%), #f6fbfb; border: 1px solid rgba(8,26,28,0.08); display: flex; align-items: flex-end; padding: 6px 8px; box-sizing: border-box"><span class="cap">2A Sky morning</span></div>
+        <div style="height: 44px; border-radius: 12px; background: radial-gradient(45% 55% at 100% 0%, rgba(74,12,50,0.08), transparent 70%), radial-gradient(40% 50% at 82% 22%, rgba(244,126,99,0.18), transparent 70%), radial-gradient(50% 60% at 0% 100%, rgba(250,209,199,0.60), transparent 70%), #fdf8f8; border: 1px solid rgba(8,26,28,0.08); display: flex; align-items: flex-end; padding: 6px 8px; box-sizing: border-box"><span class="cap">3E Twilight light</span></div>
+        <div style="height: 44px; border-radius: 12px; background: radial-gradient(80% 60% at 50% 115%, rgba(244,126,99,0.30), transparent 70%), radial-gradient(50% 55% at 8% 8%, rgba(250,209,199,0.70), transparent 70%), #fffaf8; border: 1px solid rgba(8,26,28,0.08); display: flex; align-items: flex-end; padding: 6px 8px; box-sizing: border-box"><span class="cap">1D Low ember</span></div>
+      </div>
+      <span class="cap">The four primary backgrounds by job: staff app, reports, Ask Lofty, document covers. Each has a dark twin.</span>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":760}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

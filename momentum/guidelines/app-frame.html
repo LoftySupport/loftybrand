@@ -1,0 +1,21 @@
+<!-- @dsCard group="Layout" viewport="1100x260" name="App frame" subtitle="Page glows and the frosted frame in three themes" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AppFrame</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap">
+<style>body{margin:0;background:var(--page);color:var(--ink);font-family:var(--font-body)} .wrap{padding:24px;display:flex;gap:16px;flex-wrap:wrap;align-items:flex-start} button{font-family:var(--font-body)}</style>
+</head>
+<body>
+<div style="position:relative;height:260px;overflow:hidden;background:var(--page)">
+<div style="position:absolute;width:360px;height:360px;right:-100px;top:-160px;border-radius:50%;background:var(--glow-1);opacity:0.4;filter:blur(80px)"></div>
+<div style="position:absolute;width:320px;height:320px;left:-120px;bottom:-160px;border-radius:50%;background:var(--glow-2);opacity:0.25;filter:blur(80px)"></div>
+<div style="position:absolute;inset:20px;border-radius:var(--radius-frame);background:var(--surface-frame);border:1px solid var(--edge-glass);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);display:flex;gap:12px;padding:12px">
+<div style="width:40px;border-radius:var(--radius-m);display:flex;flex-direction:column;gap:8px;align-items:center"><span style="width:32px;height:32px;border-radius:10px;background:var(--crisp-orange)"></span><span style="width:28px;height:28px;border-radius:8px;background:var(--line)"></span><span style="width:28px;height:28px;border-radius:8px;background:var(--line)"></span></div>
+<div style="width:140px;border-radius:var(--radius-xl);background:var(--surface-panel);border:1px solid var(--edge-glass)"></div>
+<div style="flex-grow:1;display:flex;align-items:center;justify-content:center"><span style="width:60%;height:48px;border-radius:var(--radius-xl);background:var(--surface-input);border:1px solid var(--line-control);box-shadow:var(--shadow-float)"></span></div>
+<div style="width:160px;border-radius:var(--radius-xl);background:var(--surface-panel);border:1px solid var(--edge-glass)"></div>
+</div></div>
+</body>
+</html>
