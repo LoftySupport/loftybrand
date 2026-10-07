@@ -1,6 +1,6 @@
-/* Screen/product typography — Outfit titles + Onest body (Amber, 7 October 2026). Fallback order wherever
+/* Screen/product typography — Outfit titles + Onest body. Fallback order wherever
    the Fieldwork brand fonts are unavailable: Outfit (titles) or Onest (body) first, then Montserrat, then Arial.
-   Montserrat is the digital fallback when Outfit and Onest are not available (Amber, 7 October 2026), and the Word
+   Montserrat is the digital fallback when Outfit and Onest are not available, and the Word
    document substitute where Fieldwork is not installed. It is not loaded from Google Fonts here; print stays on Fieldwork. */
 @import url("https://fonts.googleapis.com/css2?family=Onest:wght@300..700&family=Outfit:wght@300..700&display=swap");
 

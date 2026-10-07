@@ -1,4 +1,4 @@
-<!-- momentum/components/TaskPlanner.md : Momentum component rules, from the Lofty Momentum Consolidated artifact (components/TaskPlanner/README.md). 5 October 2026. -->
+<!-- momentum/components/TaskPlanner.md : Momentum component rules, from the Lofty Momentum artifact (components/TaskPlanner/README.md). 5 October 2026. -->
 # TaskPlanner
 
 My tasks: people see their tasks and their actual calendar together, and drag tasks onto the day to book time for them.

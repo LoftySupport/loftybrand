@@ -1,4 +1,4 @@
-<!-- momentum/components/ReportExamples.md : Momentum component rules, from the Lofty Momentum Consolidated artifact (components/ReportExamples/README.md). 5 October 2026. -->
+<!-- momentum/components/ReportExamples.md : Momentum component rules, from the Lofty Momentum artifact (components/ReportExamples/README.md). 5 October 2026. -->
 # ReportExamples
 
 ReportColours applied on a full staff-app screen: Reports > Budget, in Sunrise and Deep Eco. Sample figures only.

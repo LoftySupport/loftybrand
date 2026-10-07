@@ -1,4 +1,4 @@
-<!-- momentum/components/StarterCard.md : Momentum component rules, from the Lofty Momentum Consolidated artifact (components/StarterCard/README.md). 5 October 2026. -->
+<!-- momentum/components/StarterCard.md : Momentum component rules, from the Lofty Momentum artifact (components/StarterCard/README.md). 5 October 2026. -->
 # StarterCard
 
 A one-tap starting point under the prompt box. Four per screen, chosen by role.

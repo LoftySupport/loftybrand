@@ -1,4 +1,4 @@
-<!-- momentum/components/ChatBubble.md : Momentum component rules, from the Lofty Momentum Consolidated artifact (components/ChatBubble/README.md). 5 October 2026. -->
+<!-- momentum/components/ChatBubble.md : Momentum component rules, from the Lofty Momentum artifact (components/ChatBubble/README.md). 5 October 2026. -->
 # ChatBubble
 
 Who said what, at a glance. Keep it quiet: the answer widgets carry the colour, not the bubbles.

@@ -1,4 +1,4 @@
-<!-- momentum/components/AppRail.md : Momentum component rules, from the Lofty Momentum Consolidated artifact (components/AppRail/README.md). 5 October 2026. -->
+<!-- momentum/components/AppRail.md : Momentum component rules, from the Lofty Momentum artifact (components/AppRail/README.md). 5 October 2026. -->
 # AppRail
 
 The left navigation, matching the App Rail diagram: logo, Ask Lofty and search, My work, Pinned projects, the six destinations, then Settings, Admin and the signed-in person.

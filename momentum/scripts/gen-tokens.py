@@ -9,8 +9,8 @@ T = lambda l,e,t: {"light":l,"eco":e,"twilight":t}
 # tier, name, value, usage
 COLORS = [
  # Brand kit and Momentum palette (primitives)
- ("brand","crisp-orange","#f47e63","Core brand colour and the primary colour for interactive elements (Amber, 5 October 2026, C07). Always Deep Eco ink on it, 6.8:1; white on it is 2.6:1 and fails. Never body text on white."),
- ("brand","orange-hover","#d9634a","Hover step of orange fills (App Design System value). 3.6:1 on white, so only behind large or bold labels."),
+ ("brand","crisp-orange","#f47e63","Core brand colour and the primary colour for interactive elements Always Deep Eco ink on it, 6.8:1; white on it is 2.6:1 and fails. Never body text on white."),
+ ("brand","orange-hover","#d9634a","Hover step of orange fills. 3.6:1 on white, so only behind large or bold labels."),
  ("brand","orange-pressed","#c2543c","Pressed state of orange fills, link hover, and orange-toned icons or links on light surfaces (4.5:1 on white, 4.1:1 on Shell)."),
  ("brand","deep-eco","#081a1c","Near-black. All text on light surfaces and the ink on orange and Current. White on it 17:1."),
  ("brand","plum","#32021f","Accent: the AI mark, AI-led tiles and feature cards. Never a page ground. White on it 18:1, orange on it 6.9:1."),
@@ -21,43 +21,43 @@ COLORS = [
  ("brand","sky","#adfbff","Highlights on dark: eyebrow text on Eco Green, glow on light pages, avatars. Deep Eco ink on it."),
  ("brand","eco-night","#020a0b","Deep Eco dark page ground: near-black with a green cast. White on it 20:1."),
  ("brand","twilight","#070105","Twilight dark page ground: near-black with a plum cast. White on it 20:1."),
- ("brand","foundation-black","#414042","Brand kit primary and the App Design System's former text colour. Only the black lockup carries it now: text ink is Deep Eco on every surface, the Hub, the portal and documents included (Amber, 5 October 2026)."),
+ ("brand","foundation-black","#414042","Brand kit primary. Only the black lockup carries it: text ink is Deep Eco on every surface, the Hub, the portal and documents included."),
  ("brand","finisher-white","#ffffff","Brand kit. Solid cards and the prompt box in Sunrise; the white lockup and mark on dark grounds."),
- ("brand","mid-gray","#d1d3d4","Brand kit. Logo and print only. Never a UI border or fill (App Design System rule, kept)."),
+ ("brand","mid-gray","#d1d3d4","Brand kit. Logo and print only. Never a UI border or fill."),
  ("brand","plum-lift",T("{plum}","{plum}","#4a0c32"),"Plum for blocks and tiles on the page. Plum holds on eco-night; on twilight it disappears, so it lifts to #4A0C32. White on it 15:1."),
  # Semantic: grounds and ink
  ("semantic","page",T("{shell}","{eco-night}","{twilight}"),"The page ground under the glass frame: Shell in Sunrise, eco-night in Deep Eco, twilight in Twilight."),
  ("semantic","ink",T("{deep-eco}","#ffffff","#ffffff"),"Primary text and icons on page, glass and card surfaces. 16:1 on Shell, 20:1 on the dark pages."),
  ("semantic","ink-muted",T("#5a6668","rgba(255,255,255,0.62)","rgba(255,255,255,0.62)"),"Secondary text, captions, timestamps, placeholders. 5.4:1 on Shell, 5.9:1 on white, 4.8:1 on `surface-selected`; 7.8:1 on eco-night."),
- ("semantic","ink-disabled",T("rgba(8,26,28,0.4)","rgba(255,255,255,0.4)","rgba(255,255,255,0.4)"),"Disabled labels and controls: ink at 40%, the App Design System's disabled opacity. Exempt from the contrast floor, so never for content people must read. Confirmed by Amber, 5 October 2026."),
+ ("semantic","ink-disabled",T("rgba(8,26,28,0.4)","rgba(255,255,255,0.4)","rgba(255,255,255,0.4)"),"Disabled labels and controls: ink at 40%. Exempt from the contrast floor, so never for content people must read."),
  ("semantic","surface-frame",T("rgba(255,255,255,0.42)","rgba(255,255,255,0.03)","rgba(255,255,255,0.03)"),"The frosted app frame that holds rail, panels and main area. Pair with blur-frame."),
  ("semantic","surface-panel",T("rgba(255,255,255,0.5)","rgba(255,255,255,0.04)","rgba(255,255,255,0.04)"),"Side panels: the AppRail, chat history and Your day."),
  ("semantic","surface-card",T("rgba(255,255,255,0.72)","rgba(255,255,255,0.05)","rgba(255,255,255,0.05)"),"Starter cards and answer widgets on the frame."),
  ("semantic","surface-input",T("#ffffff","rgba(255,255,255,0.06)","rgba(255,255,255,0.06)"),"The prompt box, search and form fields. Solid white in Sunrise so typing stays crisp."),
  ("semantic","surface-solid",T("#ffffff","#0a1b1d","#170710"),"Solid cards that must stand off the ground: kanban cards, widgets, tables, file lists, watch lists, modals."),
- ("semantic","surface-selected",T("#fae4d5","rgba(255,255,255,0.20)","rgba(255,255,255,0.20)"),"Selected row, nav item, tab or option: a peach tint on light, a white wash on dark, one token per theme (Amber, 5 October 2026, C11). Ink stays `ink`. Replaces Momentum's white and the App Design System's two values."),
- ("semantic","surface-selected-hover",T("#f6d3bf","rgba(255,255,255,0.28)","rgba(255,255,255,0.28)"),"Hover on a selected item (App Design System values for peach and the on-dark wash)."),
- ("semantic","surface-hover",T("rgba(8,26,28,0.08)","rgba(255,255,255,0.12)","rgba(255,255,255,0.12)"),"Neutral hover wash behind ghost buttons, icon buttons, menu and table rows. The App Design System rule with Deep Eco as the ink; white at 12% on dark. Confirmed by Amber, 5 October 2026."),
+ ("semantic","surface-selected",T("#fae4d5","rgba(255,255,255,0.20)","rgba(255,255,255,0.20)"),"Selected row, nav item, tab or option: a peach tint on light, a white wash on dark, one token per theme. Ink stays `ink`."),
+ ("semantic","surface-selected-hover",T("#f6d3bf","rgba(255,255,255,0.28)","rgba(255,255,255,0.28)"),"Hover on a selected item."),
+ ("semantic","surface-hover",T("rgba(8,26,28,0.08)","rgba(255,255,255,0.12)","rgba(255,255,255,0.12)"),"Neutral hover wash behind ghost buttons, icon buttons, menu and table rows. Deep Eco at 8% on light; white at 12% on dark."),
  ("semantic","edge-glass",T("rgba(255,255,255,0.85)","rgba(255,255,255,0.08)","rgba(255,255,255,0.08)"),"1px edge on frame, panels and cards so glass reads as a surface. Decorative: carries no meaning."),
  ("semantic","line",T("rgba(8,26,28,0.08)","rgba(255,255,255,0.08)","rgba(255,255,255,0.08)"),"Dividers inside panels, table rules, ring and tab tracks, recessed fills. Decorative: carries no meaning."),
- ("semantic","line-control","#8a898d","Control boundaries: inputs, ghost buttons, chips, the prompt box, one token in every theme (Amber, 5 October 2026, C10). 3.1:1 on Shell, 3.5:1 on white, 5.8:1 on eco-night, 5.1:1 on the dark solid card. 2.8:1 on `surface-selected` peach: a control inside a selected row takes `ink-muted` as its edge."),
+ ("semantic","line-control","#8a898d","Control boundaries: inputs, ghost buttons, chips, the prompt box, one token in every theme. 3.1:1 on Shell, 3.5:1 on white, 5.8:1 on eco-night, 5.1:1 on the dark solid card. 2.8:1 on `surface-selected` peach: a control inside a selected row takes `ink-muted` as its edge."),
  ("semantic","action","{crisp-orange}","Primary action fill: the one filled orange action per area."),
  ("semantic","action-hover","{orange-hover}","Hover on a filled action."),
  ("semantic","action-pressed","{orange-pressed}","Press on a filled action."),
- ("semantic","on-action","{deep-eco}","Text and icons on action fills (Amber, 5 October 2026, C08). Never white."),
+ ("semantic","on-action","{deep-eco}","Text and icons on action fills. Never white."),
  ("semantic","ai-surface","{plum}","The AI mark and AI-owned tiles. Never a page."),
- ("semantic","focus",T("#c2543c","#f47e63","#f47e63"),"Focus ring colour, drawn solid by `focus-ring`. 4.5:1 on white and 4.1:1 on Shell in Sunrise; 7.6:1 on eco-night. Replaces the App Design System's 50% orange ring, which measured 1.6:1 (C09: 3:1 on edges and icons). Confirmed by Amber, 5 October 2026."),
- ("semantic","backdrop",T("rgba(8,26,28,0.7)","rgba(0,0,0,0.7)","rgba(0,0,0,0.7)"),"Modal backdrop: the App Design System's 70% black, in Deep Eco on light. Confirmed by Amber, 5 October 2026."),
- ("semantic","glow-1",T("{crisp-orange}","{current}","#8e3a72"),"Large glow, top left in Sunrise: 1000px Crisp Orange disc at 15%. Top right in dark: Current (Deep Eco) or berry plum (Twilight) at 15%, 820px. Glow discs never exceed 15% opacity (Amber, 6 October 2026, from the 3 October feedback: little colour, low saturation)."),
- ("semantic","glow-2",T("{crisp-orange}","{crisp-orange}","{crisp-orange}"),"Warm glow, bottom right in Sunrise: 820px Crisp Orange disc at 15%. Bottom left in dark: 560px at 12%. Capped at 15% (Amber, 6 October 2026)."),
- ("semantic","glow-3",T("{current}","{eco-green}","{current}"),"Cool counterweight: a 700px Current disc at 12% top right in Sunrise; an Eco Green disc at 15% on the right in Deep Eco; a faint Current disc at 12% in Twilight. Capped at 15% (Amber, 6 October 2026). The eleven backgrounds in backgrounds.css keep their measured values."),
+ ("semantic","focus",T("#c2543c","#f47e63","#f47e63"),"Focus ring colour, drawn solid by `focus-ring`. 4.5:1 on white and 4.1:1 on Shell in Sunrise; 7.6:1 on eco-night. Edges and icons need 3:1."),
+ ("semantic","backdrop",T("rgba(8,26,28,0.7)","rgba(0,0,0,0.7)","rgba(0,0,0,0.7)"),"Modal backdrop: 70% black, Deep Eco on light."),
+ ("semantic","glow-1",T("{crisp-orange}","{current}","#8e3a72"),"Large glow, top left in Sunrise: 1000px Crisp Orange disc at 15%. Top right in dark: Current (Deep Eco) or berry plum (Twilight) at 15%, 820px. Glow discs never exceed 15% opacity: little colour, low saturation."),
+ ("semantic","glow-2",T("{crisp-orange}","{crisp-orange}","{crisp-orange}"),"Warm glow, bottom right in Sunrise: 820px Crisp Orange disc at 15%. Bottom left in dark: 560px at 12%. Capped at 15%."),
+ ("semantic","glow-3",T("{current}","{eco-green}","{current}"),"Cool counterweight: a 700px Current disc at 12% top right in Sunrise; an Eco Green disc at 15% on the right in Deep Eco; a faint Current disc at 12% in Twilight. Capped at 15%. The eleven backgrounds in backgrounds.css keep their measured values."),
  # Status
  ("status","status-on-track",T("#00805f","#1f9e80","#1f9e80"),"On track. Circle with a tick. White glyph in light (4.9:1), Deep Eco glyph in dark (5.3:1). State only, never a chart series."),
  ("status","status-on-track-soft",T("rgba(0,128,95,0.12)","rgba(31,158,128,0.18)","rgba(31,158,128,0.18)"),"On track chip fill. Quietest of the three: tinted, no edge, `ink` label."),
- ("status","status-at-risk",T("#c28400","#bf8912","#bf8912"),"At risk. Triangle with an exclamation. White glyph in light (3.2:1, graphic only), Deep Eco glyph in dark (5.8:1). Replaces the App Design System's warning #ffcb00 (1.5:1 on white)."),
+ ("status","status-at-risk",T("#c28400","#bf8912","#bf8912"),"At risk. Triangle with an exclamation. White glyph in light (3.2:1, graphic only), Deep Eco glyph in dark (5.8:1). "),
  ("status","status-at-risk-soft",T("#fdefc8","rgba(191,137,18,0.22)","rgba(191,137,18,0.22)"),"At risk chip fill, with status-at-risk-edge. Louder than On track."),
  ("status","status-at-risk-edge",T("rgba(194,132,0,0.55)","rgba(191,137,18,0.6)","rgba(191,137,18,0.6)"),"1px inset edge on the At risk chip."),
- ("status","status-overdue",T("#d83a52","#e85a6e","#e85a6e"),"Overdue. Octagon with a clock. White glyph in light (4.5:1), Deep Eco glyph in dark (5.2:1). The same red as the App Design System's negative."),
+ ("status","status-overdue",T("#d83a52","#e85a6e","#e85a6e"),"Overdue. Octagon with a clock. White glyph in light (4.5:1), Deep Eco glyph in dark (5.2:1). Vibe's negative red."),
  ("status","status-overdue-fill","#d83a52","Overdue chip: solid fill with a white label and white octagon (4.5:1). Same in every theme, since white on the dark status-overdue is 3.4:1."),
  ("status","status-complete","{eco-green}","Complete: Eco Green circle with a tick (StatusIcon). Not started is a dashed `ink-muted` ring."),
  ("status","on-status",T("#ffffff","{deep-eco}","{deep-eco}"),"Glyph colour inside status icons."),
@@ -78,15 +78,15 @@ FONTS = [
  ("Fieldwork","fonts/Fieldwork-ItalicLight.woff","300","italic"),
  ("Fieldwork","fonts/Fieldwork-ItalicDemiBold.woff","600","italic"),
 ]
-# Outfit for headings and Onest for body (Amber, 7 October 2026, replacing Montserrat only, C04). Both from Google Fonts.
-SYS_TAIL = 'Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif'  # Montserrat is the fallback when Outfit and Onest are not available (Amber, 7 October 2026)
+# Outfit for headings and Onest for body, both from Google Fonts.
+SYS_TAIL = 'Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif'  # Montserrat is the fallback when Outfit and Onest are not available
 FAMILIES = {
  "display": "Outfit, " + SYS_TAIL,
  "body": "Onest, " + SYS_TAIL,
  "brand": '"Fieldwork Geo", "Fieldwork", Outfit, Montserrat, Arial, sans-serif',
  "brand-body": '"Fieldwork Hum", "Fieldwork", Onest, Montserrat, Arial, sans-serif',
 }
-# Body text is weight 500 on the dark themes (Amber, 7 October 2026): thin light-on-dark strokes break up at 12 to 14px, especially on phones.
+# Body text is weight 500 on the dark themes: thin light-on-dark strokes break up at 12 to 14px, especially on phones.
 DARK_BODY_WEIGHT = 500
 DARK_BODY_STYLES = ("text1","text2","text3","body","prompt","caption")
 # name, size, lh, weight, ls, sample, usage
@@ -102,12 +102,12 @@ GROUPS = [
   ("stat-m","36px","40px",500,"-1px","12","Glance panel counts."),
  ]),
  ("Screen","display",[
-  ("h1","32px","40px",600,"-0.5px","Jobs","Page titles. Vibe's scale, kept for the Hub (Amber, 4 October 2026, C01 and C03)."),
+  ("h1","32px","40px",600,"-0.5px","Jobs","Page titles. Vibe's scale, used by the Hub."),
   ("h2","24px","30px",600,"-0.1px","Harbour Rise","Section titles."),
   ("h3","18px","24px",600,"-0.1px","Open variations","Card and dialog titles."),
  ]),
  ("Screen text","body",[
-  ("text1","16px","22px",400,None,"Assign a crew before publishing the schedule.","Body copy in the Hub, in Onest. Weights 400, 500, 600 and 700 only (Amber, 5 October 2026, C05)."),
+  ("text1","16px","22px",400,None,"Assign a crew before publishing the schedule.","Body copy in the Hub, in Onest. Weights 400, 500, 600 and 700 only."),
   ("text2","14px","20px",400,None,"Due Friday 9 October","Table cells, menu items, field values. 600 for emphasis."),
   ("text3","12px","16px",400,None,"Updated 2 h ago","Captions, counts and the smallest label. No type step below 12px."),
  ]),
@@ -124,7 +124,7 @@ GROUPS = [
  ]),
 ]
 SPACING = [
- ("space-2","2px","Hairline offsets: the gap between a focus ring and its control, a dot and its label (App Design System)."),
+ ("space-2","2px","Hairline offsets: the gap between a focus ring and its control, a dot and its label."),
  ("space-4","4px","Label to value."),
  ("space-8","8px","Between chips and adjacent controls."),
  ("space-12","12px","Between starter cards and inside compact rows."),
@@ -132,34 +132,34 @@ SPACING = [
  ("space-20","20px","Panel padding and frame inset from the page edge."),
  ("space-24","24px","Between stacked widgets; content card padding."),
  ("space-32","32px","Between the landing question, prompt box and starter row; page gutters."),
- ("space-40","40px","Control height on desktop; nav row height (App Design System)."),
+ ("space-40","40px","Control height on desktop; nav row height."),
  ("space-48","48px","Side padding of the conversation column; the largest button."),
- ("space-64","64px","Condensed rail width; section breaks on long pages (App Design System)."),
- ("space-80","80px","Hero and cover spacing on brand-led surfaces (App Design System)."),
+ ("space-64","64px","Condensed rail width; section breaks on long pages."),
+ ("space-80","80px","Hero and cover spacing on brand-led surfaces."),
 ]
 RADIUS = [
- ("radius-xs","4px","Dense controls: checkboxes, menu items, small tags, table controls (the App Design System's `--border-radius-small`). Amber, 5 October 2026 (kept) and 6 October 2026 (the 3 October scale applies)."),
- ("radius-s","8px","Buttons, inputs, icon buttons (send, voice), segmented controls, status chips that are not pills. Amber, 6 October 2026: buttons are 8px, not pills."),
- ("radius-m","12px","Cards: starter cards, answer widgets, glance cards, chat bubbles; also rail rows and icon tiles. Amber, 6 October 2026."),
- ("radius-l","16px","Panels: the rail, the Your day panel, the prompt box, modals (Vibe's big radius). Amber, 6 October 2026; reinstates the 16px step dropped on 5 October."),
- ("radius-xl","24px","The frosted app frame; same value as `radius-frame`. Amber, 6 October 2026."),
- ("radius-frame","24px","The frosted app frame only (was 28px). Amber, 6 October 2026."),
- ("radius-pill","999px","Chips (tool chips, status chips, filter chips) and Search only. Never a button (Amber, 6 October 2026, from the 3 October feedback \"Momentum is too round\"). Toggles and progress tracks keep their natural pill shape."),
- ("radius-circle","50%","Avatars, radios, loaders, status circles (App Design System; kept by Amber, 5 October 2026)."),
+ ("radius-xs","4px","Dense controls: checkboxes, menu items, small tags, table controls."),
+ ("radius-s","8px","Buttons, inputs, icon buttons (send, voice), segmented controls, status chips that are not pills. Buttons are 8px, never pills."),
+ ("radius-m","12px","Cards: starter cards, answer widgets, glance cards, chat bubbles; also rail rows and icon tiles."),
+ ("radius-l","16px","Panels: the rail, the Your day panel, the prompt box, modals (Vibe's big radius)."),
+ ("radius-xl","24px","The frosted app frame; same value as `radius-frame`."),
+ ("radius-frame","24px","The frosted app frame only."),
+ ("radius-pill","999px","Chips (tool chips, status chips, filter chips) and Search only. Never a button. Toggles and progress tracks keep their natural pill shape."),
+ ("radius-circle","50%","Avatars, radios, loaders, status circles."),
 ]
 SHADOWS = [
- ("shadow-xs",T("0 4px 6px -4px rgba(65,64,66,0.1)","0 4px 6px -4px rgba(0,0,0,0.4)","0 4px 6px -4px rgba(0,0,0,0.4)"),"Row hover lift (App Design System)."),
- ("shadow-s",T("0 4px 8px rgba(65,64,66,0.2)","0 4px 8px rgba(0,0,0,0.5)","0 4px 8px rgba(0,0,0,0.5)"),"Dropdowns and a board card on hover (App Design System)."),
- ("shadow-m",T("0 6px 20px rgba(65,64,66,0.2)","0 6px 20px rgba(0,0,0,0.55)","0 6px 20px rgba(0,0,0,0.55)"),"Menus, toasts and tooltips (App Design System)."),
- ("shadow-l",T("0 15px 50px rgba(65,64,66,0.3)","0 15px 50px rgba(0,0,0,0.7)","0 15px 50px rgba(0,0,0,0.7)"),"Modals (App Design System)."),
+ ("shadow-xs",T("0 4px 6px -4px rgba(65,64,66,0.1)","0 4px 6px -4px rgba(0,0,0,0.4)","0 4px 6px -4px rgba(0,0,0,0.4)"),"Row hover lift."),
+ ("shadow-s",T("0 4px 8px rgba(65,64,66,0.2)","0 4px 8px rgba(0,0,0,0.5)","0 4px 8px rgba(0,0,0,0.5)"),"Dropdowns and a board card on hover."),
+ ("shadow-m",T("0 6px 20px rgba(65,64,66,0.2)","0 6px 20px rgba(0,0,0,0.55)","0 6px 20px rgba(0,0,0,0.55)"),"Menus, toasts and tooltips."),
+ ("shadow-l",T("0 15px 50px rgba(65,64,66,0.3)","0 15px 50px rgba(0,0,0,0.7)","0 15px 50px rgba(0,0,0,0.7)"),"Modals."),
  ("shadow-float",T("0 24px 60px rgba(8,26,28,0.10)","0 24px 60px rgba(0,0,0,0.35)","0 24px 60px rgba(0,0,0,0.35)"),"The prompt box and anything that floats over glass."),
  ("shadow-ai","0 12px 32px rgba(50,2,31,0.35)","The plum AI mark on the landing page."),
- ("focus-ring",T("0 0 0 2px #ffffff, 0 0 0 4px #c2543c","0 0 0 2px #020a0b, 0 0 0 4px #f47e63","0 0 0 2px #070105, 0 0 0 4px #f47e63"),"Visible focus on every control: a 2px gap in the page colour, then a 2px solid ring in `focus`. Never removed, never replaced by a colour change alone. Confirmed by Amber, 5 October 2026."),
+ ("focus-ring",T("0 0 0 2px #ffffff, 0 0 0 4px #c2543c","0 0 0 2px #020a0b, 0 0 0 4px #f47e63","0 0 0 2px #070105, 0 0 0 4px #f47e63"),"Visible focus on every control: a 2px gap in the page colour, then a 2px solid ring in `focus`. Never removed, never replaced by a colour change alone."),
 ]
 BLUR = [
  ("blur-frame","30px","backdrop-filter on the app frame."),
  ("blur-input","20px","backdrop-filter on the prompt box and floating bars."),
- ("blur-glow","140px","filter blur on the background glow discs, which sit at 15% opacity or less (Amber, 6 October 2026)."),
+ ("blur-glow","140px","filter blur on the background glow discs, which sit at 15% opacity or less."),
 ]
 ZINDEX = [
  ("z-sticky","10","Sticky table headers and the top bar."),
@@ -208,15 +208,15 @@ BACKGROUNDS = [
 # ---------- tokens.json ----------
 def tok(name,value,usage): return {"name":name,"value":value,"usage":usage}
 tokens = {
- "name":"Lofty Momentum Consolidated","version":2,
- "meta":{"source":"consolidation","of":["Lofty Momentum 1.4 (concept, 25 September 2026)","Lofty's App Design System (LoftySupport/loftybrand, main, 5 October 2026)","Amber's decisions of 4 and 5 October 2026 in loftyprojectapp docs/ui-system"],"synced":"2026-10-05"},
+ "name":"Lofty Momentum","version":2,
+ "meta":{"source":"momentum","synced":"2026-10-07"},
  "color":{"themes":[{"id":i,"name":n} for i,n in THEMES],"tokens":[tok(n,v,u) for _,n,v,u in COLORS]},
  "type":{"fonts":[{"family":f,"file":p,"weight":w,"style":s} for f,p,w,s in FONTS],"families":FAMILIES,"groups":[]},
  "spacing":{"tokens":[tok(*s) for s in SPACING]},
  "radius":{"tokens":[tok(*r) for r in RADIUS]},
  "shadow":{"tokens":[tok(*s) for s in SHADOWS]},
  "blur":{"note":"Backdrop and glow blur radii. Glass needs a coloured glow behind it or it reads as grey.","tokens":[tok(*b) for b in BLUR]},
- "zIndex":{"note":"Layer scale, never a literal (App Design System).","tokens":[tok(*z) for z in ZINDEX]},
+ "zIndex":{"note":"Layer scale, never a literal.","tokens":[tok(*z) for z in ZINDEX]},
 }
 for gname,fam,styles in GROUPS:
     g={"name":gname,"family":fam,"styles":[]}
@@ -237,7 +237,7 @@ def css_val(v):
 def theme_val(v,t): return v if isinstance(v,str) else v.get(t, v["light"])
 def write(name,text): open(os.path.join(OUT_CSS,name),"w").write(text)
 
-lines=["/* momentum/tokens/colors.css : Lofty Momentum Consolidated colour tokens.","   Generated from tokens.json by gen.py on 5 October 2026. Edit the generator, not this file.","   Sunrise (light) on :root; Deep Eco on [data-theme=\"eco\"]; Twilight on [data-theme=\"twilight\"] (any element).","   Precedence: Amber's decisions of 4 and 5 October 2026, then Momentum 1.4, then the App Design System, then Vibe. */",":root, [data-theme=\"light\"] {"]
+lines=["/* momentum/tokens/colors.css : Lofty Momentum colour tokens.","   Generated by gen-tokens.py. Edit the generator, not this file.","   Sunrise (light) on :root; Deep Eco on [data-theme=\"eco\"]; Twilight on [data-theme=\"twilight\"] (any element).","   Vibe supplies the semantic names; Momentum supplies the values. */",":root, [data-theme=\"light\"] {"]
 tier=None
 for tr,n,v,u in COLORS:
     if tr!=tier: lines.append("  /* ---- %s ---- */"%{"brand":"Brand kit and Momentum palette (primitives, never themed except plum-lift)","semantic":"Semantic layer: build with these, not the primitives","status":"Status: state only, never decoration or a chart series","series":"Chart series: which one, never is it OK"}[tr]); tier=tr
@@ -250,7 +250,7 @@ for t,_ in THEMES[1:]:
     lines.append("  color-scheme: dark;\n}")
 write("colors.css","\n".join(lines)+"\n")
 
-ty=["/* momentum/tokens/typography.css : families, weights and the type styles. Outfit for headings and Onest for body (Amber, 7 October 2026, replacing Montserrat only, C04); four weights (C05). Fieldwork for brand-led surfaces only. */",":root {"]
+ty=["/* momentum/tokens/typography.css : families, weights and the type styles. Outfit for headings and Onest for body; four weights. Fieldwork for brand-led surfaces only. */",":root {"]
 for k,v in FAMILIES.items(): ty.append("  --font-%s: %s;"%(k,v))
 ty.append("  --font-weight-normal: 400;\n  --font-weight-medium: 500;\n  --font-weight-semibold: 600;\n  --font-weight-bold: 700;")
 for gname,fam,styles in GROUPS:
@@ -261,7 +261,7 @@ for gname,fam,styles in GROUPS:
         if ls: ty.append("  --letter-spacing-%s: %s;"%(n,ls))
 ty.append("}")
 for t,_ in THEMES[1:]:
-    ty.append("/* Body text at 500 on the dark themes (Amber, 7 October 2026). */")
+    ty.append("/* Body text at 500 on the dark themes. */")
     ty.append("[data-theme=\"%s\"] {"%t)
     for gname,fam,styles in GROUPS:
         for n,fs,lh,fw,ls,sample,usage in styles:
@@ -282,7 +282,7 @@ for t,_ in THEMES[1:]:
     sh.append("}")
 write("shadows.css","\n".join(sh)+"\n")
 write("motion.css","/* momentum/tokens/motion.css : productive and expressive durations, the AI feedback deadline, easings. Nothing bounces; everything stops under prefers-reduced-motion (see base.css). */\n:root {\n"+"".join("  --%s: %s; /* %s */\n"%(n,v,u) for n,v,u in MOTION)+"}\n")
-write("layers.css","/* momentum/tokens/layers.css : z-index scale, never a literal (App Design System). */\n:root {\n"+"".join("  --%s: %s; /* %s */\n"%(n,v,u) for n,v,u in ZINDEX)+"}\n")
+write("layers.css","/* momentum/tokens/layers.css : z-index scale, never a literal. */\n:root {\n"+"".join("  --%s: %s; /* %s */\n"%(n,v,u) for n,v,u in ZINDEX)+"}\n")
 bg=["/* momentum/tokens/backgrounds.css : the eleven Momentum backgrounds, light and dark twins, chosen by job (GradientBackgrounds). One per screen; never a straight top-to-bottom gradient. */",":root {"]
 for no,name,mode,job,role,css in BACKGROUNDS:
     slug=(no+"-"+name).lower().replace(" ","-")

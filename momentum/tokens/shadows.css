@@ -1,15 +1,15 @@
 /* momentum/tokens/shadows.css : shadows, the focus ring and blur. Only the prompt box floats at rest. */
 :root {
-  --shadow-xs: 0 4px 6px -4px rgba(65,64,66,0.1); /* Row hover lift (App Design System). */
-  --shadow-s: 0 4px 8px rgba(65,64,66,0.2); /* Dropdowns and a board card on hover (App Design System). */
-  --shadow-m: 0 6px 20px rgba(65,64,66,0.2); /* Menus, toasts and tooltips (App Design System). */
-  --shadow-l: 0 15px 50px rgba(65,64,66,0.3); /* Modals (App Design System). */
+  --shadow-xs: 0 4px 6px -4px rgba(65,64,66,0.1); /* Row hover lift. */
+  --shadow-s: 0 4px 8px rgba(65,64,66,0.2); /* Dropdowns and a board card on hover. */
+  --shadow-m: 0 6px 20px rgba(65,64,66,0.2); /* Menus, toasts and tooltips. */
+  --shadow-l: 0 15px 50px rgba(65,64,66,0.3); /* Modals. */
   --shadow-float: 0 24px 60px rgba(8,26,28,0.10); /* The prompt box and anything that floats over glass. */
   --shadow-ai: 0 12px 32px rgba(50,2,31,0.35); /* The plum AI mark on the landing page. */
-  --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #c2543c; /* Visible focus on every control: a 2px gap in the page colour, then a 2px solid ring in `focus`. Never removed, never replaced by a colour change alone. Confirmed by Amber, 5 October 2026. */
+  --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #c2543c; /* Visible focus on every control: a 2px gap in the page colour, then a 2px solid ring in `focus`. Never removed, never replaced by a colour change alone. */
   --blur-frame: 30px; /* backdrop-filter on the app frame. */
   --blur-input: 20px; /* backdrop-filter on the prompt box and floating bars. */
-  --blur-glow: 140px; /* filter blur on the background glow discs, which sit at 15% opacity or less (Amber, 6 October 2026). */
+  --blur-glow: 140px; /* filter blur on the background glow discs, which sit at 15% opacity or less. */
 }
 [data-theme="eco"] {
   --shadow-xs: 0 4px 6px -4px rgba(0,0,0,0.4);

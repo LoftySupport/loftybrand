@@ -1,4 +1,4 @@
-<!-- momentum/components/PrintTemplates.md : Momentum component rules, from the Lofty Momentum Consolidated artifact (components/PrintTemplates/README.md). 5 October 2026. -->
+<!-- momentum/components/PrintTemplates.md : Momentum component rules, from the Lofty Momentum artifact (components/PrintTemplates/README.md). 5 October 2026. -->
 # PrintTemplates
 
 The Momentum cover page and document template, A4, for reports, proposals and process documents.

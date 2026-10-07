@@ -1,4 +1,4 @@
-<!-- momentum/components/ReportColours.md : Momentum component rules, from the Lofty Momentum Consolidated artifact (components/ReportColours/README.md). 5 October 2026. -->
+<!-- momentum/components/ReportColours.md : Momentum component rules, from the Lofty Momentum artifact (components/ReportColours/README.md). 5 October 2026. -->
 # ReportColours
 
 How several colours sit together in reports, charts and multi-colour icons without muddying.

@@ -25,7 +25,7 @@ Load from Google Fonts, variable, once, wherever the Hub loads fonts today (find
 --font-body: Onest, Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 ```
 
-Montserrat is the fallback when Outfit and Onest are not available (Amber, 7 October 2026). It sits next in each stack and is not loaded from Google Fonts. No component names a font directly. Everything reads the two tokens.
+Montserrat is the fallback when Outfit and Onest are not available. It sits next in each stack and is not loaded from Google Fonts. No component names a font directly. Everything reads the two tokens.
 
 ## Weights and sizes
 
