@@ -21,10 +21,10 @@ Where the sources disagree: Amber's dated decisions, then Momentum 1.4, then the
 | --- | --- |
 | `styles.css` | The entry point. `@import`s only. Link it instead of the root `styles.css` to get Momentum |
 | `tokens/colors.css` | 56 colour tokens: primitives, the semantic layer, status and chart series. Sunrise on `:root`, Deep Eco on `[data-theme="eco"]`, Twilight on `[data-theme="twilight"]` |
-| `tokens/typography.css` | Montserrat only, four weights, 19 type styles as `--type-*` font shorthands (the Hub's Vibe scale plus Momentum's display, numbers and chat styles) |
+| `tokens/typography.css` | Outfit for headings and Onest for body, four weights, 19 type styles as `--type-*` font shorthands (the Hub's Vibe scale plus Momentum's display, numbers and chat styles) |
 | `tokens/spacing.css`, `radius.css`, `shadows.css`, `motion.css`, `layers.css` | Twelve spacing steps, eight radii, elevation and the solid focus ring with the blur radii, durations and easings, the z-index scale |
 | `tokens/backgrounds.css` | The eleven Momentum backgrounds with their dark twins as `--bg-*`, chosen by job |
-| `tokens/fonts.css` | Montserrat from Google Fonts; Fieldwork `@font-face` pointing at `../assets/fonts` |
+| `tokens/fonts.css` | Outfit and Onest from Google Fonts; Fieldwork `@font-face` pointing at `../assets/fonts` |
 | `tokens/base.css` | Element defaults for a page that links `styles.css`. Not for the Hub, where Vibe owns the base |
 | `tokens/vibe-theme.css` | **The consolidation as CSS:** every Vibe semantic name the App Design System and the Hub use, pointed at a Momentum token. Fallbacks to App Design System values are marked |
 | `tokens.json` | The artifact's token file: every token with its usage note and contrast ratio |
@@ -41,7 +41,7 @@ Where the sources disagree: Amber's dated decisions, then Momentum 1.4, then the
 
 | | App Design System (root of this repository) | Momentum Consolidated (this folder) |
 | --- | --- | --- |
-| Faces | Figtree body, Montserrat titles | Montserrat only (Amber, 5 Oct 2026, C04) |
+| Faces | Figtree body, Montserrat titles | Outfit headings, Onest body (Amber, 7 Oct 2026, replacing Montserrat only, C04) |
 | Weights | 200 to 700 | 400, 500, 600, 700 (C05) |
 | Ink on orange | White | Deep Eco `#081a1c`, 6.8:1 (C08) |
 | Text ink | Foundation Black `#414042` | Deep Eco everywhere, documents included (Amber, 5 Oct 2026). Foundation Black stays a brand kit primitive for the black lockup only |

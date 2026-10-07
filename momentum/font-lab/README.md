@@ -21,6 +21,10 @@ Open `index.html` from a checkout of this repository, in Chrome, with an interne
 
 Built from Amber's font-lab experiment for another brand. Kept: the layout, the controls, the pairing studio, the glyph comparison and the candidate faces (Hanken Grotesk, Manrope, Albert Sans, Figtree, Onest, Plus Jakarta Sans, Montserrat; Jost, Outfit and Space Grotesk as heading faces; added by Claude: System UI as a device reference). Removed at Amber's request on 7 October 2026: Inter, Mulish, Fieldwork Hum, Source Sans 3, IBM Plex Sans, Atkinson Hyperlegible Next, Public Sans, DM Sans and Nunito Sans (Fieldwork Hum is still measured as the baseline for the percentages below, but is not a choice in any list). Replaced: its colours with Momentum's, its display face with Fieldwork, its copy with Lofty copy, its single light and dark panes with the three themes. Left out and not saved anywhere: the other brand's name, logo, palette and notes, its display and print faces (Modulus Pro, Sofia Pro) and Poppins.
 
+## Decided, 7 October 2026
+
+Amber chose **Outfit for headings and Onest for body**. It is applied in `../tokens` (`--font-display`, `--font-body`, h1 to h3 at weight 600). The findings below are the record of how the choice was made; where they recommend Figtree or Hanken Grotesk they are superseded.
+
 ## Findings and recommendations, 7 October 2026
 
 Measured, not opinion (stroke weight is the stem thickness at mid lowercase height, as a share of lowercase height):

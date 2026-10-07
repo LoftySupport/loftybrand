@@ -78,12 +78,13 @@ FONTS = [
  ("Fieldwork","fonts/Fieldwork-ItalicLight.woff","300","italic"),
  ("Fieldwork","fonts/Fieldwork-ItalicDemiBold.woff","600","italic"),
 ]
-SYS = 'Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif'
+# Outfit for headings and Onest for body (Amber, 7 October 2026, replacing Montserrat only, C04). Both from Google Fonts.
+SYS_TAIL = 'system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif'
 FAMILIES = {
- "display": SYS,
- "body": SYS,
- "brand": '"Fieldwork Geo", "Fieldwork", Montserrat, Arial, sans-serif',
- "brand-body": '"Fieldwork Hum", "Fieldwork", Montserrat, Arial, sans-serif',
+ "display": "Outfit, " + SYS_TAIL,
+ "body": "Onest, " + SYS_TAIL,
+ "brand": '"Fieldwork Geo", "Fieldwork", Outfit, Arial, sans-serif',
+ "brand-body": '"Fieldwork Hum", "Fieldwork", Onest, Arial, sans-serif',
 }
 # name, size, lh, weight, ls, sample, usage
 GROUPS = [
@@ -98,10 +99,12 @@ GROUPS = [
   ("stat-m","36px","40px",500,"-1px","12","Glance panel counts."),
  ]),
  ("Screen","display",[
-  ("h1","32px","40px",700,"-0.5px","Jobs","Page titles. Vibe's scale, kept for the Hub (Amber, 4 October 2026, C01 and C03)."),
-  ("h2","24px","30px",700,"-0.1px","Harbour Rise","Section titles."),
-  ("h3","18px","24px",700,"-0.1px","Open variations","Card and dialog titles."),
-  ("text1","16px","22px",400,None,"Assign a crew before publishing the schedule.","Body copy in the Hub. Weights 400, 500, 600 and 700 only (Amber, 5 October 2026, C05)."),
+  ("h1","32px","40px",600,"-0.5px","Jobs","Page titles. Vibe's scale, kept for the Hub (Amber, 4 October 2026, C01 and C03)."),
+  ("h2","24px","30px",600,"-0.1px","Harbour Rise","Section titles."),
+  ("h3","18px","24px",600,"-0.1px","Open variations","Card and dialog titles."),
+ ]),
+ ("Screen text","body",[
+  ("text1","16px","22px",400,None,"Assign a crew before publishing the schedule.","Body copy in the Hub, in Onest. Weights 400, 500, 600 and 700 only (Amber, 5 October 2026, C05)."),
   ("text2","14px","20px",400,None,"Due Friday 9 October","Table cells, menu items, field values. 600 for emphasis."),
   ("text3","12px","16px",400,None,"Updated 2 h ago","Captions, counts and the smallest label. No type step below 12px."),
  ]),
@@ -243,7 +246,7 @@ for t,_ in THEMES[1:]:
     lines.append("  color-scheme: dark;\n}")
 write("colors.css","\n".join(lines)+"\n")
 
-ty=["/* momentum/tokens/typography.css : families, weights and the type styles. Montserrat only for digital and web (Amber, 5 October 2026, C04); four weights (C05). Fieldwork for brand-led surfaces only. */",":root {"]
+ty=["/* momentum/tokens/typography.css : families, weights and the type styles. Outfit for headings and Onest for body (Amber, 7 October 2026, replacing Montserrat only, C04); four weights (C05). Fieldwork for brand-led surfaces only. */",":root {"]
 for k,v in FAMILIES.items(): ty.append("  --font-%s: %s;"%(k,v))
 ty.append("  --font-weight-normal: 400;\n  --font-weight-medium: 500;\n  --font-weight-semibold: 600;\n  --font-weight-bold: 700;")
 for gname,fam,styles in GROUPS:

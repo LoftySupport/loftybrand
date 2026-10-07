@@ -8,7 +8,7 @@ My tasks: people see their tasks and their actual calendar together, and drag ta
   - Capacity bar: "3h 45m planned today" and "7h 30m available", Current fill on a `line` track.
   - Add box: "Add a task, then press Enter", with "Plan my day" beside it (plum tile style, arrows mark, the AI owns it).
   - To schedule: filter chips (All, Jobs, Admin, Mine only) with counts, then task cards.
-  - Task card: drag handle, round checkbox, title (Montserrat 700, 15px), job chip, duration, due date, subtask count and list. Status chips only for At risk and Overdue, with their icons (StatusIcon).
+  - Task card: drag handle, round checkbox, title (Onest 700, 15px), job chip, duration, due date, subtask count and list. Status chips only for At risk and Overdue, with their icons (StatusIcon).
   - Done today: collapsed list, struck through.
 - **Right column: the day.**
   - Title "Thursday 24 September" with counts, previous, Today and next.
