@@ -12,7 +12,7 @@ CACHE = sys.argv[2] if len(sys.argv) > 2 else "/tmp/lofty-font-cache"
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 os.makedirs(CACHE, exist_ok=True)
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
-FAMILIES = ["Hanken Grotesk", "Manrope", "Albert Sans", "Figtree", "Onest", "Plus Jakarta Sans", "Montserrat", "Nunito Sans", "Mulish", "Jost", "Outfit", "Space Grotesk", "Inter", "DM Sans", "Source Sans 3", "Atkinson Hyperlegible Next", "Public Sans", "IBM Plex Sans"]
+FAMILIES = ["Hanken Grotesk", "Manrope", "Albert Sans", "Figtree", "Onest", "Plus Jakarta Sans", "Montserrat", "Jost", "Outfit", "Space Grotesk"]
 LOWER = "abcdefghijklmnopqrstuvwxyz"
 
 def fetch(url, dest):
