@@ -20,7 +20,7 @@ body{margin:0;font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,A
 <div style="width: 1440px; height: 760px; box-sizing: border-box; background: #ffffff; color: #081a1c; padding: 40px 48px; display: flex; flex-direction: column; gap: 24px">
   <div style="display: flex; flex-direction: column; gap: 6px">
     <h1 style="margin: 0; font-size: 24px; line-height: 30px; font-weight: 700; letter-spacing: -0.1px">Spacing, shape, elevation and glass</h1>
-    <p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a6668; max-width: 960px">Twelve spacing steps, nothing off the scale. Corners grow with the surface. Only the prompt box floats at rest. The page is never a straight gradient: glow discs, then a frosted frame, panels and cards, with text on solid surfaces.</p>
+    <p style="margin: 0; font-size: 14px; line-height: 20px; color: #5a6668; max-width: 960px">Twelve spacing steps, nothing off the scale. Corners grow with the surface on the 3 October scale: buttons 8, cards 12, panels 16, frame 24; pills only for chips and Search. Only the prompt box floats at rest. The page is never a straight gradient: glow discs, then a frosted frame, panels and cards, with text on solid surfaces.</p>
   </div>
 
   <div style="display: grid; grid-template-columns: 1.1fr 1fr 1.3fr; gap: 32px; flex-grow: 1">
@@ -43,15 +43,15 @@ body{margin:0;font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,A
         </div>
       </div>
       <div style="display: flex; flex-direction: column; gap: 10px">
-        <span class="cap"><b>Radius</b> xs 4 · s 8 · m 12 · l 20 · xl 24 · frame 28 · pill · circle</span>
+        <span class="cap"><b>Radius</b> xs 4 · s 8 buttons, inputs · m 12 cards · l 16 panels · frame 24 · pill (chips, Search) · circle</span>
         <div style="display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap">
           <div class="step"><span style="display: block; width: 56px; height: 56px; border-radius: 4px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">xs</span></div>
           <div class="step"><span style="display: block; width: 56px; height: 56px; border-radius: 8px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">s</span></div>
           <div class="step"><span style="display: block; width: 56px; height: 56px; border-radius: 12px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">m</span></div>
-          <div class="step"><span style="display: block; width: 72px; height: 56px; border-radius: 12px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">l</span></div>
-          <div class="step"><span style="display: block; width: 72px; height: 56px; border-radius: 16px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">xl</span></div>
+          <div class="step"><span style="display: block; width: 72px; height: 56px; border-radius: 16px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">l</span></div>
+          <div class="step"><span style="display: block; width: 80px; height: 56px; border-radius: 24px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">xl</span></div>
           <div class="step"><span style="display: block; width: 80px; height: 56px; border-radius: 16px; background: #fcf1ee; border: 1px solid #8a898d"></span><span class="cap">frame</span></div>
-          <div class="step"><span style="display: block; width: 96px; height: 40px; border-radius: 999px; background: #f47e63"></span><span class="cap">pill</span></div>
+          <div class="step"><span style="display: block; width: 96px; height: 40px; border-radius: 999px; background: #f47e63"></span><span class="cap">pill: chips, Search</span></div>
           <div class="step"><span style="display: block; width: 40px; height: 40px; border-radius: 50%; background: #fad1c7"></span><span class="cap">circle</span></div>
         </div>
       </div>
@@ -77,15 +77,15 @@ body{margin:0;font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,A
     <section style="display: flex; flex-direction: column; gap: 12px">
       <span class="cap"><b>Glass</b> page with glows, then frame, panel, card, solid</span>
       <div style="position: relative; overflow: hidden; flex-grow: 1; border-radius: 16px; background: #fcf1ee; padding: 20px; box-sizing: border-box">
-        <div style="position: absolute; width: 420px; height: 420px; left: -140px; top: -200px; border-radius: 50%; background: #f47e63; opacity: 0.36; filter: blur(140px); pointer-events: none"></div>
-        <div style="position: absolute; width: 360px; height: 360px; right: -160px; bottom: -200px; border-radius: 50%; background: #f47e63; opacity: 0.40; filter: blur(140px); pointer-events: none"></div>
-        <div style="position: absolute; width: 300px; height: 300px; right: -120px; top: -140px; border-radius: 50%; background: #009ba3; opacity: 0.26; filter: blur(140px); pointer-events: none"></div>
+        <div style="position: absolute; width: 420px; height: 420px; left: -140px; top: -200px; border-radius: 50%; background: #f47e63; opacity: 0.15; filter: blur(140px); pointer-events: none"></div>
+        <div style="position: absolute; width: 360px; height: 360px; right: -160px; bottom: -200px; border-radius: 50%; background: #f47e63; opacity: 0.15; filter: blur(140px); pointer-events: none"></div>
+        <div style="position: absolute; width: 300px; height: 300px; right: -120px; top: -140px; border-radius: 50%; background: #009ba3; opacity: 0.12; filter: blur(140px); pointer-events: none"></div>
         <div style="position: relative; height: 100%; box-sizing: border-box; border-radius: 16px; background: rgba(255,255,255,0.42); border: 1px solid rgba(255,255,255,0.85); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); padding: 16px; display: flex; gap: 12px">
           <div style="width: 120px; flex-shrink: 0; box-sizing: border-box; border-radius: 16px; background: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.85); padding: 12px"><span class="cap"><b>surface-panel</b> 50%</span></div>
           <div style="flex-grow: 1; display: flex; flex-direction: column; gap: 12px">
             <div style="box-sizing: border-box; border-radius: 12px; background: rgba(255,255,255,0.72); border: 1px solid rgba(255,255,255,0.85); padding: 12px"><span class="cap"><b>surface-card</b> 72%: starter cards, widgets</span></div>
             <div style="box-sizing: border-box; border-radius: 12px; background: #ffffff; padding: 12px"><span class="cap"><b>surface-solid</b>: tables, watch lists, modals, body text</span></div>
-            <div style="margin-top: auto; box-sizing: border-box; height: 48px; border-radius: 16px; background: #ffffff; border: 1px solid #8a898d; box-shadow: 0 24px 60px rgba(8,26,28,0.10); display: flex; align-items: center; justify-content: space-between; padding: 0 6px 0 16px"><span style="font-size: 14px; color: #5a6668">surface-input, the prompt box</span><span style="width: 36px; height: 36px; border-radius: 999px; background: #f47e63; color: #081a1c; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></span></div>
+            <div style="margin-top: auto; box-sizing: border-box; height: 48px; border-radius: 16px; background: #ffffff; border: 1px solid #8a898d; box-shadow: 0 24px 60px rgba(8,26,28,0.10); display: flex; align-items: center; justify-content: space-between; padding: 0 6px 0 16px"><span style="font-size: 14px; color: #5a6668">surface-input, the prompt box</span><span style="width: 36px; height: 36px; border-radius: 8px; background: #f47e63; color: #081a1c; display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"></path></svg></span></div>
           </div>
         </div>
       </div>
