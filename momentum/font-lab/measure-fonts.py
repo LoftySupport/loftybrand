@@ -12,7 +12,7 @@ CACHE = sys.argv[2] if len(sys.argv) > 2 else "/tmp/lofty-font-cache"
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 os.makedirs(CACHE, exist_ok=True)
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
-FAMILIES = ["Hanken Grotesk", "Manrope", "Albert Sans", "Figtree", "Onest", "Plus Jakarta Sans", "Montserrat", "Nunito Sans", "Mulish", "Jost", "Outfit", "Space Grotesk"]
+FAMILIES = ["Hanken Grotesk", "Manrope", "Albert Sans", "Figtree", "Onest", "Plus Jakarta Sans", "Montserrat", "Nunito Sans", "Mulish", "Jost", "Outfit", "Space Grotesk", "Inter", "DM Sans", "Source Sans 3", "Atkinson Hyperlegible Next", "Public Sans", "IBM Plex Sans"]
 LOWER = "abcdefghijklmnopqrstuvwxyz"
 
 def fetch(url, dest):
@@ -32,6 +32,21 @@ def google_latin(family, weight):
             return fetch(url, os.path.join(CACHE, "%s-%d.woff2" % (family.replace(" ", ""), weight)))
     raise RuntimeError("no latin subset for %s %d" % (family, weight))
 
+def stem_width(gs, glyph, y, upm):
+    # Thickness of the first stroke the line y crosses on the glyph: a horizontal cross-section through the stem of the lowercase l,
+    # at half the lowercase height, clear of serifs, tails and joins. Sampled every 2 font units.
+    from fontTools.pens.pointInsidePen import PointInsidePen
+    bp = BoundsPen(gs); gs[glyph].draw(bp); xmin, _, xmax, _ = bp.bounds
+    run = 0; started = False; x = int(xmin)
+    while x <= xmax:
+        pen = PointInsidePen(gs, (x, y)); gs[glyph].draw(pen)
+        if pen.getResult():
+            run += 2; started = True
+        elif started:
+            break
+        x += 2
+    return run / upm
+
 def measure(path):
     f = TTFont(path)
     upm = f["head"].unitsPerEm
@@ -45,8 +60,8 @@ def measure(path):
     x = bounds("x")[3] / upm
     cap = bounds("H")[3] / upm
     adv = [hmtx[cmap[ord(c)]][0] for c in LOWER if ord(c) in cmap]
-    l = bounds("I")  # capital I is a plain bar in these faces; lowercase l has a tail in some
-    return {"x": round(x, 3), "cap": round(cap, 3), "xcap": round(x / cap, 3), "avg": round(sum(adv) / len(adv) / upm, 3), "stem": round((l[2] - l[0]) / upm, 3)}
+    stem = stem_width(gs, cmap[ord("l")], int(x * upm / 2), upm)
+    return {"x": round(x, 3), "cap": round(cap, 3), "xcap": round(x / cap, 3), "avg": round(sum(adv) / len(adv) / upm, 3), "stem": round(stem, 3)}
 
 rows = []
 FW = [("Fieldwork Hum", "Light", "Fieldwork-Hum-Light.woff"), ("Fieldwork Hum", "DemiBold", "Fieldwork-Hum-DemiBold.woff"),

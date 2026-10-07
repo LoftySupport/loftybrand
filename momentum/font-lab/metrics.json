@@ -6,8 +6,8 @@
   "cap": 0.663,
   "xcap": 0.706,
   "avg": 0.513,
-  "stem400": 0.081,
-  "stem600": 0.132,
+  "stem400": 0.077,
+  "stem600": 0.125,
   "source": "Fieldwork Light (300) and DemiBold (600), assets/fonts"
  },
  {
@@ -17,8 +17,8 @@
   "cap": 0.663,
   "xcap": 0.706,
   "avg": 0.519,
-  "stem400": 0.081,
-  "stem600": 0.132,
+  "stem400": 0.077,
+  "stem600": 0.125,
   "source": "Fieldwork Light (300) and DemiBold (600), assets/fonts"
  },
  {
@@ -28,8 +28,8 @@
   "cap": 0.697,
   "xcap": 0.707,
   "avg": 0.504,
-  "stem400": 0.088,
-  "stem600": 0.116,
+  "stem400": 0.084,
+  "stem600": 0.11,
   "source": "Google Fonts latin subset, weights 400 and 600"
  },
  {
@@ -50,8 +50,8 @@
   "cap": 0.7,
   "xcap": 0.714,
   "avg": 0.515,
-  "stem400": 0.08,
-  "stem600": 0.119,
+  "stem400": 0.074,
+  "stem600": 0.112,
   "source": "Google Fonts latin subset, weights 400 and 600"
  },
  {
@@ -61,8 +61,8 @@
   "cap": 0.7,
   "xcap": 0.714,
   "avg": 0.507,
-  "stem400": 0.085,
-  "stem600": 0.116,
+  "stem400": 0.08,
+  "stem600": 0.112,
   "source": "Google Fonts latin subset, weights 400 and 600"
  },
  {
@@ -72,8 +72,8 @@
   "cap": 0.707,
   "xcap": 0.745,
   "avg": 0.527,
-  "stem400": 0.087,
-  "stem600": 0.125,
+  "stem400": 0.084,
+  "stem600": 0.122,
   "source": "Google Fonts latin subset, weights 400 and 600"
  },
  {
@@ -83,8 +83,8 @@
   "cap": 0.745,
   "xcap": 0.719,
   "avg": 0.54,
-  "stem400": 0.08,
-  "stem600": 0.118,
+  "stem400": 0.074,
+  "stem600": 0.112,
   "source": "Google Fonts latin subset, weights 400 and 600"
  },
  {
@@ -94,8 +94,8 @@
   "cap": 0.7,
   "xcap": 0.75,
   "avg": 0.574,
-  "stem400": 0.074,
-  "stem600": 0.13,
+  "stem400": 0.07,
+  "stem600": 0.124,
   "source": "Google Fonts latin subset, weights 400 and 600"
  },
  {
@@ -105,8 +105,8 @@
   "cap": 0.705,
   "xcap": 0.689,
   "avg": 0.508,
-  "stem400": 0.082,
-  "stem600": 0.104,
+  "stem400": 0.08,
+  "stem600": 0.1,
   "source": "Google Fonts latin subset, weights 400 and 600"
  },
  {
@@ -116,8 +116,8 @@
   "cap": 0.705,
   "xcap": 0.712,
   "avg": 0.523,
-  "stem400": 0.083,
-  "stem600": 0.104,
+  "stem400": 0.08,
+  "stem600": 0.1,
   "source": "Google Fonts latin subset, weights 400 and 600"
  },
  {
@@ -127,8 +127,8 @@
   "cap": 0.7,
   "xcap": 0.657,
   "avg": 0.466,
-  "stem400": 0.085,
-  "stem600": 0.145,
+  "stem400": 0.08,
+  "stem600": 0.13,
   "source": "Google Fonts latin subset, weights 400 and 600"
  },
  {
@@ -138,8 +138,8 @@
   "cap": 0.694,
   "xcap": 0.684,
   "avg": 0.502,
-  "stem400": 0.094,
-  "stem600": 0.136,
+  "stem400": 0.09,
+  "stem600": 0.13,
   "source": "Google Fonts latin subset, weights 400 and 600"
  },
  {
@@ -149,8 +149,74 @@
   "cap": 0.7,
   "xcap": 0.699,
   "avg": 0.556,
+  "stem400": 0.078,
+  "stem600": 0.114,
+  "source": "Google Fonts latin subset, weights 400 and 600"
+ },
+ {
+  "key": "Inter",
+  "brand": false,
+  "x": 0.546,
+  "cap": 0.728,
+  "xcap": 0.75,
+  "avg": 0.536,
+  "stem400": 0.088,
+  "stem600": 0.127,
+  "source": "Google Fonts latin subset, weights 400 and 600"
+ },
+ {
+  "key": "DM Sans",
+  "brand": false,
+  "x": 0.504,
+  "cap": 0.7,
+  "xcap": 0.72,
+  "avg": 0.522,
   "stem400": 0.084,
-  "stem600": 0.121,
+  "stem600": 0.12,
+  "source": "Google Fonts latin subset, weights 400 and 600"
+ },
+ {
+  "key": "Source Sans 3",
+  "brand": false,
+  "x": 0.486,
+  "cap": 0.656,
+  "xcap": 0.741,
+  "avg": 0.475,
+  "stem400": 0.082,
+  "stem600": 0.114,
+  "source": "Google Fonts latin subset, weights 400 and 600"
+ },
+ {
+  "key": "Atkinson Hyperlegible Next",
+  "brand": false,
+  "x": 0.496,
+  "cap": 0.668,
+  "xcap": 0.743,
+  "avg": 0.487,
+  "stem400": 0.084,
+  "stem600": 0.122,
+  "source": "Google Fonts latin subset, weights 400 and 600"
+ },
+ {
+  "key": "Public Sans",
+  "brand": false,
+  "x": 0.517,
+  "cap": 0.723,
+  "xcap": 0.715,
+  "avg": 0.529,
+  "stem400": 0.091,
+  "stem600": 0.119,
+  "source": "Google Fonts latin subset, weights 400 and 600"
+ },
+ {
+  "key": "IBM Plex Sans",
+  "brand": false,
+  "x": 0.516,
+  "cap": 0.698,
+  "xcap": 0.739,
+  "avg": 0.505,
+  "stem400": 0.08,
+  "stem600": 0.128,
   "source": "Google Fonts latin subset, weights 400 and 600"
  }
 ]
