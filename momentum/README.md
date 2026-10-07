@@ -1,19 +1,19 @@
-<!-- momentum/README.md : Lofty Momentum Consolidated in this repository. Version 2.0 draft, 5 October 2026; cards, canvas source and reference records added 6 October 2026. -->
-# Lofty Momentum Consolidated
+<!-- momentum/README.md : Lofty Momentum in this repository: tokens, rules, cards and the tools behind them. Updated 7 October 2026. -->
+# Lofty Momentum
 
-The Momentum brand refresh (concept 1.4, 25 September 2026) merged with this repository's App Design System and Amber's decisions of 4 and 5 October 2026 for the Lofty Hub rebuild, as one token set. It is the brand layer the Hub applies over Vibe, and the shared tokens the homeowner portal reads. It does not replace the rest of this repository: the 61 Vibe-shaped components, the icons and the brand assets stay where they are and read this folder through `tokens/vibe-theme.css`.
+Lofty Momentum is the brand layer the Lofty Hub applies over Vibe, and the shared token set the homeowner portal reads: three themes (Sunrise, Deep Eco, Twilight), Outfit for headings, Onest for body, glass and glow surfaces, and the rules for the components built on them. The 61 Vibe-shaped components, the icons and the brand assets stay where they are and read this folder through `tokens/vibe-theme.css`.
 
-The same system is published as the Claude artifact "Lofty Momentum Consolidated" (brand book, live previews, asset groups): https://claude.ai/artifact/EhxWmKtgNMfZsT7wYgTR6P. `tokens.json` here is the artifact's token file, byte for byte. The CSS is generated from the same values.
+The same system is published as the Claude artifact "Lofty Momentum Consolidated" (brand book, live previews, asset groups): https://claude.ai/artifact/EhxWmKtgNMfZsT7wYgTR6P. `tokens.json` here is the source of the artifact's tokens. The CSS is generated from the same values.
 
 A design canvas of the same system, "Lofty Momentum Consolidated Design" (the Ask Lofty landing in Sunrise and Deep Eco with a theme switch, colour in three themes, type, controls and states, spacing, shape and glass), is at https://claude.ai/artifact/Ma3dEuBCDVpnYA7MZM8dfA. It reads this system's `tokens.json` for its colour and text style menus. Both artifacts are private until shared.
 
 A claude.ai/design design-system project, "Lofty Momentum Consolidated" (project `71001be5-6701-4256-b11a-e0540b42e348`), holds a design-sync copy of this folder with the brand assets, fonts, the Momentum icon subset and six specimen cards. It sits beside "Lofty's App Design System" (`491d6888-cf3b-4d56-bdaa-4ac8a6948e99`), which keeps the 61 Vibe-shaped components. Re-sync it from this folder after a change here.
 
-Status: draft for Amber's review. Nothing in `components/` is coded yet; the files are rules and layout references.
+Status: draft for review. Nothing in `components/` is coded yet; the files are rules and layout references.
 
 ## Precedence
 
-Where the sources disagree: Amber's dated decisions, then Momentum 1.4, then the App Design System, then Vibe. Every conflict and its outcome is in [`CONSOLIDATION.md`](CONSOLIDATION.md). Outstanding questions and follow-ups are in [`HANDOFF.md`](HANDOFF.md).
+Vibe supplies the semantic token names; Momentum supplies the values. Outstanding questions and follow-ups are in [`HANDOFF.md`](HANDOFF.md).
 
 ## Index
 
@@ -26,34 +26,34 @@ Where the sources disagree: Amber's dated decisions, then Momentum 1.4, then the
 | `tokens/backgrounds.css` | The eleven Momentum backgrounds with their dark twins as `--bg-*`, chosen by job |
 | `tokens/fonts.css` | Outfit and Onest from Google Fonts; Fieldwork `@font-face` pointing at `../assets/fonts` |
 | `tokens/base.css` | Element defaults for a page that links `styles.css`. Not for the Hub, where Vibe owns the base |
-| `tokens/vibe-theme.css` | **The consolidation as CSS:** every Vibe semantic name the App Design System and the Hub use, pointed at a Momentum token. Fallbacks to App Design System values are marked |
+| `tokens/vibe-theme.css` | **The Vibe mapping:** every Vibe semantic name the Hub and the components use, pointed at a Momentum token. Fixed fallbacks are marked |
 | `tokens.json` | The artifact's token file: every token with its usage note and contrast ratio |
 | `scripts/gen-tokens.py` | The one source of values. Writes `tokens.json` and eight of the `tokens/*.css` files; `fonts.css`, `base.css` and `vibe-theme.css` are hand-written |
 | `components/*.md` | Momentum's component rules: AppFrame, AppRail, PromptBox, StarterCard, ChatBubble, AnswerWidget, GlanceCard, Button, StatusIcon, ReportColours, ReportExamples, LandingQuestion, TaskPlanner, PrintTemplates, GradientBackgrounds, and the three reference screens |
 | `guidelines/*.html` | 27 specimen cards (6 October 2026): the 20 component previews from the artifact pointed at this repository's assets, the six theme and screen cards flattened from the design canvas, and the 3 October 2026 reconciliation record. Index in `guidelines/README.md` |
 | `canvas/` | Source of the design canvas "Lofty Momentum Consolidated Design": `canvas.json` and six `.dc.html` artboards, byte for byte with the live artifact (6 October 2026) |
 | `font-lab/` | The Lofty Font Lab (7 October 2026): a tester for choosing a body typeface beside Fieldwork on the real Sunrise, Deep Eco and Twilight grounds, with the measurements behind it. Open `index.html` from a checkout. See `font-lab/README.md` |
-| `reference/` | Dated records: the Grounds page (eleven backgrounds, interactive), the Lofty Hub app icon study with the chosen icon's previews, the Momentum prototype (version 13, 6 MB), the Momentum 1.4 handoff, its proposed CLAUDE.md section and its gap-fill token proposals. Each file's status against the consolidation is in `reference/README.md` |
-| `CONSOLIDATION.md` | Sources, precedence, every decision carried, where Momentum won, derived values to confirm, known shortfalls, gaps |
+| `reference/` | Dated records: the Grounds page (eleven backgrounds, interactive), the Lofty Hub app icon study with the chosen icon's previews, the Momentum prototype (version 13, 6 MB), the Momentum 1.4 handoff, its proposed CLAUDE.md section and its gap-fill token proposals. `reference/README.md` says what each file is |
+| `CONSOLIDATION.md` | History only: the dated record of how the sources were merged. Not guidance; the rules in force are in this README and the tokens |
 | `HANDOFF.md` | Outstanding issues, open questions and the next steps |
 
-## What changed against the App Design System
+## Rules in force
 
-| | App Design System (root of this repository) | Momentum Consolidated (this folder) |
-| --- | --- | --- |
-| Faces | Figtree body, Montserrat titles | Outfit headings, Onest body (Amber, 7 Oct 2026, replacing Montserrat only, C04) |
-| Weights | 200 to 700 | 400, 500, 600, 700 (C05) |
-| Ink on orange | White | Deep Eco `#081a1c`, 6.8:1 (C08) |
-| Text ink | Foundation Black `#414042` | Deep Eco everywhere, documents included (Amber, 5 Oct 2026). Foundation Black stays a brand kit primitive for the black lockup only |
-| Page | Flint 100 `#f4f3ee`, flat | Shell `#fcf1ee` with glow discs and a frosted frame. Flint is dropped in the Hub (Amber, 5 Oct 2026) |
-| Control edge | `#8a898d` light, `#807f74` dark | `#8a898d` in every theme (C10) |
-| Selected | Peach `#fae4d5` light; white wash on dark rails | `surface-selected`: peach light, white 20% dark (C11) |
-| Status | Outline chip, dot, Vibe `#00854d` `#d83a52` `#ffcb00` | Graded pill with shape and word; `#00805f` `#c28400` `#d83a52` (C12) |
-| Focus | Orange at 50%, 1.6:1 | Solid 2px ring with a gap, 4.1:1 or better (C09) |
-| Charts | Single-accent orange ramp | Five fixed series plus Other (Amber, 5 Oct 2026). No sequential scale yet |
-| Themes | Light and dark | Sunrise, Deep Eco, Twilight; the Hub ships all three (Amber, 5 Oct 2026, superseding C15) |
-| Radii | 4 controls, 8 cards, 12 panels, 16 modal | 4 controls, 8 buttons and inputs, 12 cards, 16 panels, 24 frame; pills for chips and Search only (Amber, 6 Oct 2026, the 3 October scale) |
-| Glows | None | Three blurred discs at 15% opacity or less (Amber, 6 Oct 2026) plus the eleven backgrounds by job |
+| Area | Rule |
+| --- | --- |
+| Faces | Outfit headings, Onest body; Montserrat is the fallback when they are not available; Fieldwork for decks, print and brand-led heroes only |
+| Weights | 400, 500, 600, 700; h1 to h3 at 600; body 500 on the dark themes |
+| Ink on orange | Deep Eco `#081a1c`, 6.8:1 |
+| Text ink | Deep Eco everywhere, documents included. Foundation Black is a brand kit primitive for the black lockup only |
+| Page | Shell `#fcf1ee` with glow discs and a frosted frame |
+| Control edge | `#8a898d` in every theme |
+| Selected | `surface-selected`: peach on light, white 20% on dark |
+| Status | Graded pill with shape and word; `#00805f` `#c28400` `#d83a52` |
+| Focus | Solid 2px ring with a gap, 4.1:1 or better |
+| Charts | Five fixed series plus Other. No sequential scale yet |
+| Themes | Sunrise, Deep Eco, Twilight; the Hub ships all three |
+| Radii | 4 controls, 8 buttons and inputs, 12 cards, 16 panels, 24 frame; pills for chips and Search only |
+| Glows | Three blurred discs at 15% opacity or less, plus the eleven backgrounds by job |
 
 ## Using it
 

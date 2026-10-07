@@ -1,7 +1,7 @@
-<!-- momentum/components/Button.md : Momentum component rules, from the Lofty Momentum Consolidated artifact (components/Button/README.md). 5 October 2026. -->
+<!-- momentum/components/Button.md : Momentum component rules, from the Lofty Momentum artifact (components/Button/README.md). 5 October 2026. -->
 # Button
 
-Buttons that name the action, 8px corners (`radius-s`), never pills (Amber, 6 October 2026). One primary (orange) action per area.
+Buttons that name the action, 8px corners (`radius-s`), never pills. One primary (orange) action per area.
 
 - **Primary:** `action` fill, `on-action` (Deep Eco) text. Never white text on orange.
 - **Accent:** `eco-green` or `plum` fill with white text, for actions inside those surfaces.

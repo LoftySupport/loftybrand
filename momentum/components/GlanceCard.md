@@ -1,4 +1,4 @@
-<!-- momentum/components/GlanceCard.md : Momentum component rules, from the Lofty Momentum Consolidated artifact (components/GlanceCard/README.md). 5 October 2026. -->
+<!-- momentum/components/GlanceCard.md : Momentum component rules, from the Lofty Momentum artifact (components/GlanceCard/README.md). 5 October 2026. -->
 # GlanceCard
 
 The "Your day" side panel: switch between Schedule, Tasks and Activity without leaving the conversation.

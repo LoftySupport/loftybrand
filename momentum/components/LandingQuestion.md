@@ -1,7 +1,7 @@
-<!-- momentum/components/LandingQuestion.md : Momentum component rules, from the Lofty Momentum Consolidated artifact (components/LandingQuestion/README.md). 5 October 2026. -->
+<!-- momentum/components/LandingQuestion.md : Momentum component rules, from the Lofty Momentum artifact (components/LandingQuestion/README.md). 5 October 2026. -->
 # LandingQuestion
 
-The Ask Lofty landing, version 2 (25 September 2026). The AI mark sits on the left with a question from a bank of twelve beside it. This replaces the centred mark and the fixed "What should we move forward today?" headline.
+The Ask Lofty landing. The AI mark sits on the left with a question from a bank of twelve beside it.
 
 - **Hero:** left-aligned. Plum tile 68px with the orange Lofty arrows (`plum-lift` on Twilight). Greeting in `ink-muted`, then the question in Outfit 500 at 40/50, tracking -1.2px, two lines at most, max width 760px.
 - **Controls under the question:** "Question n of 12" in `ink-muted`, and a ghost button (`radius-s`) "Another question" that moves to the next question and wraps at twelve.

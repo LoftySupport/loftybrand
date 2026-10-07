@@ -1,4 +1,4 @@
-/* momentum/styles.css : Lofty Momentum Consolidated, the single entry point. @imports only.
+/* momentum/styles.css : Lofty Momentum, the single entry point. @imports only.
    Themes: Sunrise on :root, Deep Eco on [data-theme="eco"], Twilight on [data-theme="twilight"].
    Load tokens/vibe-theme.css last when Vibe-shaped components (the App Design System's or the Hub's) read this system. */
 @import url("tokens/fonts.css");

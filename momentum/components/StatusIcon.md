@@ -1,4 +1,4 @@
-<!-- momentum/components/StatusIcon.md : Momentum component rules, from the Lofty Momentum Consolidated artifact (components/StatusIcon/README.md). 5 October 2026. -->
+<!-- momentum/components/StatusIcon.md : Momentum component rules, from the Lofty Momentum artifact (components/StatusIcon/README.md). 5 October 2026. -->
 # StatusIcon
 
 Three job and task states, each told apart by shape and glyph as well as colour, so they read in print, for colour-blind viewers and at 16px.

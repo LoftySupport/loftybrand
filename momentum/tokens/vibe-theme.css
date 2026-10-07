@@ -1,9 +1,9 @@
-/* momentum/tokens/vibe-theme.css : the consolidation itself, as CSS.
-   The App Design System's semantic layer uses monday.com Vibe's token names, and so does the Lofty Hub
-   (app/src/theme/tokens.css). This file points every one of those names at a Lofty Momentum token, so a
-   Vibe-shaped component takes the brand refresh without a rewrite. Load it after tokens/colors.css.
+/* momentum/tokens/vibe-theme.css : the Vibe mapping.
+   monday.com Vibe's semantic token names are used by the Lofty Hub (app/src/theme/tokens.css) and by the
+   Vibe-shaped components. This file points every one of those names at a Lofty Momentum token, so a
+   Vibe-shaped component takes Momentum without a rewrite. Load it after tokens/colors.css.
    Inside the Hub, re-declare at body.light-app-theme specificity as tokens.css does today, or Vibe's class wins.
-   Lines marked FALLBACK keep an App Design System value because Momentum has no equivalent (see CONSOLIDATION.md). */
+   Lines marked FALLBACK keep a fixed value because Momentum has no equivalent token. */
 :root, [data-theme="light"], [data-theme="eco"], [data-theme="twilight"] {
   /* primary and brand */
   --primary-color: var(--action);
@@ -62,7 +62,7 @@
   --ui-background-color: var(--line);
   --ui-background-hover-color: var(--surface-hover);
   --icon-color: var(--ink-muted);
-  /* status: Vibe's three map onto Momentum's graded set (Amber, 5 October 2026, C12) */
+  /* status: Vibe's three map onto Momentum's graded set */
   --positive-color: var(--status-on-track);
   --positive-color-hover: var(--status-on-track);
   --positive-color-selected: var(--status-on-track-soft);

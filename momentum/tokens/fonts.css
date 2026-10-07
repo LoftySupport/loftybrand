@@ -1,4 +1,4 @@
-/* momentum/tokens/fonts.css : Outfit for headings and Onest for body (Amber, 7 October 2026, replacing Montserrat only, C04), four weights (C05), from Google Fonts.
+/* momentum/tokens/fonts.css : Outfit for headings and Onest for body, four weights, from Google Fonts.
    Fieldwork brand faces load from the repository's single font set in ../../assets/fonts and are for brand-led surfaces only. */
 @import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap");
 @font-face{font-family:"Fieldwork Geo";src:url("../../assets/fonts/Fieldwork-Geo-Light.woff") format("woff");font-weight:300;font-style:normal;font-display:swap}

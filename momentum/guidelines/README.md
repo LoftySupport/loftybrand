@@ -1,4 +1,4 @@
-<!-- momentum/guidelines/README.md : the specimen cards of Lofty Momentum Consolidated. Added 6 October 2026. -->
+<!-- momentum/guidelines/README.md : the specimen cards of Lofty Momentum. Added 6 October 2026. -->
 # Guidelines: the specimen cards
 
 One HTML card per Momentum component or theme, the same files the claude.ai/design project "Lofty Momentum Consolidated" shows in its Design System pane. Each file opens on its own in a browser and links `../styles.css` for the tokens. The first line of every card is its `@dsCard` marker (group, viewport, name, subtitle); the design-sync tool reads it to build the pane.

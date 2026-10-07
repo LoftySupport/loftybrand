@@ -1,4 +1,4 @@
-<!-- momentum/components/AnswerWidget.md : Momentum component rules, from the Lofty Momentum Consolidated artifact (components/AnswerWidget/README.md). 5 October 2026. -->
+<!-- momentum/components/AnswerWidget.md : Momentum component rules, from the Lofty Momentum artifact (components/AnswerWidget/README.md). 5 October 2026. -->
 # AnswerWidget
 
 How the AI answers: one sentence, then the record as widgets, then the action.

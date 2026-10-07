@@ -1,7 +1,7 @@
 /* Type scale — Vibe's screen scale (Onest body, Outfit titles), plus Lofty's
    Fieldwork brand families for brand-led surfaces (decks, print, marketing heroes). */
 :root{
-  /* Screen stack: Onest body, Outfit titles. Fallback order: brand font, then Outfit or Onest, then Montserrat, then Arial. Montserrat is the digital fallback when Outfit and Onest are not available (Amber, 7 October 2026). Print stays on Fieldwork. */
+  /* Screen stack: Onest body, Outfit titles. Fallback order: brand font, then Outfit or Onest, then Montserrat, then Arial. Montserrat is the digital fallback when Outfit and Onest are not available. Print stays on Fieldwork. */
   --font-family:Onest,Montserrat,Arial,sans-serif;
   --title-font-family:Outfit,Montserrat,Arial,sans-serif;
   --h1-font-family:var(--title-font-family);

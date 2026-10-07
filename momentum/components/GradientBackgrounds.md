@@ -1,4 +1,4 @@
-<!-- momentum/components/GradientBackgrounds.md : Momentum component rules, from the Lofty Momentum Consolidated artifact (components/GradientBackgrounds/README.md). 5 October 2026. -->
+<!-- momentum/components/GradientBackgrounds.md : Momentum component rules, from the Lofty Momentum artifact (components/GradientBackgrounds/README.md). 5 October 2026. -->
 # GradientBackgrounds
 
 Eleven backgrounds, each in light and dark, chosen by job. Every light background has a dark twin with the same number. They are CSS versions of the glow discs, for anywhere a single CSS background is easier to ship.
