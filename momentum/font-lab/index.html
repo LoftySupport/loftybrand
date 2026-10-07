@@ -10,7 +10,7 @@
 <title>Lofty Font Lab</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300..700&family=Figtree:wght@300..700&family=Hanken+Grotesk:wght@300..700&family=Jost:wght@300..700&family=Manrope:wght@300..700&family=Montserrat:wght@300..700&family=Mulish:wght@300..700&family=Nunito+Sans:wght@300..700&family=Onest:wght@300..700&family=Outfit:wght@300..700&family=Plus+Jakarta+Sans:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300..700&family=Figtree:wght@300..700&family=Hanken+Grotesk:wght@300..700&family=Jost:wght@300..700&family=Manrope:wght@300..700&family=Montserrat:wght@300..700&family=Mulish:wght@300..700&family=Nunito+Sans:wght@300..700&family=Onest:wght@300..700&family=Outfit:wght@300..700&family=Plus+Jakarta+Sans:wght@300..700&family=Space+Grotesk:wght@300..700&family=Inter:wght@300..700&family=DM+Sans:wght@300..700&family=Source+Sans+3:wght@300..700&family=Atkinson+Hyperlegible+Next:wght@300..700&family=Public+Sans:wght@300..700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap">
 <style>
 /* Fieldwork: the Lofty brand faces, supplied in Light (300) and DemiBold (600) only. */
 @font-face{font-family:"Fieldwork Geo";src:url("../../assets/fonts/Fieldwork-Geo-Light.woff") format("woff");font-weight:300;font-style:normal;font-display:swap}
@@ -156,6 +156,21 @@ section.block{padding:28px 0}
 .cfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 20px;border-top:1px solid rgba(8,26,28,.12);font-size:12px;color:var(--muted)}
 .short{font-size:12px;font-weight:700;padding:7px 12px;border:1px solid var(--line-control);border-radius:8px;background:#fff;color:var(--deep-eco)}.short.on{background:var(--deep-eco);color:var(--crisp-orange);border-color:var(--deep-eco)}
 @media(max-width:760px){.cthemes{grid-template-columns:1fr}}
+.recs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.rec{background:#fff;border:1px solid var(--line-control);border-radius:12px;padding:20px}
+.rec.top{background:var(--deep-eco);color:#eef4f3;border-color:var(--deep-eco)}
+.rec .rk{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--eco-green);margin-bottom:8px}
+.rec.top .rk{color:var(--sky)}
+.rec h3{font-family:"Montserrat",sans-serif;font-size:18px;line-height:1.25;margin-bottom:8px}
+.rec p,.rec li{font-size:14px;line-height:1.55}
+.rec ul{padding-left:18px;display:flex;flex-direction:column;gap:6px}
+.rec .to{margin-top:10px;font-size:13px;font-weight:700;color:var(--orange-pressed)}
+.rec.top .to{color:var(--crisp-orange)}
+.recgroup{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:26px 0 12px;grid-column:1/-1}
+.recgroup:first-child{margin-top:0}
+.apple .rk{color:var(--orange-pressed)}
+.code{background:#f6ebe8;border:1px solid rgba(8,26,28,.12);border-radius:8px;padding:12px 14px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;line-height:1.6;white-space:pre-wrap;margin-top:10px;color:var(--deep-eco)}
+.bigbtn{height:44px;padding:0 20px;border:0;border-radius:8px;background:var(--crisp-orange);color:var(--deep-eco);font-weight:700;font-size:14px}
 .foot{padding:20px 0 64px;font-size:13px;color:var(--muted);line-height:1.6;max-width:92ch}
 </style>
 </head>
@@ -167,7 +182,7 @@ section.block{padding:28px 0}
     <div class="control"><label for="size">Body size</label><input type="range" id="size" min="12" max="18" step="1" value="15"><output id="sizeOut">15px</output></div>
     <div class="control"><label for="weight">Body weight</label><input type="range" id="weight" min="300" max="600" step="100" value="400"><output id="weightOut">400</output></div>
     <div class="control"><label>Text colours</label><div class="seg" id="textSeg"><button data-val="tokens" class="on">Momentum today</button><button data-val="readable">Readable set</button></div></div>
-    <div class="control"><label>Backgrounds</label><div class="seg" id="bgSeg"><button data-val="hub" class="on">Hub today</button><button data-val="soft">Glows 15%</button><button data-val="flat">Flat</button></div></div>
+    <div class="control"><label>Backgrounds</label><div class="seg" id="bgSeg"><button data-val="hub" class="on">Hub today</button><button data-val="soft">Glows 15%</button><button data-val="solid">Solid cards</button><button data-val="flat">Flat</button></div></div>
     <div class="control"><button class="preset" id="copyShort" type="button">0 picked · copy shortlist</button></div>
   </div>
 </header>
@@ -176,13 +191,19 @@ section.block{padding:28px 0}
 <section class="intro">
   <p class="eyebrow">Lofty Momentum · body typeface test</p>
   <h1>Is it the font, or the colours?</h1>
-  <p class="lede">Body text in Montserrat is hard to read on the Lofty themes, most of all in Deep Eco and Twilight. Two things could be causing it: <strong>the typeface</strong> (how big, wide and heavy its letters are) and <strong>the colours</strong> (how bright the text is against the ground, with the glows and glass behind it). This tester separates them on the real <strong>Sunrise, Deep Eco and Twilight</strong> grounds, with Fieldwork, the Lofty brand face, as the yardstick.</p>
-  <p class="note">Change one thing at a time. <strong>Text colours</strong> and <strong>Backgrounds</strong> in the top bar change the colours; the two font selectors below change the typeface. Contrast ratios depend on colour only, so they do not move when you change the font. Fieldwork is supplied in Light (300) and DemiBold (600) only: weights 400 and 500 show Light. Nothing in the system changes until you choose.</p>
+  <p class="lede">Test faces and colours on the real Sunrise, Deep Eco and Twilight grounds, with Fieldwork as the yardstick.</p>
+</section>
+
+<section class="block" aria-labelledby="rc">
+  <h2 id="rc">Recommendations</h2>
+  <p class="sub">My recommendations for the most readable Lofty UI. They are inference from the measurements below and design judgement, not decisions. The Apple points come from my own understanding of Apple's Human Interface Guidelines and were not re-checked against the current text today.</p>
+  <div class="btnrow"><button class="bigbtn" id="applyRec" type="button">Show the recommended setup</button><span style="font-size:13px;color:var(--muted)">Sets size 16, Readable text, solid cards, Montserrat against Hanken Grotesk, and the pairing studio to Montserrat headings with Hanken body.</span></div>
+  <div class="recs" id="recs"></div>
 </section>
 
 <section class="block" aria-labelledby="mx">
   <h2 id="mx">Font against colours, on the real themes</h2>
-  <p class="sub">Two fonts, three themes, at the size and weight in the top bar. Row one is the font in use today. Compare the rows to see the font effect, then flip Text colours and Backgrounds to see the colour effect. Chips under each tile give the contrast at the brightest glow behind the text (4.5:1 is the AA pass for body text).</p>
+  <p class="sub">Compare the rows for the font effect, then use the buttons for the colour effect. Chips give contrast at the brightest glow (4.5:1 is the AA pass).</p>
   <div class="btnrow" id="mxPresets"><span class="lbl">Try</span></div>
   <div class="pair-controls"><div class="field"><label for="fa">Font in row one</label><select id="fa"></select></div><div class="field"><label for="fb">Font in row two</label><select id="fb"></select></div></div>
   <div class="matrix" id="matrix"></div>
@@ -190,20 +211,20 @@ section.block{padding:28px 0}
 
 <section class="block" aria-labelledby="ct">
   <h2 id="ct">Contrast by combination</h2>
-  <p class="sub">Computed from the Momentum tokens and the grounds the Hub uses. Ink is headings and body text, muted is captions, table cells and nav. Each figure is taken at the brightest glow behind the text, behind the glass card. The same numbers apply to every font.</p>
+  <p class="sub">Ink is body text, muted is captions, cells and nav, each at the brightest glow behind the text. The same numbers apply to every font.</p>
   <div class="ct" id="ctable" role="table"></div>
 </section>
 
 <section class="block" aria-labelledby="mt">
   <h2 id="mt">Measured against Fieldwork</h2>
-  <p class="sub">Taken from the font files themselves (7 October 2026, <code>font-lab/metrics.json</code>). Lowercase height decides how large a face looks at a given size. Width decides how much room words take. Stroke weight at 400, as a share of lowercase height, decides how solid small text looks, and it is what vanishes first in dark mode. Closeness scores how near each face stays to Fieldwork on width, letter proportions and stroke weight.</p>
+  <p class="sub">Measured from the font files (<code>font-lab/metrics.json</code>): lowercase height, width, and stroke weight at 400 against lowercase height, which is what vanishes first in dark mode. Closeness scores how near each face stays to Fieldwork.</p>
   <div class="measure" id="measure" role="table"></div>
-  <div class="ranking" id="ranking"></div>
+  
 </section>
 
 <section class="block studio" aria-labelledby="ps">
   <h2 id="ps">Pairing studio</h2>
-  <p class="sub">Mix any heading face with any body face, Montserrat included, and read both on all three themes.</p>
+  <p class="sub">Any heading face with any body face, Montserrat included in both lists.</p>
   <div class="pair-controls">
     <div class="field"><label for="headSel">Headings</label><select id="headSel"></select></div>
     <div class="field"><label for="bodySel">Body</label><select id="bodySel"></select></div>
@@ -215,21 +236,21 @@ section.block{padding:28px 0}
 
 <section class="block" aria-labelledby="gl">
   <h2 id="gl">Letterforms next to Fieldwork</h2>
-  <p class="sub">The shapes that give a face its character: a, g, e, R. Fieldwork Geo and Hum on the dark panels are the brand reference.</p>
+  <p class="sub">Fieldwork Geo and Hum on the dark panels are the brand reference.</p>
   <div class="gridg" id="glyphs"></div>
 </section>
 
 <section class="block" aria-labelledby="cd">
   <h2 id="cd">Every face, on all three themes</h2>
-  <p class="sub">The same Lofty screen text for each face at the body size and weight set above, then a ladder from 16px to 12px. Nothing in Lofty goes below 12px. Use Shortlist on the ones you want to keep.</p>
+  <p class="sub">Each face at the size and weight above, with a 16 to 12px ladder. Shortlist the ones you want to keep.</p>
   <div class="lab" id="lab"></div>
 </section>
 
-<p class="foot">Sample text is invented for the test. Faces other than Fieldwork load from Google Fonts (open licence); Fieldwork loads from this repository's <code>assets/fonts</code> and is for Lofty's own use. The grounds are the Hub's (<code>app/src/lofty-ui/surfaces.css</code>): Sunrise <code>#fcf1ee</code> with orange and Current glows, Deep Eco <code>#020a0b</code> and Twilight <code>#070105</code> with the night glows, under 42% (light) or 5% to 8% (dark) white glass. “Glows 15%” caps every glow at 15% opacity, the Momentum decision of 6 October 2026. “Readable set” is a proposal, not a token: dark ink <code>#eef4f3</code>, secondary text 86%, body weight one step heavier on dark, light-theme muted <code>#3e4d50</code>.</p>
+<p class="foot">Sample text is invented for the test. Fieldwork is supplied in Light (300) and DemiBold (600) only, so weights 400 and 500 show Light. Faces other than Fieldwork load from Google Fonts (open licence); Fieldwork loads from this repository's <code>assets/fonts</code> and is for Lofty's own use. The grounds are the Hub's (<code>app/src/lofty-ui/surfaces.css</code>): Sunrise <code>#fcf1ee</code> with orange and Current glows, Deep Eco <code>#020a0b</code> and Twilight <code>#070105</code> with the night glows, under 42% (light) or 5% to 8% (dark) white glass. “Glows 15%” caps every glow at 15% opacity, the Momentum decision of 6 October 2026. “Solid cards” keeps the 15% glows and puts text on opaque surfaces (Sunrise white, Deep Eco <code>#0a1b1d</code>, Twilight <code>#170710</code>), as the Momentum rule for body text already says. “Readable set” is a proposal, not a token: dark ink <code>#eef4f3</code>, secondary text 86%, body weight one step heavier on dark, light-theme muted <code>#3e4d50</code>.</p>
 </main>
 
 <script>
-/*METRICS-START*/const METRICS = [{"key": "Fieldwork Hum", "brand": true, "x": 0.468, "cap": 0.663, "xcap": 0.706, "avg": 0.513, "stem400": 0.081, "stem600": 0.132, "source": "Fieldwork Light (300) and DemiBold (600), assets/fonts"}, {"key": "Fieldwork Geo", "brand": true, "x": 0.468, "cap": 0.663, "xcap": 0.706, "avg": 0.519, "stem400": 0.081, "stem600": 0.132, "source": "Fieldwork Light (300) and DemiBold (600), assets/fonts"}, {"key": "Hanken Grotesk", "brand": false, "x": 0.493, "cap": 0.697, "xcap": 0.707, "avg": 0.504, "stem400": 0.088, "stem600": 0.116, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Manrope", "brand": false, "x": 0.54, "cap": 0.72, "xcap": 0.75, "avg": 0.523, "stem400": 0.073, "stem600": 0.104, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Albert Sans", "brand": false, "x": 0.5, "cap": 0.7, "xcap": 0.714, "avg": 0.515, "stem400": 0.08, "stem600": 0.119, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Figtree", "brand": false, "x": 0.5, "cap": 0.7, "xcap": 0.714, "avg": 0.507, "stem400": 0.085, "stem600": 0.116, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Onest", "brand": false, "x": 0.527, "cap": 0.707, "xcap": 0.745, "avg": 0.527, "stem400": 0.087, "stem600": 0.125, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Plus Jakarta Sans", "brand": false, "x": 0.536, "cap": 0.745, "xcap": 0.719, "avg": 0.54, "stem400": 0.08, "stem600": 0.118, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Montserrat", "brand": false, "x": 0.525, "cap": 0.7, "xcap": 0.75, "avg": 0.574, "stem400": 0.074, "stem600": 0.13, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Nunito Sans", "brand": false, "x": 0.486, "cap": 0.705, "xcap": 0.689, "avg": 0.508, "stem400": 0.082, "stem600": 0.104, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Mulish", "brand": false, "x": 0.502, "cap": 0.705, "xcap": 0.712, "avg": 0.523, "stem400": 0.083, "stem600": 0.104, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Jost", "brand": false, "x": 0.46, "cap": 0.7, "xcap": 0.657, "avg": 0.466, "stem400": 0.085, "stem600": 0.145, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Outfit", "brand": false, "x": 0.475, "cap": 0.694, "xcap": 0.684, "avg": 0.502, "stem400": 0.094, "stem600": 0.136, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Space Grotesk", "brand": false, "x": 0.489, "cap": 0.7, "xcap": 0.699, "avg": 0.556, "stem400": 0.084, "stem600": 0.121, "source": "Google Fonts latin subset, weights 400 and 600"}];/*METRICS-END*/
+/*METRICS-START*/const METRICS = [{"key": "Fieldwork Hum", "brand": true, "x": 0.468, "cap": 0.663, "xcap": 0.706, "avg": 0.513, "stem400": 0.077, "stem600": 0.125, "source": "Fieldwork Light (300) and DemiBold (600), assets/fonts"}, {"key": "Fieldwork Geo", "brand": true, "x": 0.468, "cap": 0.663, "xcap": 0.706, "avg": 0.519, "stem400": 0.077, "stem600": 0.125, "source": "Fieldwork Light (300) and DemiBold (600), assets/fonts"}, {"key": "Hanken Grotesk", "brand": false, "x": 0.493, "cap": 0.697, "xcap": 0.707, "avg": 0.504, "stem400": 0.084, "stem600": 0.11, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Manrope", "brand": false, "x": 0.54, "cap": 0.72, "xcap": 0.75, "avg": 0.523, "stem400": 0.073, "stem600": 0.104, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Albert Sans", "brand": false, "x": 0.5, "cap": 0.7, "xcap": 0.714, "avg": 0.515, "stem400": 0.074, "stem600": 0.112, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Figtree", "brand": false, "x": 0.5, "cap": 0.7, "xcap": 0.714, "avg": 0.507, "stem400": 0.08, "stem600": 0.112, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Onest", "brand": false, "x": 0.527, "cap": 0.707, "xcap": 0.745, "avg": 0.527, "stem400": 0.084, "stem600": 0.122, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Plus Jakarta Sans", "brand": false, "x": 0.536, "cap": 0.745, "xcap": 0.719, "avg": 0.54, "stem400": 0.074, "stem600": 0.112, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Montserrat", "brand": false, "x": 0.525, "cap": 0.7, "xcap": 0.75, "avg": 0.574, "stem400": 0.07, "stem600": 0.124, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Nunito Sans", "brand": false, "x": 0.486, "cap": 0.705, "xcap": 0.689, "avg": 0.508, "stem400": 0.08, "stem600": 0.1, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Mulish", "brand": false, "x": 0.502, "cap": 0.705, "xcap": 0.712, "avg": 0.523, "stem400": 0.08, "stem600": 0.1, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Jost", "brand": false, "x": 0.46, "cap": 0.7, "xcap": 0.657, "avg": 0.466, "stem400": 0.08, "stem600": 0.13, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Outfit", "brand": false, "x": 0.475, "cap": 0.694, "xcap": 0.684, "avg": 0.502, "stem400": 0.09, "stem600": 0.13, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Space Grotesk", "brand": false, "x": 0.489, "cap": 0.7, "xcap": 0.699, "avg": 0.556, "stem400": 0.078, "stem600": 0.114, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Inter", "brand": false, "x": 0.546, "cap": 0.728, "xcap": 0.75, "avg": 0.536, "stem400": 0.088, "stem600": 0.127, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "DM Sans", "brand": false, "x": 0.504, "cap": 0.7, "xcap": 0.72, "avg": 0.522, "stem400": 0.084, "stem600": 0.12, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Source Sans 3", "brand": false, "x": 0.486, "cap": 0.656, "xcap": 0.741, "avg": 0.475, "stem400": 0.082, "stem600": 0.114, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Atkinson Hyperlegible Next", "brand": false, "x": 0.496, "cap": 0.668, "xcap": 0.743, "avg": 0.487, "stem400": 0.084, "stem600": 0.122, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Public Sans", "brand": false, "x": 0.517, "cap": 0.723, "xcap": 0.715, "avg": 0.529, "stem400": 0.091, "stem600": 0.119, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "IBM Plex Sans", "brand": false, "x": 0.516, "cap": 0.698, "xcap": 0.739, "avg": 0.505, "stem400": 0.08, "stem600": 0.128, "source": "Google Fonts latin subset, weights 400 and 600"}];/*METRICS-END*/
 const FW = METRICS.find(m => m.key === "Fieldwork Hum") || {x:.468,cap:.663,xcap:.706,avg:.513,stem400:.081};
 const mOf = k => METRICS.find(m => m.key === k);
 const root = document.documentElement;
@@ -239,18 +260,18 @@ const store = {get(k,d){try{return localStorage.getItem(k)??d}catch(e){return d}
 const GEO = ["55% 70% at 8% 0%","45% 60% at 80% 110%","30% 40% at 100% 0%"];
 const THEMES = {
   sunrise:  {name:"Sunrise",  dark:false, base:"#fcf1ee", glows:[["244,126,99",.22],["244,126,99",.21],["0,155,163",.15]], frame:[255,255,255,.42], card:[255,255,255,.72], edge:"rgba(255,255,255,.85)", rule:"rgba(8,26,28,.12)", eyebrow:"#005058",
-             ink:{tokens:"#081a1c",readable:"#081a1c"}, muted:{tokens:"rgba(90,102,104,1)",readable:"rgba(62,77,80,1)"}},
-  eco:      {name:"Deep Eco", dark:true,  base:"#020a0b", glows:[["244,126,99",.36],["244,126,99",.32],["0,155,163",.40]], frame:[255,255,255,.05], card:[255,255,255,.08], edge:"rgba(255,255,255,.12)", rule:"rgba(255,255,255,.14)", eyebrow:"#adfbff",
+             solid:"#ffffff", ink:{tokens:"#081a1c",readable:"#081a1c"}, muted:{tokens:"rgba(90,102,104,1)",readable:"rgba(62,77,80,1)"}},
+  eco:      {name:"Deep Eco", dark:true,  base:"#020a0b", glows:[["244,126,99",.36],["244,126,99",.32],["0,155,163",.40]], frame:[255,255,255,.05], card:[255,255,255,.08], edge:"rgba(255,255,255,.12)", rule:"rgba(255,255,255,.14)", eyebrow:"#adfbff", solid:"#0a1b1d",
              ink:{tokens:"#ffffff",readable:"#eef4f3"}, muted:{tokens:"rgba(255,255,255,.62)",readable:"rgba(238,244,243,.86)"}},
-  twilight: {name:"Twilight", dark:true,  base:"#070105", glows:[["142,58,114",.47],["244,126,99",.18],["0,155,163",.14]], frame:[255,255,255,.05], card:[255,255,255,.08], edge:"rgba(255,255,255,.12)", rule:"rgba(255,255,255,.14)", eyebrow:"#adfbff",
+  twilight: {name:"Twilight", dark:true,  base:"#070105", glows:[["142,58,114",.47],["244,126,99",.18],["0,155,163",.14]], frame:[255,255,255,.05], card:[255,255,255,.08], edge:"rgba(255,255,255,.12)", rule:"rgba(255,255,255,.14)", eyebrow:"#adfbff", solid:"#170710",
              ink:{tokens:"#ffffff",readable:"#eef4f3"}, muted:{tokens:"rgba(255,255,255,.62)",readable:"rgba(238,244,243,.86)"}}
 };
 const state = {text:store.get("lofty_fl_text","tokens"), bg:store.get("lofty_fl_bgmode","hub")};
 
-function glowsFor(t, mode){ if(mode==="flat") return []; return t.glows.map(g=>[g[0], mode==="soft"?Math.min(g[1],.15):g[1]]); }
+function glowsFor(t, mode){ if(mode==="flat") return []; return t.glows.map(g=>[g[0], (mode==="soft"||mode==="solid")?Math.min(g[1],.15):g[1]]); }
 function groundCss(t, mode){ const g=glowsFor(t,mode); return g.map((x,i)=>`radial-gradient(${GEO[i]}, rgba(${x[0]},${x[1]}), transparent 70%)`).concat(t.base).join(", "); }
 function weightFor(t, text){ const w=+weight.value; return (t.dark && text==="readable") ? Math.min(w+100,700) : w; }
-function tileVars(key){ const t=THEMES[key]; return `--ground:${groundCss(t,state.bg)};--frame:rgba(${t.frame.join(",")});--card:rgba(${t.card.join(",")});--edge:${t.edge};--rule:${t.rule};--ink:${t.ink[state.text]};--muted-fg:${t.muted[state.text]};--eyebrow:${t.eyebrow};--bw:${weightFor(t,state.text)}`; }
+function tileVars(key){ const t=THEMES[key]; return `--ground:${groundCss(t,state.bg)};--frame:rgba(${t.frame.join(",")});--card:${state.bg==="solid"?t.solid:`rgba(${t.card.join(",")})`};--edge:${t.edge};--rule:${t.rule};--ink:${t.ink[state.text]};--muted-fg:${t.muted[state.text]};--eyebrow:${t.eyebrow};--bw:${weightFor(t,state.text)}`; }
 
 /* contrast, worst case: text over the card over the brightest glow (or the bare base) */
 const hex = h => [1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
@@ -261,6 +282,7 @@ const over = (fg,a,bg) => fg.map((v,i)=>v*a+bg[i]*(1-a));
 function parseCol(s){ if(s[0]==="#") return hex(s).concat(1); const m=s.match(/[\d.]+/g).map(Number); return [m[0],m[1],m[2],m[3]??1]; }
 function contrast(key, text, mode){
   const t=THEMES[key], base=hex(t.base), cands=[base];
+  if(mode==="solid"){ const card=hex(t.solid), ink=parseCol(t.ink[text]), mu=parseCol(t.muted[text]); return {ink:ratio(over(ink.slice(0,3),ink[3],card),card), muted:ratio(over(mu.slice(0,3),mu[3],card),card)}; }
   glowsFor(t,mode).forEach(g=>{const c=g[0].split(",").map(Number); cands.push(over(c,g[1],base));});
   const ink=parseCol(t.ink[text]), mu=parseCol(t.muted[text]); let wi=99, wm=99;
   cands.forEach(b=>{ const fr=over(t.frame.slice(0,3),t.frame[3],b); const card=over(t.card.slice(0,3),t.card[3],fr);
@@ -282,6 +304,13 @@ const FONTS = [
   { key:"Manrope", css:"'Manrope', sans-serif", tag:"UI-native", note:"Semi-geometric and built for interfaces. Tall lowercase, narrow strokes at 400; more designed than Hanken." },
   { key:"Plus Jakarta Sans", css:"'Plus Jakarta Sans', sans-serif", tag:"Distinctive", note:"Geometric humanist with character in the details. The tallest lowercase of the options and a little wide." },
   { key:"Mulish", css:"'Mulish', sans-serif", tag:"Minimal", note:"Clean and minimal. Close to Fieldwork on width and stroke weight, with a taller lowercase." },
+  { key:"DM Sans", css:"'DM Sans', sans-serif", tag:"Geometric, solid", note:"Low-contrast geometric with round bowls that suit Fieldwork Geo. Fieldwork's width, a lowercase 8% taller and matching stroke weight." },
+  { key:"Public Sans", css:"'Public Sans', sans-serif", tag:"Sturdy", note:"A plain, sturdy screen face, built for government sites. A lowercase 10% taller than Fieldwork's and the heaviest strokes of the close matches." },
+  { key:"Inter", css:"'Inter', sans-serif", tag:"Apple-like", note:"The closest of the open faces to Apple's system face and the largest lowercase here (17% taller than Fieldwork's). Made for interfaces; the least like Fieldwork in feel." },
+  { key:"Atkinson Hyperlegible Next", css:"'Atkinson Hyperlegible Next', sans-serif", tag:"Built for legibility", note:"Designed by the Braille Institute so every letter is distinct, including I, l and 1. Slightly narrower than Fieldwork with sturdy strokes." },
+  { key:"Source Sans 3", css:"'Source Sans 3', sans-serif", tag:"Narrow", note:"A narrow humanist face with excellent small-size text. Narrower than Fieldwork (7%), so it fits more per line." },
+  { key:"IBM Plex Sans", css:"'IBM Plex Sans', sans-serif", tag:"Technical", note:"A grotesque with a technical feel and a lowercase 10% taller than Fieldwork's. Strokes a little lighter." },
+  { key:"System UI", css:"system-ui,-apple-system,'SF Pro Text','Segoe UI',Roboto,sans-serif", tag:"Device face", sys:true, note:"The device's own face: SF Pro on Mac, iPhone and iPad, Segoe UI on Windows, Roboto on Android. The most readable on each device and free to load, but not the same on every device, so it cannot be measured here. Shown as a reference." },
 ];
 const HEAD="Every job, moving forward.", BODY="Harbour Rise Lot 12 is 68% built and four days behind plan. One thing is holding up the slab pour: the engineer's footing sign-off.", CAP="Requested Mon 21 Sep · waiting 3 days · Harbour Rise Lot 12", NAV=["Projects","Jobs","Maintenance","Reports"], LAD="Footing sign-off, 3 days waiting";
 const ROWS=[["1209-002","Evanston Park","Due today"],["1215-01","Mawson Lakes","3 days"],["1203-01","Blakeview","On track"]];
@@ -304,10 +333,10 @@ function renderMatrix(){
 }
 function renderLab(){
   const sel=JSON.parse(store.get("lofty_fl_short","[]"));
-  document.getElementById("lab").innerHTML=FONTS.map(f=>{const m=mOf(f.key)||{x:0,avg:0,stem400:0}; const w=(m.avg/FW.avg-1)*100, s=((m.stem400/m.x)/(FW.stem400/FW.x)-1)*100;
+  document.getElementById("lab").innerHTML=FONTS.map(f=>{const m=mOf(f.key); const w=m?(m.avg/FW.avg-1)*100:0, s=m?((m.stem400/m.x)/(FW.stem400/FW.x)-1)*100:0;
     return `<div class="card ${f.rec?'rec':''}"><div class="chead"><span class="name" style="font-family:${f.css}">${f.key}</span><span class="ctag ${f.cls||''}">${f.tag}</span></div><div class="cnote">${f.note}</div>
     <div class="cthemes">${["sunrise","eco","twilight"].map(k=>tileHtml(k,f.css,f.key,false).replace('class="tile"','class="tile" style="border:0;border-radius:0"')).join("")}</div>
-    <div class="cfoot"><span>Lowercase ${m.x.toFixed(3)} · width ${w>=0?'+':''}${w.toFixed(1)}% · strokes ${s>=0?'+':''}${s.toFixed(0)}% vs Fieldwork Hum</span><button class="short ${sel.includes(f.key)?'on':''}" data-k="${f.key}" type="button">${sel.includes(f.key)?'Shortlisted':'Shortlist'}</button></div></div>`}).join("");
+    <div class="cfoot"><span>${m?`Lowercase ${m.x.toFixed(3)} · width ${w>=0?'+':''}${w.toFixed(1)}% · strokes ${s>=0?'+':''}${s.toFixed(0)}% vs Fieldwork Hum`:'Not measurable: depends on the device'}</span><button class="short ${sel.includes(f.key)?'on':''}" data-k="${f.key}" type="button">${sel.includes(f.key)?'Shortlisted':'Shortlist'}</button></div></div>`}).join("");
   updShort();
 }
 function renderStudio(){
@@ -321,11 +350,11 @@ function renderStudio(){
     <div class="pcap">${CAP}</div><button class="pbtn" type="button">Chase engineer</button></div></div></div>
     <div class="chips"><span class="chip ${c.ink>=4.5?'':'bad'}">Ink ${fmt(c.ink)}</span><span class="chip ${c.muted>=4.5?'':'bad'}">Muted ${fmt(c.muted)}</span></div></div>`}).join("");
 }
-function renderAll(){ renderMatrix(); renderLab(); renderStudio(); renderTable(); }
+function renderAll(){ renderMatrix(); renderLab(); renderStudio(); renderTable(); renderRecs(); }
 
 /* ---------------- contrast table ---------------- */
 function renderTable(){
-  const combos=[["Hub today, Momentum text","hub","tokens"],["Glows 15%, Momentum text","soft","tokens"],["Hub today, readable text","hub","readable"],["Glows 15%, readable text","soft","readable"]];
+  const combos=[["Hub today, Momentum text","hub","tokens"],["Glows 15%, Momentum text","soft","tokens"],["Hub today, readable text","hub","readable"],["Glows 15%, readable text","soft","readable"],["Solid cards, Momentum text","solid","tokens"],["Solid cards, readable text","solid","readable"]];
   let h=`<div class="cr ch" role="row"><div>Setting</div><div>Sunrise ink</div><div>Sunrise muted</div><div>Deep Eco ink</div><div>Deep Eco muted</div><div>Twilight ink</div><div>Twilight muted</div></div>`;
   combos.forEach(cb=>{ const cells=["sunrise","eco","twilight"].flatMap(k=>{const c=contrast(k,cb[2],cb[1]);return [c.ink,c.muted]});
     h+=`<div class="cr" role="row"><div><strong>${cb[0]}</strong></div>${cells.map(v=>`<div class="cell ${v>=4.5?'ok':'bad'}">${fmt(v)}</div>`).join("")}</div>`; });
@@ -338,7 +367,7 @@ const close = m => Math.max(0,100*(1-dist(m)));
 function renderMeasured(){
   if(!METRICS.length){document.getElementById("measure").innerHTML="<div class='mrow'>Run measure-fonts.py to embed the measurements.</div>";return}
   const cand=METRICS.filter(m=>!m.brand).sort((a,b)=>close(b)-close(a));
-  const tagFor={Montserrat:["Current (C04)","base"],Figtree:["Was body","base"]};
+  const tagFor={Montserrat:["Current (C04)","base"],Figtree:["Was body","base"],"Hanken Grotesk":["My pick",""]};
   document.getElementById("measure").innerHTML=`<div class="mrow mhead" role="row"><div>Typeface</div><div>Lowercase / em</div><div>Width vs Fieldwork</div><div>Strokes vs Fieldwork</div><div>Closeness to Fieldwork</div><div>What it means</div></div>`+
    [METRICS.find(m=>m.key==="Fieldwork Hum"),...cand].map(m=>{const b=!!m.brand,w=(m.avg/FW.avg-1)*100,s=((m.stem400/m.x)/(FW.stem400/FW.x)-1)*100,c=close(m),t=tagFor[m.key],tag=t&&!b?`<span class="tg ${t[1]}">${t[0]}</span>`:"";
     const why=b?"The brand reference: the smallest lowercase of the set."
@@ -347,16 +376,11 @@ function renderMeasured(){
       :s<-8?"Lighter strokes than Fieldwork at weight 400: use 500 on dark."
       :Math.abs(w)>3?"A "+(w>0?"wider":"narrower")+" setting than Fieldwork.":"Close to Fieldwork.";
     return `<div class="mrow ${b?'brand':''}" role="row"><div class="nm">${b?"Fieldwork Hum (brand)":m.key}${tag}</div><div>${m.x.toFixed(3)}</div><div>${b?"baseline":(w>=0?"+":"")+w.toFixed(1)+"%"}</div><div>${b?"baseline":(s>=0?"+":"")+s.toFixed(0)+"%"}</div><div style="display:flex;align-items:center;gap:10px"><div class="bar" style="flex:1"><i style="width:${(b?100:c).toFixed(0)}%"></i></div><span>${b?"100":c.toFixed(0)}</span></div><div class="why">${why}</div></div>`}).join("");
-  document.getElementById("ranking").innerHTML=[
-   ["top","My read · 01","Hanken Grotesk","Closest to Fieldwork on width, letter proportions and stroke weight, with a taller lowercase so the same size reads larger. Inference from the measurements: judge it on the panels above."],
-   ["","Also strong · 02","Figtree","Fieldwork's width, a taller lowercase and solid strokes. It was Lofty's body face until 5 October and the Vibe-based components already use it: the smallest change to adopt."],
-   ["","Geometric · 03","Albert Sans","The most geometric of the close matches and the best partner for Fieldwork Geo. Strokes a little lighter, so use 500 on dark."],
-   ["","Softer · 04","Nunito Sans · Onest","Nunito Sans is open and friendly; Onest is built for screens. Both read well small."]
-  ].map(r=>`<div class="rank ${r[0]}"><div class="p">${r[1]}</div><h3>${r[2]}</h3><p>${r[3]}</p></div>`).join("");
+
 }
 
 /* ---------------- glyphs ---------------- */
-document.getElementById("glyphs").innerHTML=[["Fieldwork Geo","'Fieldwork Geo'",true,"Brand display face."],["Fieldwork Hum","'Fieldwork Hum'",true,"Brand body face."],["Montserrat","'Montserrat'",false,"Current body face."],["Hanken Grotesk","'Hanken Grotesk'",false,""],["Figtree","'Figtree'",false,""],["Albert Sans","'Albert Sans'",false,""],["Nunito Sans","'Nunito Sans'",false,""],["Onest","'Onest'",false,""],["Manrope","'Manrope'",false,""],["Mulish","'Mulish'",false,""]].map(g=>`<div class="gcol ${g[2]?'is-brand':''}"><div class="gname">${g[0]}</div><div class="grow" style="font-family:${g[1]},sans-serif">a g e R</div><div class="gword" style="font-family:${g[1]},sans-serif">Harbour Rise</div><div class="gnote">${g[3]}</div></div>`).join("");
+document.getElementById("glyphs").innerHTML=[["Fieldwork Geo","'Fieldwork Geo'",true,"Brand display face."],["Fieldwork Hum","'Fieldwork Hum'",true,"Brand body face."],["Montserrat","'Montserrat'",false,"Current body face."],["Hanken Grotesk","'Hanken Grotesk'",false,""],["Figtree","'Figtree'",false,""],["Albert Sans","'Albert Sans'",false,""],["Nunito Sans","'Nunito Sans'",false,""],["Onest","'Onest'",false,""],["Manrope","'Manrope'",false,""],["Mulish","'Mulish'",false,""],["DM Sans","'DM Sans'",false,""],["Public Sans","'Public Sans'",false,""],["Inter","'Inter'",false,""],["Atkinson Hyperlegible Next","'Atkinson Hyperlegible Next'",false,""],["System UI","system-ui,-apple-system,'SF Pro Text','Segoe UI',Roboto",false,"Device face."]].map(g=>`<div class="gcol ${g[2]?'is-brand':''}"><div class="gname">${g[0]}</div><div class="grow" style="font-family:${g[1]},sans-serif">a g e R</div><div class="gword" style="font-family:${g[1]},sans-serif">Harbour Rise</div><div class="gnote">${g[3]}</div></div>`).join("");
 
 /* ---------------- controls ---------------- */
 const size=document.getElementById("size"), weight=document.getElementById("weight");
@@ -372,12 +396,12 @@ const fa=document.getElementById("fa"), fb=document.getElementById("fb");
 FONTS.forEach(f=>{fa.add(new Option(f.key,f.css));fb.add(new Option(f.key,f.css))});
 fa.value=store.get("lofty_fl_fa",FONTS[2].css)||FONTS[2].css; fb.value=store.get("lofty_fl_fb",FONTS[3].css)||FONTS[3].css;
 fa.onchange=fb.onchange=()=>{store.set("lofty_fl_fa",fa.value);store.set("lofty_fl_fb",fb.value);renderMatrix()};
-[["Today's colours","tokens","hub"],["Glows 15% only","tokens","soft"],["Readable text only","readable","hub"],["Readable text and glows 15%","readable","soft"]].forEach(p=>{const b=document.createElement("button");b.type="button";b.className="preset";b.textContent=p[0];b.dataset.t=p[1];b.dataset.b=p[2];b.onclick=()=>{state.text=p[1];state.bg=p[2];store.set("lofty_fl_text",p[1]);store.set("lofty_fl_bgmode",p[2]);syncSegs();renderAll()};document.getElementById("mxPresets").appendChild(b)});
+[["Today's colours","tokens","hub"],["Glows 15% only","tokens","soft"],["Readable text only","readable","hub"],["Readable text and glows 15%","readable","soft"],["Recommended: readable text, solid cards","readable","solid"]].forEach(p=>{const b=document.createElement("button");b.type="button";b.className="preset";b.textContent=p[0];b.dataset.t=p[1];b.dataset.b=p[2];b.onclick=()=>{state.text=p[1];state.bg=p[2];store.set("lofty_fl_text",p[1]);store.set("lofty_fl_bgmode",p[2]);syncSegs();renderAll()};document.getElementById("mxPresets").appendChild(b)});
 
 /* pairing studio */
-const HEADS=[["Fieldwork Geo","'Fieldwork Geo', sans-serif"],["Montserrat","'Montserrat', sans-serif"],["Albert Sans","'Albert Sans', sans-serif"],["Outfit","'Outfit', sans-serif"],["Jost","'Jost', sans-serif"],["Space Grotesk","'Space Grotesk', sans-serif"],["Hanken Grotesk","'Hanken Grotesk', sans-serif"],["Manrope","'Manrope', sans-serif"],["Plus Jakarta Sans","'Plus Jakarta Sans', sans-serif"],["Figtree","'Figtree', sans-serif"]];
-const BODIES=[["Montserrat","'Montserrat', sans-serif"],["Hanken Grotesk","'Hanken Grotesk', sans-serif"],["Figtree","'Figtree', sans-serif"],["Albert Sans","'Albert Sans', sans-serif"],["Nunito Sans","'Nunito Sans', sans-serif"],["Onest","'Onest', sans-serif"],["Manrope","'Manrope', sans-serif"],["Plus Jakarta Sans","'Plus Jakarta Sans', sans-serif"],["Mulish","'Mulish', sans-serif"],["Fieldwork Hum","'Fieldwork Hum', sans-serif"]];
-const PRESETS=[["Today: Montserrat × Montserrat","Montserrat","Montserrat"],["Before 5 Oct: Montserrat × Figtree","Montserrat","Figtree"],["Montserrat × Hanken","Montserrat","Hanken Grotesk"],["Fieldwork Geo × Hanken","Fieldwork Geo","Hanken Grotesk"],["Fieldwork Geo × Figtree","Fieldwork Geo","Figtree"],["Albert Sans × Hanken","Albert Sans","Hanken Grotesk"],["Jost × Onest","Jost","Onest"],["Outfit × Onest","Outfit","Onest"],["Space Grotesk × Onest","Space Grotesk","Onest"]];
+const HEADS=[["Fieldwork Geo","'Fieldwork Geo', sans-serif"],["Montserrat","'Montserrat', sans-serif"],["Albert Sans","'Albert Sans', sans-serif"],["Outfit","'Outfit', sans-serif"],["Jost","'Jost', sans-serif"],["Space Grotesk","'Space Grotesk', sans-serif"],["Hanken Grotesk","'Hanken Grotesk', sans-serif"],["Manrope","'Manrope', sans-serif"],["Plus Jakarta Sans","'Plus Jakarta Sans', sans-serif"],["Figtree","'Figtree', sans-serif"],["Inter","'Inter', sans-serif"],["DM Sans","'DM Sans', sans-serif"]];
+const BODIES=[["Montserrat","'Montserrat', sans-serif"],["Hanken Grotesk","'Hanken Grotesk', sans-serif"],["Figtree","'Figtree', sans-serif"],["Albert Sans","'Albert Sans', sans-serif"],["Nunito Sans","'Nunito Sans', sans-serif"],["Onest","'Onest', sans-serif"],["Manrope","'Manrope', sans-serif"],["Plus Jakarta Sans","'Plus Jakarta Sans', sans-serif"],["Mulish","'Mulish', sans-serif"],["Fieldwork Hum","'Fieldwork Hum', sans-serif"],["DM Sans","'DM Sans', sans-serif"],["Public Sans","'Public Sans', sans-serif"],["Inter","'Inter', sans-serif"],["Atkinson Hyperlegible Next","'Atkinson Hyperlegible Next', sans-serif"],["Source Sans 3","'Source Sans 3', sans-serif"],["IBM Plex Sans","'IBM Plex Sans', sans-serif"],["System UI","system-ui,-apple-system,'SF Pro Text','Segoe UI',Roboto,sans-serif"]];
+const PRESETS=[["Today: Montserrat × Montserrat","Montserrat","Montserrat"],["Before 5 Oct: Montserrat × Figtree","Montserrat","Figtree"],["Recommended: Montserrat × Hanken","Montserrat","Hanken Grotesk"],["Fieldwork Geo × Hanken","Fieldwork Geo","Hanken Grotesk"],["Fieldwork Geo × Figtree","Fieldwork Geo","Figtree"],["Fieldwork Geo × DM Sans","Fieldwork Geo","DM Sans"],["Albert Sans × Hanken","Albert Sans","Hanken Grotesk"],["Jost × Onest","Jost","Onest"],["Outfit × Onest","Outfit","Onest"],["Space Grotesk × Onest","Space Grotesk","Onest"]];
 const hs=document.getElementById("headSel"), bs=document.getElementById("bodySel"), pw=document.getElementById("presets");
 HEADS.forEach(f=>hs.add(new Option(f[0],f[1]))); BODIES.forEach(f=>bs.add(new Option(f[0],f[1])));
 function applyPair(){root.style.setProperty("--head-font",hs.value);root.style.setProperty("--body-font",bs.value);const h=HEADS.find(f=>f[1]===hs.value)[0],b=BODIES.find(f=>f[1]===bs.value)[0];document.getElementById("pmeta").textContent="Headings: "+h+" · Body: "+b;store.set("lofty_fl_head",hs.value);store.set("lofty_fl_body",bs.value);[...pw.children].forEach(x=>x.classList.toggle("on",x.dataset.h===hs.value&&x.dataset.b===bs.value))}
@@ -388,6 +412,75 @@ hs.onchange=bs.onchange=applyPair; hs.value=store.get("lofty_fl_head",HEADS[1][1
 function updShort(){const s=JSON.parse(store.get("lofty_fl_short","[]"));document.getElementById("copyShort").textContent=s.length+" picked · copy shortlist"}
 document.getElementById("lab").addEventListener("click",e=>{const b=e.target.closest(".short");if(!b)return;const s=JSON.parse(store.get("lofty_fl_short","[]")),k=b.dataset.k,i=s.indexOf(k);if(i>=0)s.splice(i,1);else s.push(k);store.set("lofty_fl_short",JSON.stringify(s));b.classList.toggle("on",i<0);b.textContent=i<0?"Shortlisted":"Shortlist";updShort()});
 document.getElementById("copyShort").addEventListener("click",()=>{const s=JSON.parse(store.get("lofty_fl_short","[]"));const t="Lofty body face shortlist: "+(s.join(", ")||"none yet")+" · text colours: "+state.text+" · backgrounds: "+state.bg;try{navigator.clipboard.writeText(t)}catch(e){};const el=document.getElementById("copyShort");el.textContent="Copied";setTimeout(updShort,1200)});
+
+
+/* ---------------- recommendations ---------------- */
+function renderRecs(){
+  const eT=contrast("eco","tokens","hub"), eS=contrast("eco","readable","solid"), tT=contrast("twilight","tokens","hub"), tS=contrast("twilight","readable","solid");
+  const hk=mOf("Hanken Grotesk"), mt=mOf("Montserrat"), dm=mOf("DM Sans"), ps=mOf("Public Sans"), it=mOf("Inter"), fg=mOf("Figtree");
+  if(!hk||!mt) return;
+  const w=m=>((m.avg/FW.avg-1)*100), st=m=>(((m.stem400/m.x)/(FW.stem400/FW.x)-1)*100), lc=m=>((m.x/FW.x-1)*100), sg=v=>(v>=0?"+":"")+v.toFixed(0)+"%", sw=v=>(v>=0?"+":"")+v.toFixed(1)+"%";
+  const card=(cls,k,h,body,to)=>`<div class="rec ${cls}"><div class="rk">${k}</div><h3>${h}</h3>${body}${to?`<div class="to">${to}</div>`:""}</div>`;
+  const R=[];
+  R.push(`<div class="recgroup">Typeface</div>`);
+  R.push(card("top","My pick","Body, tables and small UI: Hanken Grotesk",`<p>It keeps Fieldwork's proportions (closeness ${close(hk).toFixed(0)}, width ${sw(w(hk))}), has a lowercase ${lc(hk).toFixed(0)}% taller so the same size reads larger, and strokes ${sg(st(hk))} heavier relative to its lowercase, where Montserrat's are ${sg(st(mt))} lighter. Neutral, so it disappears and the content reads.</p><p style="margin-top:8px"><strong>Alternatives:</strong> DM Sans (closeness ${close(dm).toFixed(0)}, rounder, the best partner for Fieldwork Geo, lowercase ${sg(lc(dm))}); Figtree (${close(fg).toFixed(0)}, the least change, it was the body face until 5 October); Public Sans or Inter if you want the largest lowercase regardless of brand fit (${sg(lc(ps))} and ${sg(lc(it))}).</p>`,"Change: the body font token, from Montserrat to Hanken Grotesk"));
+  R.push(card("","Keep","Montserrat for titles, the landing question and big numbers",`<p>It is the widest face here (${sw(w(mt))} against Fieldwork) with thin strokes for its size. That is a strength at 24px and above, where the width and geometry read as brand, and the weakness at 12 to 16px, where it reads loose and faint. Fieldwork stays for brand surfaces.</p>`,"Change: none to titles; body, tables and captions move off Montserrat"));
+  R.push(card("","Size and weight","Body 16px, dense UI 14px, nothing that carries information under 13px",`<ul><li>Weight 400 on light, 500 on dark. Never Light for body text.</li><li>12px only for secondary captions.</li><li>Line height 1.5 for body, 1.45 in tables. Letter-spacing +0.01em at 13px and below.</li></ul>`,"Change: the type scale tokens and the body weight on dark"));
+  R.push(`<div class="recgroup">Using Fieldwork Geo in the app</div>`);
+  R.push(card("top","Short answer","Yes for headings and display. Not for body, tables or small text.",`<p>The files load and render correctly in a browser (checked in Chromium). The limits are in the font, not the page: only two weights, no hinting, and a few things to set once. Tested: CSS weights 400 and 500 render <strong>Light</strong>, 600 and 700 render <strong>DemiBold</strong>, so the Hub's default body weight of 400 would be Light.</p>`,"Use Geo at 600 for headings from 18px, or Light at display sizes only"));
+  R.push(card("","Checked in the files","What is and is not in Fieldwork Geo",`<ul><li><strong>Characters:</strong> 424 Latin characters including $ % · – — ’ “ ” × ° ½ é … • ± ≈ − €. <strong>Missing:</strong> → and ✓, which fall back to the system font; use the icon set.</li><li><strong>Numbers:</strong> tabular, lining, old-style and slashed-zero figures are included. Set <code>font-variant-numeric: tabular-nums lining-nums</code> in tables and stats.</li><li><strong>Format:</strong> WOFF, about 80 KB per weight. Preload both and use <code>font-display: swap</code>.</li><li><strong>No italic in Geo.</strong> The italic files belong to Fieldwork Hum; a slanted Geo would be synthesised. Avoid it.</li><li><strong>No hinting.</strong> On Windows at small sizes the text looks soft, and Light is thinnest. Another reason to keep Geo large.</li></ul>`,""));
+  R.push(card("","Fix once","Make line placement the same on Mac and Windows",`<p>The file's two sets of vertical metrics disagree (hhea: ascent 112%, descent 25%; typo: 69% and 20%) and it sets USE_TYPO_METRICS, so Mac and Windows can place text at different heights inside buttons, inputs and table cells. Not tested on either here. Pin one set, then check in Chrome and Safari:</p><div class="code">@font-face {
+  font-family: "Fieldwork Geo";
+  src: url("/fonts/Fieldwork-Geo-Light.woff") format("woff");
+  font-weight: 300 500; font-display: swap;
+  ascent-override: 112%; descent-override: 25%; line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Fieldwork Geo";
+  src: url("/fonts/Fieldwork-Geo-Demibold.woff") format("woff");
+  font-weight: 600 800; font-display: swap;
+  ascent-override: 112%; descent-override: 25%; line-gap-override: 0%;
+}</div>`,"Safari support for these descriptors is recent: test it before relying on it"));
+  R.push(card("","Licence","Confirm the web licence before the Hub serves it",`<p>The files point to TipoType's licence page (tipotype.com/license). The files do not restrict embedding technically, but that is not the licence. The Hub serves fonts publicly at hub.lofty.au, so check that Lofty's licence covers web use on that domain and its page views. This is still the open item G-23 in the consolidation.</p>`,"Open: confirm with TipoType before shipping Fieldwork in the Hub"));
+  R.push(`<div class="recgroup">Colour and surfaces</div>`);
+  R.push(card("top","Biggest colour change","Put text on solid surfaces, not on glass over a glow",`<p>Momentum already says body text sits on a solid surface; the Hub's glass cards break that. Keep the glass for the frame, rail and header. Muted text in Deep Eco goes from <strong>${fmt(eT.muted)}</strong> to <strong>${fmt(eS.muted)}</strong>, in Twilight from ${fmt(tT.muted)} to ${fmt(tS.muted)}, and it no longer depends on where the glow falls.</p>`,"Change: card, table and form surfaces to opaque Deep Eco (#0a1b1d) and Twilight (#170710), white on Sunrise"));
+  R.push(card("","Colours","One secondary level, brighter, and glows kept low",`<ul><li>Dark ink <code>#eef4f3</code>. One secondary at 86% (Momentum has 62%). Light-theme muted <code>#3e4d50</code> (was <code>#5a6668</code>).</li><li>Glows at 15% or less (decided 6 October), only behind the frame.</li><li>The 40% tint is for disabled controls only, never for text that carries information, such as "no provider yet".</li></ul>`,"Change: ink-muted tokens in the dark and light themes"));
+  R.push(card("","Honour the device","Respond to contrast, transparency and colour-scheme settings",`<div class="code">@media (prefers-contrast: more) {
+  :root { --ink-muted: var(--ink); --surface-card: var(--surface-solid); }
+}
+@media (prefers-reduced-transparency: reduce) {
+  :root { --surface-frame: var(--surface-solid); --surface-panel: var(--surface-solid); }
+}
+/* default theme from the device, then the person's own choice wins */
+@media (prefers-color-scheme: dark) { :root:not([data-theme]) { color-scheme: dark; } }
+html { font-size: 100%; } /* sizes in rem so 200% zoom and larger text work */</div>`,"Change: three media queries and rem-based sizes in the Hub's base styles"));
+  R.push(`<div class="recgroup">What an Apple designer would say (from my understanding of Apple's Human Interface Guidelines, not re-checked today)</div>`);
+  const A=[
+   ["Size and weight before colour","Apple's default body size is 17 points, and Regular is the lightest weight used for text. Montserrat at 400 and 14 to 15px is a display-proportioned face used too small.","Body 16px, weight 500 on dark."],
+   ["Use a text face for text","Apple's system face has Text and Display cuts, with looser spacing at small sizes. Montserrat has one cut, tuned for large sizes. A face drawn for text, such as Hanken Grotesk or Inter, holds up small.","Text face for body, Montserrat for display."],
+   ["Two levels of text colour","Content uses a primary and a secondary label colour. The third and fourth levels, about 30% and 18%, are for placeholders and separators, never for information.","One secondary at 86%. No 62%, no 40% for content."],
+   ["Material for chrome, solid for content","Translucent material is for bars, sidebars and sheets. Text-heavy grouped content sits on opaque, slightly elevated backgrounds.","Glass for frame, rail and header; solid cards, tables and forms."],
+   ["Honour the person's settings","Increase Contrast, Reduce Transparency, Bold Text and larger text are all respected, and the device sets light or dark by default.","The media queries above and rem sizes."],
+   ["Do not make the brand face do UI work","On Apple devices the system face is the most readable and costs nothing. Brand faces are for brand moments. Lofty staff use Windows as well, so one web face keeps the Hub the same everywhere; System UI is in the tester as a reference.","Fieldwork for brand surfaces, one text face for the Hub."]
+  ];
+  A.forEach(a=>R.push(card("apple",a[0],a[1].split(".")[0].length<0?"":a[0],`<p>${a[1]}</p>`,"Lofty: "+a[2]).replace(`<h3>${a[0]}</h3>`,"")));
+  R.push(`<div class="recgroup">Proposed tokens, not adopted</div>`);
+  R.push(`<div class="rec" style="grid-column:1/-1"><div class="code">/* proposed, 7 October 2026: nothing in momentum/tokens has changed */
+--font-body: "Hanken Grotesk", system-ui, sans-serif;      /* titles keep Montserrat; brand surfaces keep Fieldwork */
+--text-body: 400 16px/1.5;   --text-dense: 400 14px/1.45;   --text-caption: 400 12px/1.4;
+--weight-body-dark: 500;
+--ink-dark: #eef4f3;   --ink-muted-dark: rgb(238 244 243 / .86);   --ink-muted-light: #3e4d50;
+--surface-text-eco: #0a1b1d;   --surface-text-twilight: #170710;   --surface-text-sunrise: #ffffff;
+--glow-max: .15;</div></div>`);
+  document.getElementById("recs").innerHTML=R.join("");
+}
+document.getElementById("applyRec").addEventListener("click",()=>{
+  state.text="readable"; state.bg="solid"; store.set("lofty_fl_text","readable"); store.set("lofty_fl_bgmode","solid");
+  size.value=16; weight.value=400; applySize(); applyWeight();
+  fa.value=FONTS.find(f=>f.key==="Montserrat").css; fb.value=FONTS.find(f=>f.key==="Hanken Grotesk").css; store.set("lofty_fl_fa",fa.value); store.set("lofty_fl_fb",fb.value);
+  hs.value=HEADS.find(f=>f[0]==="Montserrat")[1]; bs.value=BODIES.find(f=>f[0]==="Hanken Grotesk")[1]; applyPair();
+  syncSegs(); renderAll(); document.getElementById("mx").scrollIntoView({behavior:"smooth"});
+});
 
 renderMeasured(); syncSegs(); renderAll();
 </script>
