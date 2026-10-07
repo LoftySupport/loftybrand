@@ -46,6 +46,20 @@ Measured, not opinion (stroke weight is the stem thickness at mid lowercase heig
 
 An Apple designer's view, from my own understanding of Apple's Human Interface Guidelines (not re-checked today): size and weight before colour; use a text face for text; two levels of text colour; material for chrome and solid for content; honour the person's settings; do not make the brand face do UI work. The lab lists each with the Lofty change.
 
+## Heading weight (7 October 2026)
+
+Amber found Outfit heavier than Fieldwork. The lab had set every heading at 700, and Fieldwork Geo has only Light (300) and DemiBold (600), so 600 and 700 both show DemiBold while a Google face keeps getting heavier. Measured stroke thickness as a share of lowercase height at weights 300 to 700 (Geo Light 0.165, DemiBold 0.267):
+
+| Face | Weight that matches Geo DemiBold |
+| --- | --- |
+| Outfit | 600 |
+| Figtree | 700 |
+| Hanken Grotesk | 700 |
+| Albert Sans | 700 |
+| Onest | 700 |
+
+The lab's headings now default to 600, with a Heading weight slider and a Match Geo strokes switch that sets each face to its own matching weight. At matched weight the strokes are level; any remaining difference in heaviness is letter shape and size, which the lab does not measure. `measure-fonts.py` now records stroke thickness at 300 to 400, 500, 600 and 700 for each candidate.
+
 ## Fieldwork Geo in the app
 
 Yes for headings and display, not for body, tables or small text. Checked in the font files and in Chromium:

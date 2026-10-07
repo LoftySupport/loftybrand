@@ -30,7 +30,14 @@
   "avg": 0.504,
   "stem400": 0.084,
   "stem600": 0.11,
-  "source": "Google Fonts latin subset, weights 400 and 600"
+  "stems": {
+   "300": 0.062,
+   "400": 0.084,
+   "500": 0.096,
+   "600": 0.11,
+   "700": 0.122
+  },
+  "source": "Google Fonts latin subset, weights 300 to 700"
  },
  {
   "key": "Manrope",
@@ -41,7 +48,14 @@
   "avg": 0.523,
   "stem400": 0.073,
   "stem600": 0.104,
-  "source": "Google Fonts latin subset, weights 400 and 600"
+  "stems": {
+   "300": 0.057,
+   "400": 0.073,
+   "500": 0.089,
+   "600": 0.104,
+   "700": 0.12
+  },
+  "source": "Google Fonts latin subset, weights 300 to 700"
  },
  {
   "key": "Albert Sans",
@@ -52,7 +66,14 @@
   "avg": 0.515,
   "stem400": 0.074,
   "stem600": 0.112,
-  "source": "Google Fonts latin subset, weights 400 and 600"
+  "stems": {
+   "300": 0.056,
+   "400": 0.074,
+   "500": 0.094,
+   "600": 0.112,
+   "700": 0.128
+  },
+  "source": "Google Fonts latin subset, weights 300 to 700"
  },
  {
   "key": "Figtree",
@@ -63,7 +84,14 @@
   "avg": 0.507,
   "stem400": 0.08,
   "stem600": 0.112,
-  "source": "Google Fonts latin subset, weights 400 and 600"
+  "stems": {
+   "300": 0.06,
+   "400": 0.08,
+   "500": 0.094,
+   "600": 0.112,
+   "700": 0.132
+  },
+  "source": "Google Fonts latin subset, weights 300 to 700"
  },
  {
   "key": "Onest",
@@ -74,7 +102,14 @@
   "avg": 0.527,
   "stem400": 0.084,
   "stem600": 0.122,
-  "source": "Google Fonts latin subset, weights 400 and 600"
+  "stems": {
+   "300": 0.07,
+   "400": 0.084,
+   "500": 0.102,
+   "600": 0.122,
+   "700": 0.14
+  },
+  "source": "Google Fonts latin subset, weights 300 to 700"
  },
  {
   "key": "Plus Jakarta Sans",
@@ -85,7 +120,14 @@
   "avg": 0.54,
   "stem400": 0.074,
   "stem600": 0.112,
-  "source": "Google Fonts latin subset, weights 400 and 600"
+  "stems": {
+   "300": 0.06,
+   "400": 0.074,
+   "500": 0.092,
+   "600": 0.112,
+   "700": 0.13
+  },
+  "source": "Google Fonts latin subset, weights 300 to 700"
  },
  {
   "key": "Montserrat",
@@ -96,7 +138,14 @@
   "avg": 0.574,
   "stem400": 0.07,
   "stem600": 0.124,
-  "source": "Google Fonts latin subset, weights 400 and 600"
+  "stems": {
+   "300": 0.05,
+   "400": 0.07,
+   "500": 0.096,
+   "600": 0.124,
+   "700": 0.156
+  },
+  "source": "Google Fonts latin subset, weights 300 to 700"
  },
  {
   "key": "Jost",
@@ -107,7 +156,14 @@
   "avg": 0.466,
   "stem400": 0.08,
   "stem600": 0.13,
-  "source": "Google Fonts latin subset, weights 400 and 600"
+  "stems": {
+   "300": 0.052,
+   "400": 0.08,
+   "500": 0.108,
+   "600": 0.13,
+   "700": 0.152
+  },
+  "source": "Google Fonts latin subset, weights 300 to 700"
  },
  {
   "key": "Outfit",
@@ -118,7 +174,14 @@
   "avg": 0.502,
   "stem400": 0.09,
   "stem600": 0.13,
-  "source": "Google Fonts latin subset, weights 400 and 600"
+  "stems": {
+   "300": 0.07,
+   "400": 0.09,
+   "500": 0.11,
+   "600": 0.13,
+   "700": 0.152
+  },
+  "source": "Google Fonts latin subset, weights 300 to 700"
  },
  {
   "key": "Space Grotesk",
@@ -129,6 +192,13 @@
   "avg": 0.556,
   "stem400": 0.078,
   "stem600": 0.114,
-  "source": "Google Fonts latin subset, weights 400 and 600"
+  "stems": {
+   "300": 0.06,
+   "400": 0.078,
+   "500": 0.102,
+   "600": 0.114,
+   "700": 0.126
+  },
+  "source": "Google Fonts latin subset, weights 300 to 700"
  }
 ]
