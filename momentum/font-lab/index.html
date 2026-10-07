@@ -82,7 +82,13 @@ section.block{padding:28px 0}
 .t-table{border-top:1px solid var(--rule);margin-bottom:12px}
 .t-tr{display:grid;grid-template-columns:1.4fr 1fr .8fr;gap:8px;padding:7px 0;border-bottom:1px solid var(--rule);font-size:13px;font-weight:var(--bw)}
 .t-tr span:nth-child(2),.t-tr span:nth-child(3){color:var(--muted-fg)}
+.t-btnrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .t-btn{height:38px;padding:0 16px;border:0;border-radius:8px;background:var(--crisp-orange);color:var(--deep-eco);font-weight:700;font-size:13px}
+.t-btn.ghost{background:transparent;color:var(--ink);border:1px solid #8a898d;font-weight:600}
+.t-btn.small{height:32px;padding:0 12px;font-size:12px}
+.t-link{background:none;border:0;font-size:13px;font-weight:600;color:var(--ink);text-decoration:underline;text-underline-offset:3px;padding:0 4px;height:38px}
+.matrix.phone .t-btn{height:44px}
+.matrix.phone .t-btn.small{height:44px}
 .ladderx{margin-top:12px;display:flex;flex-direction:column;gap:5px;border-top:1px solid var(--rule);padding-top:10px}
 .ladderx .row{display:flex;gap:10px;align-items:baseline;color:var(--muted-fg)}
 .ladderx .px{font-family:var(--chrome);font-size:12px;opacity:.7;min-width:22px}
@@ -91,6 +97,9 @@ section.block{padding:28px 0}
 .chip{padding:3px 9px;border-radius:999px;font-weight:700;background:#e3f1ec;color:#0b4a3a}
 .chip.bad{background:#fbe0d8;color:#8a2f17}
 @media(max-width:1000px){.matrix{grid-template-columns:1fr}}
+.matrix.phone{grid-template-columns:repeat(3,390px);justify-content:start;overflow-x:auto}
+.matrix.phone .tile{width:390px}
+.matrix.phone .rowlabel{grid-column:1/-1}
 
 /* contrast table */
 .ct{border:1px solid var(--line-control);border-radius:12px;overflow:hidden;background:#fff;font-size:14px}
@@ -182,6 +191,7 @@ section.block{padding:28px 0}
     <div class="control"><label for="size">Body size</label><input type="range" id="size" min="12" max="18" step="1" value="15"><output id="sizeOut">15px</output></div>
     <div class="control"><label for="weight">Body weight</label><input type="range" id="weight" min="300" max="600" step="100" value="400"><output id="weightOut">400</output></div>
     <div class="control"><label>Text colours</label><div class="seg" id="textSeg"><button data-val="tokens" class="on">Momentum today</button><button data-val="readable">Readable set</button></div></div>
+    <div class="control"><label>View</label><div class="seg" id="viewSeg"><button data-val="desktop" class="on">Desktop</button><button data-val="phone">Phone 390px</button></div></div>
     <div class="control"><label>Backgrounds</label><div class="seg" id="bgSeg"><button data-val="hub" class="on">Hub today</button><button data-val="soft">Glows 15%</button><button data-val="solid">Solid cards</button><button data-val="flat">Flat</button></div></div>
     <div class="control"><button class="preset" id="copyShort" type="button">0 picked · copy shortlist</button></div>
   </div>
@@ -197,7 +207,8 @@ section.block{padding:28px 0}
 <section class="block" aria-labelledby="rc">
   <h2 id="rc">Recommendations</h2>
   <p class="sub">My recommendations for the most readable Lofty UI. They are inference from the measurements below and design judgement, not decisions. The Apple points come from my own understanding of Apple's Human Interface Guidelines and were not re-checked against the current text today.</p>
-  <div class="btnrow"><button class="bigbtn" id="applyRec" type="button">Show the recommended setup</button><span style="font-size:13px;color:var(--muted)">Sets size 16, Readable text, solid cards, Montserrat against Hanken Grotesk for both headings and body, and the pairing studio to Hanken Grotesk for both.</span></div>
+  <div class="btnrow"><button class="bigbtn" id="applyRec" type="button">Show the recommended setup</button><button class="bigbtn" id="applyLean" type="button" style="background:#fff;border:1px solid var(--deep-eco)">Show Amber's lean</button><span style="font-size:13px;color:var(--muted)">Sets size 16, Readable text, solid cards, Montserrat against Hanken Grotesk for both headings and body, and the pairing studio to Hanken Grotesk for both.</span></div>
+  <p class="pmeta" style="margin:-4px 0 14px">Amber's lean (7 October 2026, not a decision): Readable text and glows at 15%, Hanken Grotesk for headings and a different face for small body text. Two faces at most, body need not resemble Fieldwork. The lean button sets up a 390px phone at 13px: row one is option A (Hanken headings, Inter body), row two is option B (Inter for both), and every card in the small-text shortlist wears Hanken headings over its own body face.</p>
   <div class="recs" id="recs"></div>
 </section>
 
@@ -243,7 +254,7 @@ section.block{padding:28px 0}
 <section class="block" aria-labelledby="cd">
   <h2 id="cd">Every face, on all three themes</h2>
   <p class="sub">Each face as the body font at the size and weight above, with a 16 to 12px ladder. Choose a heading font to try one heading over every body face. Shortlist the ones you want to keep.</p>
-  <div class="pair-controls"><div class="field"><label for="cardHead">Headings on every card</label><select id="cardHead"></select></div></div>
+  <div class="pair-controls"><div class="field"><label for="cardHead">Heading font on every card</label><select id="cardHead"></select></div><div class="field"><label for="cardSet">Faces shown</label><select id="cardSet"><option value="all">All faces</option><option value="small">Small-body shortlist</option></select></div></div>
   <div class="lab" id="lab"></div>
 </section>
 
@@ -267,7 +278,7 @@ const THEMES = {
   twilight: {name:"Twilight", dark:true,  base:"#070105", glows:[["142,58,114",.47],["244,126,99",.18],["0,155,163",.14]], frame:[255,255,255,.05], card:[255,255,255,.08], edge:"rgba(255,255,255,.12)", rule:"rgba(255,255,255,.14)", eyebrow:"#adfbff", solid:"#170710",
              ink:{tokens:"#ffffff",readable:"#eef4f3"}, muted:{tokens:"rgba(255,255,255,.62)",readable:"rgba(238,244,243,.86)"}}
 };
-const state = {text:store.get("lofty_fl_text","tokens"), bg:store.get("lofty_fl_bgmode","hub")};
+const state = {text:store.get("lofty_fl_text","tokens"), bg:store.get("lofty_fl_bgmode","hub"), view:store.get("lofty_fl_view","desktop")};
 
 function glowsFor(t, mode){ if(mode==="flat") return []; return t.glows.map(g=>[g[0], (mode==="soft"||mode==="solid")?Math.min(g[1],.15):g[1]]); }
 function groundCss(t, mode){ const g=glowsFor(t,mode); return g.map((x,i)=>`radial-gradient(${GEO[i]}, rgba(${x[0]},${x[1]}), transparent 70%)`).concat(t.base).join(", "); }
@@ -324,7 +335,7 @@ function tileHtml(key, fontCss, fontKey, withChips, headCss){
     <div class="t-head" style="font-family:${headCss}">${HEAD}</div><div class="t-body">${BODY}</div><div class="t-cap">${CAP}</div>
     <div class="t-nav">${NAV.map(n=>`<span>${n}</span>`).join("")}</div>
     <div class="t-table">${ROWS.map(r=>`<div class="t-tr"><span>${r[0]}</span><span>${r[1]}</span><span>${r[2]}</span></div>`).join("")}</div>
-    <button class="t-btn" type="button" style="font-family:${fontCss}">Chase engineer</button>
+    <div class="t-btnrow"><button class="t-btn" type="button" style="font-family:${fontCss}">Chase engineer</button><button class="t-btn ghost" type="button" style="font-family:${fontCss}">Hold the pour</button><button class="t-btn ghost small" type="button" style="font-family:${fontCss}">Filter</button><button class="t-link" type="button" style="font-family:${fontCss}">Show all 7</button></div>
     <div class="ladderx">${[16,14,13,12].map(px=>`<div class="row"><span class="px">${px}</span><span class="txt" style="font-size:${px}px">${LAD}</span></div>`).join("")}</div>
   </div></div></div>${withChips?`<div class="chips"><span class="chip ${okI?'':'bad'}">Ink ${fmt(c.ink)}</span><span class="chip ${okM?'':'bad'}">Muted ${fmt(c.muted)}</span><span style="color:#5a6668;align-self:center">${okM?'Both pass AA':'Muted fails AA'}</span></div>`:""}</div>`;
 }
@@ -332,15 +343,17 @@ function fontOf(sel,fallback){ return FONTS.find(x=>x.css===sel.value)||fallback
 function renderMatrix(){
   const fa=document.getElementById("fa"), fb=document.getElementById("fb"), fah=document.getElementById("fah"), fbh=document.getElementById("fbh");
   const row=(hsel,bsel,n)=>{const bf=fontOf(bsel,FONTS[2]), hf=hsel.value?fontOf(hsel,bf):bf; return `<div class="rowlabel"><span class="rn"><span style="font-family:${hf.css}">${hf.key}</span> headings · <span style="font-family:${bf.css}">${bf.key}</span> body</span><span class="rm">${n}</span></div>`+["sunrise","eco","twilight"].map(k=>tileHtml(k,bf.css,bf.key,true,hf.css)).join("")};
-  document.getElementById("matrix").innerHTML=row(fah,fa,"Row one")+row(fbh,fb,"Row two");
+  const mx=document.getElementById("matrix"); mx.className="matrix"+(state.view==="phone"?" phone":""); mx.innerHTML=row(fah,fa,"Row one")+row(fbh,fb,"Row two");
 }
+const SMALL=['Hanken Grotesk','Inter','Public Sans','Atkinson Hyperlegible Next','DM Sans','IBM Plex Sans','Source Sans 3','Figtree'];
+function stemAt(m,w){ const t=Math.max(0,Math.min(1,(w-400)/200)); return m.stem400+(m.stem600-m.stem400)*t; }
 function cardHeadCss(){ const el=document.getElementById('cardHead'); return el&&el.value?el.value:''; }
 function renderLab(){
   const sel=JSON.parse(store.get("lofty_fl_short","[]"));
-  document.getElementById("lab").innerHTML=FONTS.map(f=>{const m=mOf(f.key); const w=m?(m.avg/FW.avg-1)*100:0, s=m?((m.stem400/m.x)/(FW.stem400/FW.x)-1)*100:0;
+  document.getElementById("lab").innerHTML=FONTS.filter(f=>{const cs=document.getElementById("cardSet"); return !cs||cs.value!=="small"||SMALL.includes(f.key)}).map(f=>{const m=mOf(f.key); const w=m?(m.avg/FW.avg-1)*100:0, s=m?((m.stem400/m.x)/(FW.stem400/FW.x)-1)*100:0;
     return `<div class="card ${f.rec?'rec':''}"><div class="chead"><span class="name" style="font-family:${f.css}">${f.key}</span><span class="ctag ${f.cls||''}">${f.tag}</span></div><div class="cnote">${f.note}</div>
     <div class="cthemes">${["sunrise","eco","twilight"].map(k=>tileHtml(k,f.css,f.key,false,cardHeadCss()||f.css).replace('class="tile"','class="tile" style="border:0;border-radius:0"')).join("")}</div>
-    <div class="cfoot"><span>${m?`Lowercase ${m.x.toFixed(3)} · width ${w>=0?'+':''}${w.toFixed(1)}% · strokes ${s>=0?'+':''}${s.toFixed(0)}% vs Fieldwork Hum`:'Not measurable: depends on the device'}</span><button class="short ${sel.includes(f.key)?'on':''}" data-k="${f.key}" type="button">${sel.includes(f.key)?'Shortlisted':'Shortlist'}</button></div></div>`}).join("");
+    <div class="cfoot"><span>${m?`At ${size.value}px: lowercase ${(m.x*(+size.value)).toFixed(1)}px, stroke ${(stemAt(m,Math.min(+weight.value+100,700))*(+size.value)).toFixed(2)}px at weight ${Math.min(+weight.value+100,700)} on dark · width ${w>=0?'+':''}${w.toFixed(1)}% · strokes ${s>=0?'+':''}${s.toFixed(0)}% vs Fieldwork Hum`:'Not measurable: depends on the device'}</span><button class="short ${sel.includes(f.key)?'on':''}" data-k="${f.key}" type="button">${sel.includes(f.key)?'Shortlisted':'Shortlist'}</button></div></div>`}).join("");
   updShort();
 }
 function renderStudio(){
@@ -351,7 +364,7 @@ function renderStudio(){
     <div class="pbody">Harbour Rise Lot 12 is 68% built and four days behind plan. One thing is holding up the slab pour: the engineer's footing sign-off, requested Monday 21 September.</div>
     <div class="ph2">What needs you today</div>
     <div class="pbody">Three tasks are waiting on you. Chase the engineer first, then update the client on the revised pour date.</div>
-    <div class="pcap">${CAP}</div><button class="pbtn" type="button">Chase engineer</button></div></div></div>
+    <div class="pcap">${CAP}</div><div class="t-btnrow" style="margin-top:12px"><button class="pbtn" type="button" style="margin-top:0">Chase engineer</button><button class="t-btn ghost" type="button" style="font-family:var(--body-font)">Hold the pour</button><button class="t-btn ghost small" type="button" style="font-family:var(--body-font)">Filter</button></div></div></div></div>
     <div class="chips"><span class="chip ${c.ink>=4.5?'':'bad'}">Ink ${fmt(c.ink)}</span><span class="chip ${c.muted>=4.5?'':'bad'}">Muted ${fmt(c.muted)}</span></div></div>`}).join("");
 }
 function renderAll(){ renderMatrix(); renderLab(); renderStudio(); renderTable(); renderRecs(); }
@@ -372,7 +385,7 @@ function renderMeasured(){
   if(!METRICS.length){document.getElementById("measure").innerHTML="<div class='mrow'>Run measure-fonts.py to embed the measurements.</div>";return}
   const cand=METRICS.filter(m=>!m.brand).sort((a,b)=>close(b)-close(a));
   const tagFor={Montserrat:["Current (C04)","base"],Figtree:["Was body","base"],"Hanken Grotesk":["My pick",""]};
-  document.getElementById("measure").innerHTML=`<div class="mrow mhead" role="row"><div>Typeface</div><div>Lowercase / em</div><div>Width vs Fieldwork</div><div>Strokes vs Fieldwork</div><div>Closeness to Fieldwork</div><div>What it means</div></div>`+
+  document.getElementById("measure").innerHTML=`<div class="mrow mhead" role="row"><div>Typeface</div><div>Lowercase / em</div><div>Width vs Fieldwork</div><div>Strokes vs Fieldwork</div><div>Closeness to Fieldwork (headings only)</div><div>What it means</div></div>`+
    [METRICS.find(m=>m.key==="Fieldwork Hum"),...cand].map(m=>{const b=!!m.brand,w=(m.avg/FW.avg-1)*100,s=((m.stem400/m.x)/(FW.stem400/FW.x)-1)*100,c=close(m),t=tagFor[m.key],tag=t&&!b?`<span class="tg ${t[1]}">${t[0]}</span>`:"";
     const why=b?"The brand reference: the smallest lowercase of the set."
       :m.key==="Montserrat"?"Widest set, thinnest strokes for its size: fewer characters per line and faint-looking small text."
@@ -393,8 +406,8 @@ function applySize(){root.style.setProperty("--base",size.value+"px");document.g
 function applyWeight(){document.getElementById("weightOut").textContent=weight.value;root.style.setProperty("--bodyweight",weight.value);store.set("lofty_fl_weight",weight.value)}
 size.oninput=()=>{applySize();renderAll()}; weight.oninput=()=>{applyWeight();renderAll()}; applySize(); applyWeight();
 function seg(id,key,field){const el=document.getElementById(id);[...el.children].forEach(b=>b.classList.toggle("on",b.dataset.val===state[field]));el.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;state[field]=b.dataset.val;store.set(key,b.dataset.val);syncSegs();renderAll()})}
-function syncSegs(){for(const [id,f] of [["textSeg","text"],["bgSeg","bg"]]) [...document.getElementById(id).children].forEach(b=>b.classList.toggle("on",b.dataset.val===state[f])); [...document.getElementById("mxPresets").querySelectorAll(".preset")].forEach(b=>b.classList.toggle("on",b.dataset.t===state.text&&b.dataset.b===state.bg))}
-seg("textSeg","lofty_fl_text","text"); seg("bgSeg","lofty_fl_bgmode","bg");
+function syncSegs(){for(const [id,f] of [["textSeg","text"],["bgSeg","bg"],["viewSeg","view"]]) [...document.getElementById(id).children].forEach(b=>b.classList.toggle("on",b.dataset.val===state[f])); [...document.getElementById("mxPresets").querySelectorAll(".preset")].forEach(b=>b.classList.toggle("on",b.dataset.t===state.text&&b.dataset.b===state.bg))}
+seg("textSeg","lofty_fl_text","text"); seg("bgSeg","lofty_fl_bgmode","bg"); seg("viewSeg","lofty_fl_view","view");
 
 const fa=document.getElementById("fa"), fb=document.getElementById("fb"), fah=document.getElementById("fah"), fbh=document.getElementById("fbh"), cardHead=document.getElementById("cardHead");
 const MONT=FONTS.find(f=>f.key==="Montserrat").css, HANK=FONTS.find(f=>f.key==="Hanken Grotesk").css;
@@ -405,6 +418,7 @@ fah.value=store.get("lofty_fl_fah",MONT); fbh.value=store.get("lofty_fl_fbh","")
 if(fah.value!==store.get("lofty_fl_fah",MONT)) fah.value=MONT;
 fa.onchange=fb.onchange=fah.onchange=fbh.onchange=()=>{store.set("lofty_fl_fa",fa.value);store.set("lofty_fl_fb",fb.value);store.set("lofty_fl_fah",fah.value);store.set("lofty_fl_fbh",fbh.value);renderMatrix()};
 cardHead.onchange=()=>{store.set("lofty_fl_cardhead",cardHead.value);renderLab()};
+document.getElementById("cardSet").onchange=()=>renderLab();
 [["Today's colours","tokens","hub"],["Glows 15% only","tokens","soft"],["Readable text only","readable","hub"],["Readable text and glows 15%","readable","soft"],["Recommended: readable text, solid cards","readable","solid"]].forEach(p=>{const b=document.createElement("button");b.type="button";b.className="preset";b.textContent=p[0];b.dataset.t=p[1];b.dataset.b=p[2];b.onclick=()=>{state.text=p[1];state.bg=p[2];store.set("lofty_fl_text",p[1]);store.set("lofty_fl_bgmode",p[2]);syncSegs();renderAll()};document.getElementById("mxPresets").appendChild(b)});
 
 /* pairing studio */
@@ -432,8 +446,13 @@ function renderRecs(){
   const card=(cls,k,h,body,to)=>`<div class="rec ${cls}"><div class="rk">${k}</div><h3>${h}</h3>${body}${to?`<div class="to">${to}</div>`:""}</div>`;
   const R=[];
   R.push(`<div class="recgroup">Typeface</div>`);
-  R.push(card("top","My pick","Body, tables and small UI: Hanken Grotesk",`<p>It keeps Fieldwork's proportions (closeness ${close(hk).toFixed(0)}, width ${sw(w(hk))}), has a lowercase ${lc(hk).toFixed(0)}% taller so the same size reads larger, and strokes ${sg(st(hk))} heavier relative to its lowercase, where Montserrat's are ${sg(st(mt))} lighter. Neutral, so it disappears and the content reads.</p><p style="margin-top:8px"><strong>Alternatives:</strong> DM Sans (closeness ${close(dm).toFixed(0)}, rounder, the best partner for Fieldwork Geo, lowercase ${sg(lc(dm))}); Figtree (${close(fg).toFixed(0)}, the least change, it was the body face until 5 October); Public Sans or Inter if you want the largest lowercase regardless of brand fit (${sg(lc(ps))} and ${sg(lc(it))}).</p>`,"Change: the body font token, from Montserrat to Hanken Grotesk"));
-  R.push(card("","Headings","Use the body face for headings too. Montserrat only for display, 28px and up.",`<p>I first suggested Montserrat for headings. That was too generous. It is the widest face here (${sw(w(mt))} against Fieldwork) with thin strokes for its size, which helps at display sizes (the landing question, hero text, big numbers) and hurts below about 24px. The Hub's headings are 32, 24 and 18px, with section titles and table headers smaller, so most of them fall in the weak range. Hanken Grotesk and Figtree at 600 to 700 hold up at every one of those sizes and keep headings and body consistent.</p><p style="margin-top:8px">Montserrat in the Hub then covers display moments only. You could also drop it from the Hub altogether: one face is simpler to load and maintain. Fieldwork stays for brand surfaces. Test it with the heading selectors below.</p>`,"Change: headings at 24px and below, and table headers, move to the body face at 600 to 700"));
+  const ia=mOf("Inter"), pa=mOf("Public Sans"), at=mOf("Atkinson Hyperlegible Next"), px=m=>(m.x*13).toFixed(1), sp=m=>(stemAt(m,500)*13).toFixed(2);
+  R.push(card("top","Two faces at most","Hanken Grotesk for headings and one body face, or one face for everything",`<p>Amber's brief, 7 October 2026: no more than two faces in the app, readability first, and small text on dark matters most because many people use dark mode on phones. Fieldwork is the brand face for recognition on decks, print and brand-led heroes, so it is not loaded in the app, and body text does not need to resemble it. Montserrat leaves the Hub. That leaves two good options, both on Google Fonts: <strong>A.</strong> Hanken Grotesk for headings plus one body face chosen for small text, or <strong>B.</strong> one face for headings and body.</p>`,"Change: two font tokens (heading, body), or one"));
+  R.push(card("top","My pick, to confirm by eye","A: Hanken Grotesk headings with Inter body",`<p>Hanken is close to Fieldwork, so headings keep a touch of the brand's look where people notice it, and it holds up at heading sizes. For body, Inter is the strongest on the numbers that matter for small light-on-dark text. At 13px, with weight 500 on dark:</p><ul style="margin-top:8px"><li><strong>Inter:</strong> lowercase ${px(ia)}px (the largest, ${sg(lc(ia))} against Fieldwork), stroke ${sp(ia)}px. Built for small interface text and the closest of the open faces to Apple's system face, which is what people see on an iPhone.</li><li><strong>Public Sans:</strong> lowercase ${px(pa)}px, stroke ${sp(pa)}px, the heaviest strokes of the options (${sg(st(pa))}). The sturdiest at 12 to 13px, a good alternative body.</li><li><strong>Atkinson Hyperlegible Next:</strong> lowercase ${px(at)}px, stroke ${sp(at)}px, drawn so every letter is distinct (I, l and 1). Chosen for legibility rather than looks.</li><li><strong>Hanken Grotesk as body:</strong> lowercase ${px(hk)}px, stroke ${sp(hk)}px, the smallest lowercase of this group, which matches Amber's report that it is hard to read small.</li><li><strong>Montserrat as body:</strong> lowercase ${px(mt)}px, stroke ${sp(mt)}px, and ${sw(w(mt))} wider than Fieldwork, so it runs long and looks faint.</li></ul><p style="margin-top:8px">Hanken and Inter are both neo-grotesques with similar proportions, so the pair should sit together without clashing; hierarchy comes from weight and size. That is inference: judge it by eye on Deep Eco and Twilight at 12 to 14px, in Phone view. The lean button sets it up.</p>`,"Change: heading font token Hanken Grotesk, body font token Inter"));
+  R.push(card("","Or one face","B: Inter for headings and body",`<p>If the lab shows Hanken headings next to Inter body adds little, use Inter alone at 600 to 700 for headings. One font to load and maintain, the best small-text numbers here, and no pairing to get wrong. Headings lose the Fieldwork-adjacent look, which matters less in an app. Public Sans alone is the sturdier version of the same idea.</p>`,"Change: one font token"));
+  R.push(card("","Other options","DM Sans, Figtree, IBM Plex Sans, Source Sans 3, System UI",`<p>DM Sans (lowercase ${sg(lc(dm))}) is rounder. Figtree is the least change: it was the body face until 5 October. IBM Plex Sans has a ${sg(lc(mOf("IBM Plex Sans")))} lowercase with lighter strokes. Source Sans 3 is narrow (${sw(w(mOf("Source Sans 3")))}). <strong>System UI</strong> (SF Pro on iPhone, Roboto on Android) is the most readable on each phone and costs nothing to load, but it differs between devices and Windows, so it cannot be measured here and would count as a face you do not control.</p>`,""));
+  R.push(`<div class="recgroup">Dark mode on phones (from my own understanding, not checked against a source today)</div>`);
+  R.push(card("","Small light text on dark","Make it sturdier, not just brighter",`<ul><li><strong>Weight 500 for body on dark, never Light.</strong> Light text on a dark ground blooms on OLED screens, but thin strokes still break up at 12 to 13px. The lab's dark panes use weight 500 by default with the Readable set.</li><li><strong>Soft white ink (<code>#eef4f3</code>), not pure white, on a near-black ground.</strong> Pure white on black glares on OLED. The Momentum night grounds are near-black, not pure black.</li><li><strong>16px for text inputs.</strong> iPhones zoom the page when a field below 16px is focused.</li><li><strong>44px touch targets</strong> on phones (already a Momentum rule) and sizes in rem so the person's text size setting works.</li><li><strong>Nothing that carries information under 13px</strong>; 12px for secondary captions only.</li></ul>`,"Change: dark body weight, soft white ink, 16px inputs, rem sizes"));
   R.push(card("","Size and weight","Body 16px, dense UI 14px, nothing that carries information under 13px",`<ul><li>Weight 400 on light, 500 on dark. Never Light for body text.</li><li>12px only for secondary captions.</li><li>Line height 1.5 for body, 1.45 in tables. Letter-spacing +0.01em at 13px and below.</li></ul>`,"Change: the type scale tokens and the body weight on dark"));
   R.push(`<div class="recgroup">Using Fieldwork Geo in the app</div>`);
   R.push(card("top","Short answer","Yes for headings and display. Not for body, tables or small text.",`<p>The files load and render correctly in a browser (checked in Chromium). The limits are in the font, not the page: only two weights, no hinting, and a few things to set once. Tested: CSS weights 400 and 500 render <strong>Light</strong>, 600 and 700 render <strong>DemiBold</strong>, so the Hub's default body weight of 400 would be Light.</p>`,"Use Geo at 600 for headings from 18px, or Light at display sizes only"));
@@ -452,7 +471,7 @@ function renderRecs(){
 }</div>`,"Safari support for these descriptors is recent: test it before relying on it"));
   R.push(card("","Licence","Confirm the web licence before the Hub serves it",`<p>The files point to TipoType's licence page (tipotype.com/license). The files do not restrict embedding technically, but that is not the licence. The Hub serves fonts publicly at hub.lofty.au, so check that Lofty's licence covers web use on that domain and its page views. This is still the open item G-23 in the consolidation.</p>`,"Open: confirm with TipoType before shipping Fieldwork in the Hub"));
   R.push(`<div class="recgroup">Colour and surfaces</div>`);
-  R.push(card("top","Biggest colour change","Put text on solid surfaces, not on glass over a glow",`<p>Momentum already says body text sits on a solid surface; the Hub's glass cards break that. Keep the glass for the frame, rail and header. Muted text in Deep Eco goes from <strong>${fmt(eT.muted)}</strong> to <strong>${fmt(eS.muted)}</strong>, in Twilight from ${fmt(tT.muted)} to ${fmt(tS.muted)}, and it no longer depends on where the glow falls.</p>`,"Change: card, table and form surfaces to opaque Deep Eco (#0a1b1d) and Twilight (#170710), white on Sunrise"));
+  R.push(card("top","Colour","Readable text and glows at 15%, as Amber leans. Solid cards are an extra.",`<p>Readable text with glows at 15% passes comfortably: Deep Eco muted <strong>${fmt(contrast("eco","readable","soft").muted)}</strong>, Twilight ${fmt(contrast("twilight","readable","soft").muted)}, Sunrise ${fmt(contrast("sunrise","readable","soft").muted)}, and ink at ${fmt(contrast("eco","readable","soft").ink)} or better. Solid cards raise Deep Eco muted to ${fmt(eS.muted)} and remove the dependence on where the glow falls, which matters most for dense tables and forms. Momentum already says body text sits on a solid surface.</p>`,"Change: ink and muted tokens in the dark and light themes; glows capped at 15%").replace(/$/,"")); R.push(card("","Optional","Put dense text on solid surfaces, not on glass over a glow",`<p>Momentum already says body text sits on a solid surface; the Hub's glass cards break that. Keep the glass for the frame, rail and header. Muted text in Deep Eco goes from <strong>${fmt(eT.muted)}</strong> to <strong>${fmt(eS.muted)}</strong>, in Twilight from ${fmt(tT.muted)} to ${fmt(tS.muted)}, and it no longer depends on where the glow falls.</p>`,"Change: card, table and form surfaces to opaque Deep Eco (#0a1b1d) and Twilight (#170710), white on Sunrise"));
   R.push(card("","Colours","One secondary level, brighter, and glows kept low",`<ul><li>Dark ink <code>#eef4f3</code>. One secondary at 86% (Momentum has 62%). Light-theme muted <code>#3e4d50</code> (was <code>#5a6668</code>).</li><li>Glows at 15% or less (decided 6 October), only behind the frame.</li><li>The 40% tint is for disabled controls only, never for text that carries information, such as "no provider yet".</li></ul>`,"Change: ink-muted tokens in the dark and light themes"));
   R.push(card("","Honour the device","Respond to contrast, transparency and colour-scheme settings",`<div class="code">@media (prefers-contrast: more) {
   :root { --ink-muted: var(--ink); --surface-card: var(--surface-solid); }
@@ -491,6 +510,15 @@ document.getElementById("applyRec").addEventListener("click",()=>{
   syncSegs(); renderAll(); document.getElementById("mx").scrollIntoView({behavior:"smooth"});
 });
 
+document.getElementById("applyLean").addEventListener("click",()=>{
+  state.text="readable"; state.bg="soft"; store.set("lofty_fl_text","readable"); store.set("lofty_fl_bgmode","soft");
+  size.value=13; weight.value=400; applySize(); applyWeight();
+  const INTER=FONTS.find(f=>f.key==="Inter").css;
+  fa.value=INTER; fah.value=HANK; fb.value=INTER; fbh.value=INTER; cardHead.value=HANK; document.getElementById("cardSet").value="small"; state.view="phone"; store.set("lofty_fl_view","phone");
+  store.set("lofty_fl_fa",fa.value); store.set("lofty_fl_fb",fb.value); store.set("lofty_fl_fah",fah.value); store.set("lofty_fl_fbh",fbh.value); store.set("lofty_fl_cardhead",cardHead.value);
+  hs.value=HEADS.find(f=>f[0]==="Hanken Grotesk")[1]; bs.value=BODIES.find(f=>f[0]==="Inter")[1]; applyPair();
+  syncSegs(); renderAll(); document.getElementById("mx").scrollIntoView({behavior:"smooth"});
+});
 renderMeasured(); syncSegs(); renderAll();
 </script>
 </body>

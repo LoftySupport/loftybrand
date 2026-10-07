@@ -9,8 +9,8 @@ Open `index.html` from a checkout of this repository, in Chrome, with an interne
 
 | Section | Answers |
 | --- | --- |
-| Recommendations | My recommendations, the Apple-style view, the Fieldwork Geo checks, and a button that sets the recommended setup |
-| Top bar: body size, body weight, text colours, backgrounds | Change one variable at a time. Text colours: Momentum today, or a Readable set (a proposal). Backgrounds: the Hub's grounds today, glows at 15%, solid cards, or flat |
+| Recommendations | My recommendations, the Apple-style view, dark mode on phones, the Fieldwork Geo checks, and two buttons: the recommended setup, and Amber's lean (Readable text, glows 15%, a 390px phone at 13px, Hanken headings over every small-text candidate) |
+| Top bar: body size, body weight, text colours, view (desktop or 390px phone), backgrounds | Change one variable at a time. Text colours: Momentum today, or a Readable set (a proposal). Backgrounds: the Hub's grounds today, glows at 15%, solid cards, or flat |
 | Font against colours | Two rows, each with its own heading font and body font, across three themes (Sunrise, Deep Eco, Twilight) on the real grounds and glass, with the contrast at the brightest glow behind the text. Compare rows for the font effect, flip the top bar for the colour effect |
 | Contrast by combination | The same numbers for four colour settings. They do not depend on the font |
 | Measured against Fieldwork | Lowercase height, width, stroke weight and a closeness score, from the font files |
@@ -38,14 +38,14 @@ Measured, not opinion (stroke weight is the stem thickness at mid lowercase heig
 - **The font is a cause.** Montserrat has the widest letters in the set and, at weight 400, strokes about 19% thinner for its lowercase height than Fieldwork's. Its lowercase is not small, so the "short x-height" explanation in the original experiment does not apply to it.
 - **The colours are also a cause, in Deep Eco.** Worst case at the brightest glow behind the glass card, Momentum text on the Hub's grounds: Deep Eco muted 4.0:1 (fails AA), Twilight 4.9:1, Sunrise 5.7:1. Ink passes everywhere. Glows at 15%: Deep Eco muted 5.5:1. Opaque cards with the Readable set: Sunrise 8.8:1, Deep Eco 11.9:1, Twilight 13.0:1.
 
-**Recommendations (inference and design judgement, not decisions):**
+**Recommendations (inference and design judgement, not decisions).** Amber's brief, 7 October 2026: at most two faces in the app, readability first, small text on dark and on phones matters most, and body text does not need to resemble Fieldwork (the brand face is for recognition on decks, print and heroes, not loaded in the app).
 
-1. **Body, tables and small UI: Hanken Grotesk.** Fieldwork's proportions, a lowercase 5% taller, strokes 4% heavier. Alternatives: DM Sans (rounder, suits Fieldwork Geo), Figtree (least change), Public Sans or Inter for the largest lowercase regardless of brand fit.
-2. **Use the body face for headings too; Montserrat for display only (28px and up).** I first suggested Montserrat for headings and corrected it the same day: the Hub's headings are 32, 24 and 18px, with section titles and table headers smaller, and Montserrat's width and thin strokes are a weakness below about 24px. Dropping it from the Hub altogether is a fair option (one face is simpler). Fieldwork stays for brand surfaces.
+1. **Two faces at most. Option A (my pick, to confirm by eye): Hanken Grotesk for headings with Inter for body.** Hanken is close to Fieldwork and holds up at heading sizes; Inter has the largest lowercase here (+17%, 7.1px at 13px) and is built for small interface text. At 13px with weight 500 on dark, stroke thickness is 1.40px for Inter, 1.36px for Public Sans, 1.34px for Atkinson Hyperlegible Next and 1.26px for Hanken. Public Sans (the sturdiest) and Atkinson Hyperlegible Next (distinct letterforms) are the alternative bodies. **Option B: Inter alone for headings and body**, one font token and no pairing to get wrong.
+2. **Hanken Grotesk is not the body face:** its lowercase (6.4px at 13px) is the smallest of the shortlist, which matches Amber's report that it is hard to read small. **Montserrat leaves the Hub.**
 3. **Size and weight:** body 16px, dense UI 14px, nothing that carries information under 13px, weight 400 on light and 500 on dark, line height 1.5, letter-spacing +0.01em at 13px and below.
-4. **Biggest colour change: put text on solid surfaces, not glass over a glow** (the Momentum rule already says so). Keep the glass for the frame, rail and header.
-5. **One brighter secondary level:** dark ink `#eef4f3`, secondary 86% (not 62%), light-theme muted `#3e4d50`; glows at 15% or less; the 40% tint for disabled controls only.
-6. **Honour the device:** `prefers-contrast: more`, `prefers-reduced-transparency`, `prefers-color-scheme`, and rem-based sizes.
+4. **Colour (Amber's lean): Readable text and glows at 15%.** Muted text then passes comfortably in every theme (Sunrise 8.5:1, Deep Eco 8.0:1, Twilight 8.5:1). Opaque cards for dense tables and forms are an optional extra (Deep Eco 11.9:1); Momentum already says body text sits on a solid surface.
+5. **One brighter secondary level:** dark ink `#eef4f3`, secondary 86% (not 62%), light-theme muted `#3e4d50`; the 40% tint for disabled controls only.
+6. **Phones in dark mode:** weight 500 body on dark, soft white on a near-black ground, 16px text inputs (iPhones zoom below that), 44px targets, rem sizes, and `prefers-contrast`, `prefers-reduced-transparency` and `prefers-color-scheme`.
 
 An Apple designer's view, from my own understanding of Apple's Human Interface Guidelines (not re-checked today): size and weight before colour; use a text face for text; two levels of text colour; material for chrome and solid for content; honour the person's settings; do not make the brand face do UI work. The lab lists each with the Lofty change.
 
