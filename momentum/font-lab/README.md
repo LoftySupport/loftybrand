@@ -11,11 +11,11 @@ Open `index.html` from a checkout of this repository, in Chrome, with an interne
 | --- | --- |
 | Recommendations | My recommendations, the Apple-style view, the Fieldwork Geo checks, and a button that sets the recommended setup |
 | Top bar: body size, body weight, text colours, backgrounds | Change one variable at a time. Text colours: Momentum today, or a Readable set (a proposal). Backgrounds: the Hub's grounds today, glows at 15%, solid cards, or flat |
-| Font against colours | Two fonts, three themes (Sunrise, Deep Eco, Twilight) on the real grounds and glass, with the contrast at the brightest glow behind the text. Compare rows for the font effect, flip the top bar for the colour effect |
+| Font against colours | Two rows, each with its own heading font and body font, across three themes (Sunrise, Deep Eco, Twilight) on the real grounds and glass, with the contrast at the brightest glow behind the text. Compare rows for the font effect, flip the top bar for the colour effect |
 | Contrast by combination | The same numbers for four colour settings. They do not depend on the font |
 | Measured against Fieldwork | Lowercase height, width, stroke weight and a closeness score, from the font files |
 | Pairing studio | Any heading face with any body face, Montserrat included in both lists, on all three themes |
-| Letterforms, Every face | Glyph comparison with Fieldwork Geo and Hum as the brand reference, and each face on all three themes with a 16 to 12px ladder |
+| Letterforms, Every face | Glyph comparison with Fieldwork Geo and Hum as the brand reference, and each face as the body font on all three themes with a 16 to 12px ladder. "Headings on every card" tries one heading font over every body face |
 
 ## Where it came from, and what was left out
 
@@ -41,7 +41,7 @@ Measured, not opinion (stroke weight is the stem thickness at mid lowercase heig
 **Recommendations (inference and design judgement, not decisions):**
 
 1. **Body, tables and small UI: Hanken Grotesk.** Fieldwork's proportions, a lowercase 5% taller, strokes 4% heavier. Alternatives: DM Sans (rounder, suits Fieldwork Geo), Figtree (least change), Public Sans or Inter for the largest lowercase regardless of brand fit.
-2. **Keep Montserrat for titles, the landing question and big numbers**, and Fieldwork for brand surfaces.
+2. **Use the body face for headings too; Montserrat for display only (28px and up).** I first suggested Montserrat for headings and corrected it the same day: the Hub's headings are 32, 24 and 18px, with section titles and table headers smaller, and Montserrat's width and thin strokes are a weakness below about 24px. Dropping it from the Hub altogether is a fair option (one face is simpler). Fieldwork stays for brand surfaces.
 3. **Size and weight:** body 16px, dense UI 14px, nothing that carries information under 13px, weight 400 on light and 500 on dark, line height 1.5, letter-spacing +0.01em at 13px and below.
 4. **Biggest colour change: put text on solid surfaces, not glass over a glow** (the Momentum rule already says so). Keep the glass for the frame, rail and header.
 5. **One brighter secondary level:** dark ink `#eef4f3`, secondary 86% (not 62%), light-theme muted `#3e4d50`; glows at 15% or less; the 40% tint for disabled controls only.
