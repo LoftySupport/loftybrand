@@ -30,7 +30,7 @@ Measured, not opinion (stroke weight is the stem thickness at mid lowercase heig
 | Montserrat | +12% | +11.9% | -19% | 63 |
 | Hanken Grotesk | +5% | -1.8% | +4% | 95 |
 | Figtree | +7% | -1.2% | -3% | 95 |
-| Onest | +13% | +2.7% | -3% | see the lab |
+| Onest | +13% | +2.7% | -3% | 89 |
 
 - **The font is a cause.** Montserrat has the widest letters in the set and, at weight 400, strokes about 19% thinner for its lowercase height than Fieldwork's. Its lowercase is not small, so the "short x-height" explanation in the original experiment does not apply to it.
 - **The colours are also a cause, in Deep Eco.** Worst case at the brightest glow behind the glass card, Momentum text on the Hub's grounds: Deep Eco muted 4.0:1 (fails AA), Twilight 4.9:1, Sunrise 5.7:1. Ink passes everywhere. Glows at 15%: Deep Eco muted 5.5:1. Opaque cards with the Readable set: Sunrise 8.8:1, Deep Eco 11.9:1, Twilight 13.0:1.
