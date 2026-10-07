@@ -5,6 +5,10 @@ Notable changes to the Lofty design system. Newest first.
 ## Unreleased
 
 ### Added
+- **`momentum/font-lab/`** (7 October 2026): the Lofty Font Lab, a tester for choosing a body typeface beside Fieldwork on the real Sunrise,
+  Deep Eco and Twilight grounds, built from Amber's font-lab experiment with Momentum colours, Fieldwork and Lofty copy (nothing from the
+  other brand was kept). Separates font from colour effects, with contrast at the brightest glow, a pairing studio with Montserrat in both
+  lists, and measurements of every face against Fieldwork (`measure-fonts.py`, `metrics.json`).
 - **`momentum/guidelines/`, `momentum/canvas/`, `momentum/reference/`** (6 October 2026): 27 specimen cards (the artifact's 20
   component previews pointed at this repository's assets, six cards flattened from the design canvas, the 3 October 2026
   reconciliation record); the design canvas source; and dated records: the Grounds page, the Lofty Hub app icon study with
