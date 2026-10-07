@@ -23,8 +23,8 @@ Outstanding issues, open questions and next steps only. What the system is and h
 - Redraw the component previews to the 6 October shapes: `guidelines/*.html` and the artifact's `components/*/preview.html` still draw pill buttons and 20 to 28px corners (hard-coded px, not tokens), except the two landing specimens and the canvas, which were updated. Rules win over pictures until then.
 - Re-sync the Hub's `docs/ui-system/` radius rows (C09 in `RULE_SOURCES.md`) with the 3 October scale when Stage 3 starts.
 
-**Not done, and why**
-- The Momentum presentation (`projects/lofty-momentum-presentation/index.html`, version 13) was not copied: it exceeds the 256 KiB a design-sync read returns and a cut copy would mislead. It stays in the "Lofty Momentum" design project.
+**Done later the same day**
+- The Momentum presentation (version 13, about 6 MB) is in `reference/lofty-momentum-prototype.html`, copied from the artifact's new Prototypes asset group (added by a Cowork session on 6 October) after the 256 KiB design-sync read cap had blocked a direct copy.
 
 ## 5 October 2026: consolidation published
 
