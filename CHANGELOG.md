@@ -24,6 +24,9 @@ Notable changes to the Lofty design system. Newest first.
   The holding note moved to `docs/icons-pending-decision.md`.
 
 ### Changed
+- **`momentum/reference/lofty-momentum-prototype.html`** (7 October 2026): replaced by Amber's upload ("Lofty Momentum Slide Presentation") with a
+  readability pass on the Deep Eco and Twilight themes: muted text 68% to 86%, no type under 12px, glows capped at 15%, amber text lifted.
+  Light theme unchanged. Still Momentum 1.4 as drawn; see `momentum/reference/README.md`.
 - **`momentum/` radii and glows** (6 October 2026, Amber, closing reconciliation rows C-09 and C-04): the 3 October radius scale
   (`radius-xs` 4 controls, `radius-s` 8 buttons and inputs, `radius-m` 12 cards, `radius-l` 16 panels and prompt box, `radius-frame` 24;
   pills for chips and Search only, buttons never pills) and the glow discs capped at 15% opacity. Generator, tokens, component rules,

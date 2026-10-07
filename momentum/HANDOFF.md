@@ -17,6 +17,7 @@ Outstanding issues, open questions and next steps only. What the system is and h
 - 6 October 2026, Amber: the glow discs (`glow-1` to `glow-3`) are capped at 15% opacity in every theme (reconciliation C-04, "little colour, low saturation"). The eleven backgrounds keep their measured, contrast-checked values. Applied to the generator notes, the AppFrame rule and the landing specimens.
 
 **Needs Amber**
+- The Hub's Deep Eco and Twilight screens have the same readability problem as the deck (Amber's screenshots of User settings, 7 October 2026): glows at 32% to 47% lift the background behind 12 to 13px muted text and the `#807f74` control edge, and the 40% disabled tint is used for text that carries information ("no provider yet"). Computed from the Hub's tokens on `main`: muted text 4.7:1 and control edges 2.4:1 over the strongest Deep Eco glow, disabled tint 2.7:1. Proposed on the Hub's `ui_system_rebuild` area: glows to 15%, a muted floor for information text, a lighter dark control edge. Awaiting Amber's go-ahead; nothing changed in the Hub.
 - The chosen app icon needs sign-off as a new mark before it moves to `assets/brand/`, and the 1024px, dark and tinted exports need to be produced; the study only holds previews.
 
 **Next steps**
@@ -24,6 +25,7 @@ Outstanding issues, open questions and next steps only. What the system is and h
 - Re-sync the Hub's `docs/ui-system/` radius rows (C09 in `RULE_SOURCES.md`) with the 3 October scale when Stage 3 starts.
 
 **Done later the same day**
+- 7 October 2026: Amber's upload of the presentation under its new title ("Lofty Momentum Slide Presentation") replaced the copy below, with a readability pass on the Deep Eco and Twilight themes (details in `reference/README.md`). The same weakness exists in the Hub itself and is not fixed there yet: see Needs Amber.
 - The Momentum presentation (version 13, about 6 MB) is in `reference/lofty-momentum-prototype.html`, copied from the artifact's new Prototypes asset group (added by a Cowork session on 6 October) after the 256 KiB design-sync read cap had blocked a direct copy.
 
 ## 5 October 2026: consolidation published
