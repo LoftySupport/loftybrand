@@ -203,9 +203,9 @@ section.block{padding:28px 0}
 
 <section class="block" aria-labelledby="mx">
   <h2 id="mx">Font against colours, on the real themes</h2>
-  <p class="sub">Compare the rows for the font effect, then use the buttons for the colour effect. Chips give contrast at the brightest glow (4.5:1 is the AA pass).</p>
+  <p class="sub">Each row has its own heading and body font. Compare rows for the font effect, then use the buttons for the colour effect. Chips give contrast at the brightest glow (4.5:1 is the AA pass).</p>
   <div class="btnrow" id="mxPresets"><span class="lbl">Try</span></div>
-  <div class="pair-controls"><div class="field"><label for="fa">Font in row one</label><select id="fa"></select></div><div class="field"><label for="fb">Font in row two</label><select id="fb"></select></div></div>
+  <div class="pair-controls"><div class="field"><label for="fah">Row one: headings</label><select id="fah"></select></div><div class="field"><label for="fa">Row one: body</label><select id="fa"></select></div><div class="field"><label for="fbh">Row two: headings</label><select id="fbh"></select></div><div class="field"><label for="fb">Row two: body</label><select id="fb"></select></div></div>
   <div class="matrix" id="matrix"></div>
 </section>
 
@@ -242,7 +242,8 @@ section.block{padding:28px 0}
 
 <section class="block" aria-labelledby="cd">
   <h2 id="cd">Every face, on all three themes</h2>
-  <p class="sub">Each face at the size and weight above, with a 16 to 12px ladder. Shortlist the ones you want to keep.</p>
+  <p class="sub">Each face as the body font at the size and weight above, with a 16 to 12px ladder. Choose a heading font to try one heading over every body face. Shortlist the ones you want to keep.</p>
+  <div class="pair-controls"><div class="field"><label for="cardHead">Headings on every card</label><select id="cardHead"></select></div></div>
   <div class="lab" id="lab"></div>
 </section>
 
@@ -315,27 +316,30 @@ const FONTS = [
 const HEAD="Every job, moving forward.", BODY="Harbour Rise Lot 12 is 68% built and four days behind plan. One thing is holding up the slab pour: the engineer's footing sign-off.", CAP="Requested Mon 21 Sep · waiting 3 days · Harbour Rise Lot 12", NAV=["Projects","Jobs","Maintenance","Reports"], LAD="Footing sign-off, 3 days waiting";
 const ROWS=[["1209-002","Evanston Park","Due today"],["1215-01","Mawson Lakes","3 days"],["1203-01","Blakeview","On track"]];
 
-function tileHtml(key, fontCss, fontKey, withChips){
+function tileHtml(key, fontCss, fontKey, withChips, headCss){
+  headCss = headCss || fontCss;
   const t=THEMES[key], c=contrast(key,state.text,state.bg), okI=c.ink>=4.5, okM=c.muted>=4.5;
   return `<div class="tile"><div class="ground" style="${tileVars(key)};font-family:${fontCss}"><div class="frame"><div class="cardx">
     <div class="tname">${t.name}</div>
-    <div class="t-head">${HEAD}</div><div class="t-body">${BODY}</div><div class="t-cap">${CAP}</div>
+    <div class="t-head" style="font-family:${headCss}">${HEAD}</div><div class="t-body">${BODY}</div><div class="t-cap">${CAP}</div>
     <div class="t-nav">${NAV.map(n=>`<span>${n}</span>`).join("")}</div>
     <div class="t-table">${ROWS.map(r=>`<div class="t-tr"><span>${r[0]}</span><span>${r[1]}</span><span>${r[2]}</span></div>`).join("")}</div>
     <button class="t-btn" type="button" style="font-family:${fontCss}">Chase engineer</button>
     <div class="ladderx">${[16,14,13,12].map(px=>`<div class="row"><span class="px">${px}</span><span class="txt" style="font-size:${px}px">${LAD}</span></div>`).join("")}</div>
   </div></div></div>${withChips?`<div class="chips"><span class="chip ${okI?'':'bad'}">Ink ${fmt(c.ink)}</span><span class="chip ${okM?'':'bad'}">Muted ${fmt(c.muted)}</span><span style="color:#5a6668;align-self:center">${okM?'Both pass AA':'Muted fails AA'}</span></div>`:""}</div>`;
 }
+function fontOf(sel,fallback){ return FONTS.find(x=>x.css===sel.value)||fallback; }
 function renderMatrix(){
-  const fa=document.getElementById("fa"), fb=document.getElementById("fb");
-  const row=(sel,n)=>{const f=FONTS.find(x=>x.css===sel.value)||FONTS[2]; return `<div class="rowlabel"><span class="rn" style="font-family:${f.css}">${f.key}</span><span class="rm">${n}</span></div>`+["sunrise","eco","twilight"].map(k=>tileHtml(k,f.css,f.key,true)).join("")};
-  document.getElementById("matrix").innerHTML=row(fa,"Row one")+row(fb,"Row two");
+  const fa=document.getElementById("fa"), fb=document.getElementById("fb"), fah=document.getElementById("fah"), fbh=document.getElementById("fbh");
+  const row=(hsel,bsel,n)=>{const bf=fontOf(bsel,FONTS[2]), hf=hsel.value?fontOf(hsel,bf):bf; return `<div class="rowlabel"><span class="rn"><span style="font-family:${hf.css}">${hf.key}</span> headings · <span style="font-family:${bf.css}">${bf.key}</span> body</span><span class="rm">${n}</span></div>`+["sunrise","eco","twilight"].map(k=>tileHtml(k,bf.css,bf.key,true,hf.css)).join("")};
+  document.getElementById("matrix").innerHTML=row(fah,fa,"Row one")+row(fbh,fb,"Row two");
 }
+function cardHeadCss(){ const el=document.getElementById('cardHead'); return el&&el.value?el.value:''; }
 function renderLab(){
   const sel=JSON.parse(store.get("lofty_fl_short","[]"));
   document.getElementById("lab").innerHTML=FONTS.map(f=>{const m=mOf(f.key); const w=m?(m.avg/FW.avg-1)*100:0, s=m?((m.stem400/m.x)/(FW.stem400/FW.x)-1)*100:0;
     return `<div class="card ${f.rec?'rec':''}"><div class="chead"><span class="name" style="font-family:${f.css}">${f.key}</span><span class="ctag ${f.cls||''}">${f.tag}</span></div><div class="cnote">${f.note}</div>
-    <div class="cthemes">${["sunrise","eco","twilight"].map(k=>tileHtml(k,f.css,f.key,false).replace('class="tile"','class="tile" style="border:0;border-radius:0"')).join("")}</div>
+    <div class="cthemes">${["sunrise","eco","twilight"].map(k=>tileHtml(k,f.css,f.key,false,cardHeadCss()||f.css).replace('class="tile"','class="tile" style="border:0;border-radius:0"')).join("")}</div>
     <div class="cfoot"><span>${m?`Lowercase ${m.x.toFixed(3)} · width ${w>=0?'+':''}${w.toFixed(1)}% · strokes ${s>=0?'+':''}${s.toFixed(0)}% vs Fieldwork Hum`:'Not measurable: depends on the device'}</span><button class="short ${sel.includes(f.key)?'on':''}" data-k="${f.key}" type="button">${sel.includes(f.key)?'Shortlisted':'Shortlist'}</button></div></div>`}).join("");
   updShort();
 }
@@ -392,10 +396,15 @@ function seg(id,key,field){const el=document.getElementById(id);[...el.children]
 function syncSegs(){for(const [id,f] of [["textSeg","text"],["bgSeg","bg"]]) [...document.getElementById(id).children].forEach(b=>b.classList.toggle("on",b.dataset.val===state[f])); [...document.getElementById("mxPresets").querySelectorAll(".preset")].forEach(b=>b.classList.toggle("on",b.dataset.t===state.text&&b.dataset.b===state.bg))}
 seg("textSeg","lofty_fl_text","text"); seg("bgSeg","lofty_fl_bgmode","bg");
 
-const fa=document.getElementById("fa"), fb=document.getElementById("fb");
-FONTS.forEach(f=>{fa.add(new Option(f.key,f.css));fb.add(new Option(f.key,f.css))});
-fa.value=store.get("lofty_fl_fa",FONTS[2].css)||FONTS[2].css; fb.value=store.get("lofty_fl_fb",FONTS[3].css)||FONTS[3].css;
-fa.onchange=fb.onchange=()=>{store.set("lofty_fl_fa",fa.value);store.set("lofty_fl_fb",fb.value);renderMatrix()};
+const fa=document.getElementById("fa"), fb=document.getElementById("fb"), fah=document.getElementById("fah"), fbh=document.getElementById("fbh"), cardHead=document.getElementById("cardHead");
+const MONT=FONTS.find(f=>f.key==="Montserrat").css, HANK=FONTS.find(f=>f.key==="Hanken Grotesk").css;
+[fah,fbh,cardHead].forEach(sel=>sel.add(new Option(sel===cardHead?"Each card's own face":"Same as body","")));
+FONTS.forEach(f=>{fa.add(new Option(f.key,f.css));fb.add(new Option(f.key,f.css));fah.add(new Option(f.key,f.css));fbh.add(new Option(f.key,f.css));cardHead.add(new Option(f.key,f.css))});
+fa.value=store.get("lofty_fl_fa",MONT)||MONT; fb.value=store.get("lofty_fl_fb",HANK)||HANK;
+fah.value=store.get("lofty_fl_fah",MONT); fbh.value=store.get("lofty_fl_fbh",MONT); cardHead.value=store.get("lofty_fl_cardhead","");
+if(fah.value!==store.get("lofty_fl_fah",MONT)) fah.value=MONT; if(fbh.value!==store.get("lofty_fl_fbh",MONT)) fbh.value=MONT;
+fa.onchange=fb.onchange=fah.onchange=fbh.onchange=()=>{store.set("lofty_fl_fa",fa.value);store.set("lofty_fl_fb",fb.value);store.set("lofty_fl_fah",fah.value);store.set("lofty_fl_fbh",fbh.value);renderMatrix()};
+cardHead.onchange=()=>{store.set("lofty_fl_cardhead",cardHead.value);renderLab()};
 [["Today's colours","tokens","hub"],["Glows 15% only","tokens","soft"],["Readable text only","readable","hub"],["Readable text and glows 15%","readable","soft"],["Recommended: readable text, solid cards","readable","solid"]].forEach(p=>{const b=document.createElement("button");b.type="button";b.className="preset";b.textContent=p[0];b.dataset.t=p[1];b.dataset.b=p[2];b.onclick=()=>{state.text=p[1];state.bg=p[2];store.set("lofty_fl_text",p[1]);store.set("lofty_fl_bgmode",p[2]);syncSegs();renderAll()};document.getElementById("mxPresets").appendChild(b)});
 
 /* pairing studio */
@@ -477,7 +486,7 @@ html { font-size: 100%; } /* sizes in rem so 200% zoom and larger text work */</
 document.getElementById("applyRec").addEventListener("click",()=>{
   state.text="readable"; state.bg="solid"; store.set("lofty_fl_text","readable"); store.set("lofty_fl_bgmode","solid");
   size.value=16; weight.value=400; applySize(); applyWeight();
-  fa.value=FONTS.find(f=>f.key==="Montserrat").css; fb.value=FONTS.find(f=>f.key==="Hanken Grotesk").css; store.set("lofty_fl_fa",fa.value); store.set("lofty_fl_fb",fb.value);
+  fa.value=MONT; fah.value=MONT; fb.value=HANK; fbh.value=MONT; cardHead.value=""; store.set("lofty_fl_fa",fa.value); store.set("lofty_fl_fb",fb.value); store.set("lofty_fl_fah",MONT); store.set("lofty_fl_fbh",MONT); store.set("lofty_fl_cardhead",""); renderLab();
   hs.value=HEADS.find(f=>f[0]==="Montserrat")[1]; bs.value=BODIES.find(f=>f[0]==="Hanken Grotesk")[1]; applyPair();
   syncSegs(); renderAll(); document.getElementById("mx").scrollIntoView({behavior:"smooth"});
 });

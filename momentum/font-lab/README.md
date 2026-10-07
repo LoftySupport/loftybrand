@@ -11,11 +11,11 @@ Open `index.html` from a checkout of this repository, in Chrome, with an interne
 | --- | --- |
 | Recommendations | My recommendations, the Apple-style view, the Fieldwork Geo checks, and a button that sets the recommended setup |
 | Top bar: body size, body weight, text colours, backgrounds | Change one variable at a time. Text colours: Momentum today, or a Readable set (a proposal). Backgrounds: the Hub's grounds today, glows at 15%, solid cards, or flat |
-| Font against colours | Two fonts, three themes (Sunrise, Deep Eco, Twilight) on the real grounds and glass, with the contrast at the brightest glow behind the text. Compare rows for the font effect, flip the top bar for the colour effect |
+| Font against colours | Two rows, each with its own heading font and body font, across three themes (Sunrise, Deep Eco, Twilight) on the real grounds and glass, with the contrast at the brightest glow behind the text. Compare rows for the font effect, flip the top bar for the colour effect |
 | Contrast by combination | The same numbers for four colour settings. They do not depend on the font |
 | Measured against Fieldwork | Lowercase height, width, stroke weight and a closeness score, from the font files |
 | Pairing studio | Any heading face with any body face, Montserrat included in both lists, on all three themes |
-| Letterforms, Every face | Glyph comparison with Fieldwork Geo and Hum as the brand reference, and each face on all three themes with a 16 to 12px ladder |
+| Letterforms, Every face | Glyph comparison with Fieldwork Geo and Hum as the brand reference, and each face as the body font on all three themes with a 16 to 12px ladder. "Headings on every card" tries one heading font over every body face |
 
 ## Where it came from, and what was left out
 
