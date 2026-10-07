@@ -99,28 +99,6 @@
   "source": "Google Fonts latin subset, weights 400 and 600"
  },
  {
-  "key": "Nunito Sans",
-  "brand": false,
-  "x": 0.486,
-  "cap": 0.705,
-  "xcap": 0.689,
-  "avg": 0.508,
-  "stem400": 0.08,
-  "stem600": 0.1,
-  "source": "Google Fonts latin subset, weights 400 and 600"
- },
- {
-  "key": "Mulish",
-  "brand": false,
-  "x": 0.502,
-  "cap": 0.705,
-  "xcap": 0.712,
-  "avg": 0.523,
-  "stem400": 0.08,
-  "stem600": 0.1,
-  "source": "Google Fonts latin subset, weights 400 and 600"
- },
- {
   "key": "Jost",
   "brand": false,
   "x": 0.46,
@@ -151,72 +129,6 @@
   "avg": 0.556,
   "stem400": 0.078,
   "stem600": 0.114,
-  "source": "Google Fonts latin subset, weights 400 and 600"
- },
- {
-  "key": "Inter",
-  "brand": false,
-  "x": 0.546,
-  "cap": 0.728,
-  "xcap": 0.75,
-  "avg": 0.536,
-  "stem400": 0.088,
-  "stem600": 0.127,
-  "source": "Google Fonts latin subset, weights 400 and 600"
- },
- {
-  "key": "DM Sans",
-  "brand": false,
-  "x": 0.504,
-  "cap": 0.7,
-  "xcap": 0.72,
-  "avg": 0.522,
-  "stem400": 0.084,
-  "stem600": 0.12,
-  "source": "Google Fonts latin subset, weights 400 and 600"
- },
- {
-  "key": "Source Sans 3",
-  "brand": false,
-  "x": 0.486,
-  "cap": 0.656,
-  "xcap": 0.741,
-  "avg": 0.475,
-  "stem400": 0.082,
-  "stem600": 0.114,
-  "source": "Google Fonts latin subset, weights 400 and 600"
- },
- {
-  "key": "Atkinson Hyperlegible Next",
-  "brand": false,
-  "x": 0.496,
-  "cap": 0.668,
-  "xcap": 0.743,
-  "avg": 0.487,
-  "stem400": 0.084,
-  "stem600": 0.122,
-  "source": "Google Fonts latin subset, weights 400 and 600"
- },
- {
-  "key": "Public Sans",
-  "brand": false,
-  "x": 0.517,
-  "cap": 0.723,
-  "xcap": 0.715,
-  "avg": 0.529,
-  "stem400": 0.091,
-  "stem600": 0.119,
-  "source": "Google Fonts latin subset, weights 400 and 600"
- },
- {
-  "key": "IBM Plex Sans",
-  "brand": false,
-  "x": 0.516,
-  "cap": 0.698,
-  "xcap": 0.739,
-  "avg": 0.505,
-  "stem400": 0.08,
-  "stem600": 0.128,
   "source": "Google Fonts latin subset, weights 400 and 600"
  }
 ]
