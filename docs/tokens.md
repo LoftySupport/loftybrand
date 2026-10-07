@@ -109,7 +109,7 @@ warm on a surface, Flint 200 is the neutral fallback.
 
 ## Type scale
 
-Screen — Montserrat titles, Figtree body:
+Screen — Outfit titles, Onest body:
 
 | Token | Size / line height |
 | --- | --- |

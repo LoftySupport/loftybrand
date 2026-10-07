@@ -5,6 +5,7 @@ Notable changes to the Lofty design system. Newest first.
 ## Unreleased
 
 ### Changed
+- **Screen type in the whole kit** (7 October 2026, Amber): Outfit titles and Onest body replace Montserrat titles and Figtree body in `tokens/`, the docs, `SKILL.md`, the style guide, the Heading component notes, `NOTICE.md` and the Momentum cards and canvas. Montserrat stays as the digital fallback when Outfit and Onest are not available, and as the Word document substitute. Print stays on Fieldwork. Figtree and Poppins are gone from the live files; `CHANGELOG.md` history is unchanged. Heading weights in the root `tokens/` are not changed (Momentum's h1 to h3 are 600).
 - **Momentum fonts** (7 October 2026, Amber): Outfit for headings and Onest for body replace Montserrat only. `--font-display` is Outfit, `--font-body` Onest, h1 to h3 are weight 600, and the Hub's text styles use the body face. Body text is weight 500 on the dark themes (Amber). Specimen cards and canvas still draw Montserrat until regenerated (`momentum/HANDOFF.md`).
 
 ### Added

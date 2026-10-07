@@ -18,8 +18,8 @@ logo and the design-check capture under `docs/`.
 ## What it consumes
 
 Tokens, the compiled bundle, the product icon SVGs, and the orange logo from
-`assets/brand/`. It uses the screen stack: semantic tokens, Figtree and
-Montserrat, dataviz components for the reports surface.
+`assets/brand/`. It uses the screen stack: semantic tokens, Onest and
+Outfit, dataviz components for the reports surface.
 
 ## Decisions worth carrying back
 

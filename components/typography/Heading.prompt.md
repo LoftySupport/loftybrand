@@ -6,4 +6,4 @@ One-line: page and section titles — `type` sets the size, `element` sets the t
 <Heading type="h1" brand>Every job, every crew, one schedule.</Heading>
 ```
 
-Sentence case always. `brand` swaps Montserrat for Fieldwork Geo Demi Bold — sign-in panels, decks and print only, never inside the app shell.
+Sentence case always. `brand` swaps Outfit for Fieldwork Geo Demi Bold — sign-in panels, decks and print only, never inside the app shell.

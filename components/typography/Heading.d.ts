@@ -1,6 +1,6 @@
 import * as React from "react";
 
-/** Title primitive. Montserrat at the three product heading sizes, or Fieldwork Geo when brand is set. */
+/** Title primitive. Outfit at the three product heading sizes, or Fieldwork Geo when brand is set. */
 export interface HeadingProps {
   children?: React.ReactNode;
   /** h1 32/40 · h2 24/30 (default) · h3 18/24. */

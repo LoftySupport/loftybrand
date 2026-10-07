@@ -23,7 +23,7 @@ nothing else.
 <link rel="stylesheet" href="styles.css">
 ```
 
-Montserrat and Figtree load from Google Fonts. Fieldwork loads from
+Outfit and Onest load from Google Fonts. Fieldwork loads from
 `assets/fonts` via `tokens/fonts.css` and is only needed for brand-led
 surfaces.
 

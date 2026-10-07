@@ -58,10 +58,10 @@ Hard rules:
 
 Two systems, chosen by surface.
 
-- **Screen:** Montserrat titles, Figtree body, at the product sizes — h1 32/40, h2 24/30, h3 18/24; text1 16/22, text2 14/20, text3 12/16. Negative tracking on headings only (-0.5px h1, -0.1px h2/h3).
+- **Screen:** Outfit titles, Onest body, at the product sizes — h1 32/40, h2 24/30, h3 18/24; text1 16/22, text2 14/20, text3 12/16. Negative tracking on headings only (-0.5px h1, -0.1px h2/h3).
 - **Brand-led** (decks, print, proposals, hero statements): Fieldwork Geo Demi Bold display, Fieldwork Hum Light body; tracking -0.01em headings, -0.02em body; minimums 14pt headings, 8pt body.
 
-Fieldwork ships as `.woff` in six cuts only, so the brand scale uses weights 300 and 600 exclusively. Print substitute is Montserrat. On screen: Montserrat titles, Figtree body. Fallback order in every stack is brand font, then Montserrat, then Arial — Helvetica, Calibri, Carlito and Aptos are not used.
+Fieldwork ships as `.woff` in six cuts only, so the brand scale uses weights 300 and 600 exclusively. Print stays on Fieldwork. On screen: Outfit titles, Onest body. Montserrat is the fallback for digital when Outfit and Onest are not available, and the Word document substitute where Fieldwork is not installed (documents not opened in Google). Fallback order in every stack is brand font, then Outfit or Onest, then Montserrat, then Arial — Helvetica, Calibri, Carlito and Aptos are not used.
 
 ## Foundations
 
@@ -116,7 +116,7 @@ Everything a codebase needs is in this folder and nothing depends on the authori
 
 - `styles.css` → `tokens/*.css`: link the entry file, or copy `tokens/` and import them. Every colour, size, radius, shadow and easing is a CSS custom property; component code must reference tokens, never literals.
 - `components/<group>/<Name>.jsx` + `.d.ts` + `.prompt.md`: the `.d.ts` is the props contract, the `.prompt.md` is the usage note and example, the `.jsx` is a reference implementation (React, inline token references). Port the contract and behaviour; do not depend on `_ds_bundle.js` in production — it is a preview bundle.
-- `assets/icons/*.svg`: ship as-is and render through a mask/currentColor wrapper equivalent to `Icon`. `assets/fonts/`: six Fieldwork `.woff` for brand-led surfaces; product UI loads Figtree + Montserrat.
+- `assets/icons/*.svg`: ship as-is and render through a mask/currentColor wrapper equivalent to `Icon`. `assets/fonts/`: six Fieldwork `.woff` for brand-led surfaces; product UI loads Outfit + Onest.
 - `assets/brand/`: logo colourways, app icon, silhouettes.
 - `ui_kits/app/`: composition reference for the shell, tables, dialogs and dashboard.
 - `guidelines/*.html`: open in a browser for visual specimens of each foundation.

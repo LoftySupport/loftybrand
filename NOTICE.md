@@ -45,17 +45,27 @@ upstream — the glyph count here is 274, not 276, by design.
 
 ---
 
+## Outfit
+
+Titles on screen. Copyright 2021 The Outfit Project Authors
+(https://github.com/Outfitio/Outfit-Fonts). Licensed under the SIL Open Font
+License 1.1. Loaded from Google Fonts; not redistributed in this repository.
+https://fonts.google.com/specimen/Outfit
+
+## Onest
+
+Body copy on screen. Copyright 2021 The Onest Project Authors
+(https://github.com/googlefonts/onest). Licensed under the SIL Open Font
+License 1.1. Loaded from Google Fonts; not redistributed in this repository.
+https://fonts.google.com/specimen/Onest
+
 ## Montserrat
 
-Titles on screen. Licensed under the SIL Open Font License 1.1.
-Loaded from Google Fonts; not redistributed in this repository.
+Fallback for digital when Outfit and Onest are not available (7 October 2026), and
+the Word document substitute where Fieldwork is not installed (documents not
+opened in Google). Print stays on Fieldwork. Licensed under the SIL Open
+Font License 1.1. Not redistributed in this repository.
 https://fonts.google.com/specimen/Montserrat
-
-## Figtree
-
-Body copy on screen. Licensed under the SIL Open Font License 1.1.
-Loaded from Google Fonts; not redistributed in this repository.
-https://fonts.google.com/specimen/Figtree
 
 ---
 
