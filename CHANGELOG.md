@@ -9,7 +9,7 @@ Notable changes to the Lofty design system. Newest first.
   Deep Eco and Twilight grounds, built from Amber's font-lab experiment with Momentum colours, Fieldwork and Lofty copy (nothing from the
   other brand was kept). Separates font from colour effects, with contrast at the brightest glow, a pairing studio with Montserrat in both
   lists, and measurements of every face against Fieldwork (`measure-fonts.py`, `metrics.json`). Updated the same day: recommendations
-  (Hanken Grotesk for body, solid text surfaces), an Apple-style view, the Fieldwork Geo checks, a Solid cards mode, six more faces and System UI, and a trimmed intro. Heading and body fonts are now separate choices on each tile and on the per-face cards, with buttons on the mockup, a 390px phone view, Amber's lean button, and recommendations reworked for at most two faces and small text on dark phones.
+  (Hanken Grotesk for body, solid text surfaces), an Apple-style view, the Fieldwork Geo checks, a Solid cards mode, six more faces and System UI, and a trimmed intro. Heading and body fonts are now separate choices on each tile and on the per-face cards, with buttons on the mockup, a 390px phone view, Amber's lean button, and recommendations reworked for at most two faces and small text on dark phones (Hanken Grotesk headings with Public Sans body; Inter ruled out).
 - **`momentum/guidelines/`, `momentum/canvas/`, `momentum/reference/`** (6 October 2026): 27 specimen cards (the artifact's 20
   component previews pointed at this repository's assets, six cards flattened from the design canvas, the 3 October 2026
   reconciliation record); the design canvas source; and dated records: the Grounds page, the Lofty Hub app icon study with
