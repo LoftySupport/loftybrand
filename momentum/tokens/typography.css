@@ -44,3 +44,21 @@
   --type-brand-body: 300 16px/24px var(--font-brand-body);
   --letter-spacing-brand-body: -0.02em;
 }
+/* Body text at 500 on the dark themes (Amber, 7 October 2026). */
+[data-theme="eco"] {
+  --type-text1: 500 16px/22px var(--font-body);
+  --type-text2: 500 14px/20px var(--font-body);
+  --type-text3: 500 12px/16px var(--font-body);
+  --type-body: 500 15px/23px var(--font-body);
+  --type-prompt: 500 17px/24px var(--font-body);
+  --type-caption: 500 12px/16px var(--font-body);
+}
+/* Body text at 500 on the dark themes (Amber, 7 October 2026). */
+[data-theme="twilight"] {
+  --type-text1: 500 16px/22px var(--font-body);
+  --type-text2: 500 14px/20px var(--font-body);
+  --type-text3: 500 12px/16px var(--font-body);
+  --type-body: 500 15px/23px var(--font-body);
+  --type-prompt: 500 17px/24px var(--font-body);
+  --type-caption: 500 12px/16px var(--font-body);
+}

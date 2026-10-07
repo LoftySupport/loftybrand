@@ -5,7 +5,7 @@ Notable changes to the Lofty design system. Newest first.
 ## Unreleased
 
 ### Changed
-- **Momentum fonts** (7 October 2026, Amber): Outfit for headings and Onest for body replace Montserrat only. `--font-display` is Outfit, `--font-body` Onest, h1 to h3 are weight 600, and the Hub's text styles use the body face. Specimen cards and canvas still draw Montserrat until regenerated (`momentum/HANDOFF.md`).
+- **Momentum fonts** (7 October 2026, Amber): Outfit for headings and Onest for body replace Montserrat only. `--font-display` is Outfit, `--font-body` Onest, h1 to h3 are weight 600, and the Hub's text styles use the body face. Body text is weight 500 on the dark themes (Amber). Specimen cards and canvas still draw Montserrat until regenerated (`momentum/HANDOFF.md`).
 
 ### Added
 - **`momentum/font-lab/`** (7 October 2026): the Lofty Font Lab, a tester for choosing a body typeface beside Fieldwork on the real Sunrise,
