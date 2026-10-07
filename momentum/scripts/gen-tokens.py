@@ -48,9 +48,9 @@ COLORS = [
  ("semantic","ai-surface","{plum}","The AI mark and AI-owned tiles. Never a page."),
  ("semantic","focus",T("#c2543c","#f47e63","#f47e63"),"Focus ring colour, drawn solid by `focus-ring`. 4.5:1 on white and 4.1:1 on Shell in Sunrise; 7.6:1 on eco-night. Replaces the App Design System's 50% orange ring, which measured 1.6:1 (C09: 3:1 on edges and icons). Confirmed by Amber, 5 October 2026."),
  ("semantic","backdrop",T("rgba(8,26,28,0.7)","rgba(0,0,0,0.7)","rgba(0,0,0,0.7)"),"Modal backdrop: the App Design System's 70% black, in Deep Eco on light. Confirmed by Amber, 5 October 2026."),
- ("semantic","glow-1",T("{crisp-orange}","{current}","#8e3a72"),"Large glow, top left in Sunrise: 1000px Crisp Orange disc at 36%. Top right in dark: Current at 40% (Deep Eco) or berry plum at 47% (Twilight), 820px."),
- ("semantic","glow-2",T("{crisp-orange}","{crisp-orange}","{crisp-orange}"),"Warm glow, bottom right in Sunrise: 820px Crisp Orange disc at 40%. Bottom left in dark: 560px at 18%."),
- ("semantic","glow-3",T("{current}","{eco-green}","{current}"),"Cool counterweight: a 700px Current disc at 26% top right in Sunrise; an Eco Green disc at 60% on the right in Deep Eco; a faint Current disc at 14% in Twilight."),
+ ("semantic","glow-1",T("{crisp-orange}","{current}","#8e3a72"),"Large glow, top left in Sunrise: 1000px Crisp Orange disc at 15%. Top right in dark: Current (Deep Eco) or berry plum (Twilight) at 15%, 820px. Glow discs never exceed 15% opacity (Amber, 6 October 2026, from the 3 October feedback: little colour, low saturation)."),
+ ("semantic","glow-2",T("{crisp-orange}","{crisp-orange}","{crisp-orange}"),"Warm glow, bottom right in Sunrise: 820px Crisp Orange disc at 15%. Bottom left in dark: 560px at 12%. Capped at 15% (Amber, 6 October 2026)."),
+ ("semantic","glow-3",T("{current}","{eco-green}","{current}"),"Cool counterweight: a 700px Current disc at 12% top right in Sunrise; an Eco Green disc at 15% on the right in Deep Eco; a faint Current disc at 12% in Twilight. Capped at 15% (Amber, 6 October 2026). The eleven backgrounds in backgrounds.css keep their measured values."),
  # Status
  ("status","status-on-track",T("#00805f","#1f9e80","#1f9e80"),"On track. Circle with a tick. White glyph in light (4.9:1), Deep Eco glyph in dark (5.3:1). State only, never a chart series."),
  ("status","status-on-track-soft",T("rgba(0,128,95,0.12)","rgba(31,158,128,0.18)","rgba(31,158,128,0.18)"),"On track chip fill. Quietest of the three: tinted, no edge, `ink` label."),
@@ -132,13 +132,13 @@ SPACING = [
  ("space-80","80px","Hero and cover spacing on brand-led surfaces (App Design System)."),
 ]
 RADIUS = [
- ("radius-xs","4px","Vibe controls inside the Hub: inputs, checkboxes, menu items, small tags (the App Design System's `--border-radius-small`). Kept by Amber, 5 October 2026; 2px and 16px are dropped."),
- ("radius-s","8px","Small tags and status chips that are not pills; cards in dense tables."),
- ("radius-m","12px","Rail items, icon tiles, list rows."),
- ("radius-l","20px","Starter cards, answer widgets, glance cards."),
- ("radius-xl","24px","The prompt box and side panels."),
- ("radius-frame","28px","The frosted app frame only."),
- ("radius-pill","999px","Buttons, chips, send and voice buttons, the mobile prompt bar, toggles, progress tracks."),
+ ("radius-xs","4px","Dense controls: checkboxes, menu items, small tags, table controls (the App Design System's `--border-radius-small`). Amber, 5 October 2026 (kept) and 6 October 2026 (the 3 October scale applies)."),
+ ("radius-s","8px","Buttons, inputs, icon buttons (send, voice), segmented controls, status chips that are not pills. Amber, 6 October 2026: buttons are 8px, not pills."),
+ ("radius-m","12px","Cards: starter cards, answer widgets, glance cards, chat bubbles; also rail rows and icon tiles. Amber, 6 October 2026."),
+ ("radius-l","16px","Panels: the rail, the Your day panel, the prompt box, modals (Vibe's big radius). Amber, 6 October 2026; reinstates the 16px step dropped on 5 October."),
+ ("radius-xl","24px","The frosted app frame; same value as `radius-frame`. Amber, 6 October 2026."),
+ ("radius-frame","24px","The frosted app frame only (was 28px). Amber, 6 October 2026."),
+ ("radius-pill","999px","Chips (tool chips, status chips, filter chips) and Search only. Never a button (Amber, 6 October 2026, from the 3 October feedback \"Momentum is too round\"). Toggles and progress tracks keep their natural pill shape."),
  ("radius-circle","50%","Avatars, radios, loaders, status circles (App Design System; kept by Amber, 5 October 2026)."),
 ]
 SHADOWS = [
@@ -153,7 +153,7 @@ SHADOWS = [
 BLUR = [
  ("blur-frame","30px","backdrop-filter on the app frame."),
  ("blur-input","20px","backdrop-filter on the prompt box and floating bars."),
- ("blur-glow","140px","filter blur on the background glow discs."),
+ ("blur-glow","140px","filter blur on the background glow discs, which sit at 15% opacity or less (Amber, 6 October 2026)."),
 ]
 ZINDEX = [
  ("z-sticky","10","Sticky table headers and the top bar."),

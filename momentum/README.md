@@ -51,6 +51,8 @@ Where the sources disagree: Amber's dated decisions, then Momentum 1.4, then the
 | Focus | Orange at 50%, 1.6:1 | Solid 2px ring with a gap, 4.1:1 or better (C09) |
 | Charts | Single-accent orange ramp | Five fixed series plus Other (Amber, 5 Oct 2026). No sequential scale yet |
 | Themes | Light and dark | Sunrise, Deep Eco, Twilight; the Hub ships all three (Amber, 5 Oct 2026, superseding C15) |
+| Radii | 4 controls, 8 cards, 12 panels, 16 modal | 4 controls, 8 buttons and inputs, 12 cards, 16 panels, 24 frame; pills for chips and Search only (Amber, 6 Oct 2026, the 3 October scale) |
+| Glows | None | Three blurred discs at 15% opacity or less (Amber, 6 Oct 2026) plus the eleven backgrounds by job |
 
 ## Using it
 

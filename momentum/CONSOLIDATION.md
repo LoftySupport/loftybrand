@@ -40,7 +40,7 @@ These are not Amber's decisions; they follow from rank 2 beating rank 3. Each is
 | Page and neutrals | Flint family (`#f4f3ee` page, `#c6c5ba` borders, dark Flint 700 to 900) | `page` = Shell, glass surfaces, `line` alpha rules, `eco-night` and `twilight` dark pages. **Decided 5 Oct 2026 (Amber): the Hub drops Flint.** Its Flint references map onto these in `vibe-theme.css` |
 | Backgrounds | Flat colour, no gradients, no blur | Glow discs, the frosted frame, glass cards and widgets, eleven backgrounds by job. **Decided 5 Oct 2026 (Amber): glass everywhere Momentum draws it**, with Momentum's own reading rule still binding: body text sits on `surface-solid` or `surface-input`, and every text on glass pair is measured at 4.5:1 over the brightest glow |
 | Data visualisation | Single-accent orange ramp `--data-1` to `-6` and a sequential orange scale | Five fixed series plus `series-other`. **Decided 5 Oct 2026 (Amber): Momentum series only.** Heat and load charts wait until a sequential scale is designed separately; none is derived here |
-| Radii | 2, 4, 8, 12, 16, pill, circle | Momentum's 8 to 28 plus pill, with `radius-xs` 4px and `radius-circle` added from the App Design System. 2px and 16px are not carried. **Decided 5 Oct 2026 (Amber)** |
+| Radii | 2, 4, 8, 12, 16, pill, circle | **Decided 6 Oct 2026 (Amber): the 3 October scale.** 4 (`radius-xs`), 8 (`radius-s`: buttons, inputs), 12 (`radius-m`: cards), 16 (`radius-l`: panels, prompt box), 24 (`radius-frame`); pills for chips and Search only. Replaces Momentum's 8 to 28 and pill buttons, and reinstates the 16px step dropped on 5 Oct. 2px is still not carried |
 | Shadows | Four elevation shadows | Momentum's `shadow-float` and `shadow-ai`, plus the four App Design System elevation shadows so Vibe dropdowns, menus and modals keep theirs |
 
 ## Values derived here, confirmed
@@ -66,7 +66,7 @@ Nothing in this table comes verbatim from a source. Each applies a source rule t
 ## Gaps the sources do not fill
 
 - A sequential (continuous quantity) chart scale. Momentum has none; the App Design System's orange ladder is not carried (Amber, 5 Oct 2026: Momentum series only). Heat maps and load charts wait until a scale is designed separately.
-- A 2px radius for checkboxes and a 16px radius for the full-view modal, which Vibe components use. `vibe-theme.css` keeps `--border-radius-2: 2px` and maps the big radius to `radius-l` (20px) until decided.
+- A 2px radius for checkboxes, which Vibe components use. `vibe-theme.css` keeps `--border-radius-2: 2px`. (The 16px modal radius is `radius-l` since 6 Oct 2026.)
 - Eco Green hover and tint steps (`--highlight-hover-color`, `--highlight-tint-color`). Momentum has none; `vibe-theme.css` keeps the App Design System values as literals, flagged.
 - Overdue tints for Vibe's `--negative-color-selected`. Momentum's Overdue chip is a solid fill; `vibe-theme.css` keeps the App Design System tints as literals, flagged.
 
@@ -79,10 +79,10 @@ Before the consolidation, the claude.ai/design project "Lofty Momentum" carried 
 | C-01 ink on orange | Owner feedback: neither white nor a new colour; Deep Eco for buttons, Plum for AI-related orange suggested | Deep Eco, one token `on-action` (Amber, 5 Oct, C08). Plum on orange is not a token; the AI mark is orange on a plum tile instead |
 | C-02 primary ink | Momentum suggested | Deep Eco everywhere, documents included (Amber, 5 Oct) |
 | C-03 neutrals | Momentum in the app; Flint kept for documents suggested | The Hub drops Flint (Amber, 5 Oct). Documents moved to Deep Eco ink the same day; their page stays white, not Flint |
-| C-04 backgrounds | Owner preference: natural gradients with little colour, never left to right or top to bottom; about 15% saturation or less suggested | Glass and glows everywhere Momentum draws them (Amber, 5 Oct). No linear gradient anywhere except the brand tile `--bg-flow-current-flow`. **The 15% figure is not yet applied**: the glow discs sit at 22% to 47% alpha. Open, asked 6 Oct |
+| C-04 backgrounds | Owner preference: natural gradients with little colour, never left to right or top to bottom; about 15% saturation or less suggested | Glass and glows everywhere Momentum draws them (Amber, 5 Oct). No linear gradient anywhere except the brand tile `--bg-flow-current-flow`. **Decided 6 Oct 2026 (Amber): the glow discs are capped at 15% opacity** in every theme; the eleven backgrounds keep their measured values |
 | C-05, C-06 glass and cards | Momentum suggested | As Momentum, with body text on `surface-solid` |
 | C-07, C-08 accents and Eco Green | Momentum; highlight button kept suggested | Orange is the primary colour for interactive elements (C07); Eco Green keeps its narrow role plus `status-complete`. Vibe's highlight tokens stay as flagged literals in `vibe-theme.css` |
-| C-09 radii | Owner feedback: Momentum is too round; 4, 8, 12, 16, 24 with pills for chips and Search only suggested | Momentum's 8 to 28 plus `radius-xs` 4 and `radius-circle`; 2 and 16 dropped (Amber, 5 Oct, on which steps exist). Buttons stay pills. **The "too round" feedback is not yet applied**. Open, asked 6 Oct |
+| C-09 radii | Owner feedback: Momentum is too round; 4, 8, 12, 16, 24 with pills for chips and Search only suggested | Momentum's 8 to 28 plus `radius-xs` 4 and `radius-circle`; 2 and 16 dropped (Amber, 5 Oct, on which steps exist). **Decided 6 Oct 2026 (Amber): the 3 October scale applies.** 4, 8, 12, 16, 24; pills for chips and Search only; buttons 8px |
 | C-10 buttons | Momentum on shape | As Momentum: pills, hover steps to `action-hover` then `action-pressed`, no outline swap |
 | C-11 type scale | Momentum for app screens, App h1 to h3 kept suggested | The Hub keeps Vibe's scale (Amber, 4 Oct, C01 and C03); Momentum's styles are for AI surfaces |
 | C-12, G-01 spacing | Add 2, 40, 64, 80 back | Twelve steps, as proposed |

@@ -1,11 +1,11 @@
 /* momentum/tokens/radius.css : corners grow with the surface. */
 :root {
-  --radius-xs: 4px; /* Vibe controls inside the Hub: inputs, checkboxes, menu items, small tags (the App Design System's `--border-radius-small`). Kept by Amber, 5 October 2026; 2px and 16px are dropped. */
-  --radius-s: 8px; /* Small tags and status chips that are not pills; cards in dense tables. */
-  --radius-m: 12px; /* Rail items, icon tiles, list rows. */
-  --radius-l: 20px; /* Starter cards, answer widgets, glance cards. */
-  --radius-xl: 24px; /* The prompt box and side panels. */
-  --radius-frame: 28px; /* The frosted app frame only. */
-  --radius-pill: 999px; /* Buttons, chips, send and voice buttons, the mobile prompt bar, toggles, progress tracks. */
+  --radius-xs: 4px; /* Dense controls: checkboxes, menu items, small tags, table controls (the App Design System's `--border-radius-small`). Amber, 5 October 2026 (kept) and 6 October 2026 (the 3 October scale applies). */
+  --radius-s: 8px; /* Buttons, inputs, icon buttons (send, voice), segmented controls, status chips that are not pills. Amber, 6 October 2026: buttons are 8px, not pills. */
+  --radius-m: 12px; /* Cards: starter cards, answer widgets, glance cards, chat bubbles; also rail rows and icon tiles. Amber, 6 October 2026. */
+  --radius-l: 16px; /* Panels: the rail, the Your day panel, the prompt box, modals (Vibe's big radius). Amber, 6 October 2026; reinstates the 16px step dropped on 5 October. */
+  --radius-xl: 24px; /* The frosted app frame; same value as `radius-frame`. Amber, 6 October 2026. */
+  --radius-frame: 24px; /* The frosted app frame only (was 28px). Amber, 6 October 2026. */
+  --radius-pill: 999px; /* Chips (tool chips, status chips, filter chips) and Search only. Never a button (Amber, 6 October 2026, from the 3 October feedback "Momentum is too round"). Toggles and progress tracks keep their natural pill shape. */
   --radius-circle: 50%; /* Avatars, radios, loaders, status circles (App Design System; kept by Amber, 5 October 2026). */
 }
