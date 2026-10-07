@@ -1,9 +1,9 @@
-/* momentum/tokens/typography.css : families, weights and the type styles. Montserrat only for digital and web (Amber, 5 October 2026, C04); four weights (C05). Fieldwork for brand-led surfaces only. */
+/* momentum/tokens/typography.css : families, weights and the type styles. Outfit for headings and Onest for body (Amber, 7 October 2026, replacing Montserrat only, C04); four weights (C05). Fieldwork for brand-led surfaces only. */
 :root {
-  --font-display: Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-body: Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-brand: "Fieldwork Geo", "Fieldwork", Montserrat, Arial, sans-serif;
-  --font-brand-body: "Fieldwork Hum", "Fieldwork", Montserrat, Arial, sans-serif;
+  --font-display: Outfit, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-body: Onest, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-brand: "Fieldwork Geo", "Fieldwork", Outfit, Arial, sans-serif;
+  --font-brand-body: "Fieldwork Hum", "Fieldwork", Onest, Arial, sans-serif;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
@@ -22,15 +22,16 @@
   --type-stat-m: 500 36px/40px var(--font-display);
   --letter-spacing-stat-m: -1px;
   /* Screen */
-  --type-h1: 700 32px/40px var(--font-display);
+  --type-h1: 600 32px/40px var(--font-display);
   --letter-spacing-h1: -0.5px;
-  --type-h2: 700 24px/30px var(--font-display);
+  --type-h2: 600 24px/30px var(--font-display);
   --letter-spacing-h2: -0.1px;
-  --type-h3: 700 18px/24px var(--font-display);
+  --type-h3: 600 18px/24px var(--font-display);
   --letter-spacing-h3: -0.1px;
-  --type-text1: 400 16px/22px var(--font-display);
-  --type-text2: 400 14px/20px var(--font-display);
-  --type-text3: 400 12px/16px var(--font-display);
+  /* Screen text */
+  --type-text1: 400 16px/22px var(--font-body);
+  --type-text2: 400 14px/20px var(--font-body);
+  --type-text3: 400 12px/16px var(--font-body);
   /* Text */
   --type-body: 400 15px/23px var(--font-body);
   --type-prompt: 400 17px/24px var(--font-body);

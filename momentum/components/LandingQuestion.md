@@ -3,7 +3,7 @@
 
 The Ask Lofty landing, version 2 (25 September 2026). The AI mark sits on the left with a question from a bank of twelve beside it. This replaces the centred mark and the fixed "What should we move forward today?" headline.
 
-- **Hero:** left-aligned. Plum tile 68px with the orange Lofty arrows (`plum-lift` on Twilight). Greeting in `ink-muted`, then the question in Montserrat 500 at 40/50, tracking -1.2px, two lines at most, max width 760px.
+- **Hero:** left-aligned. Plum tile 68px with the orange Lofty arrows (`plum-lift` on Twilight). Greeting in `ink-muted`, then the question in Outfit 500 at 40/50, tracking -1.2px, two lines at most, max width 760px.
 - **Controls under the question:** "Question n of 12" in `ink-muted`, and a ghost button (`radius-s`) "Another question" that moves to the next question and wraps at twelve.
 - **Rotation:** a random question on each visit. Never auto-rotate while the page is open.
 - **Prompt box:** docked at the foot of the main column, full column width. Placeholder "Ask about any job, or tell Lofty what to do". Chips: Attach, Any job, Search records. Voice, then the orange send (the page's one orange action).
