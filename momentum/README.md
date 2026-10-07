@@ -21,7 +21,7 @@ Where the sources disagree: Amber's dated decisions, then Momentum 1.4, then the
 | --- | --- |
 | `styles.css` | The entry point. `@import`s only. Link it instead of the root `styles.css` to get Momentum |
 | `tokens/colors.css` | 56 colour tokens: primitives, the semantic layer, status and chart series. Sunrise on `:root`, Deep Eco on `[data-theme="eco"]`, Twilight on `[data-theme="twilight"]` |
-| `tokens/typography.css` | Outfit for headings and Onest for body, four weights, 19 type styles as `--type-*` font shorthands (the Hub's Vibe scale plus Momentum's display, numbers and chat styles) |
+| `tokens/typography.css` | Outfit for headings and Onest for body, four weights (body at 500 on the dark themes), 19 type styles as `--type-*` font shorthands (the Hub's Vibe scale plus Momentum's display, numbers and chat styles) |
 | `tokens/spacing.css`, `radius.css`, `shadows.css`, `motion.css`, `layers.css` | Twelve spacing steps, eight radii, elevation and the solid focus ring with the blur radii, durations and easings, the z-index scale |
 | `tokens/backgrounds.css` | The eleven Momentum backgrounds with their dark twins as `--bg-*`, chosen by job |
 | `tokens/fonts.css` | Outfit and Onest from Google Fonts; Fieldwork `@font-face` pointing at `../assets/fonts` |

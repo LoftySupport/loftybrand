@@ -10,11 +10,11 @@ Outstanding issues, open questions and next steps only. What the system is and h
 - The deck's dark themes and the Hub's dark themes were reported hard to read the same day. The deck was fixed (`reference/README.md`); the Hub is below.
 
 **Decided**
-- 7 October 2026, Amber: Outfit for headings and Onest for body ("going outfit onest"), replacing Montserrat only (C04). Applied to `scripts/gen-tokens.py`, `tokens/typography.css`, `tokens/fonts.css` and `tokens.json`: `--font-display` Outfit, `--font-body` Onest, h1 to h3 at 600 (my choice, to match Fieldwork Geo DemiBold; Amber had found Outfit heavier than Fieldwork at 700), text1 to text3 on the body face. Fieldwork stays for brand surfaces. How she got there: `font-lab/README.md`.
+- 7 October 2026, Amber: Outfit for headings and Onest for body ("going outfit onest"), replacing Montserrat only (C04). Applied to `scripts/gen-tokens.py`, `tokens/typography.css`, `tokens/fonts.css` and `tokens.json`: `--font-display` Outfit, `--font-body` Onest, h1 to h3 at 600 (my choice, to match Fieldwork Geo DemiBold; Amber had found Outfit heavier than Fieldwork at 700), text1 to text3 on the body face. Fieldwork stays for brand surfaces. Also 7 October 2026, Amber: body text is weight 500 on the dark themes (text1 to text3, body, prompt, caption), applied in `typography.css` under `[data-theme="eco"]` and `[data-theme="twilight"]`. The values for the rest of the setup are in `font-lab/SETUP.md`. How she got there: `font-lab/README.md`.
 
 **Outstanding from that decision**
 - The 27 specimen cards, the six canvas artboards, the Grounds page and the artifact's component previews still draw Montserrat. They are flattened exports with inline font names, so they need regenerating from the artifact, not a find and replace; a heading cannot be told from body text by search.
-- Not decided: body weight 500 on dark (my recommendation), and whether body-strong and label stay at 700 (Onest) or move to 600.
+- Not decided: whether body-strong and label stay at 700 (Onest) or move to 600.
 
 **Needs Amber**
 - Colours too, in Deep Eco: muted text is 4.0:1 at the brightest glow with Momentum text on the Hub's grounds (fails AA). Capping the glows at 15% gives 5.5:1; opaque text cards with the proposed Readable set (soft white ink, secondary text 86%, a heavier body weight on dark) give 11.9:1. My recommendation: text on solid surfaces (the Momentum rule already says so), glass only for the frame, rail and header. Adopt, adjust or decline?

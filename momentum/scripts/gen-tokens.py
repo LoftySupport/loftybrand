@@ -86,6 +86,9 @@ FAMILIES = {
  "brand": '"Fieldwork Geo", "Fieldwork", Outfit, Arial, sans-serif',
  "brand-body": '"Fieldwork Hum", "Fieldwork", Onest, Arial, sans-serif',
 }
+# Body text is weight 500 on the dark themes (Amber, 7 October 2026): thin light-on-dark strokes break up at 12 to 14px, especially on phones.
+DARK_BODY_WEIGHT = 500
+DARK_BODY_STYLES = ("text1","text2","text3","body","prompt","caption")
 # name, size, lh, weight, ls, sample, usage
 GROUPS = [
  ("Display","display",[
@@ -221,6 +224,7 @@ for gname,fam,styles in GROUPS:
         st={"name":n,"fontSize":fs,"lineHeight":lh,"fontWeight":fw,"sample":sample,"usage":usage}
         if ls: st["letterSpacing"]=ls
         if n=="brand-body": st["family"]="brand-body"
+        if n in DARK_BODY_STYLES: st["darkFontWeight"]=DARK_BODY_WEIGHT
         g["styles"].append(st)
     tokens["type"]["groups"].append(g)
 os.makedirs(os.path.dirname(OUT_JSON),exist_ok=True)
@@ -256,6 +260,13 @@ for gname,fam,styles in GROUPS:
         ty.append("  --type-%s: %d %s/%s var(--font-%s);"%(n,fw,fs,lh,f))
         if ls: ty.append("  --letter-spacing-%s: %s;"%(n,ls))
 ty.append("}")
+for t,_ in THEMES[1:]:
+    ty.append("/* Body text at 500 on the dark themes (Amber, 7 October 2026). */")
+    ty.append("[data-theme=\"%s\"] {"%t)
+    for gname,fam,styles in GROUPS:
+        for n,fs,lh,fw,ls,sample,usage in styles:
+            if n in DARK_BODY_STYLES: ty.append("  --type-%s: %d %s/%s var(--font-%s);"%(n,DARK_BODY_WEIGHT,fs,lh,fam))
+    ty.append("}")
 write("typography.css","\n".join(ty)+"\n")
 
 write("spacing.css","/* momentum/tokens/spacing.css : 2 to 80, nothing off the scale. */\n:root {\n"+"".join("  --%s: %s; /* %s */\n"%(n,v,u) for n,v,u in SPACING)+"}\n")
