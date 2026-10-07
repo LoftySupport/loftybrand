@@ -8,14 +8,14 @@
     "Main.dc.html": {"x": 0, "y": 0, "w": 1440, "h": 900, "title": "Ask Lofty landing, Sunrise"},
     "LandingDeepEco.dc.html": {"x": 1520, "y": 0, "w": 1440, "h": 900, "title": "Ask Lofty landing, Deep Eco"},
     "Colour.dc.html": {"x": 0, "y": 1200, "w": 1440, "h": 820, "title": "Colour, three themes"},
-    "Type.dc.html": {"x": 1520, "y": 1200, "w": 1440, "h": 820, "title": "Type, Montserrat only"},
+    "Type.dc.html": {"x": 1520, "y": 1200, "w": 1440, "h": 820, "title": "Type, Outfit and Onest"},
     "Components.dc.html": {"x": 0, "y": 2320, "w": 1440, "h": 760, "title": "Controls and states"},
     "Foundations.dc.html": {"x": 1520, "y": 2320, "w": 1440, "h": 760, "title": "Spacing, shape, elevation, glass"}
   },
   "order": ["Main.dc.html", "LandingDeepEco.dc.html", "Colour.dc.html", "Type.dc.html", "Components.dc.html", "Foundations.dc.html"],
   "notes": {
     "t1": {"x": 0, "y": -300, "text": "Lofty Momentum Consolidated: the landing, Sunrise and Deep Eco", "kind": "title1", "maxW": 2960},
-    "t2": {"x": 0, "y": 960, "text": "Foundations: colour in three themes, Montserrat only", "kind": "title1", "maxW": 2960},
+    "t2": {"x": 0, "y": 960, "text": "Foundations: colour in three themes, Outfit and Onest", "kind": "title1", "maxW": 2960},
     "t3": {"x": 0, "y": 2080, "text": "Controls, states, spacing, shape and glass", "kind": "title1", "maxW": 2960}
   },
   "designSystems": [

@@ -57,7 +57,7 @@ Refresh checklist for a consumer:
 
 ## Two consumption modes
 
-**Screen** — Figtree body, Montserrat titles, semantic tokens, components from
+**Screen** — Onest body, Outfit titles, semantic tokens, components from
 the bundle. Dark mode via `data-theme`. The Hub mockups work this way.
 
 **Brand-led** — Fieldwork Geo and Hum, brand palette values direct, print

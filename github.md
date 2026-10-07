@@ -9,7 +9,7 @@ date: 2026-09-09T04:12:00Z
 - Packaged the design system for upload: added LICENSE, NOTICE.md, CONTRIBUTING.md, CHANGELOG.md, package.json, .gitignore and docs/.
 - Wrote docs/getting-started.md, docs/tokens.md and docs/components.md — install, theming, full token reference and component index.
 - Removed monday.com's own brand marks (MondayDoc, MondayLogoOutline) from the icon set; 274 product glyphs remain. Fieldwork fonts kept in the repository.
-- Recorded third-party terms: Vibe (MIT), Montserrat/Figtree (OFL), Fieldwork (commercial).
+- Recorded third-party terms: Vibe (MIT), Outfit/Onest/Montserrat (OFL), Fieldwork (commercial).
 
 ## Screen map
 | Area | Repo files |

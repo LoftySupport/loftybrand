@@ -15,7 +15,7 @@ Vibe-shaped component drop onto this token layer without a rewrite.
 | --- | --- | --- |
 | Token names | ✅ | |
 | Token values | | ✅ brand kit |
-| Screen type scale | ✅ Figtree / Montserrat | |
+| Screen type scale | ✅ Onest / Outfit | |
 | Brand type | | ✅ Fieldwork, brand surfaces only |
 | Status colours | ✅ values kept for contrast | |
 | Icons | ✅ default set | ✅ construction/domain additions |

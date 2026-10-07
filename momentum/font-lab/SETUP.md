@@ -7,12 +7,12 @@ Decided by Amber on 7 October 2026: **Outfit for headings, Onest for body**, Fie
 
 ## 1. Fonts and weights
 
-Load from Google Fonts (variable, so every weight below is available):
+Load from Google Fonts (variable, so every weight below is available). Montserrat is the fallback when Outfit and Onest are not available (Amber, 7 October 2026), so it sits next in the stack and is not loaded:
 
 ```css
 @import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap");
---font-display: Outfit, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
---font-body: Onest, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+--font-display: Outfit, Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+--font-body: Onest, Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 ```
 
 ### Outfit (`--font-display`), matching Fieldwork Geo strokes

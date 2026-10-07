@@ -1,6 +1,8 @@
-/* Screen/product typography — Figtree body + Montserrat titles. Fallback order wherever
-   the Fieldwork brand fonts are unavailable: Montserrat first, then Arial. */
-@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&display=swap");
+/* Screen/product typography — Outfit titles + Onest body (Amber, 7 October 2026). Fallback order wherever
+   the Fieldwork brand fonts are unavailable: Outfit (titles) or Onest (body) first, then Montserrat, then Arial.
+   Montserrat is the digital fallback when Outfit and Onest are not available (Amber, 7 October 2026), and the Word
+   document substitute where Fieldwork is not installed. It is not loaded from Google Fonts here; print stays on Fieldwork. */
+@import url("https://fonts.googleapis.com/css2?family=Onest:wght@300..700&family=Outfit:wght@300..700&display=swap");
 
 /* Brand typography — Fieldwork (Lofty corporate typeface, licensed via Adobe Fonts / Tipotype).
    Geo = geometric cut, used for headings and brand-led surfaces.

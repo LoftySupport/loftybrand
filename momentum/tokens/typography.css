@@ -1,9 +1,9 @@
 /* momentum/tokens/typography.css : families, weights and the type styles. Outfit for headings and Onest for body (Amber, 7 October 2026, replacing Montserrat only, C04); four weights (C05). Fieldwork for brand-led surfaces only. */
 :root {
-  --font-display: Outfit, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-body: Onest, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  --font-brand: "Fieldwork Geo", "Fieldwork", Outfit, Arial, sans-serif;
-  --font-brand-body: "Fieldwork Hum", "Fieldwork", Onest, Arial, sans-serif;
+  --font-display: Outfit, Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-body: Onest, Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-brand: "Fieldwork Geo", "Fieldwork", Outfit, Montserrat, Arial, sans-serif;
+  --font-brand-body: "Fieldwork Hum", "Fieldwork", Onest, Montserrat, Arial, sans-serif;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;

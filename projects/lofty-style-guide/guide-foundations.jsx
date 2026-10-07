@@ -176,15 +176,15 @@ function Colour() {
 
 function Typography() {
   const screen = [
-    ["h1", "Poppins 32/40, −0.5px", "Every job, every crew", { font: "var(--font-h1-bold)", letterSpacing: "-0.5px" }],
-    ["h2", "Poppins 24/30, −0.1px", "Delivery dashboard", { font: "var(--font-h2-bold)", letterSpacing: "-0.1px" }],
-    ["h3", "Poppins 18/24, −0.1px", "Crew utilisation", { font: "var(--font-h3-medium)", letterSpacing: "-0.1px" }],
-    ["text1", "Figtree 16/22", "Assign a crew before publishing the schedule.", { font: "var(--font-text1-normal)" }],
-    ["text2", "Figtree 14/20", "Default product body size — tables, menus, fields.", { font: "var(--font-text2-normal)" }],
-    ["text3", "Figtree 12/16", "Helper text, table headers, counters.", { font: "var(--font-text3-normal)" }]
+    ["h1", "Outfit 32/40, −0.5px", "Every job, every crew", { font: "var(--font-h1-bold)", letterSpacing: "-0.5px" }],
+    ["h2", "Outfit 24/30, −0.1px", "Delivery dashboard", { font: "var(--font-h2-bold)", letterSpacing: "-0.1px" }],
+    ["h3", "Outfit 18/24, −0.1px", "Crew utilisation", { font: "var(--font-h3-medium)", letterSpacing: "-0.1px" }],
+    ["text1", "Onest 16/22", "Assign a crew before publishing the schedule.", { font: "var(--font-text1-normal)" }],
+    ["text2", "Onest 14/20", "Default product body size — tables, menus, fields.", { font: "var(--font-text2-normal)" }],
+    ["text3", "Onest 12/16", "Helper text, table headers, counters.", { font: "var(--font-text3-normal)" }]
   ];
   return (
-    <Section id="type" eyebrow="03" title="Typography" intro="Two systems, chosen by surface. Poppins and Figtree on screen; Fieldwork on brand-led surfaces.">
+    <Section id="type" eyebrow="03" title="Typography" intro="Two systems, chosen by surface. Outfit and Onest on screen; Fieldwork on brand-led surfaces.">
       <Block title="Screen scale">
         {screen.map(([k, spec, sample, st]) => (
           <div className="type-row" key={k}>
@@ -202,11 +202,11 @@ function Typography() {
         </Block>
         <Block title="Weights and substitutes">
           <SpecTable head={["Family", "Weights", "Where"]} rows={[
-            ["Poppins", "300 / 500 / 600 / 700", "Product titles h1–h3"],
-            ["Figtree", "400 / 600 / 700", "Product body text1–text3"],
+            ["Outfit", "300 / 500 / 600 / 700", "Product titles h1–h3"],
+            ["Onest", "400 / 500 / 600 / 700", "Product body text1–text3"],
             ["Fieldwork Geo", "300 / 600", "Brand display"],
             ["Fieldwork Hum", "300 / 600", "Brand body"],
-            ["Montserrat", "—", "Print substitute for Fieldwork"]
+            ["Montserrat", "—", "Fallback when Outfit and Onest are unavailable; Word substitute"]
           ]} />
           <Rule good="Set tracking negative on headings only." bad="Track body copy, or use Fieldwork inside product UI." />
         </Block>

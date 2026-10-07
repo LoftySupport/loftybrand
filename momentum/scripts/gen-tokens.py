@@ -79,12 +79,12 @@ FONTS = [
  ("Fieldwork","fonts/Fieldwork-ItalicDemiBold.woff","600","italic"),
 ]
 # Outfit for headings and Onest for body (Amber, 7 October 2026, replacing Montserrat only, C04). Both from Google Fonts.
-SYS_TAIL = 'system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif'
+SYS_TAIL = 'Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif'  # Montserrat is the fallback when Outfit and Onest are not available (Amber, 7 October 2026)
 FAMILIES = {
  "display": "Outfit, " + SYS_TAIL,
  "body": "Onest, " + SYS_TAIL,
- "brand": '"Fieldwork Geo", "Fieldwork", Outfit, Arial, sans-serif',
- "brand-body": '"Fieldwork Hum", "Fieldwork", Onest, Arial, sans-serif',
+ "brand": '"Fieldwork Geo", "Fieldwork", Outfit, Montserrat, Arial, sans-serif',
+ "brand-body": '"Fieldwork Hum", "Fieldwork", Onest, Montserrat, Arial, sans-serif',
 }
 # Body text is weight 500 on the dark themes (Amber, 7 October 2026): thin light-on-dark strokes break up at 12 to 14px, especially on phones.
 DARK_BODY_WEIGHT = 500

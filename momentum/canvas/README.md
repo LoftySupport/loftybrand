@@ -9,7 +9,7 @@ The source of the Claude Design-canvas artifact at https://claude.ai/artifact/Ma
 | `Main.dc.html` | Ask Lofty landing, Sunrise. Carries the `theme` tweak (light, eco, twilight) |
 | `LandingDeepEco.dc.html` | The same landing imported with `theme: eco` |
 | `Colour.dc.html` | The palette in three themes |
-| `Type.dc.html` | Montserrat only: the Hub's Vibe scale, Momentum's display, numbers and text, Fieldwork for brand surfaces |
+| `Type.dc.html` | Outfit and Onest: the Hub's Vibe scale, Momentum's display, numbers and text, Fieldwork for brand surfaces |
 | `Components.dc.html` | Controls and states |
 | `Foundations.dc.html` | Spacing, shape and glass |
 | `ds/lofty-momentum/tokens.json` | The consolidated system installed as the canvas's design system (a copy of `../tokens.json` at 5 October 2026) |
