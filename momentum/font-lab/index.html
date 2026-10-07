@@ -1,0 +1,395 @@
+<!doctype html>
+<!-- momentum/font-lab/index.html : Lofty Font Lab, a tester for choosing a body typeface beside Fieldwork, on the real Momentum themes. 7 October 2026.
+     Open it from a checkout of this repository (it reads Fieldwork from ../../assets/fonts and the Lofty logo from ../../assets/brand) with an internet connection (the other faces load from Google Fonts).
+     Built from Amber's font-lab experiment, with Momentum colours and grounds (Sunrise, Deep Eco, Twilight), Fieldwork in place of the display face, and Lofty copy.
+     The measurements are embedded between the METRICS markers below; momentum/font-lab/measure-fonts.py regenerates them. -->
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lofty Font Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@300..700&family=Figtree:wght@300..700&family=Hanken+Grotesk:wght@300..700&family=Jost:wght@300..700&family=Manrope:wght@300..700&family=Montserrat:wght@300..700&family=Mulish:wght@300..700&family=Nunito+Sans:wght@300..700&family=Onest:wght@300..700&family=Outfit:wght@300..700&family=Plus+Jakarta+Sans:wght@300..700&family=Space+Grotesk:wght@300..700&display=swap">
+<style>
+/* Fieldwork: the Lofty brand faces, supplied in Light (300) and DemiBold (600) only. */
+@font-face{font-family:"Fieldwork Geo";src:url("../../assets/fonts/Fieldwork-Geo-Light.woff") format("woff");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Fieldwork Geo";src:url("../../assets/fonts/Fieldwork-Geo-Demibold.woff") format("woff");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Fieldwork Hum";src:url("../../assets/fonts/Fieldwork-Hum-Light.woff") format("woff");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"Fieldwork Hum";src:url("../../assets/fonts/Fieldwork-Hum-DemiBold.woff") format("woff");font-weight:600;font-style:normal;font-display:swap}
+
+:root{
+  /* Lofty Momentum (momentum/tokens/colors.css) */
+  --deep-eco:#081a1c; --crisp-orange:#f47e63; --orange-pressed:#c2543c; --eco-green:#005058; --current:#009ba3;
+  --shell:#fcf1ee; --sky:#adfbff; --eco-night:#020a0b; --twilight:#070105; --muted:#5a6668; --line-control:#8a898d;
+  --base:15px; --bodyweight:400;
+  --head-font:"Montserrat",sans-serif; --body-font:"Montserrat",sans-serif;
+  --chrome:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--shell);color:var(--deep-eco);font-family:var(--chrome);-webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--orange-pressed);outline-offset:2px}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:50;background:var(--deep-eco);color:#eef4f3;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;border-bottom:1px solid rgba(255,255,255,.16)}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{height:26px;display:block}
+.lab-tag{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--crisp-orange);padding-left:14px;border-left:1px solid rgba(255,255,255,.2)}
+.controls{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.control{display:flex;align-items:center;gap:8px}
+.control>label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#c9d3d2;white-space:nowrap}
+.control output{font-variant-numeric:tabular-nums;font-weight:700;color:var(--crisp-orange);font-size:14px;min-width:38px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:110px;height:3px;background:#5a6668;outline-offset:6px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;background:var(--crisp-orange);border-radius:50%;cursor:pointer}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;background:var(--crisp-orange);border:0;border-radius:50%;cursor:pointer}
+.seg{display:inline-flex;border:1px solid #8a898d;border-radius:8px;overflow:hidden}
+.seg button{background:transparent;color:#d6dedd;border:0;font-size:12px;font-weight:700;letter-spacing:.03em;padding:7px 11px}
+.seg button+button{border-left:1px solid #8a898d}
+.seg button.on{background:var(--crisp-orange);color:var(--deep-eco)}
+
+.wrap{max-width:1360px;margin:0 auto;padding:0 28px}
+.intro{padding:48px 0 12px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--eco-green);margin-bottom:12px}
+h1{font-family:"Montserrat",sans-serif;font-size:clamp(28px,4vw,48px);line-height:1.1;letter-spacing:-.02em;font-weight:700;max-width:22ch;margin-bottom:18px}
+.lede{font-size:17px;line-height:1.6;max-width:74ch}
+.note{margin-top:12px;font-size:14px;line-height:1.55;color:var(--muted);max-width:80ch}
+h2{font-family:"Montserrat",sans-serif;font-size:25px;letter-spacing:-.01em;font-weight:700;margin-bottom:6px}
+.sub{font-size:14px;line-height:1.5;color:var(--muted);max-width:80ch;margin-bottom:16px}
+section.block{padding:28px 0}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;align-items:center}
+.btnrow .lbl{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.preset{font-size:12px;font-weight:700;padding:8px 12px;border:1px solid var(--line-control);border-radius:8px;background:#fff;color:var(--deep-eco)}
+.preset.on{background:var(--deep-eco);color:var(--crisp-orange);border-color:var(--deep-eco)}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:var(--muted)}
+.field select{font:inherit;font-size:14px;font-weight:600;padding:9px 12px;border:1px solid var(--line-control);border-radius:8px;background:#fff;color:var(--deep-eco);min-width:200px}
+
+/* theme tiles: the real Momentum grounds, glass and ink */
+.matrix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.rowlabel{grid-column:1/-1;display:flex;align-items:center;gap:12px;margin-top:6px}
+.rowlabel .rn{font-weight:700;font-size:16px}
+.rowlabel .rm{font-size:13px;color:var(--muted)}
+.tile{border-radius:16px;overflow:hidden;border:1px solid var(--line-control);display:flex;flex-direction:column}
+.ground{padding:18px;background:var(--ground);color:var(--ink);flex:1}
+.frame{border-radius:16px;background:var(--frame);border:1px solid var(--edge);padding:14px;backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px)}
+.cardx{border-radius:12px;background:var(--card);border:1px solid var(--edge);padding:16px}
+.tname{font-family:var(--chrome);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-fg);margin-bottom:10px}
+.t-head{font-weight:700;font-size:calc(var(--base) + 7px);line-height:1.15;letter-spacing:-.01em;margin-bottom:8px;color:var(--ink)}
+.t-body{font-weight:var(--bw);font-size:var(--base);line-height:1.5;margin-bottom:8px;color:var(--ink)}
+.t-cap{font-weight:var(--bw);font-size:12px;line-height:1.4;margin-bottom:12px;color:var(--muted-fg)}
+.t-nav{display:flex;gap:12px;font-weight:500;font-size:var(--base);margin-bottom:12px;color:var(--muted-fg);flex-wrap:wrap}
+.t-table{border-top:1px solid var(--rule);margin-bottom:12px}
+.t-tr{display:grid;grid-template-columns:1.4fr 1fr .8fr;gap:8px;padding:7px 0;border-bottom:1px solid var(--rule);font-size:13px;font-weight:var(--bw)}
+.t-tr span:nth-child(2),.t-tr span:nth-child(3){color:var(--muted-fg)}
+.t-btn{height:38px;padding:0 16px;border:0;border-radius:8px;background:var(--crisp-orange);color:var(--deep-eco);font-weight:700;font-size:13px}
+.ladderx{margin-top:12px;display:flex;flex-direction:column;gap:5px;border-top:1px solid var(--rule);padding-top:10px}
+.ladderx .row{display:flex;gap:10px;align-items:baseline;color:var(--muted-fg)}
+.ladderx .px{font-family:var(--chrome);font-size:12px;opacity:.7;min-width:22px}
+.ladderx .txt{font-weight:var(--bw)}
+.chips{padding:10px 14px;background:#fff;border-top:1px solid var(--line-control);display:flex;flex-wrap:wrap;gap:8px;font-size:12px;font-family:var(--chrome)}
+.chip{padding:3px 9px;border-radius:999px;font-weight:700;background:#e3f1ec;color:#0b4a3a}
+.chip.bad{background:#fbe0d8;color:#8a2f17}
+@media(max-width:1000px){.matrix{grid-template-columns:1fr}}
+
+/* contrast table */
+.ct{border:1px solid var(--line-control);border-radius:12px;overflow:hidden;background:#fff;font-size:14px}
+.cr{display:grid;grid-template-columns:minmax(220px,1.6fr) repeat(6,minmax(78px,1fr));gap:8px;align-items:center;padding:10px 16px;border-top:1px solid rgba(8,26,28,.12)}
+.cr:first-child{border-top:0}
+.ch{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:#f6ebe8}
+.cg{background:#f6ebe8;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.cell{font-variant-numeric:tabular-nums;font-weight:700}
+.cell.bad{color:#b4361a}
+.cell.ok{color:var(--eco-green)}
+@media(max-width:900px){.cr{grid-template-columns:1.4fr repeat(6,1fr);font-size:12px;padding:8px}}
+
+/* measured table */
+.measure{border:1px solid var(--line-control);border-radius:12px;overflow:hidden;background:#fff}
+.mrow{display:grid;grid-template-columns:minmax(170px,1.4fr) 96px 110px 110px 1.5fr 1.5fr;gap:12px;align-items:center;padding:12px 18px;border-top:1px solid rgba(8,26,28,.12);font-size:14px}
+.mrow:first-child{border-top:0}
+.mhead{font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:#f6ebe8}
+.mrow .nm{font-weight:700}
+.tg{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:999px;margin-left:8px;background:var(--crisp-orange);color:var(--deep-eco);white-space:nowrap}
+.tg.base{background:#e4e7e6;color:var(--muted)}
+.mrow.brand{background:var(--deep-eco);color:#eef4f3}.mrow.brand .nm{color:var(--sky)}
+.bar{height:8px;border-radius:4px;background:#e6dcd9;position:relative;overflow:hidden}.mrow.brand .bar{background:#1f3a3d}
+.bar i{position:absolute;left:0;top:0;bottom:0;background:var(--eco-green);border-radius:4px}.mrow.brand .bar i{background:var(--crisp-orange)}
+.why{font-size:13px;line-height:1.4;color:var(--muted)}.mrow.brand .why{color:#c9d3d2}
+@media(max-width:900px){.mrow{grid-template-columns:1fr 1fr}.mhead{display:none}}
+.ranking{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:var(--line-control);border:1px solid var(--line-control);border-radius:12px;overflow:hidden;margin-top:18px}
+.rank{background:#fff;padding:20px}.rank.top{background:var(--crisp-orange)}
+.rank .p{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}.rank.top .p{color:var(--deep-eco)}
+.rank h3{font-family:"Montserrat",sans-serif;font-size:19px;margin-bottom:8px}.rank p{font-size:14px;line-height:1.5;color:#3c4a4c}.rank.top p{color:var(--deep-eco)}
+
+/* pairing studio */
+.pair-controls{display:flex;gap:18px;flex-wrap:wrap;align-items:flex-end;margin-bottom:14px}
+.pmeta{font-size:12px;color:var(--muted);margin:10px 0 0}
+.studio .ground{display:flex}
+.studio .frame{flex:1}
+.ph-eb{font-family:var(--head-font);font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.14em;margin-bottom:10px;color:var(--eyebrow)}
+.ph1{font-family:var(--head-font);font-weight:700;font-size:34px;line-height:1.1;letter-spacing:-.02em;margin-bottom:12px;color:var(--ink)}
+.ph2{font-family:var(--head-font);font-weight:700;font-size:21px;line-height:1.15;margin:18px 0 8px;color:var(--ink)}
+.pbody{font-family:var(--body-font);font-weight:var(--bw);font-size:var(--base);line-height:1.55;margin-bottom:12px;max-width:54ch;color:var(--ink)}
+.pcap{font-family:var(--body-font);font-size:12px;font-weight:var(--bw);line-height:1.4;color:var(--muted-fg)}
+.pbtn{font-family:var(--body-font);font-size:14px;font-weight:700;padding:0 18px;height:40px;border:0;border-radius:8px;background:var(--crisp-orange);color:var(--deep-eco);margin-top:12px}
+
+/* glyphs */
+.gh{font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:700;color:var(--muted);margin-bottom:12px}
+.gridg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--line-control);border:1px solid var(--line-control);border-radius:12px;overflow:hidden}
+.gcol{background:#fff;padding:20px;text-align:center}.gcol.is-brand{background:var(--deep-eco);color:#eef4f3}
+.gname{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--muted);margin-bottom:12px}.is-brand .gname{color:var(--sky)}
+.grow{font-size:52px;line-height:1.1;font-weight:500;letter-spacing:.03em}.gword{font-size:25px;font-weight:500;margin-top:8px}
+.gnote{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.4}.is-brand .gnote{color:#c9d3d2}
+
+/* cards */
+.lab{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,760px),1fr));gap:24px;padding:8px 0 80px}
+.card{border:1px solid var(--line-control);border-radius:14px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.card.rec{outline:3px solid var(--crisp-orange);outline-offset:-1px}
+.chead{display:flex;align-items:baseline;justify-content:space-between;gap:10px;padding:16px 20px;border-bottom:1px solid rgba(8,26,28,.12)}
+.chead .name{font-size:20px;font-weight:700;letter-spacing:-.01em}
+.ctag{font-family:var(--chrome);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:var(--crisp-orange);color:var(--deep-eco);white-space:nowrap}
+.ctag.base{background:#e4e7e6;color:var(--muted)}.ctag.brand{background:var(--deep-eco);color:var(--sky)}
+.cnote{padding:10px 20px 14px;font-size:13px;line-height:1.5;color:var(--muted);border-bottom:1px solid rgba(8,26,28,.12)}
+.cthemes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.cthemes .ground{padding:12px}.cthemes .frame{padding:10px}.cthemes .cardx{padding:12px}
+.cthemes .t-head{font-size:calc(var(--base) + 4px)}
+.cfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 20px;border-top:1px solid rgba(8,26,28,.12);font-size:12px;color:var(--muted)}
+.short{font-size:12px;font-weight:700;padding:7px 12px;border:1px solid var(--line-control);border-radius:8px;background:#fff;color:var(--deep-eco)}.short.on{background:var(--deep-eco);color:var(--crisp-orange);border-color:var(--deep-eco)}
+@media(max-width:760px){.cthemes{grid-template-columns:1fr}}
+.foot{padding:20px 0 64px;font-size:13px;color:var(--muted);line-height:1.6;max-width:92ch}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand"><img src="../../assets/brand/lofty-logo-white.png" alt="Lofty"><span class="lab-tag">Font Lab</span></div>
+  <div class="controls" role="group" aria-label="Tester controls">
+    <div class="control"><label for="size">Body size</label><input type="range" id="size" min="12" max="18" step="1" value="15"><output id="sizeOut">15px</output></div>
+    <div class="control"><label for="weight">Body weight</label><input type="range" id="weight" min="300" max="600" step="100" value="400"><output id="weightOut">400</output></div>
+    <div class="control"><label>Text colours</label><div class="seg" id="textSeg"><button data-val="tokens" class="on">Momentum today</button><button data-val="readable">Readable set</button></div></div>
+    <div class="control"><label>Backgrounds</label><div class="seg" id="bgSeg"><button data-val="hub" class="on">Hub today</button><button data-val="soft">Glows 15%</button><button data-val="flat">Flat</button></div></div>
+    <div class="control"><button class="preset" id="copyShort" type="button">0 picked · copy shortlist</button></div>
+  </div>
+</header>
+
+<main class="wrap">
+<section class="intro">
+  <p class="eyebrow">Lofty Momentum · body typeface test</p>
+  <h1>Is it the font, or the colours?</h1>
+  <p class="lede">Body text in Montserrat is hard to read on the Lofty themes, most of all in Deep Eco and Twilight. Two things could be causing it: <strong>the typeface</strong> (how big, wide and heavy its letters are) and <strong>the colours</strong> (how bright the text is against the ground, with the glows and glass behind it). This tester separates them on the real <strong>Sunrise, Deep Eco and Twilight</strong> grounds, with Fieldwork, the Lofty brand face, as the yardstick.</p>
+  <p class="note">Change one thing at a time. <strong>Text colours</strong> and <strong>Backgrounds</strong> in the top bar change the colours; the two font selectors below change the typeface. Contrast ratios depend on colour only, so they do not move when you change the font. Fieldwork is supplied in Light (300) and DemiBold (600) only: weights 400 and 500 show Light. Nothing in the system changes until you choose.</p>
+</section>
+
+<section class="block" aria-labelledby="mx">
+  <h2 id="mx">Font against colours, on the real themes</h2>
+  <p class="sub">Two fonts, three themes, at the size and weight in the top bar. Row one is the font in use today. Compare the rows to see the font effect, then flip Text colours and Backgrounds to see the colour effect. Chips under each tile give the contrast at the brightest glow behind the text (4.5:1 is the AA pass for body text).</p>
+  <div class="btnrow" id="mxPresets"><span class="lbl">Try</span></div>
+  <div class="pair-controls"><div class="field"><label for="fa">Font in row one</label><select id="fa"></select></div><div class="field"><label for="fb">Font in row two</label><select id="fb"></select></div></div>
+  <div class="matrix" id="matrix"></div>
+</section>
+
+<section class="block" aria-labelledby="ct">
+  <h2 id="ct">Contrast by combination</h2>
+  <p class="sub">Computed from the Momentum tokens and the grounds the Hub uses. Ink is headings and body text, muted is captions, table cells and nav. Each figure is taken at the brightest glow behind the text, behind the glass card. The same numbers apply to every font.</p>
+  <div class="ct" id="ctable" role="table"></div>
+</section>
+
+<section class="block" aria-labelledby="mt">
+  <h2 id="mt">Measured against Fieldwork</h2>
+  <p class="sub">Taken from the font files themselves (7 October 2026, <code>font-lab/metrics.json</code>). Lowercase height decides how large a face looks at a given size. Width decides how much room words take. Stroke weight at 400, as a share of lowercase height, decides how solid small text looks, and it is what vanishes first in dark mode. Closeness scores how near each face stays to Fieldwork on width, letter proportions and stroke weight.</p>
+  <div class="measure" id="measure" role="table"></div>
+  <div class="ranking" id="ranking"></div>
+</section>
+
+<section class="block studio" aria-labelledby="ps">
+  <h2 id="ps">Pairing studio</h2>
+  <p class="sub">Mix any heading face with any body face, Montserrat included, and read both on all three themes.</p>
+  <div class="pair-controls">
+    <div class="field"><label for="headSel">Headings</label><select id="headSel"></select></div>
+    <div class="field"><label for="bodySel">Body</label><select id="bodySel"></select></div>
+  </div>
+  <div class="btnrow" id="presets"></div>
+  <div class="matrix" id="studio"></div>
+  <p class="pmeta" id="pmeta"></p>
+</section>
+
+<section class="block" aria-labelledby="gl">
+  <h2 id="gl">Letterforms next to Fieldwork</h2>
+  <p class="sub">The shapes that give a face its character: a, g, e, R. Fieldwork Geo and Hum on the dark panels are the brand reference.</p>
+  <div class="gridg" id="glyphs"></div>
+</section>
+
+<section class="block" aria-labelledby="cd">
+  <h2 id="cd">Every face, on all three themes</h2>
+  <p class="sub">The same Lofty screen text for each face at the body size and weight set above, then a ladder from 16px to 12px. Nothing in Lofty goes below 12px. Use Shortlist on the ones you want to keep.</p>
+  <div class="lab" id="lab"></div>
+</section>
+
+<p class="foot">Sample text is invented for the test. Faces other than Fieldwork load from Google Fonts (open licence); Fieldwork loads from this repository's <code>assets/fonts</code> and is for Lofty's own use. The grounds are the Hub's (<code>app/src/lofty-ui/surfaces.css</code>): Sunrise <code>#fcf1ee</code> with orange and Current glows, Deep Eco <code>#020a0b</code> and Twilight <code>#070105</code> with the night glows, under 42% (light) or 5% to 8% (dark) white glass. “Glows 15%” caps every glow at 15% opacity, the Momentum decision of 6 October 2026. “Readable set” is a proposal, not a token: dark ink <code>#eef4f3</code>, secondary text 86%, body weight one step heavier on dark, light-theme muted <code>#3e4d50</code>.</p>
+</main>
+
+<script>
+/*METRICS-START*/const METRICS = [{"key": "Fieldwork Hum", "brand": true, "x": 0.468, "cap": 0.663, "xcap": 0.706, "avg": 0.513, "stem400": 0.081, "stem600": 0.132, "source": "Fieldwork Light (300) and DemiBold (600), assets/fonts"}, {"key": "Fieldwork Geo", "brand": true, "x": 0.468, "cap": 0.663, "xcap": 0.706, "avg": 0.519, "stem400": 0.081, "stem600": 0.132, "source": "Fieldwork Light (300) and DemiBold (600), assets/fonts"}, {"key": "Hanken Grotesk", "brand": false, "x": 0.493, "cap": 0.697, "xcap": 0.707, "avg": 0.504, "stem400": 0.088, "stem600": 0.116, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Manrope", "brand": false, "x": 0.54, "cap": 0.72, "xcap": 0.75, "avg": 0.523, "stem400": 0.073, "stem600": 0.104, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Albert Sans", "brand": false, "x": 0.5, "cap": 0.7, "xcap": 0.714, "avg": 0.515, "stem400": 0.08, "stem600": 0.119, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Figtree", "brand": false, "x": 0.5, "cap": 0.7, "xcap": 0.714, "avg": 0.507, "stem400": 0.085, "stem600": 0.116, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Onest", "brand": false, "x": 0.527, "cap": 0.707, "xcap": 0.745, "avg": 0.527, "stem400": 0.087, "stem600": 0.125, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Plus Jakarta Sans", "brand": false, "x": 0.536, "cap": 0.745, "xcap": 0.719, "avg": 0.54, "stem400": 0.08, "stem600": 0.118, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Montserrat", "brand": false, "x": 0.525, "cap": 0.7, "xcap": 0.75, "avg": 0.574, "stem400": 0.074, "stem600": 0.13, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Nunito Sans", "brand": false, "x": 0.486, "cap": 0.705, "xcap": 0.689, "avg": 0.508, "stem400": 0.082, "stem600": 0.104, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Mulish", "brand": false, "x": 0.502, "cap": 0.705, "xcap": 0.712, "avg": 0.523, "stem400": 0.083, "stem600": 0.104, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Jost", "brand": false, "x": 0.46, "cap": 0.7, "xcap": 0.657, "avg": 0.466, "stem400": 0.085, "stem600": 0.145, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Outfit", "brand": false, "x": 0.475, "cap": 0.694, "xcap": 0.684, "avg": 0.502, "stem400": 0.094, "stem600": 0.136, "source": "Google Fonts latin subset, weights 400 and 600"}, {"key": "Space Grotesk", "brand": false, "x": 0.489, "cap": 0.7, "xcap": 0.699, "avg": 0.556, "stem400": 0.084, "stem600": 0.121, "source": "Google Fonts latin subset, weights 400 and 600"}];/*METRICS-END*/
+const FW = METRICS.find(m => m.key === "Fieldwork Hum") || {x:.468,cap:.663,xcap:.706,avg:.513,stem400:.081};
+const mOf = k => METRICS.find(m => m.key === k);
+const root = document.documentElement;
+const store = {get(k,d){try{return localStorage.getItem(k)??d}catch(e){return d}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+/* ---------------- themes: the real Momentum grounds ---------------- */
+const GEO = ["55% 70% at 8% 0%","45% 60% at 80% 110%","30% 40% at 100% 0%"];
+const THEMES = {
+  sunrise:  {name:"Sunrise",  dark:false, base:"#fcf1ee", glows:[["244,126,99",.22],["244,126,99",.21],["0,155,163",.15]], frame:[255,255,255,.42], card:[255,255,255,.72], edge:"rgba(255,255,255,.85)", rule:"rgba(8,26,28,.12)", eyebrow:"#005058",
+             ink:{tokens:"#081a1c",readable:"#081a1c"}, muted:{tokens:"rgba(90,102,104,1)",readable:"rgba(62,77,80,1)"}},
+  eco:      {name:"Deep Eco", dark:true,  base:"#020a0b", glows:[["244,126,99",.36],["244,126,99",.32],["0,155,163",.40]], frame:[255,255,255,.05], card:[255,255,255,.08], edge:"rgba(255,255,255,.12)", rule:"rgba(255,255,255,.14)", eyebrow:"#adfbff",
+             ink:{tokens:"#ffffff",readable:"#eef4f3"}, muted:{tokens:"rgba(255,255,255,.62)",readable:"rgba(238,244,243,.86)"}},
+  twilight: {name:"Twilight", dark:true,  base:"#070105", glows:[["142,58,114",.47],["244,126,99",.18],["0,155,163",.14]], frame:[255,255,255,.05], card:[255,255,255,.08], edge:"rgba(255,255,255,.12)", rule:"rgba(255,255,255,.14)", eyebrow:"#adfbff",
+             ink:{tokens:"#ffffff",readable:"#eef4f3"}, muted:{tokens:"rgba(255,255,255,.62)",readable:"rgba(238,244,243,.86)"}}
+};
+const state = {text:store.get("lofty_fl_text","tokens"), bg:store.get("lofty_fl_bgmode","hub")};
+
+function glowsFor(t, mode){ if(mode==="flat") return []; return t.glows.map(g=>[g[0], mode==="soft"?Math.min(g[1],.15):g[1]]); }
+function groundCss(t, mode){ const g=glowsFor(t,mode); return g.map((x,i)=>`radial-gradient(${GEO[i]}, rgba(${x[0]},${x[1]}), transparent 70%)`).concat(t.base).join(", "); }
+function weightFor(t, text){ const w=+weight.value; return (t.dark && text==="readable") ? Math.min(w+100,700) : w; }
+function tileVars(key){ const t=THEMES[key]; return `--ground:${groundCss(t,state.bg)};--frame:rgba(${t.frame.join(",")});--card:rgba(${t.card.join(",")});--edge:${t.edge};--rule:${t.rule};--ink:${t.ink[state.text]};--muted-fg:${t.muted[state.text]};--eyebrow:${t.eyebrow};--bw:${weightFor(t,state.text)}`; }
+
+/* contrast, worst case: text over the card over the brightest glow (or the bare base) */
+const hex = h => [1,3,5].map(i=>parseInt(h.slice(i,i+2),16));
+const lin = c => {c/=255; return c<=.03928?c/12.92:Math.pow((c+.055)/1.055,2.4)};
+const lum = c => .2126*lin(c[0])+.7152*lin(c[1])+.0722*lin(c[2]);
+const ratio = (a,b) => {const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
+const over = (fg,a,bg) => fg.map((v,i)=>v*a+bg[i]*(1-a));
+function parseCol(s){ if(s[0]==="#") return hex(s).concat(1); const m=s.match(/[\d.]+/g).map(Number); return [m[0],m[1],m[2],m[3]??1]; }
+function contrast(key, text, mode){
+  const t=THEMES[key], base=hex(t.base), cands=[base];
+  glowsFor(t,mode).forEach(g=>{const c=g[0].split(",").map(Number); cands.push(over(c,g[1],base));});
+  const ink=parseCol(t.ink[text]), mu=parseCol(t.muted[text]); let wi=99, wm=99;
+  cands.forEach(b=>{ const fr=over(t.frame.slice(0,3),t.frame[3],b); const card=over(t.card.slice(0,3),t.card[3],fr);
+    wi=Math.min(wi,ratio(over(ink.slice(0,3),ink[3],card),card)); wm=Math.min(wm,ratio(over(mu.slice(0,3),mu[3],card),card)); });
+  return {ink:wi, muted:wm};
+}
+const fmt = r => r.toFixed(1)+":1";
+
+/* ---------------- fonts ---------------- */
+const FONTS = [
+  { key:"Fieldwork Hum", css:"'Fieldwork Hum', sans-serif", tag:"Brand", cls:"brand", note:"The Lofty brand body face. Light and DemiBold only, and the smallest lowercase of the set, so at body sizes it reads smaller than its size says. A brand face for decks and print rather than a screen body face." },
+  { key:"Fieldwork Geo", css:"'Fieldwork Geo', sans-serif", tag:"Brand", cls:"brand", note:"The Lofty brand display face. Geometric, Light and DemiBold only. Shown to judge how each candidate sits beside it." },
+  { key:"Montserrat", css:"'Montserrat', sans-serif", tag:"Current body (C04)", cls:"base", note:"The digital face decided on 5 October 2026. The widest letters in the set, and thin strokes for their size at weight 400: small text looks loose and faint, and dark mode loses more of it." },
+  { key:"Hanken Grotesk", css:"'Hanken Grotesk', sans-serif", tag:"Closest match", rec:true, note:"Keeps Fieldwork's proportions almost exactly, with a slightly taller lowercase and sturdier strokes. Neutral and clean small." },
+  { key:"Figtree", css:"'Figtree', sans-serif", tag:"Was the body face", note:"Lofty's body face in the App Design System until 5 October. Fieldwork's width, a taller lowercase and solid strokes. The Vibe-based components already use it." },
+  { key:"Albert Sans", css:"'Albert Sans', sans-serif", tag:"Geometric", note:"The most geometric of the close matches, with round bowls that sit well beside Fieldwork Geo. Strokes a little lighter than Hanken or Figtree." },
+  { key:"Nunito Sans", css:"'Nunito Sans', sans-serif", tag:"Soft", note:"Open and friendly with slightly rounded terminals. Close to Fieldwork's lowercase height; softens the look a little." },
+  { key:"Onest", css:"'Onest', sans-serif", tag:"Screen-first", note:"Designed for screens. A larger lowercase than Fieldwork and a little wider; neutral and dependable at every size." },
+  { key:"Manrope", css:"'Manrope', sans-serif", tag:"UI-native", note:"Semi-geometric and built for interfaces. Tall lowercase, narrow strokes at 400; more designed than Hanken." },
+  { key:"Plus Jakarta Sans", css:"'Plus Jakarta Sans', sans-serif", tag:"Distinctive", note:"Geometric humanist with character in the details. The tallest lowercase of the options and a little wide." },
+  { key:"Mulish", css:"'Mulish', sans-serif", tag:"Minimal", note:"Clean and minimal. Close to Fieldwork on width and stroke weight, with a taller lowercase." },
+];
+const HEAD="Every job, moving forward.", BODY="Harbour Rise Lot 12 is 68% built and four days behind plan. One thing is holding up the slab pour: the engineer's footing sign-off.", CAP="Requested Mon 21 Sep · waiting 3 days · Harbour Rise Lot 12", NAV=["Projects","Jobs","Maintenance","Reports"], LAD="Footing sign-off, 3 days waiting";
+const ROWS=[["1209-002","Evanston Park","Due today"],["1215-01","Mawson Lakes","3 days"],["1203-01","Blakeview","On track"]];
+
+function tileHtml(key, fontCss, fontKey, withChips){
+  const t=THEMES[key], c=contrast(key,state.text,state.bg), okI=c.ink>=4.5, okM=c.muted>=4.5;
+  return `<div class="tile"><div class="ground" style="${tileVars(key)};font-family:${fontCss}"><div class="frame"><div class="cardx">
+    <div class="tname">${t.name}</div>
+    <div class="t-head">${HEAD}</div><div class="t-body">${BODY}</div><div class="t-cap">${CAP}</div>
+    <div class="t-nav">${NAV.map(n=>`<span>${n}</span>`).join("")}</div>
+    <div class="t-table">${ROWS.map(r=>`<div class="t-tr"><span>${r[0]}</span><span>${r[1]}</span><span>${r[2]}</span></div>`).join("")}</div>
+    <button class="t-btn" type="button" style="font-family:${fontCss}">Chase engineer</button>
+    <div class="ladderx">${[16,14,13,12].map(px=>`<div class="row"><span class="px">${px}</span><span class="txt" style="font-size:${px}px">${LAD}</span></div>`).join("")}</div>
+  </div></div></div>${withChips?`<div class="chips"><span class="chip ${okI?'':'bad'}">Ink ${fmt(c.ink)}</span><span class="chip ${okM?'':'bad'}">Muted ${fmt(c.muted)}</span><span style="color:#5a6668;align-self:center">${okM?'Both pass AA':'Muted fails AA'}</span></div>`:""}</div>`;
+}
+function renderMatrix(){
+  const fa=document.getElementById("fa"), fb=document.getElementById("fb");
+  const row=(sel,n)=>{const f=FONTS.find(x=>x.css===sel.value)||FONTS[2]; return `<div class="rowlabel"><span class="rn" style="font-family:${f.css}">${f.key}</span><span class="rm">${n}</span></div>`+["sunrise","eco","twilight"].map(k=>tileHtml(k,f.css,f.key,true)).join("")};
+  document.getElementById("matrix").innerHTML=row(fa,"Row one")+row(fb,"Row two");
+}
+function renderLab(){
+  const sel=JSON.parse(store.get("lofty_fl_short","[]"));
+  document.getElementById("lab").innerHTML=FONTS.map(f=>{const m=mOf(f.key)||{x:0,avg:0,stem400:0}; const w=(m.avg/FW.avg-1)*100, s=((m.stem400/m.x)/(FW.stem400/FW.x)-1)*100;
+    return `<div class="card ${f.rec?'rec':''}"><div class="chead"><span class="name" style="font-family:${f.css}">${f.key}</span><span class="ctag ${f.cls||''}">${f.tag}</span></div><div class="cnote">${f.note}</div>
+    <div class="cthemes">${["sunrise","eco","twilight"].map(k=>tileHtml(k,f.css,f.key,false).replace('class="tile"','class="tile" style="border:0;border-radius:0"')).join("")}</div>
+    <div class="cfoot"><span>Lowercase ${m.x.toFixed(3)} · width ${w>=0?'+':''}${w.toFixed(1)}% · strokes ${s>=0?'+':''}${s.toFixed(0)}% vs Fieldwork Hum</span><button class="short ${sel.includes(f.key)?'on':''}" data-k="${f.key}" type="button">${sel.includes(f.key)?'Shortlisted':'Shortlist'}</button></div></div>`}).join("");
+  updShort();
+}
+function renderStudio(){
+  const hs=document.getElementById("headSel"), bs=document.getElementById("bodySel");
+  document.getElementById("studio").innerHTML=["sunrise","eco","twilight"].map(k=>{const t=THEMES[k],c=contrast(k,state.text,state.bg);
+   return `<div class="tile"><div class="ground" style="${tileVars(k)}"><div class="frame"><div class="cardx">
+    <div class="tname">${t.name}</div><div class="ph-eb">Maintenance</div><div class="ph1">${HEAD}</div>
+    <div class="pbody">Harbour Rise Lot 12 is 68% built and four days behind plan. One thing is holding up the slab pour: the engineer's footing sign-off, requested Monday 21 September.</div>
+    <div class="ph2">What needs you today</div>
+    <div class="pbody">Three tasks are waiting on you. Chase the engineer first, then update the client on the revised pour date.</div>
+    <div class="pcap">${CAP}</div><button class="pbtn" type="button">Chase engineer</button></div></div></div>
+    <div class="chips"><span class="chip ${c.ink>=4.5?'':'bad'}">Ink ${fmt(c.ink)}</span><span class="chip ${c.muted>=4.5?'':'bad'}">Muted ${fmt(c.muted)}</span></div></div>`}).join("");
+}
+function renderAll(){ renderMatrix(); renderLab(); renderStudio(); renderTable(); }
+
+/* ---------------- contrast table ---------------- */
+function renderTable(){
+  const combos=[["Hub today, Momentum text","hub","tokens"],["Glows 15%, Momentum text","soft","tokens"],["Hub today, readable text","hub","readable"],["Glows 15%, readable text","soft","readable"]];
+  let h=`<div class="cr ch" role="row"><div>Setting</div><div>Sunrise ink</div><div>Sunrise muted</div><div>Deep Eco ink</div><div>Deep Eco muted</div><div>Twilight ink</div><div>Twilight muted</div></div>`;
+  combos.forEach(cb=>{ const cells=["sunrise","eco","twilight"].flatMap(k=>{const c=contrast(k,cb[2],cb[1]);return [c.ink,c.muted]});
+    h+=`<div class="cr" role="row"><div><strong>${cb[0]}</strong></div>${cells.map(v=>`<div class="cell ${v>=4.5?'ok':'bad'}">${fmt(v)}</div>`).join("")}</div>`; });
+  document.getElementById("ctable").innerHTML=h;
+}
+
+/* ---------------- measured table + ranking ---------------- */
+const dist = m => Math.abs(m.avg/FW.avg-1)+Math.abs(m.xcap/FW.xcap-1)+Math.abs((m.stem400/m.x)/(FW.stem400/FW.x)-1);
+const close = m => Math.max(0,100*(1-dist(m)));
+function renderMeasured(){
+  if(!METRICS.length){document.getElementById("measure").innerHTML="<div class='mrow'>Run measure-fonts.py to embed the measurements.</div>";return}
+  const cand=METRICS.filter(m=>!m.brand).sort((a,b)=>close(b)-close(a));
+  const tagFor={Montserrat:["Current (C04)","base"],Figtree:["Was body","base"]};
+  document.getElementById("measure").innerHTML=`<div class="mrow mhead" role="row"><div>Typeface</div><div>Lowercase / em</div><div>Width vs Fieldwork</div><div>Strokes vs Fieldwork</div><div>Closeness to Fieldwork</div><div>What it means</div></div>`+
+   [METRICS.find(m=>m.key==="Fieldwork Hum"),...cand].map(m=>{const b=!!m.brand,w=(m.avg/FW.avg-1)*100,s=((m.stem400/m.x)/(FW.stem400/FW.x)-1)*100,c=close(m),t=tagFor[m.key],tag=t&&!b?`<span class="tg ${t[1]}">${t[0]}</span>`:"";
+    const why=b?"The brand reference: the smallest lowercase of the set."
+      :m.key==="Montserrat"?"Widest set, thinnest strokes for its size: fewer characters per line and faint-looking small text."
+      :(Math.abs(w)<=3&&s>=-8)?"Fieldwork's widths and a similar stroke weight."
+      :s<-8?"Lighter strokes than Fieldwork at weight 400: use 500 on dark."
+      :Math.abs(w)>3?"A "+(w>0?"wider":"narrower")+" setting than Fieldwork.":"Close to Fieldwork.";
+    return `<div class="mrow ${b?'brand':''}" role="row"><div class="nm">${b?"Fieldwork Hum (brand)":m.key}${tag}</div><div>${m.x.toFixed(3)}</div><div>${b?"baseline":(w>=0?"+":"")+w.toFixed(1)+"%"}</div><div>${b?"baseline":(s>=0?"+":"")+s.toFixed(0)+"%"}</div><div style="display:flex;align-items:center;gap:10px"><div class="bar" style="flex:1"><i style="width:${(b?100:c).toFixed(0)}%"></i></div><span>${b?"100":c.toFixed(0)}</span></div><div class="why">${why}</div></div>`}).join("");
+  document.getElementById("ranking").innerHTML=[
+   ["top","My read · 01","Hanken Grotesk","Closest to Fieldwork on width, letter proportions and stroke weight, with a taller lowercase so the same size reads larger. Inference from the measurements: judge it on the panels above."],
+   ["","Also strong · 02","Figtree","Fieldwork's width, a taller lowercase and solid strokes. It was Lofty's body face until 5 October and the Vibe-based components already use it: the smallest change to adopt."],
+   ["","Geometric · 03","Albert Sans","The most geometric of the close matches and the best partner for Fieldwork Geo. Strokes a little lighter, so use 500 on dark."],
+   ["","Softer · 04","Nunito Sans · Onest","Nunito Sans is open and friendly; Onest is built for screens. Both read well small."]
+  ].map(r=>`<div class="rank ${r[0]}"><div class="p">${r[1]}</div><h3>${r[2]}</h3><p>${r[3]}</p></div>`).join("");
+}
+
+/* ---------------- glyphs ---------------- */
+document.getElementById("glyphs").innerHTML=[["Fieldwork Geo","'Fieldwork Geo'",true,"Brand display face."],["Fieldwork Hum","'Fieldwork Hum'",true,"Brand body face."],["Montserrat","'Montserrat'",false,"Current body face."],["Hanken Grotesk","'Hanken Grotesk'",false,""],["Figtree","'Figtree'",false,""],["Albert Sans","'Albert Sans'",false,""],["Nunito Sans","'Nunito Sans'",false,""],["Onest","'Onest'",false,""],["Manrope","'Manrope'",false,""],["Mulish","'Mulish'",false,""]].map(g=>`<div class="gcol ${g[2]?'is-brand':''}"><div class="gname">${g[0]}</div><div class="grow" style="font-family:${g[1]},sans-serif">a g e R</div><div class="gword" style="font-family:${g[1]},sans-serif">Harbour Rise</div><div class="gnote">${g[3]}</div></div>`).join("");
+
+/* ---------------- controls ---------------- */
+const size=document.getElementById("size"), weight=document.getElementById("weight");
+size.value=store.get("lofty_fl_size","15"); weight.value=store.get("lofty_fl_weight","400");
+function applySize(){root.style.setProperty("--base",size.value+"px");document.getElementById("sizeOut").textContent=size.value+"px";store.set("lofty_fl_size",size.value)}
+function applyWeight(){document.getElementById("weightOut").textContent=weight.value;root.style.setProperty("--bodyweight",weight.value);store.set("lofty_fl_weight",weight.value)}
+size.oninput=()=>{applySize();renderAll()}; weight.oninput=()=>{applyWeight();renderAll()}; applySize(); applyWeight();
+function seg(id,key,field){const el=document.getElementById(id);[...el.children].forEach(b=>b.classList.toggle("on",b.dataset.val===state[field]));el.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;state[field]=b.dataset.val;store.set(key,b.dataset.val);syncSegs();renderAll()})}
+function syncSegs(){for(const [id,f] of [["textSeg","text"],["bgSeg","bg"]]) [...document.getElementById(id).children].forEach(b=>b.classList.toggle("on",b.dataset.val===state[f])); [...document.getElementById("mxPresets").querySelectorAll(".preset")].forEach(b=>b.classList.toggle("on",b.dataset.t===state.text&&b.dataset.b===state.bg))}
+seg("textSeg","lofty_fl_text","text"); seg("bgSeg","lofty_fl_bgmode","bg");
+
+const fa=document.getElementById("fa"), fb=document.getElementById("fb");
+FONTS.forEach(f=>{fa.add(new Option(f.key,f.css));fb.add(new Option(f.key,f.css))});
+fa.value=store.get("lofty_fl_fa",FONTS[2].css)||FONTS[2].css; fb.value=store.get("lofty_fl_fb",FONTS[3].css)||FONTS[3].css;
+fa.onchange=fb.onchange=()=>{store.set("lofty_fl_fa",fa.value);store.set("lofty_fl_fb",fb.value);renderMatrix()};
+[["Today's colours","tokens","hub"],["Glows 15% only","tokens","soft"],["Readable text only","readable","hub"],["Readable text and glows 15%","readable","soft"]].forEach(p=>{const b=document.createElement("button");b.type="button";b.className="preset";b.textContent=p[0];b.dataset.t=p[1];b.dataset.b=p[2];b.onclick=()=>{state.text=p[1];state.bg=p[2];store.set("lofty_fl_text",p[1]);store.set("lofty_fl_bgmode",p[2]);syncSegs();renderAll()};document.getElementById("mxPresets").appendChild(b)});
+
+/* pairing studio */
+const HEADS=[["Fieldwork Geo","'Fieldwork Geo', sans-serif"],["Montserrat","'Montserrat', sans-serif"],["Albert Sans","'Albert Sans', sans-serif"],["Outfit","'Outfit', sans-serif"],["Jost","'Jost', sans-serif"],["Space Grotesk","'Space Grotesk', sans-serif"],["Hanken Grotesk","'Hanken Grotesk', sans-serif"],["Manrope","'Manrope', sans-serif"],["Plus Jakarta Sans","'Plus Jakarta Sans', sans-serif"],["Figtree","'Figtree', sans-serif"]];
+const BODIES=[["Montserrat","'Montserrat', sans-serif"],["Hanken Grotesk","'Hanken Grotesk', sans-serif"],["Figtree","'Figtree', sans-serif"],["Albert Sans","'Albert Sans', sans-serif"],["Nunito Sans","'Nunito Sans', sans-serif"],["Onest","'Onest', sans-serif"],["Manrope","'Manrope', sans-serif"],["Plus Jakarta Sans","'Plus Jakarta Sans', sans-serif"],["Mulish","'Mulish', sans-serif"],["Fieldwork Hum","'Fieldwork Hum', sans-serif"]];
+const PRESETS=[["Today: Montserrat × Montserrat","Montserrat","Montserrat"],["Before 5 Oct: Montserrat × Figtree","Montserrat","Figtree"],["Montserrat × Hanken","Montserrat","Hanken Grotesk"],["Fieldwork Geo × Hanken","Fieldwork Geo","Hanken Grotesk"],["Fieldwork Geo × Figtree","Fieldwork Geo","Figtree"],["Albert Sans × Hanken","Albert Sans","Hanken Grotesk"],["Jost × Onest","Jost","Onest"],["Outfit × Onest","Outfit","Onest"],["Space Grotesk × Onest","Space Grotesk","Onest"]];
+const hs=document.getElementById("headSel"), bs=document.getElementById("bodySel"), pw=document.getElementById("presets");
+HEADS.forEach(f=>hs.add(new Option(f[0],f[1]))); BODIES.forEach(f=>bs.add(new Option(f[0],f[1])));
+function applyPair(){root.style.setProperty("--head-font",hs.value);root.style.setProperty("--body-font",bs.value);const h=HEADS.find(f=>f[1]===hs.value)[0],b=BODIES.find(f=>f[1]===bs.value)[0];document.getElementById("pmeta").textContent="Headings: "+h+" · Body: "+b;store.set("lofty_fl_head",hs.value);store.set("lofty_fl_body",bs.value);[...pw.children].forEach(x=>x.classList.toggle("on",x.dataset.h===hs.value&&x.dataset.b===bs.value))}
+PRESETS.forEach(p=>{const b=document.createElement("button");b.type="button";b.className="preset";b.textContent=p[0];b.dataset.h=HEADS.find(f=>f[0]===p[1])[1];b.dataset.b=BODIES.find(f=>f[0]===p[2])[1];b.onclick=()=>{hs.value=b.dataset.h;bs.value=b.dataset.b;applyPair()};pw.appendChild(b)});
+hs.onchange=bs.onchange=applyPair; hs.value=store.get("lofty_fl_head",HEADS[1][1]); bs.value=store.get("lofty_fl_body",BODIES[0][1]); if(!hs.value)hs.value=HEADS[1][1]; if(!bs.value)bs.value=BODIES[0][1]; applyPair();
+
+/* shortlist */
+function updShort(){const s=JSON.parse(store.get("lofty_fl_short","[]"));document.getElementById("copyShort").textContent=s.length+" picked · copy shortlist"}
+document.getElementById("lab").addEventListener("click",e=>{const b=e.target.closest(".short");if(!b)return;const s=JSON.parse(store.get("lofty_fl_short","[]")),k=b.dataset.k,i=s.indexOf(k);if(i>=0)s.splice(i,1);else s.push(k);store.set("lofty_fl_short",JSON.stringify(s));b.classList.toggle("on",i<0);b.textContent=i<0?"Shortlisted":"Shortlist";updShort()});
+document.getElementById("copyShort").addEventListener("click",()=>{const s=JSON.parse(store.get("lofty_fl_short","[]"));const t="Lofty body face shortlist: "+(s.join(", ")||"none yet")+" · text colours: "+state.text+" · backgrounds: "+state.bg;try{navigator.clipboard.writeText(t)}catch(e){};const el=document.getElementById("copyShort");el.textContent="Copied";setTimeout(updShort,1200)});
+
+renderMeasured(); syncSegs(); renderAll();
+</script>
+</body>
+</html>

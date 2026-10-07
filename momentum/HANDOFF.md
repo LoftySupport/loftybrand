@@ -3,6 +3,16 @@
 
 Outstanding issues, open questions and next steps only. What the system is and how it was decided: `README.md` and `CONSOLIDATION.md`.
 
+## 7 October 2026: Font Lab added, body face under review
+
+**Done**
+- `font-lab/`: a tester for choosing a body typeface beside Fieldwork, built from Amber's experiment for another brand with Momentum colours and grounds, Fieldwork, and Lofty copy (the other brand's name, logo, palette and display faces were not saved). It separates font from colours on Sunrise, Deep Eco and Twilight. Findings and method in `font-lab/README.md`.
+- The deck's dark themes and the Hub's dark themes were reported hard to read the same day. The deck was fixed (`reference/README.md`); the Hub is below.
+
+**Needs Amber**
+- Which body face? Amber reported on 7 October 2026 that Montserrat in body text is too hard to read, which reopens the body half of C04 ("Montserrat for digital and web", 5 October). Measured: Montserrat has the widest letters in the set (+11.9% against Fieldwork Hum) and strokes 19% thinner for its lowercase at weight 400. The closest to Fieldwork on width, proportions and stroke weight are Figtree (96), Hanken Grotesk (95), Nunito Sans (94), Mulish (93) and Albert Sans (91). Figtree is the least change: it was the body face until 5 October and the Vibe-based components use it. Titles and display can stay Montserrat or Fieldwork Geo. Use the tester; nothing in the tokens has changed.
+- Colours too, in Deep Eco: muted text is 4.0:1 at the brightest glow with Momentum text on the Hub's grounds (fails AA). Capping the glows at 15% gives 5.5:1; with the proposed Readable set (soft white ink, secondary text 86%, a heavier body weight on dark) 8.0:1. Adopt either, both or neither?
+
 ## 6 October 2026: cards, canvas source and records added
 
 **Done**
