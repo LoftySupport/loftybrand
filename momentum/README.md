@@ -32,7 +32,7 @@ Where the sources disagree: Amber's dated decisions, then Momentum 1.4, then the
 | `components/*.md` | Momentum's component rules: AppFrame, AppRail, PromptBox, StarterCard, ChatBubble, AnswerWidget, GlanceCard, Button, StatusIcon, ReportColours, ReportExamples, LandingQuestion, TaskPlanner, PrintTemplates, GradientBackgrounds, and the three reference screens |
 | `guidelines/*.html` | 27 specimen cards (6 October 2026): the 20 component previews from the artifact pointed at this repository's assets, the six theme and screen cards flattened from the design canvas, and the 3 October 2026 reconciliation record. Index in `guidelines/README.md` |
 | `canvas/` | Source of the design canvas "Lofty Momentum Consolidated Design": `canvas.json` and six `.dc.html` artboards, byte for byte with the live artifact (6 October 2026) |
-| `reference/` | Dated records: the Grounds page (eleven backgrounds, interactive), the Lofty Hub app icon study with the chosen icon's previews, the Momentum 1.4 handoff, its proposed CLAUDE.md section and its gap-fill token proposals. Each file's status against the consolidation is in `reference/README.md` |
+| `reference/` | Dated records: the Grounds page (eleven backgrounds, interactive), the Lofty Hub app icon study with the chosen icon's previews, the Momentum prototype (version 13, 6 MB), the Momentum 1.4 handoff, its proposed CLAUDE.md section and its gap-fill token proposals. Each file's status against the consolidation is in `reference/README.md` |
 | `CONSOLIDATION.md` | Sources, precedence, every decision carried, where Momentum won, derived values to confirm, known shortfalls, gaps |
 | `HANDOFF.md` | Outstanding issues, open questions and the next steps |
 

@@ -12,7 +12,8 @@ Files kept as they were written, so a decision in `../CONSOLIDATION.md` can be c
 | `CLAUDE.momentum-1.0.md` | The CLAUDE.md section the 1.4 handoff proposed for the Hub, 25 September 2026 | Not adopted as written; the Hub's `CLAUDE.md` and `docs/ui-system/` own its rules |
 | `proposed-tokens-1.4.css` | The gap-fill proposals G-01 to G-10 written against Momentum 1.4 | Every block resolved; the header of the file says how |
 
+| `lofty-momentum-prototype.html` | The Momentum presentation (version 13): the clickable prototype of every screen in Sunrise, Deep Eco and Twilight with sample data, about 6 MB, self-contained. Copied 6 October 2026 from the artifact's Prototypes asset group, where a Cowork session placed it the same evening (the design-sync read cap of 256 KiB had blocked a direct copy from the design project) | Behaviour reference only, Momentum 1.4 as drawn: Figtree body, pill buttons, 20 to 28px corners, full-strength glows, two of the three themes dark. Rules win over pictures; see `../CONSOLIDATION.md` for what changed |
+
 ## Not copied
 
-- **The Momentum presentation** (`projects/lofty-momentum-presentation/index.html` in the "Lofty Momentum" design project, version 13): the clickable prototype of every screen in three themes. It is larger than the 256 KiB a design-sync read returns, so it could not be copied whole, and a cut file would mislead. It stays in the design project at https://claude.ai/design/p/85c9500f-c4af-47b9-8329-8ab78617deb2. The 2.0 handoff treats it as behaviour reference only: rules win over pictures.
 - **The "Lofty Momentum" design project's own cards** (`cover`, `button`, `status-icon`, `app-rail`, Momentum 1.4 in Figtree with the spark icon): superseded by `../guidelines/`.
