@@ -41,6 +41,7 @@ Vibe supplies the semantic token names; Momentum supplies the values. Outstandin
 | `font-lab/` | The Lofty Font Lab (7 October 2026): a tester for choosing a body typeface beside Fieldwork on the real Sunrise, Deep Eco and Twilight grounds, with the measurements behind it. Open `index.html` from a checkout. See `font-lab/README.md` |
 | `reference/` | Dated records: the Grounds page (eleven backgrounds, interactive), the Lofty Hub app icon study with the chosen icon's previews, the Momentum prototype (version 13, 6 MB), the Momentum 1.4 handoff, its proposed CLAUDE.md section and its gap-fill token proposals. `reference/README.md` says what each file is |
 | `CONSOLIDATION.md` | History only: the dated record of how the sources were merged. Not guidance; the rules in force are in this README and the tokens |
+| `SKILL.md` | The skill for designing and building with Lofty Momentum: the rules in force as a working summary, with the order to read things in |
 | `HANDOFF.md` | Outstanding issues, open questions and the next steps |
 
 ## Rules in force
