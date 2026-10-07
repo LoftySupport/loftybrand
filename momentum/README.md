@@ -15,6 +15,12 @@ Status: draft for review. Nothing in `components/` is coded yet; the files are r
 
 Vibe supplies the semantic token names; Momentum supplies the values. Outstanding questions and follow-ups are in [`HANDOFF.md`](HANDOFF.md).
 
+## Sections
+
+- **App:** screens and components for the staff app. The cards are grouped as *App screens* (the landing, the conversation, My tasks, reports) and *App components* (buttons, chat, answer widgets, the rail, the frame, status, charts), with the rules in `components/`.
+- **Portal:** the purchaser portal at portal.lofty.au: its routes and its reference screens in Sunrise, Deep Eco and Twilight (the *Portal* cards). The app is `portal/` in loftysupport/loftyprojectapp; its design handoff is `docs/portal/HANDOFF.md` there.
+- **Foundations and brand:** colour, type, spacing and glass, the eleven backgrounds, the cover and the print templates.
+
 ## Index
 
 | Path | What it is |
@@ -30,7 +36,7 @@ Vibe supplies the semantic token names; Momentum supplies the values. Outstandin
 | `tokens.json` | The artifact's token file: every token with its usage note and contrast ratio |
 | `scripts/gen-tokens.py` | The one source of values. Writes `tokens.json` and eight of the `tokens/*.css` files; `fonts.css`, `base.css` and `vibe-theme.css` are hand-written |
 | `components/*.md` | Momentum's component rules: AppFrame, AppRail, PromptBox, StarterCard, ChatBubble, AnswerWidget, GlanceCard, Button, StatusIcon, ReportColours, ReportExamples, LandingQuestion, TaskPlanner, PrintTemplates, GradientBackgrounds, and the three reference screens |
-| `guidelines/*.html` | 27 specimen cards (6 October 2026): the 20 component previews from the artifact pointed at this repository's assets, the six theme and screen cards flattened from the design canvas, and the 3 October 2026 reconciliation record. Index in `guidelines/README.md` |
+| `guidelines/*.html` | 33 specimen cards (6 October 2026): the 20 component previews from the artifact pointed at this repository's assets, the six theme and screen cards flattened from the design canvas, and the 3 October 2026 reconciliation record. Index in `guidelines/README.md` |
 | `canvas/` | Source of the design canvas "Lofty Momentum Consolidated Design": `canvas.json` and six `.dc.html` artboards, byte for byte with the live artifact (6 October 2026) |
 | `font-lab/` | The Lofty Font Lab (7 October 2026): a tester for choosing a body typeface beside Fieldwork on the real Sunrise, Deep Eco and Twilight grounds, with the measurements behind it. Open `index.html` from a checkout. See `font-lab/README.md` |
 | `reference/` | Dated records: the Grounds page (eleven backgrounds, interactive), the Lofty Hub app icon study with the chosen icon's previews, the Momentum prototype (version 13, 6 MB), the Momentum 1.4 handoff, its proposed CLAUDE.md section and its gap-fill token proposals. `reference/README.md` says what each file is |
