@@ -24,6 +24,10 @@ Notable changes to the Lofty design system. Newest first.
   The holding note moved to `docs/icons-pending-decision.md`.
 
 ### Changed
+- **`momentum/` radii and glows** (6 October 2026, Amber, closing reconciliation rows C-09 and C-04): the 3 October radius scale
+  (`radius-xs` 4 controls, `radius-s` 8 buttons and inputs, `radius-m` 12 cards, `radius-l` 16 panels and prompt box, `radius-frame` 24;
+  pills for chips and Search only, buttons never pills) and the glow discs capped at 15% opacity. Generator, tokens, component rules,
+  the landing specimens and the canvas updated; the other component previews still draw the earlier shapes (next step in `momentum/HANDOFF.md`).
 - **Document template and cover pages** (`projects/lofty-document-template/`, `templates/lofty-document/`, 5 October 2026): text ink,
   headings, rules and the hover wash move from Foundation Black `#414042` to Deep Eco `#081a1c` (Amber, 5 October 2026: Deep Eco
   everywhere, documents included). The closing page's dark brand band keeps Foundation Black as a background.

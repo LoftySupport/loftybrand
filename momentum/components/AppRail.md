@@ -3,9 +3,9 @@
 
 The left navigation, matching the App Rail diagram: logo, Ask Lofty and search, My work, Pinned projects, the six destinations, then Settings, Admin and the signed-in person.
 
-- 224px wide inside the glass frame, `surface-panel` with `edge-glass`, `radius-xl`. Collapses to a condensed 64px rail with the chevron top right (see below).
+- 224px wide inside the glass frame, `surface-panel` with `edge-glass`, `radius-l` (16px). Collapses to a condensed 64px rail with the chevron top right (see below).
 - Logo: the orange lockup at 24px high on light, the white lockup on dark (Logos group).
-- **Top:** Ask Lofty (ghost pill with the orange Lofty arrows) and a round search button. The orange fill stays on the prompt box.
+- **Top:** Ask Lofty (a ghost button, `radius-s`, with the orange Lofty arrows) and a round search button (Search keeps the pill). The orange fill stays on the prompt box.
 - **My work:** a group label with Inbox and Tasks, each with a count.
 - **Pinned:** up to three pinned projects, number in bold then name.
 - **Destinations, in order:** Projects, Jobs, Maintenance, Reports, Contacts, Tools, with counts where useful (Projects 9, Jobs 128, Maintenance 23). Jobs uses the Location (place) icon.

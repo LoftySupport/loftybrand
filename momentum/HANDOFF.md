@@ -12,10 +12,16 @@ Outstanding issues, open questions and next steps only. What the system is and h
 - `CONSOLIDATION.md`: new section answering the 3 October 2026 reconciliation row by row, with the owner feedback it recorded.
 - Artifact "Lofty Momentum Consolidated": the app icon uploaded to the Logos group, an AppIcon entry, the README's Logos section and the Consolidation section updated.
 
-**Needs Amber** (asked in the popup on 6 October 2026; the outcome is recorded under Decided once answered)
-- C-09 of the reconciliation recorded the feedback "Momentum is too round" with a suggested scale (4px dense controls, 8px buttons and inputs, 12px cards, 16px panels, 24px frame; pills for chips and Search only). The consolidation kept Momentum's radii (8, 12, 20, 24, 28, pill) and pill buttons under rank 2, and Amber's 5 October decision on radii covered only which steps exist. Which scale applies?
-- C-04 recorded the feedback "natural gradients with little colour, low saturation (about 15% or less)". The glow discs in `tokens/colors.css` run at 22% to 47% alpha and the eleven backgrounds at 8% to 85%. Is the 15% a ceiling on the glows, or guidance already met by the backgrounds' soft falloff?
+**Decided**
+- 6 October 2026, Amber: the 3 October radius scale applies (reconciliation C-09, "Momentum is too round"). `radius-xs` 4 dense controls, `radius-s` 8 buttons and inputs, `radius-m` 12 cards, `radius-l` 16 panels and the prompt box, `radius-frame` 24; pills for chips and Search only, buttons are never pills. Reinstates the 16px step dropped on 5 October; 20 and 28 go. Applied to the generator, the tokens, the component rules and the two landing specimens.
+- 6 October 2026, Amber: the glow discs (`glow-1` to `glow-3`) are capped at 15% opacity in every theme (reconciliation C-04, "little colour, low saturation"). The eleven backgrounds keep their measured, contrast-checked values. Applied to the generator notes, the AppFrame rule and the landing specimens.
+
+**Needs Amber**
 - The chosen app icon needs sign-off as a new mark before it moves to `assets/brand/`, and the 1024px, dark and tinted exports need to be produced; the study only holds previews.
+
+**Next steps**
+- Redraw the component previews to the 6 October shapes: `guidelines/*.html` and the artifact's `components/*/preview.html` still draw pill buttons and 20 to 28px corners (hard-coded px, not tokens), except the two landing specimens and the canvas, which were updated. Rules win over pictures until then.
+- Re-sync the Hub's `docs/ui-system/` radius rows (C09 in `RULE_SOURCES.md`) with the 3 October scale when Stage 3 starts.
 
 **Not done, and why**
 - The Momentum presentation (`projects/lofty-momentum-presentation/index.html`, version 13) was not copied: it exceeds the 256 KiB a design-sync read returns and a cut copy would mislead. It stays in the "Lofty Momentum" design project.
@@ -36,7 +42,7 @@ Outstanding issues, open questions and next steps only. What the system is and h
 - 5 October 2026, Amber: glass everywhere Momentum draws it (frame, panels, cards, widgets). Body text still sits on `surface-solid` or `surface-input`; text on glass is measured over the brightest glow. The App Design System's "no gradients, no blur" rule no longer applies to the Hub.
 - 5 October 2026, Amber: charts use the five Momentum series only. The orange ramp and its sequential scale are not carried. Heat and load charts wait until a sequential scale is designed separately.
 - 5 October 2026, Amber: the four derived values stand (solid focus ring, Deep Eco hover wash, disabled ink at 40%, Deep Eco backdrop).
-- 5 October 2026, Amber: eight radii. `radius-xs` 4px and `radius-circle` stay for Vibe controls; 2px and 16px are dropped.
+- 5 October 2026, Amber: eight radii. `radius-xs` 4px and `radius-circle` stay for Vibe controls; 2px and 16px are dropped. (16px returned on 6 October as `radius-l`; see above.)
 - 5 October 2026, Amber: the Vibe glyphs keep the names Contacts, Dashboard and Team; the Lofty traces moved from `assets/icons-pending/` to `assets/icons/` as `ContactsLofty`, `DashboardLofty` and `TeamLofty` (`docs/icons-pending-decision.md`).
 
 **Needs Amber**

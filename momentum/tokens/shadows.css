@@ -9,7 +9,7 @@
   --focus-ring: 0 0 0 2px #ffffff, 0 0 0 4px #c2543c; /* Visible focus on every control: a 2px gap in the page colour, then a 2px solid ring in `focus`. Never removed, never replaced by a colour change alone. Confirmed by Amber, 5 October 2026. */
   --blur-frame: 30px; /* backdrop-filter on the app frame. */
   --blur-input: 20px; /* backdrop-filter on the prompt box and floating bars. */
-  --blur-glow: 140px; /* filter blur on the background glow discs. */
+  --blur-glow: 140px; /* filter blur on the background glow discs, which sit at 15% opacity or less (Amber, 6 October 2026). */
 }
 [data-theme="eco"] {
   --shadow-xs: 0 4px 6px -4px rgba(0,0,0,0.4);
