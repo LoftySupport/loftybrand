@@ -77,8 +77,10 @@ for name, cuts in fw.items():
 for fam in FAMILIES:
     m400 = measure(google_latin(fam, 400))
     m600 = measure(google_latin(fam, 600))
+    # Stroke thickness at every weight from 300 to 700, so the page can find the weight that matches Fieldwork Geo DemiBold.
+    stems = {str(w): measure(google_latin(fam, w))["stem"] for w in (300, 400, 500, 600, 700)}
     rows.append({"key": fam, "brand": False, "x": m400["x"], "cap": m400["cap"], "xcap": m400["xcap"], "avg": m400["avg"],
-                 "stem400": m400["stem"], "stem600": m600["stem"], "source": "Google Fonts latin subset, weights 400 and 600"})
+                 "stem400": m400["stem"], "stem600": m600["stem"], "stems": stems, "source": "Google Fonts latin subset, weights 300 to 700"})
 json.dump(rows, open(OUT, "w"), indent=1)
 
 # Refresh the measurements embedded in the page between the METRICS markers.
