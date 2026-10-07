@@ -41,7 +41,7 @@ Measured, not opinion (stroke weight is the stem thickness at mid lowercase heig
 **Recommendations (inference and design judgement, not decisions):**
 
 1. **Body, tables and small UI: Hanken Grotesk.** Fieldwork's proportions, a lowercase 5% taller, strokes 4% heavier. Alternatives: DM Sans (rounder, suits Fieldwork Geo), Figtree (least change), Public Sans or Inter for the largest lowercase regardless of brand fit.
-2. **Keep Montserrat for titles, the landing question and big numbers**, and Fieldwork for brand surfaces.
+2. **Use the body face for headings too; Montserrat for display only (28px and up).** I first suggested Montserrat for headings and corrected it the same day: the Hub's headings are 32, 24 and 18px, with section titles and table headers smaller, and Montserrat's width and thin strokes are a weakness below about 24px. Dropping it from the Hub altogether is a fair option (one face is simpler). Fieldwork stays for brand surfaces.
 3. **Size and weight:** body 16px, dense UI 14px, nothing that carries information under 13px, weight 400 on light and 500 on dark, line height 1.5, letter-spacing +0.01em at 13px and below.
 4. **Biggest colour change: put text on solid surfaces, not glass over a glow** (the Momentum rule already says so). Keep the glass for the frame, rail and header.
 5. **One brighter secondary level:** dark ink `#eef4f3`, secondary 86% (not 62%), light-theme muted `#3e4d50`; glows at 15% or less; the 40% tint for disabled controls only.
