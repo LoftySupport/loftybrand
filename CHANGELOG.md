@@ -5,6 +5,7 @@ Notable changes to the Lofty design system. Newest first.
 ## Unreleased
 
 ### Added
+- **Hub components, page templates and the app icon exports in Momentum** (12 October 2026, Amber): `momentum/components/Hub*.md` (twelve rules documented from the running Hub: buttons, tabs, modal and states, detach and delete, fields, table, text and people, toast, record family, views, floating panel, page templates), 18 specimen cards (`hub-*.html`, `template-*.html`, photographs of `/design-system` and the seven templates in Sunrise and Deep Eco), and `assets/app-icon/` (the Hub's icon exports). Card font stacks no longer carry Montserrat.
 - **`momentum/SKILL.md`** (7 October 2026): the Lofty Momentum design skill (`lofty-momentum`): the three themes, Outfit and Onest, glass and glow surfaces, radii, states, the App and Portal screens, components, logos and voice, with the order to read things in. It replaces the root `SKILL.md` as the skill in the Lofty Momentum design project; the root `SKILL.md` still describes the production App Design System.
 
 ### Changed

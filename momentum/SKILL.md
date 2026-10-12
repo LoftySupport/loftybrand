@@ -13,7 +13,7 @@ This file is the working summary. The rules in force are in `momentum/README.md`
 ## Before you build
 
 1. Read the rules below. Where a picture and a rule disagree, the rule wins. Where this folder and the Hub's rulebook disagree, the Hub's rulebook wins in the Hub (next section).
-2. Open `guidelines/`. The cards are grouped **App screens**, **App components**, **Portal**, **Foundations** (colour, type, spacing and glass, the eleven backgrounds) and **Brand** (the cover and the print templates). Build a new app screen from the reference screens, not from a single component.
+2. Open `guidelines/`. The cards are grouped **App screens**, **App components**, **Hub components** (the built `@lofty/ui` components), **Page templates** (the seven templates), **Portal**, **Foundations** (colour, type, spacing and glass, the eleven backgrounds) and **Brand** (the cover and the print templates). Build a new app screen from the reference screens, not from a single component.
 3. Read the component rule in `docs/components/<Name>.md` (in the repository, `momentum/components/<Name>.md`) before using a component. Do not guess sizes or states.
 4. The type setup and how it was chosen are in `font-lab/`. `font-lab/SETUP.md` has the weights and colour values to build from.
 5. What is still open is in `HANDOFF.md`. Do not decide it for Amber: ask, one question at a time.
@@ -99,11 +99,13 @@ Rules:
 
 Layout and style references built from tokens, not coded React. The Hub's coded components come from Vibe, themed by these tokens. The rules are in `docs/components/`: AppFrame, AppRail, PromptBox, StarterCard, ChatBubble, AnswerWidget, GlanceCard, Button, StatusIcon, ReportColours, ReportExamples, LandingQuestion, TaskPlanner, PrintTemplates, GradientBackgrounds, ReferenceLanding, ReferenceLandingDark, ReferenceConversation. The 61 Vibe-shaped components live in LoftySupport/loftybrand.
 
+The Hub's built components and templates are documented from the running app in `components/Hub*.md` (buttons 32px pills, tabs, modal, fields, table, toast, stage track, views, floating panel, `HubTemplates.md`); read them before drawing one, because they are what ships.
+
 ## Logos and icons
 
 - **Logos** (`assets/brand/`): white lockup or mark on Deep Eco, the dark pages and plum; black or orange lockup on Shell and white. The orange lockup never sits on Eco Green or Current. Clear space equals the height of the "L". Never recolour a file.
 - **The AI mark** is the Lofty arrows in orange on a plum tile (`plum-lift` on Twilight). Never a four-point spark, never in a white circle.
-- **The app icon** (Gantt, tone on tone, all orange) is a decision record until it is signed off as a new mark. Do not ship it.
+- **The app icon** (Gantt, tone on tone, all orange): the Hub already ships its exports (`assets/app-icon/`: 1024, 512, 192, 180, 32, 16 and `.ico`). It still needs sign-off as a new mark; do not use it in new brand work until then.
 - **Icons** (`assets/icons/`): render as a mask over `currentColor`. Deep Eco on orange and Current tiles, white on plum, Eco Green and dark grounds. Sizes 16, 20, 24. No emoji, no icon font.
 
 ## Voice
