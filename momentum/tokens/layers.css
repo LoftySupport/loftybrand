@@ -1,8 +1,11 @@
 /* momentum/tokens/layers.css : z-index scale, never a literal. */
 :root {
-  --z-sticky: 10; /* Sticky table headers and the top bar. */
+  --z-sticky: 10; /* Sticky table headers. */
   --z-dropdown: 20; /* Dropdown lists and combobox panels. */
-  --z-tooltip: 30; /* Tooltips and tipseens. */
-  --z-dialog: 40; /* Dialogs, modals and the backdrop. */
-  --z-toast: 50; /* Toasts and alert banners. */
+  --z-frame: 30; /* The app frame and the chrome inside it. */
+  --z-scrim: 40; /* The backdrop behind a modal, panel or drawer. */
+  --z-panel: 41; /* Side panels and modals above the scrim. */
+  --z-drawer: 50; /* The record drawer. */
+  --z-toast: 60; /* Toasts and alert banners. */
+  --z-skip: 100; /* The skip link. */
 }

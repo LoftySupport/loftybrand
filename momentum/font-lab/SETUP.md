@@ -1,9 +1,9 @@
-<!-- momentum/font-lab/SETUP.md : the chosen type and text-colour setup as values to build from. 7 October 2026. Written for Amber to hand to a build session. -->
+<!-- momentum/font-lab/SETUP.md : the chosen type and text-colour setup as values to build from. 7 October 2026; weights and Readable colours brought into line with the Hub 12 October 2026. -->
 # Chosen setup: Outfit headings, Onest body, Readable text, glows at 15%
 
-Decided by Amber on 7 October 2026: **Outfit for headings, Onest for body**, Fieldwork for brand surfaces only. **Readable text and glows at 15%** was Amber's lean and is not yet a decision; the values are here so it can be applied in one step.
+Decided by Amber on 7 October 2026: **Outfit for headings, Onest for body**, Fieldwork for brand surfaces only, **readable text and glows at 15%**. The weights below are the Hub's (`docs/ui-system/PATTERNS.md` section 13, 7 and 8 October 2026), which Amber confirmed on 12 October 2026 as the weights for both repositories.
 
-**What is applied in `momentum/tokens` today:** the two fonts, h1 to h3 at weight 600, body text at 500 on the dark themes and the glow discs at 15% or less. **What is not applied:** the Readable text colours.
+**Applied in `momentum/tokens`:** the two fonts, h1 to h3 at weight 500, body at 400 on every theme, bold body styles at 600, the Readable text colours and glow discs at 15% or less.
 
 ## 1. Fonts and weights
 
@@ -15,39 +15,39 @@ Load from Google Fonts (variable, so every weight below is available). Montserra
 --font-body: Onest, Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 ```
 
-### Outfit (`--font-display`), matching Fieldwork Geo strokes
+### Outfit (`--font-display`)
 
-Fieldwork Geo has only Light (300) and DemiBold (600), so 600 and 700 both show DemiBold. Outfit matches Geo DemiBold at **weight 600** (stroke thickness as a share of lowercase height: Outfit 0.269, Geo 0.267). At 700 Outfit reads heavier than Fieldwork. Measured, not judged by eye.
+Fieldwork Geo has only Light (300) and DemiBold (600), so 600 and 700 both show DemiBold. Measured as stroke thickness over lowercase height, Outfit at 600 (0.269) matches Geo DemiBold (0.267), and at 700 it reads heavier than Fieldwork. Amber found 600 too heavy on screen on 7 October 2026, and the Hub, which is live, set headings at **500**. Both repositories use 500.
 
-| Style token | Size / line | Weight | Why |
+| Style token | Size / line | Weight | Note |
 | --- | --- | --- | --- |
-| `--type-h1` | 32/40 | 600 | Was 700 (Vibe). Moved to match Geo DemiBold |
-| `--type-h2` | 24/30 | 600 | As above |
-| `--type-h3` | 18/24 | 600 | As above |
+| `--type-h1` | 32/40 | 500 | 700 in Vibe; 600 until 7 October 2026 |
+| `--type-h2` | 24/30 | 500 | As above |
+| `--type-h3` | 18/24 | 500 | As above |
 | `--type-title` | 18/24 | 600 | Unchanged |
 | `--type-stat-xl`, `--type-stat-l` | 120/116, 52/52 | 600 | Unchanged |
-| `--type-hero`, `--type-hero-mobile` | 40/50, 32/38 | 500 | Unchanged (5 October). Sits between Geo Light and DemiBold, so it matches neither exactly. Outfit 300 (0.149) is the nearest to Geo Light (0.165) if a Light hero is wanted |
+| `--type-hero`, `--type-hero-mobile` | 40/50, 32/38 | 500 | Unchanged (5 October). Outfit 300 (0.149) is nearest to Geo Light (0.165) if a Light hero is wanted |
 | `--type-stat-m` | 36/40 | 500 | Unchanged |
 
 ### Onest (`--font-body`)
 
-| Style token | Size / line | Light themes | Dark themes (Readable) |
-| --- | --- | --- | --- |
-| `--type-text1` | 16/22 | 400 | 500 |
-| `--type-text2` | 14/20 | 400 | 500 |
-| `--type-text3` | 12/16 | 400 | 500 |
-| `--type-body` | 15/23 | 400 | 500 |
-| `--type-prompt` | 17/24 | 400 | 500 |
-| `--type-caption` | 12/16 | 400 | 500 |
-| `--type-body-strong`, `--type-label` | 14/20, 12/16 | 700 | 700 |
+| Style token | Size / line | Weight, every theme |
+| --- | --- | --- |
+| `--type-text1` | 16/22 | 400 |
+| `--type-text2` | 14/20 | 400 |
+| `--type-text3` | 12/16 | 400 |
+| `--type-body` | 15/23 | 400 |
+| `--type-prompt` | 17/24 | 400 |
+| `--type-caption` | 12/16 | 400 |
+| `--type-body-strong`, `--type-label` | 14/20, 12/16 | 600 |
 
-- **Dark weight 500** is decided and applied: `tokens/typography.css` redeclares the six body styles at 500 under `[data-theme="eco"]` and `[data-theme="twilight"]`. Thin light-on-dark strokes break up at 12 to 13px, especially on phones. At 13px Onest is 1.34px thick at 500 and 1.09px at 400.
-- **Bold body styles at 700:** unchanged from 5 October. Whether they move to 600 is open.
-- **Sizes:** body 16px, dense UI 14px, nothing that carries information under 13px, 12px for secondary captions only, 16px for text inputs (iPhones zoom below that), line height 1.5.
+- **Body at 400 on every theme.** Onest at 500 on the dark themes (applied here on 7 October 2026 for thin strokes at 12 to 13px) was lowered by Amber in the Hub the same week as too heavy. At 13px Onest is 1.34px thick at 500 and 1.09px at 400 (`metrics.json`).
+- **Medium styles 500, bold body styles 600** (700 until 8 October 2026).
+- **Sizes:** body 16px, dense UI 14px, nothing that carries information under 13px, 12px for secondary captions only, 16px for text inputs (iPhones zoom below that), line height 1.5. These are Font Lab recommendations; the Hub's phone footer may drop to 10px (`0ne`).
 
 ## 2. Readable text colours
 
-Light themes keep the ink; the muted text goes darker. Dark themes get a soft white and a stronger secondary level.
+Applied in `momentum/tokens` on 12 October 2026, matching the Hub's `colors.css` and `dark.css`. Light themes keep the ink; the muted text goes darker. Dark themes get a soft white and a stronger secondary level.
 
 | Token | Sunrise | Deep Eco | Twilight | Today |
 | --- | --- | --- | --- | --- |
@@ -60,7 +60,7 @@ Soft white, not pure white, on a near-black ground, because pure white glares on
 ## 3. Glows at 15%
 
 - **Momentum tokens:** already done on 6 October 2026. `--glow-1` to `--glow-3` and the eleven backgrounds in `tokens/backgrounds.css` sit at 15% or less.
-- **The Hub:** not done. From my earlier read of `app/src/lofty-ui/surfaces.css` the night grounds use 36 to 47% glows and the glass uses 5 to 8% white, and `app/src/design-system/tokens/dark.css` has muted text `#b9b8bc`. Re-read both before editing; the Hub's `ui_system_rebuild` branch owns them.
+- **The Hub:** done for Deep Eco and Twilight (`docs/ui-system/PATTERNS.md` section 13: glow discs 15% or less, the Readable muted level). Sunrise is stronger than the cap in the Hub, by Amber's request on 7 October 2026 ("make entire background more crisp orange"): `app/src/lofty-ui/surfaces.css` draws 85% orange corners and a 50% edge. Momentum's 15% cap and the Hub's Sunrise differ; see the Hub's `docs/ui-system/BRAND_CHECK.md`.
 
 ## 4. Contrast this gives
 

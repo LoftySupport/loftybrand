@@ -1,5 +1,7 @@
-<!-- momentum/font-lab/AGENT-PROMPT.md : the typography handoff for the Lofty Hub agent. 7 October 2026. Self-contained: paste it as the first message. -->
+<!-- momentum/font-lab/AGENT-PROMPT.md : the typography handoff for the Lofty Hub agent. 7 October 2026. Historical: the Hub applied it and Amber then changed the weights (see the note below). -->
 # Prompt for the Hub agent: typography and text colour
+
+> **Superseded on 12 October 2026.** The Hub applied this brief on 7 October 2026 and Amber then lowered the weights: headings 500 (not 600), body 400 on every theme (not 500 on dark), bold body styles 600 (not 700), and tables and forms stay on glass. The current values are `font-lab/SETUP.md` and the Hub's `docs/ui-system/PATTERNS.md` section 13. Do not paste this brief again.
 
 Paste everything below the line into the agent working on `loftysupport/loftyprojectapp`.
 

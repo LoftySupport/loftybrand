@@ -12,13 +12,21 @@ This file is the working summary. The rules in force are in `momentum/README.md`
 
 ## Before you build
 
-1. Read the rules below. Where a picture and a rule disagree, the rule wins.
+1. Read the rules below. Where a picture and a rule disagree, the rule wins. Where this folder and the Hub's rulebook disagree, the Hub's rulebook wins in the Hub (next section).
 2. Open `guidelines/`. The cards are grouped **App screens**, **App components**, **Portal**, **Foundations** (colour, type, spacing and glass, the eleven backgrounds) and **Brand** (the cover and the print templates). Build a new app screen from the reference screens, not from a single component.
 3. Read the component rule in `docs/components/<Name>.md` (in the repository, `momentum/components/<Name>.md`) before using a component. Do not guess sizes or states.
 4. The type setup and how it was chosen are in `font-lab/`. `font-lab/SETUP.md` has the weights and colour values to build from.
 5. What is still open is in `HANDOFF.md`. Do not decide it for Amber: ask, one question at a time.
 
 `CONSOLIDATION.md`, `reference/` and `guidelines/reconciliation.html` are dated history. Do not build from them.
+
+## Where the Hub's rulebook decides
+
+`docs/ui-system/PATTERNS.md` in loftysupport/loftyprojectapp is the one rulebook for the Hub. Amber's brand-check decisions of 5 October 2026 (B1 to B15 in the Hub's `docs/ui-system/BRAND_CHECK.md`), her 7 and 8 October type and selected-state decisions, and the Hub's page layouts (`LAYOUTS.md`) outrank anything in this folder for a Hub screen. This folder carries those values from 12 October 2026. Momentum's own sizes (type 15, 17, 40, 52 and 120; the 64px condensed rail; 280px glance panel) apply on the AI landing, the portal and brand-led surfaces only.
+
+- **Check a Hub change against both** with the Hub's `brand-check` skill, and run the Hub's `run-lofty-hub` skill to compare the live app's computed values with these tokens.
+- **Not carried, on purpose:** spacing 2, 20, 40 and 80; 40px controls; peach selected; 16px panels.
+- **Still differs in the Hub, so a Hub screen follows the Hub:** status and chart colours, the Sunrise page ground, neutral greys, and dark shadows (`docs/ui-system/BRAND_CHECK.md`, section "Found by the live-app comparison").
 
 ## Using it
 
@@ -47,18 +55,18 @@ Rules:
 - **One filled orange action per area.** On the landing page it is the send button.
 - **Text ink is Deep Eco everywhere**, documents included. Foundation Black is the black lockup only; Mid Grey is logo and print only.
 - **Control edges are `line-control` `#8a898d` in every theme.** Dividers use `line`.
-- **Selected is `surface-selected`:** peach on light, a white wash at 20% on dark. Never an orange fill. Hover is a neutral wash (`surface-hover`), not a colour change.
-- **Tables, watch lists and summary tiles sit on `surface-solid`.**
+- **Selected is `surface-selected`:** a white pill with `selected-glow` on light (`surface-selected-wash` on a white surface), a white wash at 14% on dark. Never an orange fill. Hover is a neutral wash (`surface-hover`), not a colour change.
+- **Watch lists and summary tiles sit on `surface-solid`; tables and forms stay on glass in the Hub.**
 - **Status is a graded pill with a shape and a word:** On track `#00805f`, At risk `#c28400`, Overdue `#d83a52`, plus Complete in Eco Green. State only, never decoration.
 - **Charts use `series-1` to `series-5` in fixed order;** a sixth category folds into `series-other`. Brand accents stay on surfaces.
 - **Contrast is WCAG AA, measured:** 4.5:1 text, 3:1 icons, control edges and focus rings, in every theme. Disabled text is the one exemption.
-- **Readable text colours are not yet adopted.** Whether the dark themes move to soft white ink and a stronger secondary level is open (`HANDOFF.md`); the values are in `font-lab/SETUP.md`.
+- **Readable text.** Ink is `#081a1c` on Sunrise and soft white `#eef4f3` on the dark themes. One muted level: `#3e4d50` on Sunrise, 86% soft white on dark. Disabled is 40%, for controls only, never for information.
 
 ## Type
 
-- **Outfit for headings and Onest for body**, from Google Fonts. Montserrat is the fallback when they are not available, then the system sans-serif stack, then Arial. Both faces are variable; use 400, 500, 600 and 700 only.
-- **Headings h1 to h3 are weight 600.** Outfit matches Fieldwork Geo DemiBold there and reads heavier at 700.
-- **Body text is weight 500 on the dark themes,** 400 on Sunrise. The tokens redeclare the six body styles under `[data-theme="eco"]` and `[data-theme="twilight"]`.
+- **Outfit for headings and Onest for body**, from Google Fonts. Montserrat is the fallback when they are not available, then the system sans-serif stack, then Arial. Both faces are variable; use 400, 500, 600 and 700 only, and the same weights on every theme.
+- **Headings h1 to h3 are weight 500** (the Hub's `PATTERNS.md` section 13; Amber found 600 too heavy on 7 October 2026). `title` and the stat figures stay at 600.
+- **Body text is weight 400 on every theme.** Medium styles are 500; bold body styles (`body-strong`, `label`) are 600.
 - **The Hub keeps Vibe's scale:** h1 32/40, h2 24/30, h3 18/24, text1 16/22, text2 14/20, text3 12/16. Nothing below 12px.
 - **AI and chat surfaces:** `hero` 40/50 at 500, `body` 15/23, `prompt` 17/24, `body-strong` 14/20, `caption` and `label` 12/16. Numbers: `stat-xl` one per screen, `stat-l` for tiles, `stat-m` for counts. Negative tracking on display and figures only.
 - **Fieldwork Geo and Hum are brand faces** for decks, print and brand-led heroes, supplied only in 300 and 600. Never app UI. Print stays on Fieldwork; Montserrat is the Word substitute where Fieldwork is not installed.
@@ -67,11 +75,12 @@ Rules:
 ## Surfaces, shape and spacing
 
 - **Page and glow:** `page` with three blurred discs (`glow-1` to `glow-3`, `blur-glow`) at 15% opacity or less. Never a straight linear gradient. The eleven backgrounds are chosen by job: Sunrise for the staff app, Sky morning for reports, Twilight light for Ask Lofty, Low ember for covers and portal pages without a photo.
-- **Glass:** one frosted frame inset `space-20` from the page edge (`surface-frame`, `edge-glass`, `radius-frame`, `blur-frame`), with panels and cards on it. No drop shadow at rest. Body text sits on `surface-solid` or `surface-input`; any text on glass is measured at 4.5:1 over the brightest glow.
+- **Glass:** one frosted frame inset 12px (`space-12`) from the page edge in the Hub (`surface-frame`, `edge-glass`, `radius-frame`, `blur-frame`), with panels and cards on it. No drop shadow at rest. Tables and forms stay on glass in the Hub (Amber, 8 October 2026, `0lh`); kanban cards, widgets and modals sit on `surface-solid`. Any text on glass is measured at 4.5:1 over the brightest glow.
 - **The prompt box is the only surface that floats** (`surface-input`, `line-control`, `shadow-float`).
-- **Radii:** `radius-xs` 4 dense controls, `radius-s` 8 buttons and inputs, `radius-m` 12 cards, `radius-l` 16 panels and the prompt box, `radius-frame` 24. Pills for chips and Search only; buttons are never pills. No literal radii.
-- **Spacing:** 2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80. Nothing off the scale. Touch targets 40px desktop, 44px phone.
-- **Shadows only when something floats:** `shadow-xs` row hover, `shadow-s` dropdowns, `shadow-m` menus and toasts, `shadow-l` modals.
+- **Radii:** `radius-xs` 4 controls and inputs, `radius-s` 8 small tags and dense-table cards, `radius-m` 12 rail items, tiles and rows, `radius-l` 20 cards, `radius-xl` 24 the prompt box and side panels, `radius-frame` 28. Buttons, chips, send buttons, toggles and progress tracks are pills (`radius-pill`). No literal radii.
+- **Spacing:** 4, 8, 12, 16, 24, 32, 48, 64. Nothing off the scale. Buttons and fields are 32px with a 44px tap area; page margin 24, 16 on small screens.
+- **Shadows only when something floats:** `shadow-xs` row hover, `shadow-s` dropdowns, `shadow-m` menus and toasts, `shadow-l` modals. The dark themes tint them from the ground, never pure black. Selected rows use `selected-glow`.
+- **Layers are named, never a number:** `z-sticky`, `z-dropdown`, `z-frame`, `z-scrim`, `z-panel`, `z-drawer`, `z-toast`, `z-skip`. Backdrops have three depths: `backdrop` 70% (modal), `backdrop-record` 45% (record drawer), `backdrop-list` 22% (list or filter panel).
 
 ## States and motion
 

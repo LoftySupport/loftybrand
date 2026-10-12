@@ -23,15 +23,16 @@
   /* ---- Semantic layer: build with these, not the primitives ---- */
   --page: var(--shell);
   --ink: var(--deep-eco);
-  --ink-muted: #5a6668;
+  --ink-muted: #3e4d50;
   --ink-disabled: rgba(8,26,28,0.4);
   --surface-frame: rgba(255,255,255,0.42);
   --surface-panel: rgba(255,255,255,0.5);
   --surface-card: rgba(255,255,255,0.72);
   --surface-input: #ffffff;
   --surface-solid: #ffffff;
-  --surface-selected: #fae4d5;
-  --surface-selected-hover: #f6d3bf;
+  --surface-selected: #ffffff;
+  --surface-selected-hover: #f9f9f6;
+  --surface-selected-wash: rgba(8,26,28,0.05);
   --surface-hover: rgba(8,26,28,0.08);
   --edge-glass: rgba(255,255,255,0.85);
   --line: rgba(8,26,28,0.08);
@@ -43,6 +44,8 @@
   --ai-surface: var(--plum);
   --focus: #c2543c;
   --backdrop: rgba(8,26,28,0.7);
+  --backdrop-record: rgba(8,26,28,0.45);
+  --backdrop-list: rgba(8,26,28,0.22);
   --glow-1: var(--crisp-orange);
   --glow-2: var(--crisp-orange);
   --glow-3: var(--current);
@@ -67,21 +70,24 @@
 }
 [data-theme="eco"] {
   --page: var(--eco-night);
-  --ink: #ffffff;
-  --ink-muted: rgba(255,255,255,0.62);
+  --ink: #eef4f3;
+  --ink-muted: rgba(238,244,243,0.86);
   --ink-disabled: rgba(255,255,255,0.4);
   --surface-frame: rgba(255,255,255,0.03);
   --surface-panel: rgba(255,255,255,0.04);
   --surface-card: rgba(255,255,255,0.05);
   --surface-input: rgba(255,255,255,0.06);
   --surface-solid: #0a1b1d;
-  --surface-selected: rgba(255,255,255,0.20);
-  --surface-selected-hover: rgba(255,255,255,0.28);
+  --surface-selected: rgba(255,255,255,0.14);
+  --surface-selected-hover: rgba(255,255,255,0.18);
+  --surface-selected-wash: rgba(255,255,255,0.06);
   --surface-hover: rgba(255,255,255,0.12);
   --edge-glass: rgba(255,255,255,0.08);
   --line: rgba(255,255,255,0.08);
   --focus: #f47e63;
   --backdrop: rgba(0,0,0,0.7);
+  --backdrop-record: rgba(0,0,0,0.45);
+  --backdrop-list: rgba(0,0,0,0.22);
   --glow-1: var(--current);
   --glow-3: var(--eco-green);
   --status-on-track: #1f9e80;
@@ -99,21 +105,24 @@
 [data-theme="twilight"] {
   --plum-lift: #4a0c32;
   --page: var(--twilight);
-  --ink: #ffffff;
-  --ink-muted: rgba(255,255,255,0.62);
+  --ink: #eef4f3;
+  --ink-muted: rgba(238,244,243,0.86);
   --ink-disabled: rgba(255,255,255,0.4);
   --surface-frame: rgba(255,255,255,0.03);
   --surface-panel: rgba(255,255,255,0.04);
   --surface-card: rgba(255,255,255,0.05);
   --surface-input: rgba(255,255,255,0.06);
   --surface-solid: #170710;
-  --surface-selected: rgba(255,255,255,0.20);
-  --surface-selected-hover: rgba(255,255,255,0.28);
+  --surface-selected: rgba(255,255,255,0.14);
+  --surface-selected-hover: rgba(255,255,255,0.18);
+  --surface-selected-wash: rgba(255,255,255,0.06);
   --surface-hover: rgba(255,255,255,0.12);
   --edge-glass: rgba(255,255,255,0.08);
   --line: rgba(255,255,255,0.08);
   --focus: #f47e63;
   --backdrop: rgba(0,0,0,0.7);
+  --backdrop-record: rgba(0,0,0,0.45);
+  --backdrop-list: rgba(0,0,0,0.22);
   --glow-1: #8e3a72;
   --status-on-track: #1f9e80;
   --status-on-track-soft: rgba(31,158,128,0.18);
