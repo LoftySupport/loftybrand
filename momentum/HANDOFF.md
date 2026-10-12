@@ -19,10 +19,10 @@ Outstanding issues, open questions and next steps only. What the system is: `REA
 ## Next steps
 
 - **Check the cards.** `guidelines/*.html` and `canvas/*.dc.html` were rewritten for Outfit and Onest by a script. On 12 October 2026 the muted text colours, the colour card's selected swatch and the foundations card's spacing steps were updated. The cards still draw 8px buttons, 40px controls, white ink on the dark themes, 600 headings and 700 bold text. Redraw them to the current tokens; the artifact's `components/*/preview.html` likewise. Rules win over pictures until then.
-- **Re-sync the copies.** Republish `tokens.json` and the README to the Lofty Momentum artifact, and re-sync the design project, after this change.
+- **Artifact leftovers.** The Lofty Momentum artifact and the design project were re-synced on 12 October 2026 (tokens, README, Handoff, seven component READMEs, the skill, the font lab, the cards). Still stale there: the artifact's `components/*/preview.html` pictures, and `api/tokens.md`, which the Design System type generates on its own save and build; rebuild it from the artifact if it still shows 700 headings or Montserrat.
 - **Hub Stage 3.** Repoint `app/src/design-system/` (the mirror) at this folder and update `loftyTheme.ts`; expect `npm run check:design-tokens` to fail until both move together. Correct `DESIGN.md` and `check-contrast.mjs` lines 142 to 152 for Deep Eco on orange.
 - **Homeowner portal.** Repoint its tokens (`portal/src/styles/tokens/`, byte-identical to an earlier Momentum draft) at this folder so there is one set.
-- **Keep the tokens single-sourced.** Edit `scripts/gen-tokens.py`, run it (`python3 momentum/scripts/gen-tokens.py momentum/tokens.json momentum/tokens`), copy `tokens.json` to `canvas/ds/lofty-momentum/tokens.json`, then republish and re-sync.
+- **Keep the tokens single-sourced.** Edit `scripts/gen-tokens.py`, run it (`python3 momentum/scripts/gen-tokens.py momentum/tokens.json momentum/tokens`), copy `tokens.json` to `canvas/ds/lofty-momentum/tokens.json`, then republish `tokens.json` to the artifact (the artifact's format differs: values are per theme, weights are strings) and re-sync the design project.
 - **Compare with the live Hub.** Run `.claude/skills/run-lofty-hub/driver.mjs drift --brand <this checkout>` in `LoftySupport/loftyprojectapp` after any token change.
 
 ## Known shortfalls
