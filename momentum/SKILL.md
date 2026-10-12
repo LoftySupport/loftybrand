@@ -67,7 +67,7 @@ Rules:
 - **Outfit for headings and Onest for body**, from Google Fonts. Montserrat is the fallback when they are not available, then the system sans-serif stack, then Arial. Both faces are variable; use 400, 500, 600 and 700 only, and the same weights on every theme.
 - **Headings h1 to h3 are weight 500** (the Hub's `PATTERNS.md` section 13; Amber found 600 too heavy on 7 October 2026). `title` and the stat figures stay at 600.
 - **Body text is weight 400 on every theme.** Medium styles are 500; bold body styles (`body-strong`, `label`) are 600.
-- **The Hub keeps Vibe's scale:** h1 32/40, h2 24/30, h3 18/24, text1 16/22, text2 14/20, text3 12/16. Nothing below 12px.
+- **The Hub keeps Vibe's scale:** h1 32/40, h2 24/30, h3 18/24, text1 16/22, text2 14/20, text3 12/16. Nothing below 12px, except the Hub's phone footer at 10px.
 - **AI and chat surfaces:** `hero` 40/50 at 500, `body` 15/23, `prompt` 17/24, `body-strong` 14/20, `caption` and `label` 12/16. Numbers: `stat-xl` one per screen, `stat-l` for tiles, `stat-m` for counts. Negative tracking on display and figures only.
 - **Fieldwork Geo and Hum are brand faces** for decks, print and brand-led heroes, supplied only in 300 and 600. Never app UI. Print stays on Fieldwork; Montserrat is the Word substitute where Fieldwork is not installed.
 - Sentence case everywhere.
