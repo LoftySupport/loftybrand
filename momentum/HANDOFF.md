@@ -14,7 +14,7 @@ Outstanding issues, open questions and next steps only. What the system is: `REA
   - Hub still ships spacing 2, 20, 40 and 80 (`BRAND_CHECK.md` F2).
 - **Fieldwork Geo in the app.** Yes for headings and display, not body (only Light and DemiBold exist, so CSS weight 400 renders Light). Before the Hub serves it, confirm the TipoType web licence covers hub.lofty.au (G-23) and pin the vertical metrics in `@font-face` (the lab has the block). Not needed while Fieldwork is not shipped in the Hub.
 - **The app icon.** The chosen icon needs sign-off as a new mark before it moves to `assets/brand/`. The Hub already ships the 1024, 512, 192, 180, 32 and 16px exports and `.ico` (copied to `assets/app-icon/` on 12 October 2026); the dark and tinted iOS variants are not made.
-- **The root kit.** Whether the root `styles.css`, `SKILL.md` and `tokens/` switch fully to Momentum, or this folder stays opt-in until the Hub ships it. The root kit uses Outfit and Onest but keeps 700 headings and the old spacing, radii and selected state.
+- **The root kit.** Whether the root `styles.css`, `SKILL.md` and `tokens/` switch fully to Momentum, or this folder stays opt-in until the Hub ships it. The root kit uses Outfit and Onest but keeps 700 headings and the old spacing, radii and selected state. The B13 to B15 notes (callout edges, `RecordTabs` deprecated, five-stage drawer track) were added on 12 October 2026; `RecordTabs` and its example in `RecordDrawer.prompt.md` are not deleted or rewritten until you say.
 
 ## Next steps
 

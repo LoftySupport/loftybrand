@@ -15,3 +15,5 @@ Rules
 - Never Crisp Orange behind small text. Overdue is `--negative-color` with white ink, on track is `--positive-color` with `--text-color-on-status` ink.
 - On the readouts the label is dark semibold and the value light — inverted from the usual field pairing, because the label is the thing you scan for.
 - Carry the chip once per record.
+
+> **Note, 5 October 2026 (Hub brand check B15).** In the record drawer the track draws five stages. The Hub has seven (Acquisition & Development, Pre-construction, Construction, Maintenance, Completed, Closed, Cancelled); all seven show wherever stages are listed in the app (boards, filters, tables). A closed or cancelled job is not opened in the drawer.

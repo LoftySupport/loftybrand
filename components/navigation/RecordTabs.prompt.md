@@ -1,3 +1,5 @@
+> **Deprecated, 5 October 2026 (Hub brand check B14).** The Hub has two tab shapes only: primary tabs (text with a 3px orange underline, 44px) and pills. This lifted-card strip is retired there. Use `Tabs` or pills in new work. Kept for the production layer until it switches.
+
 One-line: the conversation tab strip inside a record — Tabs when the tabs sit on white, RecordTabs when they need delineation.
 
 ```jsx

@@ -69,7 +69,7 @@ Fieldwork ships as `.woff` in six cuts only, so the brand scale uses weights 300
 
 **Radii** All tokens: 2px checkbox & small label · 4px controls, chips, tabs, menu items · 8px cards, menus, dialogs · 12px panels & app icon · 16px full-view modal only · 100px pills (toggle, progress, counter, badge) · 50% avatars. No literal radii.
 
-**Borders** 1px solid, always. `--ui-border-color` on controls, Flint 300 (`--layout-border-color`) on cards, panels and table rules, Flint 200 (`--ui-border-subtle-color`) on decorative rules inside a control; border goes Foundation Black on input hover, Crisp Orange on focus. No coloured left-border accent strips.
+**Borders** 1px solid, always. `--ui-border-color` on controls, Flint 300 (`--layout-border-color`) on cards, panels and table rules, Flint 200 (`--ui-border-subtle-color`) on decorative rules inside a control; border goes Foundation Black on input hover, Crisp Orange on focus. No coloured left-border accent strips (superseded in the Momentum layer: coloured callout edges are allowed as one Callout component with status tokens; Hub brand check B13, 5 October 2026).
 
 **Data viz** `components/dataviz/` carries the dashboard set — StatTile, BarChart, ChartLegend, DonutStat, MeterRow, StatusChip. Categorical colour comes from `--data-1 … --data-6`; for continuous quantity (heat, load, density) use the sequential scale `--data-scale-1 … -5` or `--data-gradient`. All of it comes from the tokens and the neutral steps, so the same markup renders light and dark. Never hard-code a series hex.
 
