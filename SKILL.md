@@ -61,7 +61,7 @@ Two systems, chosen by surface.
 - **Screen:** Outfit titles, Onest body, at the product sizes — h1 32/40, h2 24/30, h3 18/24; text1 16/22, text2 14/20, text3 12/16. Negative tracking on headings only (-0.5px h1, -0.1px h2/h3).
 - **Brand-led** (decks, print, proposals, hero statements): Fieldwork Geo Demi Bold display, Fieldwork Hum Light body; tracking -0.01em headings, -0.02em body; minimums 14pt headings, 8pt body.
 
-Fieldwork ships as `.woff` in six cuts only, so the brand scale uses weights 300 and 600 exclusively. Print stays on Fieldwork. On screen: Outfit titles, Onest body. Montserrat is the fallback for digital when Outfit and Onest are not available, and the Word document substitute where Fieldwork is not installed (documents not opened in Google). Fallback order in every stack is brand font, then Outfit or Onest, then Montserrat, then Arial — Helvetica, Calibri, Carlito and Aptos are not used.
+Fieldwork ships as `.woff` in six cuts only, so the brand scale uses weights 300 and 600 exclusively. Print stays on Fieldwork. On screen: Outfit titles, Onest body. The system sans-serif is the fallback when Outfit and Onest are not available (Amber, 12 October 2026); Montserrat is the Word document substitute where Fieldwork is not installed (documents not opened in Google). Fallback order in every digital stack is brand font, then Outfit or Onest, then the system sans-serif, then Arial — Helvetica, Calibri, Carlito and Aptos are not used.
 
 ## Foundations
 

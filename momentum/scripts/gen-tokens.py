@@ -27,28 +27,31 @@ COLORS = [
  ("brand","plum-lift",T("{plum}","{plum}","#4a0c32"),"Plum for blocks and tiles on the page. Plum holds on eco-night; on twilight it disappears, so it lifts to #4A0C32. White on it 15:1."),
  # Semantic: grounds and ink
  ("semantic","page",T("{shell}","{eco-night}","{twilight}"),"The page ground under the glass frame: Shell in Sunrise, eco-night in Deep Eco, twilight in Twilight."),
- ("semantic","ink",T("{deep-eco}","#ffffff","#ffffff"),"Primary text and icons on page, glass and card surfaces. 16:1 on Shell, 20:1 on the dark pages."),
- ("semantic","ink-muted",T("#5a6668","rgba(255,255,255,0.62)","rgba(255,255,255,0.62)"),"Secondary text, captions, timestamps, placeholders. 5.4:1 on Shell, 5.9:1 on white, 4.8:1 on `surface-selected`; 7.8:1 on eco-night."),
+ ("semantic","ink",T("{deep-eco}","#eef4f3","#eef4f3"),"Primary text and icons on page, glass and card surfaces. Soft white on the dark themes, because pure white glares on near-black. 16.1:1 on Shell, 18:1 on the dark pages and 15.9:1 on the dark solid card."),
+ ("semantic","ink-muted",T("#3e4d50","rgba(238,244,243,0.86)","rgba(238,244,243,0.86)"),"Secondary text, captions, timestamps. The one secondary level: no 62% and no 40% for content. 8.0:1 on Shell, 8.8:1 on white, 13.2:1 on eco-night and 11.9:1 on the dark solid card."),
  ("semantic","ink-disabled",T("rgba(8,26,28,0.4)","rgba(255,255,255,0.4)","rgba(255,255,255,0.4)"),"Disabled labels and controls: ink at 40%. Exempt from the contrast floor, so never for content people must read."),
  ("semantic","surface-frame",T("rgba(255,255,255,0.42)","rgba(255,255,255,0.03)","rgba(255,255,255,0.03)"),"The frosted app frame that holds rail, panels and main area. Pair with blur-frame."),
  ("semantic","surface-panel",T("rgba(255,255,255,0.5)","rgba(255,255,255,0.04)","rgba(255,255,255,0.04)"),"Side panels: the AppRail, chat history and Your day."),
  ("semantic","surface-card",T("rgba(255,255,255,0.72)","rgba(255,255,255,0.05)","rgba(255,255,255,0.05)"),"Starter cards and answer widgets on the frame."),
  ("semantic","surface-input",T("#ffffff","rgba(255,255,255,0.06)","rgba(255,255,255,0.06)"),"The prompt box, search and form fields. Solid white in Sunrise so typing stays crisp."),
- ("semantic","surface-solid",T("#ffffff","#0a1b1d","#170710"),"Solid cards that must stand off the ground: kanban cards, widgets, tables, file lists, watch lists, modals."),
- ("semantic","surface-selected",T("#fae4d5","rgba(255,255,255,0.20)","rgba(255,255,255,0.20)"),"Selected row, nav item, tab or option: a peach tint on light, a white wash on dark, one token per theme. Ink stays `ink`."),
- ("semantic","surface-selected-hover",T("#f6d3bf","rgba(255,255,255,0.28)","rgba(255,255,255,0.28)"),"Hover on a selected item."),
+ ("semantic","surface-solid",T("#ffffff","#0a1b1d","#170710"),"Solid cards that must stand off the ground: kanban cards, widgets, watch lists, modals. Tables and forms in the Hub stay on glass (Amber, 8 October 2026)."),
+ ("semantic","surface-selected",T("#ffffff","rgba(255,255,255,0.14)","rgba(255,255,255,0.14)"),"Selected row, nav item, tab or option: a white pill with `selected-glow` on light, a white wash on dark (Amber, 8 October 2026). Ink stays `ink`."),
+ ("semantic","surface-selected-hover",T("#f9f9f6","rgba(255,255,255,0.18)","rgba(255,255,255,0.18)"),"Hover on a selected item."),
+ ("semantic","surface-selected-wash",T("rgba(8,26,28,0.05)","rgba(255,255,255,0.06)","rgba(255,255,255,0.06)"),"A selected row on a white or solid surface: a faint wash instead of the white pill, which would not show there."),
  ("semantic","surface-hover",T("rgba(8,26,28,0.08)","rgba(255,255,255,0.12)","rgba(255,255,255,0.12)"),"Neutral hover wash behind ghost buttons, icon buttons, menu and table rows. Deep Eco at 8% on light; white at 12% on dark."),
  ("semantic","edge-glass",T("rgba(255,255,255,0.85)","rgba(255,255,255,0.08)","rgba(255,255,255,0.08)"),"1px edge on frame, panels and cards so glass reads as a surface. Decorative: carries no meaning."),
  ("semantic","line",T("rgba(8,26,28,0.08)","rgba(255,255,255,0.08)","rgba(255,255,255,0.08)"),"Dividers inside panels, table rules, ring and tab tracks, recessed fills. Decorative: carries no meaning."),
- ("semantic","line-control","#8a898d","Control boundaries: inputs, ghost buttons, chips, the prompt box, one token in every theme. 3.1:1 on Shell, 3.5:1 on white, 5.8:1 on eco-night, 5.1:1 on the dark solid card. 2.8:1 on `surface-selected` peach: a control inside a selected row takes `ink-muted` as its edge."),
+ ("semantic","line-control","#8a898d","Control boundaries: inputs, ghost buttons, chips, the prompt box, one token in every theme. 3.1:1 on Shell, 3.5:1 on white, 5.8:1 on eco-night, 5.1:1 on the dark solid card. 3.5:1 on the white selected pill."),
  ("semantic","action","{crisp-orange}","Primary action fill: the one filled orange action per area."),
  ("semantic","action-hover","{orange-hover}","Hover on a filled action."),
  ("semantic","action-pressed","{orange-pressed}","Press on a filled action."),
  ("semantic","on-action","{deep-eco}","Text and icons on action fills. Never white."),
  ("semantic","ai-surface","{plum}","The AI mark and AI-owned tiles. Never a page."),
  ("semantic","focus",T("#c2543c","#f47e63","#f47e63"),"Focus ring colour, drawn solid by `focus-ring`. 4.5:1 on white and 4.1:1 on Shell in Sunrise; 7.6:1 on eco-night. Edges and icons need 3:1."),
- ("semantic","backdrop",T("rgba(8,26,28,0.7)","rgba(0,0,0,0.7)","rgba(0,0,0,0.7)"),"Modal backdrop: 70% black, Deep Eco on light."),
- ("semantic","glow-1",T("{crisp-orange}","{current}","#8e3a72"),"Large glow, top left in Sunrise: 1000px Crisp Orange disc at 15%. Top right in dark: Current (Deep Eco) or berry plum (Twilight) at 15%, 820px. Glow discs never exceed 15% opacity: little colour, low saturation."),
+ ("semantic","backdrop",T("rgba(8,26,28,0.7)","rgba(0,0,0,0.7)","rgba(0,0,0,0.7)"),"Backdrop behind a modal: 70%, Deep Eco on light, black on dark."),
+ ("semantic","backdrop-record",T("rgba(8,26,28,0.45)","rgba(0,0,0,0.45)","rgba(0,0,0,0.45)"),"Backdrop behind a record drawer: 45%."),
+ ("semantic","backdrop-list",T("rgba(8,26,28,0.22)","rgba(0,0,0,0.22)","rgba(0,0,0,0.22)"),"Backdrop behind a list or filter panel: 22%."),
+ ("semantic","glow-1",T("{crisp-orange}","{current}","#8e3a72"),"Large glow, top left in Sunrise: 1000px Crisp Orange disc at 15%. Top right in dark: Current (Deep Eco) or berry plum (Twilight) at 15%, 820px. On the dark themes glow discs never exceed 15% opacity: little colour, low saturation. The Hub's Sunrise ground is stronger (85% orange corners, a 50% edge) by Amber's request, so the 15% cap is for the dark themes (Amber, 12 October 2026)."),
  ("semantic","glow-2",T("{crisp-orange}","{crisp-orange}","{crisp-orange}"),"Warm glow, bottom right in Sunrise: 820px Crisp Orange disc at 15%. Bottom left in dark: 560px at 12%. Capped at 15%."),
  ("semantic","glow-3",T("{current}","{eco-green}","{current}"),"Cool counterweight: a 700px Current disc at 12% top right in Sunrise; an Eco Green disc at 15% on the right in Deep Eco; a faint Current disc at 12% in Twilight. Capped at 15%. The eleven backgrounds in backgrounds.css keep their measured values."),
  # Status
@@ -79,16 +82,14 @@ FONTS = [
  ("Fieldwork","fonts/Fieldwork-ItalicDemiBold.woff","600","italic"),
 ]
 # Outfit for headings and Onest for body, both from Google Fonts.
-SYS_TAIL = 'Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif'  # Montserrat is the fallback when Outfit and Onest are not available
+SYS_TAIL = 'system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif'  # the system sans-serif is the fallback when Outfit and Onest are not available (Amber, 12 October 2026); Montserrat is the Word substitute only
 FAMILIES = {
  "display": "Outfit, " + SYS_TAIL,
  "body": "Onest, " + SYS_TAIL,
- "brand": '"Fieldwork Geo", "Fieldwork", Outfit, Montserrat, Arial, sans-serif',
- "brand-body": '"Fieldwork Hum", "Fieldwork", Onest, Montserrat, Arial, sans-serif',
+ "brand": '"Fieldwork Geo", "Fieldwork", Outfit, Arial, sans-serif',
+ "brand-body": '"Fieldwork Hum", "Fieldwork", Onest, Arial, sans-serif',
 }
-# Body text is weight 500 on the dark themes: thin light-on-dark strokes break up at 12 to 14px, especially on phones.
-DARK_BODY_WEIGHT = 500
-DARK_BODY_STYLES = ("text1","text2","text3","body","prompt","caption")
+# Weights follow the Hub's PATTERNS.md section 13 (Amber, 7 and 8 October 2026): headings h1 to h3 at 500, body at 400 on every theme, bold body styles at 600.
 # name, size, lh, weight, ls, sample, usage
 GROUPS = [
  ("Display","display",[
@@ -102,9 +103,9 @@ GROUPS = [
   ("stat-m","36px","40px",500,"-1px","12","Glance panel counts."),
  ]),
  ("Screen","display",[
-  ("h1","32px","40px",600,"-0.5px","Jobs","Page titles. Vibe's scale, used by the Hub."),
-  ("h2","24px","30px",600,"-0.1px","Harbour Rise","Section titles."),
-  ("h3","18px","24px",600,"-0.1px","Open variations","Card and dialog titles."),
+  ("h1","32px","40px",500,"-0.5px","Jobs","Page titles. Vibe's scale, used by the Hub."),
+  ("h2","24px","30px",500,"-0.1px","Harbour Rise","Section titles."),
+  ("h3","18px","24px",500,"-0.1px","Open variations","Card and dialog titles."),
  ]),
  ("Screen text","body",[
   ("text1","16px","22px",400,None,"Assign a crew before publishing the schedule.","Body copy in the Hub, in Onest. Weights 400, 500, 600 and 700 only."),
@@ -114,9 +115,9 @@ GROUPS = [
  ("Text","body",[
   ("body","15px","23px",400,None,"68% built and 4 days behind plan.","AI answers and chat text."),
   ("prompt","17px","24px",400,None,"Ask about any job, or tell Lofty what to do","Text inside the prompt box."),
-  ("body-strong","14px","20px",700,None,"Prep my next meeting","Card and row titles in chat surfaces."),
+  ("body-strong","14px","20px",600,None,"Prep my next meeting","Card and row titles in chat surfaces."),
   ("caption","12px","16px",400,None,"Requested Mon 21 Sep","Supporting lines and timestamps, in ink-muted."),
-  ("label","12px","16px",700,None,"Needs you","Section labels inside panels, sentence case."),
+  ("label","12px","16px",600,None,"Needs you","Section labels inside panels, sentence case."),
  ]),
  ("Brand","brand",[
   ("brand-display","48px","52px",600,"-0.01em","Every job, moving forward.","Decks, print and brand-led hero statements. Fieldwork Geo DemiBold."),
@@ -124,49 +125,49 @@ GROUPS = [
  ]),
 ]
 SPACING = [
- ("space-2","2px","Hairline offsets: the gap between a focus ring and its control, a dot and its label."),
  ("space-4","4px","Label to value."),
  ("space-8","8px","Between chips and adjacent controls."),
  ("space-12","12px","Between starter cards and inside compact rows."),
- ("space-16","16px","Frame padding, gap between rail and panels, card padding, compact tiles."),
- ("space-20","20px","Panel padding and frame inset from the page edge."),
- ("space-24","24px","Between stacked widgets; content card padding."),
- ("space-32","32px","Between the landing question, prompt box and starter row; page gutters."),
- ("space-40","40px","Control height on desktop; nav row height."),
- ("space-48","48px","Side padding of the conversation column; the largest button."),
- ("space-64","64px","Condensed rail width; section breaks on long pages."),
- ("space-80","80px","Hero and cover spacing on brand-led surfaces."),
+ ("space-16","16px","Frame padding, gap between rail and panels, card padding, compact tiles; the page margin on small screens."),
+ ("space-24","24px","Between stacked widgets; content card padding; the page margin."),
+ ("space-32","32px","Between the landing question, prompt box and starter row."),
+ ("space-48","48px","Side padding of the conversation column."),
+ ("space-64","64px","Section breaks on long pages."),
 ]
 RADIUS = [
- ("radius-xs","4px","Dense controls: checkboxes, menu items, small tags, table controls."),
- ("radius-s","8px","Buttons, inputs, icon buttons (send, voice), segmented controls, status chips that are not pills. Buttons are 8px, never pills."),
- ("radius-m","12px","Cards: starter cards, answer widgets, glance cards, chat bubbles; also rail rows and icon tiles."),
- ("radius-l","16px","Panels: the rail, the Your day panel, the prompt box, modals (Vibe's big radius)."),
- ("radius-xl","24px","The frosted app frame; same value as `radius-frame`."),
- ("radius-frame","24px","The frosted app frame only."),
- ("radius-pill","999px","Chips (tool chips, status chips, filter chips) and Search only. Never a button. Toggles and progress tracks keep their natural pill shape."),
+ ("radius-xs","4px","Vibe controls: inputs, checkboxes, menu items, small tags."),
+ ("radius-s","8px","Small tags, status chips that are not pills, cards in dense tables."),
+ ("radius-m","12px","Rail items, icon tiles, list rows."),
+ ("radius-l","20px","Cards."),
+ ("radius-xl","24px","The prompt box and side panels."),
+ ("radius-frame","28px","The frosted app frame only."),
+ ("radius-pill","999px","Buttons, chips, send buttons, toggles, progress tracks."),
  ("radius-circle","50%","Avatars, radios, loaders, status circles."),
 ]
 SHADOWS = [
- ("shadow-xs",T("0 4px 6px -4px rgba(65,64,66,0.1)","0 4px 6px -4px rgba(0,0,0,0.4)","0 4px 6px -4px rgba(0,0,0,0.4)"),"Row hover lift."),
- ("shadow-s",T("0 4px 8px rgba(65,64,66,0.2)","0 4px 8px rgba(0,0,0,0.5)","0 4px 8px rgba(0,0,0,0.5)"),"Dropdowns and a board card on hover."),
- ("shadow-m",T("0 6px 20px rgba(65,64,66,0.2)","0 6px 20px rgba(0,0,0,0.55)","0 6px 20px rgba(0,0,0,0.55)"),"Menus, toasts and tooltips."),
- ("shadow-l",T("0 15px 50px rgba(65,64,66,0.3)","0 15px 50px rgba(0,0,0,0.7)","0 15px 50px rgba(0,0,0,0.7)"),"Modals."),
- ("shadow-float",T("0 24px 60px rgba(8,26,28,0.10)","0 24px 60px rgba(0,0,0,0.35)","0 24px 60px rgba(0,0,0,0.35)"),"The prompt box and anything that floats over glass."),
+ ("shadow-xs",T("0 4px 6px -4px rgba(65,64,66,0.1)","0 4px 6px -4px rgba(2,10,11,0.4)","0 4px 6px -4px rgba(7,1,5,0.4)"),"Row hover lift."),
+ ("shadow-s",T("0 4px 8px rgba(65,64,66,0.2)","0 4px 8px rgba(2,10,11,0.5)","0 4px 8px rgba(7,1,5,0.5)"),"Dropdowns and a board card on hover."),
+ ("shadow-m",T("0 6px 20px rgba(65,64,66,0.2)","0 6px 20px rgba(2,10,11,0.55)","0 6px 20px rgba(7,1,5,0.55)"),"Menus, toasts and tooltips. The dark themes tint the shadow from their ground (eco-night, twilight), not pure black (Amber, 5 October 2026)."),
+ ("shadow-l",T("0 15px 50px rgba(65,64,66,0.3)","0 15px 50px rgba(2,10,11,0.7)","0 15px 50px rgba(7,1,5,0.7)"),"Modals."),
+ ("shadow-float",T("0 24px 60px rgba(8,26,28,0.10)","0 24px 60px rgba(2,10,11,0.35)","0 24px 60px rgba(7,1,5,0.35)"),"The prompt box and anything that floats over glass."),
+ ("selected-glow",T("0 0 0 1px rgba(8,26,28,0.08), 0 2px 10px rgba(8,26,28,0.10)","0 0 0 1px rgba(255,255,255,0.12), 0 2px 10px rgba(2,10,11,0.35)","0 0 0 1px rgba(255,255,255,0.12), 0 2px 10px rgba(7,1,5,0.35)"),"The lift under the white selected pill. Not a shadow at rest: it marks selection."),
  ("shadow-ai","0 12px 32px rgba(50,2,31,0.35)","The plum AI mark on the landing page."),
  ("focus-ring",T("0 0 0 2px #ffffff, 0 0 0 4px #c2543c","0 0 0 2px #020a0b, 0 0 0 4px #f47e63","0 0 0 2px #070105, 0 0 0 4px #f47e63"),"Visible focus on every control: a 2px gap in the page colour, then a 2px solid ring in `focus`. Never removed, never replaced by a colour change alone."),
 ]
 BLUR = [
  ("blur-frame","30px","backdrop-filter on the app frame."),
  ("blur-input","20px","backdrop-filter on the prompt box and floating bars."),
- ("blur-glow","140px","filter blur on the background glow discs, which sit at 15% opacity or less."),
+ ("blur-glow","140px","filter blur on the background glow discs, which sit at 15% opacity or less on the dark themes."),
 ]
 ZINDEX = [
- ("z-sticky","10","Sticky table headers and the top bar."),
+ ("z-sticky","10","Sticky table headers."),
  ("z-dropdown","20","Dropdown lists and combobox panels."),
- ("z-tooltip","30","Tooltips and tipseens."),
- ("z-dialog","40","Dialogs, modals and the backdrop."),
- ("z-toast","50","Toasts and alert banners."),
+ ("z-frame","30","The app frame and the chrome inside it."),
+ ("z-scrim","40","The backdrop behind a modal, panel or drawer."),
+ ("z-panel","41","Side panels and modals above the scrim."),
+ ("z-drawer","50","The record drawer."),
+ ("z-toast","60","Toasts and alert banners."),
+ ("z-skip","100","The skip link."),
 ]
 MOTION = [
  ("motion-productive-short","70ms","Press scale, hover washes."),
@@ -224,7 +225,6 @@ for gname,fam,styles in GROUPS:
         st={"name":n,"fontSize":fs,"lineHeight":lh,"fontWeight":fw,"sample":sample,"usage":usage}
         if ls: st["letterSpacing"]=ls
         if n=="brand-body": st["family"]="brand-body"
-        if n in DARK_BODY_STYLES: st["darkFontWeight"]=DARK_BODY_WEIGHT
         g["styles"].append(st)
     tokens["type"]["groups"].append(g)
 os.makedirs(os.path.dirname(OUT_JSON),exist_ok=True)
@@ -250,7 +250,7 @@ for t,_ in THEMES[1:]:
     lines.append("  color-scheme: dark;\n}")
 write("colors.css","\n".join(lines)+"\n")
 
-ty=["/* momentum/tokens/typography.css : families, weights and the type styles. Outfit for headings and Onest for body; four weights. Fieldwork for brand-led surfaces only. */",":root {"]
+ty=["/* momentum/tokens/typography.css : families, weights and the type styles. Outfit for headings and Onest for body; four weights, the same on every theme. Fieldwork for brand-led surfaces only. */",":root {"]
 for k,v in FAMILIES.items(): ty.append("  --font-%s: %s;"%(k,v))
 ty.append("  --font-weight-normal: 400;\n  --font-weight-medium: 500;\n  --font-weight-semibold: 600;\n  --font-weight-bold: 700;")
 for gname,fam,styles in GROUPS:
@@ -260,16 +260,9 @@ for gname,fam,styles in GROUPS:
         ty.append("  --type-%s: %d %s/%s var(--font-%s);"%(n,fw,fs,lh,f))
         if ls: ty.append("  --letter-spacing-%s: %s;"%(n,ls))
 ty.append("}")
-for t,_ in THEMES[1:]:
-    ty.append("/* Body text at 500 on the dark themes. */")
-    ty.append("[data-theme=\"%s\"] {"%t)
-    for gname,fam,styles in GROUPS:
-        for n,fs,lh,fw,ls,sample,usage in styles:
-            if n in DARK_BODY_STYLES: ty.append("  --type-%s: %d %s/%s var(--font-%s);"%(n,DARK_BODY_WEIGHT,fs,lh,fam))
-    ty.append("}")
 write("typography.css","\n".join(ty)+"\n")
 
-write("spacing.css","/* momentum/tokens/spacing.css : 2 to 80, nothing off the scale. */\n:root {\n"+"".join("  --%s: %s; /* %s */\n"%(n,v,u) for n,v,u in SPACING)+"}\n")
+write("spacing.css","/* momentum/tokens/spacing.css : 4 to 64, eight steps, nothing off the scale. */\n:root {\n"+"".join("  --%s: %s; /* %s */\n"%(n,v,u) for n,v,u in SPACING)+"}\n")
 write("radius.css","/* momentum/tokens/radius.css : corners grow with the surface. */\n:root {\n"+"".join("  --%s: %s; /* %s */\n"%(n,v,u) for n,v,u in RADIUS)+"}\n")
 sh=["/* momentum/tokens/shadows.css : shadows, the focus ring and blur. Only the prompt box floats at rest. */",":root {"]
 for n,v,u in SHADOWS: sh.append("  --%s: %s; /* %s */"%(n,theme_val(v,"light"),u))

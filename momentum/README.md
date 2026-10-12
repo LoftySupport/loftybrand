@@ -48,19 +48,20 @@ Vibe supplies the semantic token names; Momentum supplies the values. Outstandin
 
 | Area | Rule |
 | --- | --- |
-| Faces | Outfit headings, Onest body; Montserrat is the fallback when they are not available; Fieldwork for decks, print and brand-led heroes only |
-| Weights | 400, 500, 600, 700; h1 to h3 at 600; body 500 on the dark themes |
+| Faces | Outfit headings, Onest body; the system sans-serif is the fallback when they are not available (Montserrat is the Word substitute only); Fieldwork for decks, print and brand-led heroes only |
+| Weights | 400, 500, 600, 700; h1 to h3 at 500; body 400 on every theme; bold body styles 600 (the Hub's `PATTERNS.md` section 13, 7 and 8 October 2026) |
 | Ink on orange | Deep Eco `#081a1c`, 6.8:1 |
-| Text ink | Deep Eco everywhere, documents included. Foundation Black is a brand kit primitive for the black lockup only |
+| Text ink | Deep Eco `#081a1c` on Sunrise, soft white `#eef4f3` on the dark themes. One muted level: `#3e4d50` on Sunrise, 86% soft white on dark. Foundation Black is a brand kit primitive for the black lockup only |
 | Page | Shell `#fcf1ee` with glow discs and a frosted frame |
 | Control edge | `#8a898d` in every theme |
-| Selected | `surface-selected`: peach on light, white 20% on dark |
+| Selected | `surface-selected`: a white pill with `selected-glow` on light, white 14% on dark (Amber, 8 October 2026) |
 | Status | Graded pill with shape and word; `#00805f` `#c28400` `#d83a52` |
 | Focus | Solid 2px ring with a gap, 4.1:1 or better |
 | Charts | Five fixed series plus Other. No sequential scale yet |
 | Themes | Sunrise, Deep Eco, Twilight; the Hub ships all three |
-| Radii | 4 controls, 8 buttons and inputs, 12 cards, 16 panels, 24 frame; pills for chips and Search only |
-| Glows | Three blurred discs at 15% opacity or less, plus the eleven backgrounds by job |
+| Radii | 4 controls, 8 small tags, 12 rows and tiles, 20 cards, 24 prompt box and side panels, 28 frame; pills for buttons, chips, send buttons, toggles and progress tracks |
+| Spacing | 4, 8, 12, 16, 24, 32, 48, 64: eight steps. Buttons and fields 32px with a 44px tap area; page margin 24, 16 on small screens |
+| Glows | Three blurred discs, at 15% opacity or less on the dark themes (the Hub's Sunrise ground is stronger, by Amber's request), plus the eleven backgrounds by job |
 
 ## Using it
 
@@ -76,7 +77,7 @@ Vibe supplies the semantic token names; Momentum supplies the values. Outstandin
 
 ## App icon
 
-The Lofty Hub app icon study (`reference/lofty-hub-icon.html`, from https://claude.ai/artifact/3NgDUejwLP4U4HeZWNoza1) chose **Gantt, tone on tone, all orange**: three rounded bars stepping forward on Crisp Orange, the top two in darker orange and the last in white. Previews are in `reference/app-icon/`. The study notes that the icon arranges the Lofty point in a new way and needs sign-off as a new mark before it ships; until then it stays in `reference/`, not `assets/brand/`, and the 1024px exports the study describes are not in this repository.
+The Lofty Hub app icon study (`reference/lofty-hub-icon.html`, from https://claude.ai/artifact/L8cprtqo47YTG5sLUafsit) chose **Gantt, tone on tone, all orange**: three rounded bars stepping forward on Crisp Orange, the top two in darker orange and the last in white. Previews are in `reference/app-icon/`. The study notes that the icon arranges the Lofty point in a new way and needs sign-off as a new mark before it ships; until then it stays in `reference/`, not `assets/brand/`, and the 1024px exports the study describes are not in this repository.
 
 ## Not here
 

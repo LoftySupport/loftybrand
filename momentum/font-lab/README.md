@@ -23,7 +23,7 @@ Built from Amber's font-lab experiment for another brand. Kept: the layout, the 
 
 ## Decided, 7 October 2026
 
-The weights, colours and references to build from are in [`SETUP.md`](SETUP.md). Amber chose **Outfit for headings and Onest for body**, with body text at 500 on dark. It is applied in `../tokens` (`--font-display`, `--font-body`, h1 to h3 at weight 600). The findings below are the record of how the choice was made; where they recommend Figtree or Hanken Grotesk they are superseded.
+The weights, colours and references to build from are in [`SETUP.md`](SETUP.md). Amber chose **Outfit for headings and Onest for body**, with the Hub's weights: headings 500, body 400 on every theme (the lab's own recommendations below predate that and are kept as the record). It is applied in `../tokens` (`--font-display`, `--font-body`, h1 to h3 at weight 600). The findings below are the record of how the choice was made; where they recommend Figtree or Hanken Grotesk they are superseded.
 
 ## Findings and recommendations, 7 October 2026
 

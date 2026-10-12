@@ -12,9 +12,9 @@ The source of the Claude Design-canvas artifact at https://claude.ai/artifact/Ma
 | `Type.dc.html` | Outfit and Onest: the Hub's Vibe scale, Momentum's display, numbers and text, Fieldwork for brand surfaces |
 | `Components.dc.html` | Controls and states |
 | `Foundations.dc.html` | Spacing, shape and glass |
-| `ds/lofty-momentum/tokens.json` | The consolidated system installed as the canvas's design system (a copy of `../tokens.json` at 5 October 2026) |
+| `ds/lofty-momentum/tokens.json` | Lofty Momentum installed as the canvas's design system (a copy of `../tokens.json`, regenerated with it) |
 
-These files are artifact source, not web pages: they reference `./support.js` (supplied by the canvas runtime) and uploaded assets by `/_blob/<id>`. The flattened, self-contained versions that open in a browser are in `../guidelines/` (`screen-landing-sunrise.html`, `screen-landing-deep-eco.html`, `colour-three-themes.html`, `type-montserrat.html`, `controls-and-states.html`, `foundations-glass.html`).
+These files are artifact source, not web pages: they reference `./support.js` (supplied by the canvas runtime) and uploaded assets by `/_blob/<id>`. The flattened, self-contained versions that open in a browser are in `../guidelines/` (`screen-landing-sunrise.html`, `screen-landing-deep-eco.html`, `colour-three-themes.html`, `type-outfit-onest.html`, `controls-and-states.html`, `foundations-glass.html`).
 
 Blob references and the repository file each one is:
 
