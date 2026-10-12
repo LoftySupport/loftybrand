@@ -3,7 +3,7 @@
 
 One HTML card per Momentum component or theme, the same files the claude.ai/design project "Lofty Momentum Consolidated" shows in its Design System pane. Each file opens on its own in a browser and links `../styles.css` for the tokens. The first line of every card is its `@dsCard` marker (group, viewport, name, subtitle); the design-sync tool reads it to build the pane.
 
-Four origins, kept in step by hand:
+Five origins, kept in step by hand (the fifth, 12 October 2026: the *Hub components* and *Page templates* cards are screenshots of the running Hub at `/design-system` and `/design-system/preview/<template>`, taken with the Hub's `run-lofty-hub` skill, in Sunrise and Deep Eco; retake them when a component changes):
 
 - **Component cards** (`answer-widget.html` to `task-planner.html`, 20 files): the preview of each component in the artifact "Lofty Momentum Consolidated" (https://claude.ai/artifact/EhxWmKtgNMfZsT7wYgTR6P), with the artifact's uploaded assets replaced by this repository's files (`../../assets/brand/`, `../../assets/icons/`, `../../assets/lofty-mark-transparent.png`). The rule for each component is in `../components/<Name>.md`. When a preview changes in the artifact, regenerate the card; do not edit it here.
 - **Theme and screen cards** (`screen-landing-sunrise.html`, `screen-landing-deep-eco.html`, `colour-three-themes.html`, `type-outfit-onest.html`, `controls-and-states.html`, `foundations-glass.html`): flattened from the six artboards of the design canvas "Lofty Momentum Consolidated Design" (https://claude.ai/artifact/Ma3dEuBCDVpnYA7MZM8dfA; source in `../canvas/`).
@@ -14,6 +14,8 @@ Four origins, kept in step by hand:
 | --- | --- |
 | App screens | `reference-landing.html`, `reference-landing-dark.html`, `reference-conversation.html`, `landing-question.html`, `screen-landing-sunrise.html`, `screen-landing-deep-eco.html`, `task-planner.html`, `report-examples.html` |
 | App components | `answer-widget.html`, `chat-bubble.html`, `prompt-box.html`, `starter-card.html`, `app-frame.html`, `app-rail.html`, `glance-card.html`, `button.html`, `status-icon.html`, `report-colours.html`, `controls-and-states.html` |
+| Hub components | `hub-buttons.html`, `hub-tabs.html`, `hub-modal-states.html`, `hub-detach-delete.html`, `hub-fields.html`, `hub-table.html`, `hub-text-people.html`, `hub-toast.html`, `hub-record-family.html`, `hub-views.html`, `hub-floating-panel.html` |
+| Page templates | `template-index.html`, `template-record.html`, `template-record-gantt.html`, `template-plain.html`, `template-outside.html`, `template-docked.html`, `template-settings.html` |
 | Portal | `portal-overview.html`, `portal-home.html`, `portal-files.html`, `portal-contact.html`, `portal-log-in.html`, `portal-menu-account.html` |
 | Foundations | `colour-three-themes.html`, `type-outfit-onest.html`, `foundations-glass.html`, `gradient-backgrounds.html` |
 | Brand | `cover.html`, `print-templates.html` |
