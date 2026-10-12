@@ -51,7 +51,7 @@ COLORS = [
  ("semantic","backdrop",T("rgba(8,26,28,0.7)","rgba(0,0,0,0.7)","rgba(0,0,0,0.7)"),"Backdrop behind a modal: 70%, Deep Eco on light, black on dark."),
  ("semantic","backdrop-record",T("rgba(8,26,28,0.45)","rgba(0,0,0,0.45)","rgba(0,0,0,0.45)"),"Backdrop behind a record drawer: 45%."),
  ("semantic","backdrop-list",T("rgba(8,26,28,0.22)","rgba(0,0,0,0.22)","rgba(0,0,0,0.22)"),"Backdrop behind a list or filter panel: 22%."),
- ("semantic","glow-1",T("{crisp-orange}","{current}","#8e3a72"),"Large glow, top left in Sunrise: 1000px Crisp Orange disc at 15%. Top right in dark: Current (Deep Eco) or berry plum (Twilight) at 15%, 820px. Glow discs never exceed 15% opacity: little colour, low saturation."),
+ ("semantic","glow-1",T("{crisp-orange}","{current}","#8e3a72"),"Large glow, top left in Sunrise: 1000px Crisp Orange disc at 15%. Top right in dark: Current (Deep Eco) or berry plum (Twilight) at 15%, 820px. On the dark themes glow discs never exceed 15% opacity: little colour, low saturation. The Hub's Sunrise ground is stronger (85% orange corners, a 50% edge) by Amber's request, so the 15% cap is for the dark themes (Amber, 12 October 2026)."),
  ("semantic","glow-2",T("{crisp-orange}","{crisp-orange}","{crisp-orange}"),"Warm glow, bottom right in Sunrise: 820px Crisp Orange disc at 15%. Bottom left in dark: 560px at 12%. Capped at 15%."),
  ("semantic","glow-3",T("{current}","{eco-green}","{current}"),"Cool counterweight: a 700px Current disc at 12% top right in Sunrise; an Eco Green disc at 15% on the right in Deep Eco; a faint Current disc at 12% in Twilight. Capped at 15%. The eleven backgrounds in backgrounds.css keep their measured values."),
  # Status
@@ -82,12 +82,12 @@ FONTS = [
  ("Fieldwork","fonts/Fieldwork-ItalicDemiBold.woff","600","italic"),
 ]
 # Outfit for headings and Onest for body, both from Google Fonts.
-SYS_TAIL = 'Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif'  # Montserrat is the fallback when Outfit and Onest are not available
+SYS_TAIL = 'system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif'  # the system sans-serif is the fallback when Outfit and Onest are not available (Amber, 12 October 2026); Montserrat is the Word substitute only
 FAMILIES = {
  "display": "Outfit, " + SYS_TAIL,
  "body": "Onest, " + SYS_TAIL,
- "brand": '"Fieldwork Geo", "Fieldwork", Outfit, Montserrat, Arial, sans-serif',
- "brand-body": '"Fieldwork Hum", "Fieldwork", Onest, Montserrat, Arial, sans-serif',
+ "brand": '"Fieldwork Geo", "Fieldwork", Outfit, Arial, sans-serif',
+ "brand-body": '"Fieldwork Hum", "Fieldwork", Onest, Arial, sans-serif',
 }
 # Weights follow the Hub's PATTERNS.md section 13 (Amber, 7 and 8 October 2026): headings h1 to h3 at 500, body at 400 on every theme, bold body styles at 600.
 # name, size, lh, weight, ls, sample, usage
@@ -157,7 +157,7 @@ SHADOWS = [
 BLUR = [
  ("blur-frame","30px","backdrop-filter on the app frame."),
  ("blur-input","20px","backdrop-filter on the prompt box and floating bars."),
- ("blur-glow","140px","filter blur on the background glow discs, which sit at 15% opacity or less."),
+ ("blur-glow","140px","filter blur on the background glow discs, which sit at 15% opacity or less on the dark themes."),
 ]
 ZINDEX = [
  ("z-sticky","10","Sticky table headers."),

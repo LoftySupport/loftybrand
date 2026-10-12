@@ -48,7 +48,7 @@ Vibe supplies the semantic token names; Momentum supplies the values. Outstandin
 
 | Area | Rule |
 | --- | --- |
-| Faces | Outfit headings, Onest body; Montserrat is the fallback when they are not available; Fieldwork for decks, print and brand-led heroes only |
+| Faces | Outfit headings, Onest body; the system sans-serif is the fallback when they are not available (Montserrat is the Word substitute only); Fieldwork for decks, print and brand-led heroes only |
 | Weights | 400, 500, 600, 700; h1 to h3 at 500; body 400 on every theme; bold body styles 600 (the Hub's `PATTERNS.md` section 13, 7 and 8 October 2026) |
 | Ink on orange | Deep Eco `#081a1c`, 6.8:1 |
 | Text ink | Deep Eco `#081a1c` on Sunrise, soft white `#eef4f3` on the dark themes. One muted level: `#3e4d50` on Sunrise, 86% soft white on dark. Foundation Black is a brand kit primitive for the black lockup only |
@@ -61,7 +61,7 @@ Vibe supplies the semantic token names; Momentum supplies the values. Outstandin
 | Themes | Sunrise, Deep Eco, Twilight; the Hub ships all three |
 | Radii | 4 controls, 8 small tags, 12 rows and tiles, 20 cards, 24 prompt box and side panels, 28 frame; pills for buttons, chips, send buttons, toggles and progress tracks |
 | Spacing | 4, 8, 12, 16, 24, 32, 48, 64: eight steps. Buttons and fields 32px with a 44px tap area; page margin 24, 16 on small screens |
-| Glows | Three blurred discs at 15% opacity or less, plus the eleven backgrounds by job |
+| Glows | Three blurred discs, at 15% opacity or less on the dark themes (the Hub's Sunrise ground is stronger, by Amber's request), plus the eleven backgrounds by job |
 
 ## Using it
 

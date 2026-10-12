@@ -7,12 +7,12 @@ Decided by Amber on 7 October 2026: **Outfit for headings, Onest for body**, Fie
 
 ## 1. Fonts and weights
 
-Load from Google Fonts (variable, so every weight below is available). Montserrat is the fallback when Outfit and Onest are not available, so it sits next in the stack and is not loaded:
+Load from Google Fonts (variable, so every weight below is available). The system sans-serif is the fallback when Outfit and Onest are not available (Amber, 12 October 2026); Montserrat is the Word substitute only and is not in the stacks:
 
 ```css
 @import url("https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap");
---font-display: Outfit, Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
---font-body: Onest, Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+--font-display: Outfit, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+--font-body: Onest, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 ```
 
 ### Outfit (`--font-display`)
@@ -59,8 +59,8 @@ Soft white, not pure white, on a near-black ground, because pure white glares on
 
 ## 3. Glows at 15%
 
-- **Momentum tokens:** already done on 6 October 2026. `--glow-1` to `--glow-3` and the eleven backgrounds in `tokens/backgrounds.css` sit at 15% or less.
-- **The Hub:** done for Deep Eco and Twilight (`docs/ui-system/PATTERNS.md` section 13: glow discs 15% or less, the Readable muted level). Sunrise is stronger than the cap in the Hub, by Amber's request on 7 October 2026 ("make entire background more crisp orange"): `app/src/lofty-ui/surfaces.css` draws 85% orange corners and a 50% edge. Momentum's 15% cap and the Hub's Sunrise differ; see the Hub's `docs/ui-system/BRAND_CHECK.md`.
+- **Momentum tokens:** `--glow-1` to `--glow-3` sit at 15% or less. The eleven backgrounds in `tokens/backgrounds.css` keep their measured values.
+- **The Hub:** done for Deep Eco and Twilight (`docs/ui-system/PATTERNS.md` section 13: glow discs 15% or less, the Readable muted level). The cap is for the dark themes (Amber, 12 October 2026): Sunrise is stronger in the Hub, by her request on 7 October 2026 ("make entire background more crisp orange"): `app/src/lofty-ui/surfaces.css` draws 85% orange corners and a 50% edge. The Hub's `PATTERNS.md` section 13 row still says all three themes; it is flagged in the Hub's `docs/ui-system/BRAND_CHECK.md` to be reworded.
 
 ## 4. Contrast this gives
 

@@ -64,7 +64,7 @@ Rules:
 
 ## Type
 
-- **Outfit for headings and Onest for body**, from Google Fonts. Montserrat is the fallback when they are not available, then the system sans-serif stack, then Arial. Both faces are variable; use 400, 500, 600 and 700 only, and the same weights on every theme.
+- **Outfit for headings and Onest for body**, from Google Fonts. The system sans-serif stack is the fallback when they are not available (Amber, 12 October 2026), then Arial. Both faces are variable; use 400, 500, 600 and 700 only, and the same weights on every theme.
 - **Headings h1 to h3 are weight 500** (the Hub's `PATTERNS.md` section 13; Amber found 600 too heavy on 7 October 2026). `title` and the stat figures stay at 600.
 - **Body text is weight 400 on every theme.** Medium styles are 500; bold body styles (`body-strong`, `label`) are 600.
 - **The Hub keeps Vibe's scale:** h1 32/40, h2 24/30, h3 18/24, text1 16/22, text2 14/20, text3 12/16. Nothing below 12px, except the Hub's phone footer at 10px.
@@ -74,7 +74,7 @@ Rules:
 
 ## Surfaces, shape and spacing
 
-- **Page and glow:** `page` with three blurred discs (`glow-1` to `glow-3`, `blur-glow`) at 15% opacity or less. Never a straight linear gradient. The eleven backgrounds are chosen by job: Sunrise for the staff app, Sky morning for reports, Twilight light for Ask Lofty, Low ember for covers and portal pages without a photo.
+- **Page and glow:** `page` with three blurred discs (`glow-1` to `glow-3`, `blur-glow`). On the dark themes they sit at 15% opacity or less; the Hub's Sunrise ground is stronger (85% orange corners and a 50% edge, Amber's 7 October request, confirmed 12 October). Never a straight linear gradient. The eleven backgrounds are chosen by job: Sunrise for the staff app, Sky morning for reports, Twilight light for Ask Lofty, Low ember for covers and portal pages without a photo.
 - **Glass:** one frosted frame inset 12px (`space-12`) from the page edge in the Hub (`surface-frame`, `edge-glass`, `radius-frame`, `blur-frame`), with panels and cards on it. No drop shadow at rest. Tables and forms stay on glass in the Hub (Amber, 8 October 2026, `0lh`); kanban cards, widgets and modals sit on `surface-solid`. Any text on glass is measured at 4.5:1 over the brightest glow.
 - **The prompt box is the only surface that floats** (`surface-input`, `line-control`, `shadow-float`).
 - **Radii:** `radius-xs` 4 controls and inputs, `radius-s` 8 small tags and dense-table cards, `radius-m` 12 rail items, tiles and rows, `radius-l` 20 cards, `radius-xl` 24 the prompt box and side panels, `radius-frame` 28. Buttons, chips, send buttons, toggles and progress tracks are pills (`radius-pill`). No literal radii.
