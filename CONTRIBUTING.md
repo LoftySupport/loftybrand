@@ -30,7 +30,7 @@ Vibe-shaped component drop onto this token layer without a rewrite.
 - **No off-scale spacing.** 2/4/8/12/16/20/24/32/40/48/64/80 only — no 6, 10, 14.
 - **No new colours.** Five brand colours plus status. The two accents never
   appear together in one view.
-- **No emoji, no gradients, no backdrop blur, no left-border accent strips.**
+- **No emoji, no gradients, no backdrop blur, no left-border accent strips in the production layer (the Momentum layer allows coloured callout edges, B13).**
 - **Never edit `_ds_bundle.js`, `_ds_manifest.json` or
   `_adherence.oxlintrc.json`** — a compiler regenerates them and they are
   gitignored.
