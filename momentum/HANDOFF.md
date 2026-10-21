@@ -5,7 +5,6 @@ Outstanding issues, open questions and next steps only. What the system is: `REA
 
 ## Needs Amber
 
-- **"No SLA" on a Workflow's health pill.** A Maintenance, Company & Contacts or System Workflow has no SLA, and since 19 October 2026 (Hub #767) its pill reads No SLA rather than "No duration set". It was not put to you before it shipped. Keep it, or choose another word.
 
 - **Where the Hub and Momentum still differ** (found by the live-app comparison, 12 October 2026; the Hub's `docs/ui-system/BRAND_CHECK.md` has the table). None is decided:
   - Status colours: the Hub uses Vibe's `#00854d` and `#ffcb00`; Momentum uses the graded `#00805f`, `#c28400`, `#d83a52`.
