@@ -70,7 +70,7 @@ Rules:
 - **The Hub keeps Vibe's scale:** h1 32/40, h2 24/30, h3 18/24, text1 16/22, text2 14/20, text3 12/16. Nothing below 12px, except the Hub's phone footer at 10px.
 - **AI and chat surfaces:** `hero` 40/50 at 500, `body` 15/23, `prompt` 17/24, `body-strong` 14/20, `caption` and `label` 12/16. Numbers: `stat-xl` one per screen, `stat-l` for tiles, `stat-m` for counts. Negative tracking on display and figures only.
 - **Fieldwork Geo and Hum are brand faces** for decks, print and brand-led heroes, supplied only in 300 and 600. Never app UI. Print stays on Fieldwork; Montserrat is the Word substitute where Fieldwork is not installed.
-- Sentence case everywhere.
+- Sentence case everywhere, except in the Hub's record drawers: their section titles and field labels are Title Case with the small words lowered, and a section heading is 16/500 over 14/400 rows (the Hub's `PATTERNS.md` section 25, Amber, 15 October 2026). A question or sentence in a drawer stays sentence case.
 
 ## Surfaces, shape and spacing
 
@@ -110,7 +110,7 @@ The Hub's built components and templates are documented from the running app in 
 
 ## Voice
 
-Australian English. Sentence case. Second person, active voice; the product never says "I" except the AI in conversation, which is collaborative, confident and positive and points to what is next. Buttons are verbs that name the object ("Chase engineer", not "Submit"). Labels are nouns of one to three words. Numbers are concrete ("68%", "3 days waiting"). Empty and error states say what happened and what to do next, and carry the action. No emoji, no exclamation marks, no em dashes.
+Australian English. Sentence case (Title Case only for the Hub drawer titles and labels, above). Second person, active voice; the product never says "I" except the AI in conversation, which is collaborative, confident and positive and points to what is next. Buttons are verbs that name the object ("Chase engineer", not "Submit"). Labels are nouns of one to three words. Numbers are concrete ("68%", "3 days waiting"). Empty and error states say what happened and what to do next, and carry the action. No emoji, no exclamation marks, no em dashes.
 
 ## Handoff to code
 
