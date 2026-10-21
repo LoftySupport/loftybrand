@@ -1,9 +1,10 @@
-<!-- momentum/HANDOFF.md : outstanding issues and next steps for Lofty Momentum. Updated 12 October 2026. -->
+<!-- momentum/HANDOFF.md : outstanding issues and next steps for Lofty Momentum. Updated 21 October 2026. -->
 # Handoff: Lofty Momentum
 
 Outstanding issues, open questions and next steps only. What the system is: `README.md`. How it got here, as a dated record: `CONSOLIDATION.md`, `CHANGELOG.md` and `reference/`.
 
 ## Needs Amber
+
 
 - **Where the Hub and Momentum still differ** (found by the live-app comparison, 12 October 2026; the Hub's `docs/ui-system/BRAND_CHECK.md` has the table). None is decided:
   - Status colours: the Hub uses Vibe's `#00854d` and `#ffcb00`; Momentum uses the graded `#00805f`, `#c28400`, `#d83a52`.
@@ -19,6 +20,7 @@ Outstanding issues, open questions and next steps only. What the system is: `REA
 ## Next steps
 
 - **Check the cards.** `guidelines/*.html` and `canvas/*.dc.html` were rewritten for Outfit and Onest by a script. On 12 October 2026 the muted text colours, the colour card's selected swatch and the foundations card's spacing steps were updated. The cards still draw 8px buttons, 40px controls, white ink on the dark themes, 600 headings and 700 bold text. Redraw them to the current tokens; the artifact's `components/*/preview.html` likewise. Rules win over pictures until then.
+- **Bring the Hub's newer rules into the cards.** Since 12 October the Hub decided the record drawer (`PATTERNS.md` section 25: Title Case drawer labels, 16/500 section headings, 144px right-aligned rows, None for an empty fact, the orange + on a section) and one colour picker (section 26). `components/HubRecordFamily.md` and `HubTextAndPeople.md` were updated on 21 October 2026; their cards `guidelines/hub-record-family.html` and `hub-text-people.html` still show the old drawer and the swatch grid. Retake them as below.
 - **Retake the Hub cards.** `guidelines/hub-*.html` and `template-*.html` are photographs of the running Hub (12 October 2026). Retake them with the Hub's `run-lofty-hub` skill (`driver.mjs shot`) when a component changes, and update `components/Hub*.md`. Three Hub findings came out of it: table rows, the stage track's Foundation Black and its Deep Eco contrast (the Hub's `docs/ui-system/BRAND_CHECK.md` F27 to F29).
 - **Artifact leftovers.** The Lofty Momentum artifact and the design project were re-synced on 12 October 2026 (tokens, README, Handoff, seven component READMEs, the skill, the font lab, the cards). Still stale there: the artifact's `components/*/preview.html` pictures, and `api/tokens.md`, which the Design System type generates on its own save and build; rebuild it from the artifact if it still shows 700 headings or Montserrat.
 - **Hub Stage 3.** Repoint `app/src/design-system/` (the mirror) at this folder and update `loftyTheme.ts`; expect `npm run check:design-tokens` to fail until both move together. Correct `DESIGN.md` and `check-contrast.mjs` lines 142 to 152 for Deep Eco on orange.
