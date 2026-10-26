@@ -63,9 +63,21 @@
   --series-1: #009ba3;
   --series-2: #e46c50;
   --series-3: #8e3a72;
-  --series-4: #ad8410;
+  --series-4: #947ddc;
   --series-5: #3f6fb0;
   --series-other: var(--line-control);
+  /* ---- Team colours: the fill behind a team mark, from the Hub (Admin, Brand) ---- */
+  --team-acquisition-development: #3f6fb0;
+  --team-design: #8e3a72;
+  --team-pre-construction: #6fb8ec;
+  --team-scheduling: #009ba3;
+  --team-selections: #ee86ae;
+  --team-estimating: #a08be0;
+  --team-construction: #f47e63;
+  --team-accounts: #005058;
+  --team-maintenance: #9bcb4a;
+  --team-general: #414042;
+  --team-system: #8a898d;
   color-scheme: light;
 }
 [data-theme="eco"] {
@@ -97,9 +109,9 @@
   --status-at-risk-edge: rgba(191,137,18,0.6);
   --status-overdue: #e85a6e;
   --on-status: var(--deep-eco);
+  --series-2: #f47e63;
   --series-3: #a8508a;
-  --series-4: #b88c14;
-  --series-5: #5a82d0;
+  --series-4: #a08be0;
   color-scheme: dark;
 }
 [data-theme="twilight"] {
@@ -131,8 +143,8 @@
   --status-at-risk-edge: rgba(191,137,18,0.6);
   --status-overdue: #e85a6e;
   --on-status: var(--deep-eco);
+  --series-2: #f47e63;
   --series-3: #a8508a;
-  --series-4: #b88c14;
-  --series-5: #5a82d0;
+  --series-4: #a08be0;
   color-scheme: dark;
 }

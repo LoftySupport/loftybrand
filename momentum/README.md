@@ -27,7 +27,7 @@ Vibe supplies the semantic token names; Momentum supplies the values. Outstandin
 | Path | What it is |
 | --- | --- |
 | `styles.css` | The entry point. `@import`s only. Link it instead of the root `styles.css` to get Momentum |
-| `tokens/colors.css` | 56 colour tokens: primitives, the semantic layer, status and chart series. Sunrise on `:root`, Deep Eco on `[data-theme="eco"]`, Twilight on `[data-theme="twilight"]` |
+| `tokens/colors.css` | 70 colour tokens: primitives, the semantic layer, status, chart series and team colours. Sunrise on `:root`, Deep Eco on `[data-theme="eco"]`, Twilight on `[data-theme="twilight"]` |
 | `tokens/typography.css` | Outfit for headings and Onest for body, four weights (body at 500 on the dark themes), 19 type styles as `--type-*` font shorthands (the Hub's Vibe scale plus Momentum's display, numbers and chat styles) |
 | `tokens/spacing.css`, `radius.css`, `shadows.css`, `motion.css`, `layers.css` | Twelve spacing steps, eight radii, elevation and the solid focus ring with the blur radii, durations and easings, the z-index scale |
 | `tokens/backgrounds.css` | The eleven Momentum backgrounds with their dark twins as `--bg-*`, chosen by job |
@@ -60,7 +60,7 @@ Vibe supplies the semantic token names; Momentum supplies the values. Outstandin
 | Selected | `surface-selected`: a white pill with `selected-glow` on light, white 14% on dark (Amber, 8 October 2026) |
 | Status | Graded pill with shape and word; `#00805f` `#c28400` `#d83a52` |
 | Focus | Solid 2px ring with a gap, 4.1:1 or better |
-| Charts | Five fixed series plus Other. No sequential scale yet |
+| Charts | Five fixed series plus Other, built from the Hub's team colours (Amber, 26 October 2026). Eleven `team-*` tokens hold the team colours themselves. No sequential scale yet |
 | Themes | Sunrise, Deep Eco, Twilight; the Hub ships all three |
 | Radii | 4 controls, 8 small tags, 12 rows and tiles, 20 cards, 24 prompt box and side panels, 28 frame; pills for buttons, chips, send buttons, toggles and progress tracks |
 | Spacing | 4, 8, 12, 16, 24, 32, 48, 64: eight steps. Buttons and fields 32px with a 44px tap area; page margin 24, 16 on small screens |

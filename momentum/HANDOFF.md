@@ -8,7 +8,8 @@ Outstanding issues, open questions and next steps only. What the system is: `REA
 
 - **Where the Hub and Momentum still differ** (found by the live-app comparison, 12 October 2026; the Hub's `docs/ui-system/BRAND_CHECK.md` has the table). None is decided:
   - Status colours: the Hub uses Vibe's `#00854d` and `#ffcb00`; Momentum uses the graded `#00805f`, `#c28400`, `#d83a52`.
-  - Chart series: the Hub's orange-first ramp; Momentum's five fixed series (your 5 October decision, not yet in the rulebook).
+  - Chart series: the Hub's orange-first ramp; Momentum's five fixed series, now built from the team colours (26 October 2026; your 5 October decision, not yet in the rulebook).
+  - Team marks: the Hub draws a team's icon in white on its colour. White is under 3:1 on five of the eleven (Pre-Construction 2.2, Selections 2.4, Estimating 2.9, Construction 2.6, Maintenance 1.9; see the `team-*` notes). The tokens copy the live `teams` values of 26 October 2026; the Hub's table is the source, so recheck them when a team colour changes.
   - Sunrise page ground (`#f3f4f4` in the Hub, Shell `#fcf1ee` here), the Flint-style neutrals still in the Hub's `--ui-background-*` and `--layout-border-color`, and the placeholder colour.
   - Dark control edge: the Hub has `#807f74`; the rule is `#8a898d` in every theme.
   - Dark shadows: you confirmed tinted on 5 October; Momentum now is, the Hub is still pure black.
