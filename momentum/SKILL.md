@@ -58,7 +58,7 @@ Rules:
 - **Selected is `surface-selected`:** a white pill with `selected-glow` on light (`surface-selected-wash` on a white surface), a white wash at 14% on dark. Never an orange fill. Hover is a neutral wash (`surface-hover`), not a colour change.
 - **Watch lists and summary tiles sit on `surface-solid`; tables and forms stay on glass in the Hub.**
 - **Status is a graded pill with a shape and a word:** On track `#00805f`, At risk `#c28400`, Overdue `#d83a52`, plus Complete in Eco Green. State only, never decoration.
-- **Charts use `series-1` to `series-5` in fixed order;** a sixth category folds into `series-other`. Brand accents stay on surfaces.
+- **Charts use `series-1` to `series-5` in fixed order;** a sixth category folds into `series-other`. The series are the Hub's team colours (Scheduling, Construction, Design, Estimating, Acquisition & Development), deepened or lifted only where 3:1 needs it. `team-*` tokens are for a team's mark and tag, never a chart. Brand accents stay on surfaces.
 - **Contrast is WCAG AA, measured:** 4.5:1 text, 3:1 icons, control edges and focus rings, in every theme. Disabled text is the one exemption.
 - **Readable text.** Ink is `#081a1c` on Sunrise and soft white `#eef4f3` on the dark themes. One muted level: `#3e4d50` on Sunrise, 86% soft white on dark. Disabled is 40%, for controls only, never for information.
 
