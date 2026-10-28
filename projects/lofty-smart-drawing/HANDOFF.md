@@ -16,3 +16,4 @@ Outstanding items only. What it is: `../lofty-smart-drawing.md`. How to run it: 
 - Upstream's IndyGo example (5 MB `smart-drawing.html`, `index.db`) was left out on purpose. Fetch it from the upstream repository if you want a sample.
 - Measured checks use the drawn line width as the tolerance and cover the site boundary, slab outline and four areas. Window sizes and room areas are not measured.
 - OpenTakeoff (AGPL-3.0) measures from plans and may suit manual takeoffs. Vetting is not finished (see `LoftySupport/skills` `docs/vetting-log.md`).
+- `--compare` was tested on an altered copy of the same set (an added sheet, one edited area), not on two real revisions. Run it on Rev E against Rev F.

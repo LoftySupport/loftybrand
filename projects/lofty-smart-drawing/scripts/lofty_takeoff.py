@@ -11,9 +11,9 @@ import argparse
 import json
 import os
 import re
-from collections import Counter
 
 import pymupdf
+from collections import Counter
 from openpyxl import Workbook
 from openpyxl.styles import Font, PatternFill, Alignment
 
@@ -290,6 +290,93 @@ def boq_lines(doc, tags):
     return lines, sched
 
 
+def page_lines(page):
+    out = []
+    for l in page.get_text().split("\n"):
+        l = re.sub(r"\s+", " ", l.strip().upper())
+        if len(l) >= 2:
+            out.append(l)
+    return out
+
+
+def chrome_of(pages):
+    """Lines repeated on most sheets (title block, notices). Compared once, not per sheet."""
+    c = Counter()
+    for ls in pages:
+        c.update(set(ls))
+    return {l for l, n in c.items() if n >= max(2, 0.6 * len(pages))}
+
+
+def revision_of(doc):
+    m = re.search(r"REV:\s*([A-Z])\b", doc[0].get_text().upper())
+    return m.group(1) if m else ""
+
+
+def compare_docs(new, old, tags_new, areas_new, site_new, chk_new):
+    """Rows: area, sheet in new, sheet in old, change, item, old value, new value. Old is the earlier version."""
+    rows = []
+    pn = [page_lines(p) for p in new]
+    po = [page_lines(p) for p in old]
+    cn, co = chrome_of(pn), chrome_of(po)
+    rows.append(["Revision", "", "", "Version", "Revision letter on sheet 1", revision_of(old) or "not found", revision_of(new) or "not found"])
+    if len(old) != len(new):
+        rows.append(["Revision", "", "", "Sheets", "Sheet count", len(old), len(new)])
+    for l in sorted(cn - co):
+        rows.append(["Title block", "", "", "Added", l, "", l])
+    for l in sorted(co - cn):
+        rows.append(["Title block", "", "", "Removed", l, l, ""])
+    # match sheets by text similarity
+    sims = []
+    for i, a in enumerate(pn):
+        sa = set(a) - cn
+        for j, b in enumerate(po):
+            sb = set(b) - co
+            u = len(sa | sb)
+            sims.append((len(sa & sb) / u if u else 1.0, i, j))
+    used_i, used_j, pairs = set(), set(), []
+    for sim, i, j in sorted(sims, reverse=True):
+        if i in used_i or j in used_j or sim < 0.3:
+            continue
+        used_i.add(i)
+        used_j.add(j)
+        pairs.append((i, j, sim))
+    for i in range(len(pn)):
+        if i not in used_i:
+            rows.append(["Sheet", i + 1, "", "Added sheet", "No matching sheet in the earlier version", "", f"Sheet {i + 1}"])
+    for j in range(len(po)):
+        if j not in used_j:
+            rows.append(["Sheet", "", j + 1, "Removed sheet", "No matching sheet in the later version", f"Sheet {j + 1}", ""])
+    for i, j, sim in sorted(pairs):
+        a = set(pn[i]) - cn
+        b = set(po[j]) - co
+        for l in sorted(b - a):
+            rows.append(["Text", i + 1, j + 1, "Removed", l, l, ""])
+        for l in sorted(a - b):
+            rows.append(["Text", i + 1, j + 1, "Added", l, "", l])
+    # tags
+    tags_old = read_tags(old)
+    cn_, co_ = Counter(f"{t['code']} {t['num']}" for t in tags_new), Counter(f"{t['code']} {t['num']}" for t in tags_old)
+    for k in sorted(set(cn_) | set(co_)):
+        if cn_[k] != co_[k]:
+            rows.append(["Tags", "", "", "Count changed" if cn_[k] and co_[k] else "Added" if cn_[k] else "Removed", k, co_[k], cn_[k]])
+    # printed quantities
+    ao, so = read_areas(old), read_site(old)
+    qo = {k: v for k, v in ao[1]}
+    qo.update({k: v for _, k, v, _ in so})
+    qn = {k: v for k, v in areas_new[1]}
+    qn.update({k: v for _, k, v, _ in site_new})
+    for k in sorted(set(qn) | set(qo)):
+        if qn.get(k) != qo.get(k):
+            rows.append(["Quantity", "", "", "Changed" if k in qn and k in qo else "Added" if k in qn else "Removed", k, qo.get(k, ""), qn.get(k, "")])
+    # checks
+    old_chk = {r[0]: r for r in measured_checks(old, ao, so)}
+    for r in chk_new:
+        o = old_chk.get(r[0])
+        if o and (o[4] != r[4] or o[2] != r[2]):
+            rows.append(["Check", r[5], o[5], "Result changed", r[0], f"{o[2]} ({o[4]})", f"{r[2]} ({r[4]})"])
+    return rows
+
+
 def style(ws, widths):
     for c in ws[1]:
         c.font = Font(bold=True, color="081A1C")
@@ -307,6 +394,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("pdf")
     ap.add_argument("--out", required=True)
+    ap.add_argument("--compare", help="an earlier version of the same set, to list what changed")
     a = ap.parse_args()
     doc = pymupdf.open(a.pdf)
     if not any(p.get_text().strip() for p in doc):
@@ -372,6 +460,17 @@ def main():
     for r in sched:
         ws.append(r)
     style(ws, [14, 26, 18, 18, 6, 12, 10, 16, 10])
+    if a.compare:
+        old = pymupdf.open(a.compare)
+        crows = compare_docs(doc, old, tags, areas, site, meas)
+        ws = wb.create_sheet("Changes", 1)
+        ws.append(["Area", "Sheet (this version)", "Sheet (earlier version)", "Change", "Item", "Earlier", "This version"])
+        for r in crows:
+            ws.append(r)
+        style(ws, [12, 12, 12, 16, 60, 40, 40])
+        summ = wb["Summary"]
+        summ.append(["Compared with", a.compare.split("/")[-1], f"{len(crows)} changes listed on the Changes sheet"])
+        print(f"compared with {a.compare.split('/')[-1]}: {len(crows)} changes")
     wb.save(a.out)
     print(f"{len(tags)} tags, {len(chk)} checks ({sum(1 for r in chk if r[4] != 'PASS')} to review, {len(meas)} measured) -> {a.out}")
 
