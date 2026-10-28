@@ -1,0 +1,7 @@
+{
+  "_note": "Hub products these drawing items can map to. Codes and descriptions were read from the live Hub products table on 28 October 2026 (read only). Windows are bought by quote, so tags do not map one to one to a product. A person confirms every line before it is loaded.",
+  "windows_quote": {"code": "1330.001", "description": "Windows as per Quote", "unit": "QUOTE"},
+  "garage_door_quote": {"code": "1620.0001", "description": "Garage Door/s as per Quote", "unit": null},
+  "window_sills": {"code": "1550.160", "description": "Waterproof Window Sills", "unit": "LM"},
+  "window_surrounds": {"code": "1445.080", "description": "Window Surrounds", "unit": "LM"}
+}

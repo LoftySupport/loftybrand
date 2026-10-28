@@ -5,6 +5,9 @@ Notable changes to the Lofty design system. Newest first.
 ## Unreleased
 
 ### Added
+- **`lofty_takeoff.py` in `projects/lofty-smart-drawing/`** (28 October 2026, Amber): reads a Lofty residential drawing set and writes an Excel takeoff workbook: window and door tag counts, quantities printed on the sheets, 17 checks (8 measured from the drawing lines at the printed scale), a draft BoQ lines sheet mapped to Hub products through `hub_product_map.json`, and a window schedule. Tested on Job 1393 Rev F only. `--compare` adds a Changes sheet against an earlier version of the same set.
+
+### Added
 - **`projects/lofty-smart-drawing/`** (28 October 2026, Amber): the AutoConst smart-drawing skill brought in as its own Lofty skill (`lofty-smart-drawing`): PDF drawing set to one clickable offline HTML viewer. Scripts copied unchanged; `SKILL.md` adapted; upstream licence and `NOTICE.md` entry added. Viewer is not yet on Momentum tokens (`HANDOFF.md`).
 
 ### Added
