@@ -12,6 +12,7 @@ repository carries the work that exercises the system, not just a link to it.
 | [`lofty-hub-mockups/`](./lofty-hub-mockups/) · [notes](./lofty-hub-mockups.md) | Screen mockups and a design check for the projects app | Tokens, bundle, icons, brand assets | Tracks `LoftySupport/loftyprojectapp` |
 | [`lofty-document-template/`](./lofty-document-template/) · [notes](./lofty-document-template.md) | A4 print/PDF document master and cover pages | Brand palette, Fieldwork fonts, brand shapes | Brand-led surface — Fieldwork, not the screen type scale |
 | [`lofty-style-guide/`](./lofty-style-guide/) · [notes](./lofty-style-guide.md) | Single-page navigable style guide | All nine token files, `styles.css`, logo and masthead shape | Pure token references — no literals |
+| [`lofty-smart-drawing/`](./lofty-smart-drawing/) · [notes](./lofty-smart-drawing.md) | Skill that turns an architectural PDF set into a clickable offline HTML viewer | Nothing yet (own viewer styling) | Adapted from AutoConst smart-drawing, internal use only |
 
 ## No duplicated assets
 
