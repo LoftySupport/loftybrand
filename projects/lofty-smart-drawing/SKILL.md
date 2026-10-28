@@ -49,3 +49,15 @@ Writes `outputs/<p>/index.db` (SQLite) and `outputs/<p>/smart-drawing.html` (one
 - Vector (CAD-exported) PDFs only.
 - Architectural only. Other trades need their own skill.
 - Two-column legends can put a code under the wrong category; titles can need a manual fix (`UPDATE sheets SET title=...`).
+
+## Lofty residential sets: takeoff workbook
+
+Lofty working drawings tag windows on the plan and have no schedule tables, so `smart_drawing.py` finds nothing on them. Use:
+
+```
+python3 -I projects/lofty-smart-drawing/scripts/lofty_takeoff.py <set.pdf> --out <folder>/takeoff.xlsx
+```
+
+Writes an Excel workbook with Summary, Tags, Counts, Printed quantities, Checks, BoQ lines (draft) and Window schedule sheets. Every row has its sheet and a status: Verified (read off the sheet), Inferred (from a tag code) or Review (a person must look). It counts tags, copies quantities printed on the plans (areas, site data, ceiling heights, stairs) and checks the sums, percentages and the low-E note. It does not measure from line geometry, price anything or compare against a spec (use `au-residential-spec-drawings-crosscheck`). Needs `openpyxl` as well as PyMuPDF. Tested on one set only (Job 1393, Rev F).
+
+The BoQ lines sheet maps to Hub products through `hub_product_map.json` (codes read from the live Hub products table on 28 October 2026, read only). Windows are bought by quote in the Hub, so tags do not map one to one to a product. Every line is marked for a person to confirm and nothing is written to the Hub.

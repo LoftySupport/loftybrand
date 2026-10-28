@@ -5,7 +5,7 @@ Turns an architectural PDF drawing set into one clickable offline HTML file: doo
 
 # Files
 
-Vendored under [`lofty-smart-drawing/`](./lofty-smart-drawing/): `SKILL.md`, `scripts/` (Python, PyMuPDF), `requirements.txt` and `UPSTREAM_LICENSE`.
+Vendored under [`lofty-smart-drawing/`](./lofty-smart-drawing/): `SKILL.md`, `scripts/` (Python, PyMuPDF and openpyxl), `hub_product_map.json`, `requirements.txt` and `UPSTREAM_LICENSE`. `scripts/lofty_takeoff.py` is Lofty's own addition: it reads a residential set and writes an Excel takeoff workbook.
 
 # Source and licence
 
