@@ -80,3 +80,13 @@ distribution, and foundry licences commonly bound distribution by domain,
 pageview or seat count. This repository is private; keep it that way, or
 confirm the Lofty Fieldwork licence covers wider distribution before opening
 it up.
+
+---
+
+## AutoConst smart-drawing
+
+**What is used:** the Python scripts and viewer template in `projects/lofty-smart-drawing/`, adapted from the upstream skill.
+
+**Source:** https://github.com/hamzaabduljabbar/autoConst-smart-drawing
+
+**Licence:** AutoConst Source Available License, copyright (c) 2026 Hamza Jabbar / AutoConst. Internal business use and modification only, attribution kept, no resale or rebranding as a product. Full text in `projects/lofty-smart-drawing/UPSTREAM_LICENSE`. Keep this repository private.
